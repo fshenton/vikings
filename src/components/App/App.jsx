@@ -6,6 +6,7 @@ import Navigation from "COMPONENTS/Navigation/";
 import Socials from "COMPONENTS/Socials/"
 import Landing from "COMPONENTS/Landing/";
 import About from "COMPONENTS/About/";
+import Characters from "COMPONENTS/Characters/";
 
 export default function App(){
 
@@ -23,6 +24,7 @@ export default function App(){
 			{/* PAGES */}
 			<Landing />
 			<About />
+			<Characters />
 
 		</div>
 	);
