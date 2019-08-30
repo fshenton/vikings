@@ -1,5 +1,6 @@
 import React, { useState } from "react";
-import { RENDER } from "./";
+import RENDER from "SHARED/renderUtils.jsx";
+import Socials from "COMPONENTS/Socials/";
 
 export default function Navigation(){
 
@@ -36,8 +37,9 @@ export default function Navigation(){
 		}
 	];
 
-	const links    = linkData.map(RENDER.item);
-	const ariaOpen = open.toString();
+
+	const links       = linkData.map(RENDER.item.bind(true, "navigation"));
+	const ariaOpen    = open.toString();
 
 	return (
 		<nav>
@@ -45,7 +47,8 @@ export default function Navigation(){
 				role="switch"
 				aria-checked={ariaOpen}
 				aria-controls="navigation__links"
-				onClick={toggleOpen}>
+				onClick={toggleOpen}
+			>
 				<span>
 					Menu
 				</span>
@@ -55,9 +58,11 @@ export default function Navigation(){
 			</button>
 			<ul 
 				id="navigation__links"
-				aria-expanded={ariaOpen}>
+				aria-expanded={ariaOpen}
+			>
 				{links}
 			</ul>
+			<Socials />
 		</nav>
 	);
 }//Navigation

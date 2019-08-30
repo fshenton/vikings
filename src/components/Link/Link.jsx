@@ -9,8 +9,10 @@ export default function Link(props){
 	//RENDER
 	//------------------------
 	const {
-		label,
-		destination = ""
+		label, 
+		destination = "",
+		iconOnly    = false,
+		className   = ""
 	} = props;
 
 	const isInternal         = destination.indexOf("/") === 0;
@@ -18,13 +20,17 @@ export default function Link(props){
 		target: "_blank",
 		rel: "noopener"
 	};
+	const ariaLabel = iconOnly ? { "aria-label": label } : {};
 
 
 	return (
 		<a 
+			className={className}
 			href={destination}
-			{...externalAttributes}>
-			{label}
+			{...externalAttributes}
+			{...ariaLabel}
+		>
+			{!iconOnly && label}
 		</a>	
 	);
 }//Link
