@@ -1,0 +1,34 @@
+{
+  "name": "vikings",
+  "version": "0.1.0",
+  "description": "A walkthrough project for Vikings season 7.",
+  "main": "index.js",
+  "scripts": {
+    "build-prod": "cp -r src/index.html dist && webpack --mode=production",
+    "build-dev": "cp -r src/index.html dist && webpack-dev-server --open --mode=development"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fshenton/vikings.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/fshenton/vikings/issues"
+  },
+  "homepage": "https://github.com/fshenton/vikings#readme",
+  "devDependencies": {
+    "@babel/core": "^7.5.5",
+    "@babel/preset-react": "^7.0.0",
+    "babel-loader": "^8.0.6",
+    "css-loader": "^3.1.0",
+    "node-sass": "^4.12.0",
+    "react": "^16.9.0",
+    "react-dom": "^16.9.0",
+    "sass-loader": "^7.1.0",
+    "style-loader": "^1.0.0",
+    "webpack": "^4.39.1",
+    "webpack-cli": "^3.3.6",
+    "webpack-dev-server": "^3.7.2"
+  }
+}
