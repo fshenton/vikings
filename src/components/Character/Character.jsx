@@ -1,9 +1,19 @@
-import React from "react";
-import { data as characters } from "COMPONENTS/Characters/";
-import { RENDER } from "./";
+import React, { useContext } from "react";
+import { 
+	data as characters,
+	Characters
+} from "COMPONENTS/Characters/";
+import { RENDER, s } from "./";
 
 export default function Character(props){
 
+	//CONTEXT
+	//---------------------------
+	const { activeIndex } = useContext(Characters);
+
+
+	//RENDER
+	//----------------------------
 	const {
 		name,
 		nickname,
@@ -20,17 +30,32 @@ export default function Character(props){
 		description
 	} = image;
 
+
+	// inline style to prevent the need for a huge png asset
 	const mask = { clipPath: `url(${maskPath})` }
 
+
+	// next & prev button labels
 	const prevCharacter = characters[index-1] || {};
 	const nextCharacter = characters[index+1] || {};
 
 	const { name: prevCharName } = prevCharacter;
 	const { name: nextCharName } = nextCharacter;
 
+
+	// active character checks
+	const isActive = index === activeIndex;
+
 	return (
-		<article id={id}>
-			<h1>
+		<article 
+			id={id}
+			className={s.wrapper}
+			role="group"
+			aria-roledescription="slide"
+			aria-label={`Character ${index + 1} of ${characters.length}.`}
+			aria-hidden={!isActive.toString()}
+		>
+			<h1 id={`character__${id}`}>
 				{name}
 			</h1>
 			<h2>
