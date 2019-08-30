@@ -21,6 +21,7 @@ function renderItem(data){
 }//renderItem
 
 
-export {
-	renderItem
+
+export default {
+	item: renderItem
 };

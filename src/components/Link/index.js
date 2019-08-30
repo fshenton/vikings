@@ -1,4 +1,4 @@
-import { checkProps } from "./utils.js";
+import UTILS from "./utils.js";
 
 export { default } from "./Link.jsx";
-export { checkProps };
+export { UTILS };

@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { renderItem } from "./";
+import { RENDER } from "./";
 
 export default function Navigation(){
 
@@ -36,7 +36,7 @@ export default function Navigation(){
 		}
 	];
 
-	const links    = linkData.map(renderItem);
+	const links    = linkData.map(RENDER.item);
 	const ariaOpen = open.toString();
 
 	return (

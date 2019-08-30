@@ -1,10 +1,10 @@
 import React from "react";
-import { checkProps } from "./";
+import { UTILS } from "./";
 
 export default function Link(props){
 
 	//shout at the dev who implemented this incorrectly
-	checkProps(props);
+	UTILS.checkProps(props);
 	
 	//RENDER
 	//------------------------

@@ -8,6 +8,6 @@ function checkProps(props){
 	
 }//checkProps
 
-export {
+export default {
 	checkProps
 };

@@ -1,4 +1,4 @@
-import { renderItem } from "./renderUtils.jsx";
+import RENDER from "./renderUtils.jsx";
 
 export { default } from "./Navigation.jsx";
-export { renderItem };
+export { RENDER };
