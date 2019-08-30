@@ -1,4 +1,6 @@
 import React from "react";
+import { data as characters } from "COMPONENTS/Characters/";
+import { RENDER } from "./";
 
 export default function Character(props){
 
@@ -7,7 +9,9 @@ export default function Character(props){
 		nickname,
 		actor,
 		body,
-		image = {}
+		image = {},
+		index,
+		id
 	} = props;
 
 	const {
@@ -18,8 +22,14 @@ export default function Character(props){
 
 	const mask = { clipPath: `url(${maskPath})` }
 
+	const prevCharacter = characters[index-1] || {};
+	const nextCharacter = characters[index+1] || {};
+
+	const { name: prevCharName } = prevCharacter;
+	const { name: nextCharName } = nextCharacter;
+
 	return (
-		<article>
+		<article id={id}>
 			<h1>
 				{name}
 			</h1>
@@ -37,6 +47,10 @@ export default function Character(props){
 				alt={description}
 				style={mask}
 			/>
+
+			{prevCharName && RENDER.button(prevCharName, -1)}
+			{nextCharName && RENDER.button(nextCharName, +1)}
+
 		</article>
 	);
 }//Character

@@ -15,7 +15,7 @@ export default function Link(props){
 		children: label,
 	} = props;
 
-	const isInternal         = destination.indexOf("/") === 0;
+	const isInternal         = !!destination.match(/(\/|#)/);
 	const externalAttributes = isInternal ? {} : {
 		target: "_blank",
 		rel: "noopener"
