@@ -5,7 +5,8 @@ import UTILS from "SHARED/utils.js";
 function renderItem(namespace, data){
 
 	const { 
-		label = "" 
+		label = "",
+		...remainingProps
 	} = data;
 	
 	const safeLabel = UTILS.convertToSafeString(label);
@@ -14,7 +15,9 @@ function renderItem(namespace, data){
 
 	return (
 		<li key={key}>
-			<Link {...data} />
+			<Link {...remainingProps}>
+				{label}
+			</Link>
 		</li>
 	);
 }//renderItem

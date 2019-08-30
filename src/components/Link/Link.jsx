@@ -9,10 +9,10 @@ export default function Link(props){
 	//RENDER
 	//------------------------
 	const {
-		label, 
 		destination = "",
 		iconOnly    = false,
-		className   = ""
+		className   = "",
+		children: label,
 	} = props;
 
 	const isInternal         = destination.indexOf("/") === 0;
