@@ -1,5 +1,6 @@
 import React from "react";
 import RENDER from "SHARED/renderUtils.jsx";
+import { s } from "./";
 
 export default function Socials(){
 
@@ -22,7 +23,7 @@ export default function Socials(){
 	const links = data.map(RENDER.item.bind(true, "socials"));
 
 	return (
-		<ul>
+		<ul className={s.wrapper}>
 			{links}
 		</ul>
 	);

@@ -3,8 +3,9 @@ import HomePermalink from "COMPONENTS/HomePermalink/";
 import HistoryChannel from "COMPONENTS/HistoryChannel/";
 import WatchNow from "COMPONENTS/WatchNow/";
 import Navigation from "COMPONENTS/Navigation/";
-import Landing from "COMPONENTS/Landing/";
 import Socials from "COMPONENTS/Socials/"
+import Landing from "COMPONENTS/Landing/";
+import About from "COMPONENTS/About/";
 
 export default function App(){
 
@@ -21,6 +22,7 @@ export default function App(){
 
 			{/* PAGES */}
 			<Landing />
+			<About />
 
 		</div>
 	);
