@@ -1,10 +1,13 @@
 import React from "react";
+import Navigation from "COMPONENTS/Navigation/";
+import Landing from "COMPONENTS/Landing/";
 
 export default function App(){
 
 	return (
-		<p>
-			Ahoy, you fuckers.
-		</p>
+		<div>
+			<Navigation />
+			<Landing />
+		</div>
 	);
 }//App

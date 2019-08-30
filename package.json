@@ -1,7 +1,7 @@
 {
   "name": "vikings",
   "version": "0.1.0",
-  "description": "A walkthrough project for Vikings season 7.",
+  "description": "A walkthrough project for Vikings season 6.",
   "main": "index.js",
   "scripts": {
     "build-prod": "cp -r src/index.html dist && webpack --mode=production",
