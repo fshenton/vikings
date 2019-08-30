@@ -1,8 +1,23 @@
-import React from "react";
+import React, { useState } from "react";
+import { renderItem } from "./";
 
 export default function Navigation(){
 
-	const links = [
+	//HOOKS
+	//----------------------------
+	const [ open, setOpen ] = useState(false);
+
+
+	//EVENT HANDLING
+	//---------------------------
+	function toggleOpen(){
+		setOpen(!open);
+	}//toggleOpen
+
+
+	//RENDER
+	//----------------------------
+	const linkData = [
 		{
 			label: "Home",
 			destination: "/home"
@@ -21,13 +36,16 @@ export default function Navigation(){
 		}
 	];
 
+	const links    = linkData.map(renderItem);
+	const ariaOpen = open.toString();
 
 	return (
 		<nav>
 			<button 
 				role="switch"
-				aria-checked="false"
-				aria-controls="navigation__links">
+				aria-checked={ariaOpen}
+				aria-controls="navigation__links"
+				onClick={toggleOpen}>
 				<span>
 					Menu
 				</span>
@@ -37,12 +55,8 @@ export default function Navigation(){
 			</button>
 			<ul 
 				id="navigation__links"
-				aria-expanded="false">
-				<li>
-					<a href="/">
-						Home
-					</a>	
-				</li>
+				aria-expanded={ariaOpen}>
+				{links}
 			</ul>
 		</nav>
 	);
