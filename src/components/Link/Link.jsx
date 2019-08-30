@@ -13,6 +13,7 @@ export default function Link(props){
 		iconOnly    = false,
 		className   = "",
 		children: label,
+		...remainingProps
 	} = props;
 
 	const isInternal         = !!destination.match(/(\/|#)/);
@@ -26,6 +27,7 @@ export default function Link(props){
 	return (
 		<a 
 			className={className}
+			{...remainingProps}
 			href={destination}
 			{...externalAttributes}
 			{...ariaLabel}

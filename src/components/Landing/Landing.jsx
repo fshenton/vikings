@@ -2,7 +2,7 @@ import React from "react";
 
 export default function Landing(){
 	return(
-		<main>
+		<header>
 			<h1>
 				Vikings
 			</h1>
@@ -15,6 +15,6 @@ export default function Landing(){
 			<p>
 				Get a closer look at <span>Vikings season 5</span>.
 			</p>
-		</main>
+		</header>
 	);
 }//Landing

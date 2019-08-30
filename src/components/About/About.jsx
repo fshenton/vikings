@@ -16,7 +16,7 @@ export default function About(){
 	const { src, description } = image;
 
 	return (
-		<main>
+		<article>
 			<img src={src} alt={description} />
 			<h1>
 				{title}
@@ -27,6 +27,6 @@ export default function About(){
 			<p>
 				{body}
 			</p>
-		</main>
+		</article>
 	);z
 }//About

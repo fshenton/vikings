@@ -47,35 +47,36 @@ export default function Character(props){
 	const isActive = index === activeIndex;
 
 	return (
-		<article 
+		<li
 			id={id}
-			className={s.wrapper}
+			className={s.wrapper} 
 			role="group"
 			aria-roledescription="slide"
 			aria-label={`Character ${index + 1} of ${characters.length}.`}
-			aria-hidden={!isActive.toString()}
-		>
-			<h1 id={`character__${id}`}>
-				{name}
-			</h1>
-			<h2>
-				{nickname}
-			</h2>
-			<h3>
-				{actor}
-			</h3>
-			<p>
-				{body}
-			</p>
-			<img 
-				src={src} 
-				alt={description}
-				style={mask}
-			/>
+			aria-hidden={!isActive.toString()}>
+			<article>
+				<h1 id={`character__${id}`}>
+					{name}
+				</h1>
+				<h2>
+					{nickname}
+				</h2>
+				<h3>
+					{actor}
+				</h3>
+				<p>
+					{body}
+				</p>
+				<img 
+					src={src} 
+					alt={description}
+					style={mask}
+				/>
 
-			{prevCharName && RENDER.button(prevCharName, -1)}
-			{nextCharName && RENDER.button(nextCharName, +1)}
+				{prevCharName && RENDER.button(prevCharName, -1)}
+				{nextCharName && RENDER.button(nextCharName, +1)}
 
-		</article>
+			</article>
+		</li>
 	);
 }//Character

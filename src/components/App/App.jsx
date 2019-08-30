@@ -22,9 +22,11 @@ export default function App(){
 			<Navigation />
 
 			{/* PAGES */}
-			<Landing />
-			<About />
-			<Characters />
+			<main>
+				<Landing />
+				<About />
+				<Characters />
+			</main>
 
 		</div>
 	);

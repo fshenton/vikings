@@ -10,7 +10,7 @@ export default function Characters(){
 	const characters = characterData.map(RENDER.character);
 
 	return(
-		<main 
+		<article 
 			role="region"
 			aria-roledescription="carousel"
 			aria-label="Characters"
@@ -23,6 +23,6 @@ export default function Characters(){
 					{characters}
 				</ul>
 			</CharactersProvider>
-		</main>
+		</article>
 	);
 }//Characters
