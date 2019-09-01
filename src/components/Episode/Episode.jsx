@@ -15,8 +15,8 @@ export default function Episode(props){
 	} = props;
 
 	const {
-		thumbSrc,
-		thumbDesc
+		src: thumbSrc,
+		description: thumbDesc
 	} = image;
 
 	const { videoSrc } = video;
