@@ -32,7 +32,7 @@ export default function Character(props){
 
 
 	// inline style to prevent the need for a huge png asset
-	const mask = { clipPath: `url(${maskPath})` }
+	const mask = { clipPath: `url(${maskPath})` };
 
 
 	// next & prev button labels
