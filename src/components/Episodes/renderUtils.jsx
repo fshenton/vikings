@@ -1,4 +1,5 @@
 import React from "react";
+import Episode from "COMPONENTS/Episode/";
 
 function renderPaginationLink(data){
 
@@ -13,45 +14,26 @@ function renderPaginationLink(data){
 	);	
 }// renderPaginationLink
 
-function renderEpisode(data){
+function renderEpisode(data, index){
 
 	const { 
 		number,
 		title,
 		synopsis,
-		image: { 
-			src: thumbSrc,
-			description: thumbDesc
-		},
-		video: {
-			src: videoSrc
-		}
+		image,
+		video,
 	} = data;
 
 	return (
-		<li key={ `episode__${number}` }>
-			<article>
-				<h2>
-					Episode { number }
-				</h2>
-				<h1>
-					{ title }
-				</h1>
-				<p>
-					{ synopsis }
-				</p>
-				<a 
-					href={ videoSrc } 
-					rel="noopener" 
-					target="_blank"
-				>
-					<img 
-						src={ thumbSrc } 
-						alt={ thumbDesc } 
-					/>
-				</a>
-			</article>
-		</li>
+		<Episode
+			key={ `episode__${number}` }
+			index={ index }
+			number={ number }
+			title={ title }
+			synopsis={ synopsis }
+			image={ image }
+			video={ video }
+		/>
 	);
 }// renderEpisode
 

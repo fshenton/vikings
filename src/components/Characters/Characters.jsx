@@ -25,4 +25,4 @@ export default function Characters(){
 			</CharactersProvider>
 		</article>
 	);
-}//Characters
+}// Characters

@@ -1,4 +1,5 @@
 import React from "react";
+import Episode from "COMPONENTS/Episode/";
 import { 
 	data,
 	RENDER
@@ -10,7 +11,7 @@ export default function Episodes(){
 	const episodes = data.map(RENDER.episode);
 
 	return (
-		<>
+		<article>
 			<ol>
 				{ episodes }
 			</ol>
@@ -21,6 +22,6 @@ export default function Episodes(){
 					{ pagination }
 				</ol>
 			</nav>
-		</>
+		</article>
 	);
 }// Episodes

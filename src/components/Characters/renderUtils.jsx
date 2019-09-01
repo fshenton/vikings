@@ -26,7 +26,7 @@ function renderCharacter(data, index){
 			key={`${safeName}`}
 		/>
 	);
-}//renderCharacter
+}// renderCharacter
 
 export default {
 	character: renderCharacter
