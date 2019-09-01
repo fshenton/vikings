@@ -5,14 +5,13 @@ export default function Link(props){
 
 	//shout at the dev who implemented this incorrectly
 	UTILS.checkProps(props);
-	
+
 	//RENDER
 	//------------------------
 	const {
 		destination = "",
-		iconOnly    = false,
 		className   = "",
-		children: label,
+		children,
 		...remainingProps
 	} = props;
 
@@ -21,7 +20,6 @@ export default function Link(props){
 		target: "_blank",
 		rel: "noopener"
 	};
-	const ariaLabel = iconOnly ? { "aria-label": label } : {};
 
 
 	return (
@@ -30,9 +28,8 @@ export default function Link(props){
 			{...remainingProps}
 			href={destination}
 			{...externalAttributes}
-			{...ariaLabel}
 		>
-			{!iconOnly && label}
+			{children}
 		</a>	
 	);
 }//Link

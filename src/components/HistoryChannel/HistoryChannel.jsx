@@ -6,9 +6,7 @@ export default function HistoryChannel(){
 	return (
 		<Link
 			destination="https://www.history.co.uk/"
-			iconOnly={true}
-		>
-			The History Channel
-		</Link>
+			aria-label="The History Channel"
+		/>
 	);
 }//HistoryChannel
