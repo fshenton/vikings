@@ -79,4 +79,4 @@ export default function Character(props){
 			</article>
 		</li>
 	);
-}//Character
+}// Character
