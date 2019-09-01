@@ -1,10 +1,15 @@
-import React from "react";
-import {
-	data as episodes
-} from "COMPONENTS/Episodes/";
+import React, { useContext } from "react";
+import { Episodes } from "COMPONENTS/Episodes/";
 
 export default function Episode(props){
 
+	//CONTEXT
+	//---------------------------
+	const { activeIndex } = useContext(Episodes);
+
+
+	//RENDER
+	//---------------------------
 	const {
 		index,
 		number,
