@@ -1,9 +1,16 @@
-import React from "react";
+import React, { useContext } from "react";
 import { data } from "COMPONENTS/Episodes/";
 import { RENDER } from "./";
+import { Episodes } from "COMPONENTS/Episodes/";
 
 export default function EpisodesControls(){
+	
+	//CONTEXT
+	//---------------------------
+	const { activeIndex } = useContext(Episodes);
 
+	//RENDER
+	//---------------------------
 	const pagination = data.map(RENDER.pagination);
 
 	return (

@@ -20,7 +20,9 @@ export default function Episodes(){
 					</ol>
 				</EpisodesProvider>
 			</article>
-			<EpisodesControls />
+			<EpisodesProvider>
+				<EpisodesControls />
+			</EpisodesProvider>
 		</>
 	);
 }// Episodes
