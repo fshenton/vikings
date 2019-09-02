@@ -1,5 +1,6 @@
 import React from "react";
 import Episode from "COMPONENTS/Episode/";
+import EpisodesControls from "COMPONENTS/EpisodesControls/";
 import { 
 	data,
 	RENDER,
@@ -8,23 +9,18 @@ import {
 
 export default function Episodes(){
 
-	const pagination = data.map(RENDER.pagination);
 	const episodes = data.map(RENDER.episode);
 
 	return (
-		<article>
-			<EpisodesProvider>
-				<ol>
-					{ episodes }
-				</ol>
-				<nav>
-					<button aria-label="Previous episode." />
-					<button aria-label="Next episode." />
+		<>
+			<article>
+				<EpisodesProvider>
 					<ol>
-						{ pagination }
+						{ episodes }
 					</ol>
-				</nav>
-			</EpisodesProvider>
-		</article>
+				</EpisodesProvider>
+			</article>
+			<EpisodesControls />
+		</>
 	);
 }// Episodes
