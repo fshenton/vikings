@@ -1,4 +1,6 @@
 import React from "react";
+import { s } from "./";
+import Link from "COMPONENTS/Link/";
 
 function renderPaginationLink(data){
 
@@ -6,9 +8,12 @@ function renderPaginationLink(data){
 
 	return (
 		<li key={`episode__pagination__${number}`}>
-			<a href={ `#episode-${number}` }>
+			<Link 
+				destination={ `#episode-${number}` }
+				className={ s.paginationLink }
+			>
 				{ number }
-			</a>
+			</Link>
 		</li>
 	);	
 }// renderPaginationLink
