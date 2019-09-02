@@ -5,9 +5,7 @@ export default function HomePermalink(){
 	return (
 		<Link 
 			destination="/"
-			iconOnly={true}
-		>
-			Home
-		</Link>
+			aria-label="Home."
+		/>
 	);
 }//HomePermalink
