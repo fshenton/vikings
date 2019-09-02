@@ -8,6 +8,7 @@ import Landing from "COMPONENTS/Landing/";
 import About from "COMPONENTS/About/";
 import Characters from "COMPONENTS/Characters/";
 import Episodes from "COMPONENTS/Episodes/";
+import EpisodePreview from "COMPONENTS/EpisodePreview/";
 
 export default function App(){
 
@@ -28,6 +29,7 @@ export default function App(){
 				<About />
 				<Characters />
 				<Episodes />
+				<EpisodePreview />
 			</main>
 
 		</div>
