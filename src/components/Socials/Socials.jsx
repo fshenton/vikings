@@ -1,26 +1,22 @@
 import React from "react";
-import RENDER from "SHARED/renderUtils.jsx";
-import { s } from "./";
+import { RENDER, s } from "./";
 
 export default function Socials(){
 
 	const data = [
 		{
-			label: "facebook",
-			destination: "https://www.facebook.com/",
-			iconOnly: true
+			label: "Facebook",
+			destination: "https://www.facebook.com/"
 		}, {
-			label: "twitter",
-			destination: "https://www.twitter.com/",
-			iconOnly: true
+			label: "Twitter",
+			destination: "https://www.twitter.com/"
 		}, {
-			label: "instagram",
-			destination: "https://www.instagram.com/",
-			iconOnly: true
+			label: "Instagram",
+			destination: "https://www.instagram.com/"
 		}
 	];
 
-	const links = data.map(RENDER.item.bind(true, "socials"));
+	const links = data.map(RENDER.item);
 
 	return (
 		<ul className={s.wrapper}>

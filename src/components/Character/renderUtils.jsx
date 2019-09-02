@@ -13,8 +13,9 @@ function renderButton(name, direction){
 			className={`${s.button} ${direction > 0 ? s.next : s.previous}`} 
 			destination={`#${safeName}`}
 			aria-controls="characters__items"
+			aria-label={`${directionLabel} character: ${name}.`}
 		>
-			{`${directionLabel} character: ${name}.`}
+			{ name }
 		</Link>
 	);
 }//renderButton

@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import RENDER from "SHARED/renderUtils.jsx";
 import Socials from "COMPONENTS/Socials/";
+import { RENDER } from "./";
 
 export default function Navigation(){
 
@@ -38,7 +38,7 @@ export default function Navigation(){
 	];
 
 
-	const links       = linkData.map(RENDER.item.bind(true, "navigation"));
+	const links       = linkData.map(RENDER.item);
 	const ariaOpen    = open.toString();
 
 	return (
