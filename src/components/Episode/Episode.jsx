@@ -30,8 +30,7 @@ export default function Episode(props){
 	} = image;
 
 	const { videoSrc } = video;
-
-	const isActive = index === activeIndex;
+	const hidden       = index !== activeIndex;
 
 	return (
 		<li
@@ -40,7 +39,7 @@ export default function Episode(props){
 			role="group"
 			aria-roledescription="slide"
 			aria-label={ `Episode ${number} of ${data.length}.` }
-			aria-hidden={ !isActive.toString() }
+			aria-hidden={ hidden.toString() }
 		>
 			<article>
 				<h2>
