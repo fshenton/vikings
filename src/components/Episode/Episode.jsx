@@ -1,5 +1,9 @@
 import React, { useContext } from "react";
-import { Episodes } from "COMPONENTS/Episodes/";
+import { 
+	data, 
+	EpisodesContext as Episodes 
+} from "COMPONENTS/Episodes/";
+import { s } from "./";
 
 export default function Episode(props){
 
@@ -11,6 +15,7 @@ export default function Episode(props){
 	//RENDER
 	//---------------------------
 	const {
+		id,
 		index,
 		number,
 		title,
@@ -26,8 +31,17 @@ export default function Episode(props){
 
 	const { videoSrc } = video;
 
+	const isActive = index === activeIndex;
+
 	return (
-		<li>
+		<li
+			id={ id }
+			className={ s.wrapper }
+			role="group"
+			aria-roledescription="slide"
+			aria-label={ `Episode ${number} of ${data.length}.` }
+			aria-hidden={ !isActive.toString() }
+		>
 			<article>
 				<h2>
 					Episode { number }

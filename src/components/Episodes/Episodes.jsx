@@ -13,14 +13,17 @@ export default function Episodes(){
 
 	return (
 		<>
-			<article>
-				<EpisodesProvider>
-					<ol>
-						{ episodes }
-					</ol>
-					<EpisodesNav />
-				</EpisodesProvider>
-			</article>
+		<article>
+			<EpisodesProvider>
+				<ol 
+					id="episodes-list"
+					aria-live="polite"
+				>
+					{ episodes }
+				</ol>
+				<EpisodesNav />
+			</EpisodesProvider>
+		</article>
 		</>
 	);
 }// Episodes

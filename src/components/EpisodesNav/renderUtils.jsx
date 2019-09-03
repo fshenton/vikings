@@ -1,8 +1,8 @@
-import React from "react";
+import React, { useContext } from "react";
 import { s } from "./";
 import Link from "COMPONENTS/Link/";
 
-function renderPaginationLink(data){
+function renderPaginationLink(data, index){
 
 	const { number } = data;
 

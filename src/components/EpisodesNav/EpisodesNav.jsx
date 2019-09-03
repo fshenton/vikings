@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
 import { 
 	data,
-	Episodes
+	EpisodesContext as Episodes
 } from "COMPONENTS/Episodes/";
 import { RENDER } from "./";
 
@@ -17,8 +17,14 @@ export default function EpisodesNav(){
 
 	return (
 		<nav>
-			<button aria-label="Previous episode." />
-			<button aria-label="Next episode." />
+			<button 
+				aria-label="Previous episode."
+				aria-controls="episode-list" 
+			/>
+			<button 
+				aria-label="Next episode." 
+				aria-controls="episode-list"
+			/>
 			<ol>
 				{ pagination }
 			</ol>
