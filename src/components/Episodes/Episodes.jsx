@@ -14,7 +14,10 @@ export default function Episodes(){
 	return (
 		<article>
 			<EpisodesProvider>
-				<ol id="episodes-list">
+				<ol 
+					id="episodes-list"
+					aria-live="polite"
+				>
 					{ episodes }
 				</ol>
 				<nav>
