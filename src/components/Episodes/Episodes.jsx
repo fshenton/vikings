@@ -14,12 +14,18 @@ export default function Episodes(){
 	return (
 		<article>
 			<EpisodesProvider>
-				<ol>
+				<ol id="episodes-list">
 					{ episodes }
 				</ol>
 				<nav>
-					<button aria-label="Previous episode." />
-					<button aria-label="Next episode." />
+					<button 
+						aria-label="Previous episode." 
+						aria-controls="episodes-list"
+					/>
+					<button 
+						aria-label="Next episode."
+						aria-controls="episodes-list" 
+					/>
 					<ol>
 						{ pagination }
 					</ol>
