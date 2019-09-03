@@ -19,11 +19,11 @@ export default function EpisodesNav(){
 		<nav>
 			<button 
 				aria-label="Previous episode."
-				aria-controls="episode-list" 
+				aria-controls="episodes__items" 
 			/>
 			<button 
 				aria-label="Next episode." 
-				aria-controls="episode-list"
+				aria-controls="episodes__items"
 			/>
 			<ol>
 				{ pagination }

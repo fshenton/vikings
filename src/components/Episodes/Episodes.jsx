@@ -16,7 +16,7 @@ export default function Episodes(){
 		<article>
 			<EpisodesProvider>
 				<ol 
-					id="episodes-list"
+					id="episodes__items"
 					aria-live="polite"
 				>
 					{ episodes }
