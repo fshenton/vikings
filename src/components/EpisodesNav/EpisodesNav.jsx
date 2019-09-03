@@ -7,25 +7,19 @@ import { RENDER } from "./";
 
 export default function EpisodesNav(){
 	
-	//CONTEXT
-	//---------------------------
-	const { activeIndex } = useContext(Episodes);
-
-	//RENDER
-	//---------------------------
 	const pagination = data.map(RENDER.pagination);
 
 	return (
 		<nav>
 			<button 
 				aria-label="Previous episode."
-				aria-controls="episodes__items" 
+				aria-controls="episodes__items episodes__pagination"
 			/>
 			<button 
 				aria-label="Next episode." 
-				aria-controls="episodes__items"
+				aria-controls="episodes__items episodes__pagination"
 			/>
-			<ol>
+			<ol id="episodes__pagination">
 				{ pagination }
 			</ol>
 		</nav>
