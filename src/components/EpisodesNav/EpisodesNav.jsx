@@ -3,7 +3,7 @@ import { data } from "COMPONENTS/Episodes/";
 import { RENDER } from "./";
 import { Episodes } from "COMPONENTS/Episodes/";
 
-export default function EpisodesControls(){
+export default function EpisodesNav(){
 	
 	//CONTEXT
 	//---------------------------
@@ -22,4 +22,4 @@ export default function EpisodesControls(){
 			</ol>
 		</nav>
 	);
-}// EpisodesControls
+}// EpisodesNav

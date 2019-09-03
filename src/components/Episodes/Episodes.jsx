@@ -1,6 +1,6 @@
 import React from "react";
 import Episode from "COMPONENTS/Episode/";
-import EpisodesControls from "COMPONENTS/EpisodesControls/";
+import EpisodesNav from "COMPONENTS/EpisodesNav/";
 import { 
 	data,
 	RENDER,
@@ -21,7 +21,7 @@ export default function Episodes(){
 				</EpisodesProvider>
 			</article>
 			<EpisodesProvider>
-				<EpisodesControls />
+				<EpisodesNav />
 			</EpisodesProvider>
 		</>
 	);
