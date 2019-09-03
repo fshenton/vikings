@@ -18,11 +18,9 @@ export default function Episodes(){
 					<ol>
 						{ episodes }
 					</ol>
+					<EpisodesNav />
 				</EpisodesProvider>
 			</article>
-			<EpisodesProvider>
-				<EpisodesNav />
-			</EpisodesProvider>
 		</>
 	);
 }// Episodes

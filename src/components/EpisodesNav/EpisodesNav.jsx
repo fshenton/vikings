@@ -1,7 +1,9 @@
 import React, { useContext } from "react";
-import { data } from "COMPONENTS/Episodes/";
+import { 
+	data,
+	Episodes
+} from "COMPONENTS/Episodes/";
 import { RENDER } from "./";
-import { Episodes } from "COMPONENTS/Episodes/";
 
 export default function EpisodesNav(){
 	
