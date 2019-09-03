@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import { Episodes } from "COMPONENTS/Episodes/";
+import { EpisodesContext as Episodes } from "COMPONENTS/Episodes/";
 
 export default function Episode(props){
 
