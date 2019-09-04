@@ -1,5 +1,6 @@
 import React, { useContext } from "react";
 import { EpisodesContext as Episodes } from "COMPONENTS/Episodes/";
+import EpisodePreview from "COMPONENTS/EpisodePreview/";
 import { s } from "./";
 
 export default function Episode(props){
@@ -29,8 +30,11 @@ export default function Episode(props){
 		description: thumbDesc
 	} = image;
 
-	const { videoSrc } = video;
-	const hidden       = index !== activeIndex;
+	const { 
+		src: videoSrc 
+	} = video;
+
+	const hidden = index !== activeIndex;
 
 	return (
 		<li
@@ -51,16 +55,13 @@ export default function Episode(props){
 				<p>
 					{ synopsis }
 				</p>
-				<a 
-					href={ videoSrc } 
-					rel="noopener" 
-					target="_blank"
-				>
-					<img 
-						src={ thumbSrc } 
-						alt={ thumbDesc } 
-					/>
-				</a>
+				<EpisodePreview 
+					number={ number }
+					title={ title }
+					thumbSrc={ thumbSrc }
+					thumbDesc={ thumbDesc }
+					videoSrc={ videoSrc } 
+				/>
 			</article>
 		</li>
 	);

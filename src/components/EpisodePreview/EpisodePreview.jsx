@@ -1,21 +1,51 @@
 import React from "react";
 
-export default function EpisodePreview(){
+export default function EpisodePreview(props){
+
+	const { 
+		number,
+		title,
+		thumbSrc,
+		thumbDesc,
+		videoSrc
+	} = props;
+
+	const previewId = `episode__${number}__preview`;
+
+	console.log(videoSrc);
 
 	return (
-		<form>
-			<button>Close</button>
-			<output>
-				<img 
-					src="path/to/image.jpg" 
-					alt="placeholder description" 
+		<aside>
+			<a
+				href={ videoSrc }
+				aria-controls={ previewId }
+			>
+				<img
+					src={ thumbSrc }
+					alt={ thumbDesc }
 				/>
-				<video controls src="path/to/video.mp4" />
-			</output>
-			<h2>Episode X</h2>
-			<h1>Name of Episode X</h1>
-			<button>Previous</button>
-			<button>Next</button>
-		</form>
+			</a>
+			<div
+				id={ previewId }
+				aria-hidden="true"
+			>
+				<header>
+					<h2>
+						{ `Episode ${number}` } 
+					</h2>
+					<h1>
+						{ title }
+					</h1>
+					<nav>
+						<a href="prevepisodeifthereisone" />
+						<a href="nextepisodeifthereisone" />
+						<a href="hidepreviewandreturntocurrentepisodepage" />
+					</nav>
+				</header>
+				<video>
+					{/*only render the video when it's activated*/}
+				</video>
+			</div>	
+		</aside>
 	);
 }
