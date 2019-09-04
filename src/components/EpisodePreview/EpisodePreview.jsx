@@ -26,26 +26,24 @@ export default function EpisodePreview(props){
 
 	const previewId = `episode__${number}__preview`;
 
-	//this section could be one for render utils?
 	const prevIndex = index - 1;
 	const nextIndex = index + 1;
 
-	let prevLink;
-	let nextLink;
+	let prevLink, nextLink;
 
 	if(prevIndex > -1){
 		prevLink = 
-		<a href={ `#episode__${number-1}__preview` }>
-			Prev
-		</a>
+			<a href={ `#episode__${number-1}__preview` }>
+				Prev
+			</a>
 		;
 	}
 
 	if(nextIndex < episodeCount){
 		nextLink =
-		<a href={ `#episode__${number+1}__preview` }>
-			Next
-		</a>
+			<a href={ `#episode__${number+1}__preview` }>
+				Next
+			</a>
 		;
 	}
 
@@ -74,7 +72,9 @@ export default function EpisodePreview(props){
 					<nav>
 						{ prevLink }
 						{ nextLink }
-						<a href="hidepreviewandreturntocurrentepisodepage" />
+						<a href={ `#episode__${number}` }> 
+							Close
+						</a>
 					</nav>
 				</header>
 				<video>
