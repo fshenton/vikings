@@ -1,15 +1,15 @@
 import React, { useContext } from "react";
-import { 
-	data, 
-	EpisodesContext as Episodes 
-} from "COMPONENTS/Episodes/";
+import { EpisodesContext as Episodes } from "COMPONENTS/Episodes/";
 import { s } from "./";
 
 export default function Episode(props){
 
 	//CONTEXT
 	//---------------------------
-	const { activeIndex } = useContext(Episodes);
+	const { 
+		activeIndex,
+		episodeCount: episodes
+	} = useContext(Episodes);
 
 
 	//RENDER
@@ -38,7 +38,7 @@ export default function Episode(props){
 			className={ s.wrapper }
 			role="group"
 			aria-roledescription="slide"
-			aria-label={ `Episode ${number} of ${data.length}.` }
+			aria-label={ `Episode ${number} of ${episodes}.` }
 			aria-hidden={ hidden.toString() }
 		>
 			<article>
