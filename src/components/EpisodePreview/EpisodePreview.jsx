@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import {
 	EpisodesContext as Episodes
 } from "COMPONENTS/Episodes";
@@ -11,6 +11,11 @@ export default function EpisodePreview(props){
 		activeIndex,
 		episodeCount
 	} = useContext(Episodes);
+
+
+	// STATE
+	// ----------------------------
+	const [hidden, setHidden] = useState(true);
 
 
 	// RENDER
@@ -47,11 +52,13 @@ export default function EpisodePreview(props){
 		;
 	}
 
+
 	return (
 		<aside>
 			<a
-				href={ videoSrc }
+				href={ `#${previewId}` }
 				aria-controls={ previewId }
+				onClick={ () => { setHidden(!hidden) } }
 			>
 				<img
 					src={ thumbSrc }
@@ -60,7 +67,7 @@ export default function EpisodePreview(props){
 			</a>
 			<div
 				id={ previewId }
-				aria-hidden="true"
+				aria-hidden={ hidden }
 			>
 				<header>
 					<h2>
