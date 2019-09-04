@@ -1,19 +1,23 @@
 import React, { createContext } from "react";
+import { data } from "./";
 
-const Episodes = createContext();
+const EpisodesContext = createContext();
+
+const episodes = data.length;
 
 const initialState = {
-	activeIndex: 0
+	activeIndex: 0,
+	episodeCount: episodes
 };
 
 function EpisodesProvider(props){
 	const { children } = props;
 
 	return (
-		<Episodes.Provider value={ initialState }>
+		<EpisodesContext.Provider value={ initialState }>
 			{ children }
-		</Episodes.Provider>
+		</EpisodesContext.Provider>
 	);
 }
 
-export { Episodes, EpisodesProvider };
+export { EpisodesContext, EpisodesProvider };
