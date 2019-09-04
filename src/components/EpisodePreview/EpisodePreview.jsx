@@ -1,8 +1,22 @@
-import React from "react";
+import React, { useContext } from "react";
+import {
+	EpisodesContext as Episodes
+} from "COMPONENTS/Episodes";
 
 export default function EpisodePreview(props){
 
+	// CONTEXT
+	//-----------------------------
+	const {
+		activeIndex,
+		episodeCount
+	} = useContext(Episodes);
+
+
+	// RENDER
+	// ----------------------------
 	const { 
+		index,
 		number,
 		title,
 		thumbSrc,
@@ -12,7 +26,28 @@ export default function EpisodePreview(props){
 
 	const previewId = `episode__${number}__preview`;
 
-	console.log(videoSrc);
+	//this section could be one for render utils?
+	const prevIndex = index - 1;
+	const nextIndex = index + 1;
+
+	let prevLink;
+	let nextLink;
+
+	if(prevIndex > -1){
+		prevLink = 
+		<a href={ `#episode__${number-1}__preview` }>
+			Prev
+		</a>
+		;
+	}
+
+	if(nextIndex < episodeCount){
+		nextLink =
+		<a href={ `#episode__${number+1}__preview` }>
+			Next
+		</a>
+		;
+	}
 
 	return (
 		<aside>
@@ -37,8 +72,8 @@ export default function EpisodePreview(props){
 						{ title }
 					</h1>
 					<nav>
-						<a href="prevepisodeifthereisone" />
-						<a href="nextepisodeifthereisone" />
+						{ prevLink }
+						{ nextLink }
 						<a href="hidepreviewandreturntocurrentepisodepage" />
 					</nav>
 				</header>

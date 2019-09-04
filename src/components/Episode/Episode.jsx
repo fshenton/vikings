@@ -56,6 +56,7 @@ export default function Episode(props){
 					{ synopsis }
 				</p>
 				<EpisodePreview 
+					index={ index }
 					number={ number }
 					title={ title }
 					thumbSrc={ thumbSrc }
