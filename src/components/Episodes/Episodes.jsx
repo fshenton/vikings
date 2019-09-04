@@ -1,27 +1,27 @@
 import React from "react";
 import Episode from "COMPONENTS/Episode/";
+import EpisodesNav from "COMPONENTS/EpisodesNav/";
 import { 
 	data,
-	RENDER
+	RENDER,
+	EpisodesProvider
 } from "./";
 
 export default function Episodes(){
 
-	const pagination = data.map(RENDER.pagination);
 	const episodes = data.map(RENDER.episode);
 
 	return (
 		<article>
-			<ol>
-				{ episodes }
-			</ol>
-			<nav>
-				<button aria-label="Previous episode." />
-				<button aria-label="Next episode." />
-				<ol>
-					{ pagination }
+			<EpisodesProvider>
+				<ol 
+					id="episodes__items"
+					aria-live="polite"
+				>
+					{ episodes }
 				</ol>
-			</nav>
+				<EpisodesNav />
+			</EpisodesProvider>
 		</article>
 	);
 }// Episodes

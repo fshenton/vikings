@@ -1,11 +1,21 @@
-import React from "react";
-import {
-	data as episodes
-} from "COMPONENTS/Episodes/";
+import React, { useContext } from "react";
+import { EpisodesContext as Episodes } from "COMPONENTS/Episodes/";
+import { s } from "./";
 
 export default function Episode(props){
 
+	//CONTEXT
+	//---------------------------
+	const { 
+		activeIndex,
+		episodeCount: episodes
+	} = useContext(Episodes);
+
+
+	//RENDER
+	//---------------------------
 	const {
+		id,
 		index,
 		number,
 		title,
@@ -20,9 +30,17 @@ export default function Episode(props){
 	} = image;
 
 	const { videoSrc } = video;
+	const hidden       = index !== activeIndex;
 
 	return (
-		<li>
+		<li
+			id={ id }
+			className={ s.wrapper }
+			role="group"
+			aria-roledescription="slide"
+			aria-label={ `Episode ${number} of ${episodes}.` }
+			aria-hidden={ hidden.toString() }
+		>
 			<article>
 				<h2>
 					Episode { number }

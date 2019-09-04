@@ -44,7 +44,7 @@ export default function Character(props){
 
 
 	// active character checks
-	const isActive = index === activeIndex;
+	const hidden = index !== activeIndex;
 
 	return (
 		<li
@@ -53,7 +53,7 @@ export default function Character(props){
 			role="group"
 			aria-roledescription="slide"
 			aria-label={`Character ${index + 1} of ${characters.length}.`}
-			aria-hidden={!isActive.toString()}>
+			aria-hidden={ hidden.toString() }>
 			<article>
 				<h1 id={`character__${id}`}>
 					{name}
