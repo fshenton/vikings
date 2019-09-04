@@ -56,7 +56,7 @@ export default function EpisodePreview(props){
 	return (
 		<aside>
 			<a
-				href={ `#${previewId}` }
+				href={ videoSrc }
 				aria-controls={ previewId }
 				onClick={ () => { setHidden(!hidden) } }
 			>
