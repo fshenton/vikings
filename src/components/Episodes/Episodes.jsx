@@ -12,7 +12,6 @@ export default function Episodes(){
 	const episodes = data.map(RENDER.episode);
 
 	return (
-		<>
 		<article>
 			<EpisodesProvider>
 				<ol 
@@ -24,6 +23,5 @@ export default function Episodes(){
 				<EpisodesNav />
 			</EpisodesProvider>
 		</article>
-		</>
 	);
 }// Episodes
