@@ -22,9 +22,13 @@ export default function EpisodePreview(props){
 		index,
 		number,
 		title,
-		thumbSrc,
-		thumbDesc,
-		videoSrc
+		image: {
+			src: thumbSrc,
+			description: thumbDesc
+		},
+		video: {
+			src: videoSrc
+		}
 	} = props;
 
 	const previewId = `episode__${number}__preview`;

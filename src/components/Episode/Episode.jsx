@@ -25,15 +25,6 @@ export default function Episode(props){
 		video = {},
 	} = props;
 
-	const {
-		src: thumbSrc,
-		description: thumbDesc
-	} = image;
-
-	const { 
-		src: videoSrc 
-	} = video;
-
 	const hidden = index !== activeIndex;
 
 	return (
@@ -59,9 +50,8 @@ export default function Episode(props){
 					index={ index }
 					number={ number }
 					title={ title }
-					thumbSrc={ thumbSrc }
-					thumbDesc={ thumbDesc }
-					videoSrc={ videoSrc } 
+					image={ image }
+					video={ video }
 				/>
 			</article>
 		</li>
