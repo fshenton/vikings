@@ -11,7 +11,7 @@ function renderEpisode(data, index){
 		video,
 	} = data;
 
-	const id = `episode__${number}`;
+	const id = `episode__details__${number}`;
 
 	return (
 		<Episode

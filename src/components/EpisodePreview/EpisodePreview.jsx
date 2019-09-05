@@ -62,6 +62,7 @@ export default function EpisodePreview(props){
 			<a
 				href={ videoSrc }
 				aria-controls={ previewId }
+				aria-label="Watch episode preview."
 				onClick={ (e) => { showOverlay(e, true) } }
 			>
 				<img
@@ -83,7 +84,7 @@ export default function EpisodePreview(props){
 					<nav>
 						{ !isFirst && (
 							<a 
-								href={ `#episode__${prevEpisodeNo}__preview` }
+								href={ `#episode__preview__${prevEpisodeNo}` }
 								aria-label="Previous."
 								onClick={ (e) => { 
 									handleNavPressed(e, index-1) 
@@ -94,7 +95,7 @@ export default function EpisodePreview(props){
 						)}
 						{ !isLast && (
 							<a 
-								href={ `#episode__${nextEpisodeNo}__preview` } 
+								href={ `#episode__preview__${nextEpisodeNo}` } 
 								onClick={ (e) => { 
 									handleNavPressed(e, index+1) 
 								}}
@@ -103,7 +104,7 @@ export default function EpisodePreview(props){
 							</a>
 						)}
 						<a 
-							href={ `#episode__${episodeNo}` }
+							href={ `#episode__details__${episodeNo}` }
 							onClick={ e => showOverlay(e, false) }
 						> 
 							Close
