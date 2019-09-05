@@ -3,37 +3,24 @@ import { data } from "./";
 
 const EpisodesContext = createContext();
 
-const episodeCount = data.length;
-
-
-function setActiveIndex(index){
-	console.log("Prev Index: " + state.activeIndex);
-	state.activeIndex = index;
-	console.log("New Index: " + state.activeIndex);
-}// setActiveIndex
-
-
-function setOverlayActive(active){
-	console.log("Prev OverlayActive: " + state.overlayActive);
-	state.overlayActive = active;
-	console.log("New OverlayActive: " + state.overlayActive);
-}// setOverlayActive
-
 
 function EpisodesProvider(props){
 	const { children } = props;
 
+	const episodeCount = data.length;
 	const [activeIndex, setActiveIndex] = useState(0);
 	const [overlayActive, setOverlayActive] = useState(false);
 
+	const state = {
+		episodeCount,
+		activeIndex,
+		setActiveIndex,
+		overlayActive,
+		setOverlayActive 
+	};
+ 
 	return (
-		<EpisodesContext.Provider value={{
-			episodeCount,
-			activeIndex,
-			setActiveIndex,
-			overlayActive,
-			setOverlayActive 
-		}}>
+		<EpisodesContext.Provider value={ state }>
 			{ children }
 		</EpisodesContext.Provider>
 	);
