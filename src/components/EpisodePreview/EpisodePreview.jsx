@@ -1,8 +1,6 @@
-import React, { useContext, useState } from "react";
+import React, { useContext } from "react";
 import {
-	EpisodesContext as Episodes,
-	setActiveIndex,
-	setOverlayActive
+	EpisodesContext as Episodes
 } from "COMPONENTS/Episodes";
 
 export default function EpisodePreview(props){
@@ -10,9 +8,11 @@ export default function EpisodePreview(props){
 	// CONTEXT
 	//-----------------------------
 	const {
+		episodeCount, 
 		activeIndex,
-		episodeCount,
+		setActiveIndex,
 		overlayActive,
+		setOverlayActive
 	} = useContext(Episodes);
 
 
@@ -33,8 +33,6 @@ export default function EpisodePreview(props){
 	const isActiveEpisode 	= activeIndex === index;
 	const thisOverlayActive = isActiveEpisode && overlayActive;
 	const hidden 			= !thisOverlayActive;
-
-	console.log({index}, {isActiveEpisode}, {thisOverlayActive});
 
 	const prevIndex = index - 1;
 	const nextIndex = index + 1;
@@ -75,10 +73,11 @@ export default function EpisodePreview(props){
 		setActiveIndex(newIndex);
 	}// handleNavPressed
 
-	function showOverlay(e){
+
+	function showOverlay(e, show){
 		e.preventDefault();
 
-		setOverlayActive(true);
+		setOverlayActive(show);
 	}// showOverlay
 
 	return (
@@ -86,7 +85,7 @@ export default function EpisodePreview(props){
 			<a
 				href={ videoSrc }
 				aria-controls={ previewId }
-				onClick={ (e) => { showOverlay(e) } }
+				onClick={ (e) => { showOverlay(e, true) } }
 			>
 				<img
 					src={ thumbSrc }
@@ -107,7 +106,10 @@ export default function EpisodePreview(props){
 					<nav>
 						{ prevLink }
 						{ nextLink }
-						<a href={ `#episode__${number}` }> 
+						<a 
+							href={ `#episode__${number}` }
+							onClick={ e => showOverlay(e, false) }
+						> 
 							Close
 						</a>
 					</nav>
