@@ -38,38 +38,8 @@ export default function EpisodePreview(props){
 	const thisOverlayActive = isActiveEpisode && overlayActive;
 	const hidden 			= !thisOverlayActive;
 
-	const prevIndex = index - 1;
-	const nextIndex = index + 1;
-
-	let prevLink, nextLink;
-
-	if(prevIndex > -1){
-		prevLink = 
-			<a 
-				href={ `#episode__${number-1}__preview` }
-				onClick={ (e) => { 
-					handleNavPressed(e, prevIndex) 
-				}}
-			>
-				Prev
-			
-			</a>
-		;
-	}
-
-	if(nextIndex < episodeCount){
-		nextLink =
-			<a 
-				href={ `#episode__${number+1}__preview` } 
-				onClick={ (e) => { 
-					handleNavPressed(e, nextIndex) 
-				}}
-			>
-				Next
-			
-			</a>
-		;
-	}
+	const isFirst 	= index === 0;
+	const isLast 	= index === episodeCount - 1;
 
 	function handleNavPressed(e, newIndex){
 		e.preventDefault();
@@ -108,8 +78,27 @@ export default function EpisodePreview(props){
 						{ title }
 					</h1>
 					<nav>
-						{ prevLink }
-						{ nextLink }
+						{ !isFirst && (
+							<a 
+								href={ `#episode__${number-1}__preview` }
+								aria-label="Previous."
+								onClick={ (e) => { 
+									handleNavPressed(e, index-1) 
+								}}
+							>
+								Prev
+							</a>
+						)}
+						{ !isLast && (
+							<a 
+								href={ `#episode__${number+1}__preview` } 
+								onClick={ (e) => { 
+									handleNavPressed(e, index+1) 
+								}}
+							>
+								Next
+							</a>
+						)}
 						<a 
 							href={ `#episode__${number}` }
 							onClick={ e => showOverlay(e, false) }
