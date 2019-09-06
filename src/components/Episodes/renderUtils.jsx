@@ -4,21 +4,21 @@ import Episode from "COMPONENTS/Episode/";
 function renderEpisode(data, index){
 
 	const { 
-		number,
+		episodeNo,
 		title,
 		synopsis,
 		thumbnail,
 		trailer,
 	} = data;
 
-	const id = `episode__details__${number}`;
+	const id = `episode__details__${episodeNo}`;
 
 	return (
 		<Episode
 			id={ id }
 			key={ id }
 			index={ index }
-			number={ number }
+			episodeNo={ episodeNo }
 			title={ title }
 			synopsis={ synopsis }
 			thumbnail={ thumbnail }

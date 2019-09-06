@@ -11,20 +11,20 @@ function renderPaginationLink(data, index){
 
 	// RENDER
 	// --------------------------
-	const { number } = data;
+	const { episodeNo } = data;
 
 	const isActive = index === activeIndex;
 
 	return (
 		<li 
-			key={`episode__pagination__${number}`}
+			key={`episode__pagination__${episodeNo}`}
 			aria-current={isActive.toString()}
 		>
 			<Link 
-				destination={ `#episode-${number}` }
+				destination={ `#episode-${episodeNo}` }
 				className={ s.paginationLink }
 			>
-				{ number }
+				{ episodeNo }
 			</Link>
 		</li>
 	);	

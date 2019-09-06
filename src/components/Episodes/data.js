@@ -1,6 +1,6 @@
 export default [
 	{
-		number: 1,
+		episodeNo: 1,
 		thumbnail: {
 			src: "/assets/images/episode-1.jpg",
 			description: "Description of episode 1 thumbnail."
@@ -11,7 +11,7 @@ export default [
 		title: "The Departed, Part 1",
 		synopsis: "Guided by Bishop Heahmund's visions, the Saxons devise a battle plan. Ivar the Boneless strategizes on his own as the Vikings undergo increasing pressure. Bjorn Ironside finds himself in a new territory and must convince the local commander he is a trader and not a raider."
 	}, {
-		number: 2,
+		episodeNo: 2,
 		thumbnail: {
 			src: "/assets/images/episode-2.jpg",
 			description: "Description of episode 2 thumbnail."

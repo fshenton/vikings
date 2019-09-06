@@ -18,7 +18,7 @@ export default function Episode(props){
 	const {
 		id,
 		index,
-		number,
+		episodeNo,
 		title,
 		synopsis,
 		thumbnail = {},
@@ -33,12 +33,12 @@ export default function Episode(props){
 			className={ s.wrapper }
 			role="group"
 			aria-roledescription="slide"
-			aria-label={ `Episode ${number} of ${episodes}.` }
+			aria-label={ `Episode ${episodeNo} of ${episodes}.` }
 			aria-hidden={ hidden.toString() }
 		>
 			<article>
 				<h2>
-					Episode { number }
+					Episode { episodeNo }
 				</h2>
 				<h1>
 					{ title }
@@ -48,7 +48,7 @@ export default function Episode(props){
 				</p>
 				<EpisodePreview 
 					index={ index }
-					number={ number }
+					episodeNo={ episodeNo }
 					title={ title }
 					thumbnail={ thumbnail }
 					trailer={ trailer }
