@@ -7,8 +7,8 @@ function renderEpisode(data, index){
 		number,
 		title,
 		synopsis,
-		image,
-		video,
+		thumbnail,
+		trailer,
 	} = data;
 
 	const id = `episode__details__${number}`;
@@ -21,8 +21,8 @@ function renderEpisode(data, index){
 			number={ number }
 			title={ title }
 			synopsis={ synopsis }
-			image={ image }
-			video={ video }
+			thumbnail={ thumbnail }
+			trailer={ trailer }
 		/>
 	);
 }// renderEpisode

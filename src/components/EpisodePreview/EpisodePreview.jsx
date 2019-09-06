@@ -16,12 +16,12 @@ export default function EpisodePreview(props){
 		index,
 		number: episodeNo,
 		title,
-		image: {
+		thumbnail: {
 			src: thumbSrc,
 			description: thumbDesc
 		},
-		video: {
-			src: videoSrc
+		trailer: {
+			src: trailerSrc
 		}
 	} = props;
 
@@ -56,7 +56,7 @@ export default function EpisodePreview(props){
 	return (
 		<aside>
 			<a
-				href={ videoSrc }
+				href={ trailerSrc }
 				aria-controls={ previewId }
 				aria-label={ `Watch preview for episode ${episodeNo}: ${title}.` }
 				onClick={ (e) => { showOverlay(e, true) } }
@@ -109,7 +109,7 @@ export default function EpisodePreview(props){
 				</header>
 				{ thisOverlayActive && 
 					<video
-						src={ videoSrc }
+						src={ trailerSrc }
 					>
 					</video>
 				}

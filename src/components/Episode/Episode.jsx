@@ -21,8 +21,8 @@ export default function Episode(props){
 		number,
 		title,
 		synopsis,
-		image = {},
-		video = {},
+		thumbnail = {},
+		trailer = {},
 	} = props;
 
 	const hidden = index !== activeIndex;
@@ -50,8 +50,8 @@ export default function Episode(props){
 					index={ index }
 					number={ number }
 					title={ title }
-					image={ image }
-					video={ video }
+					thumbnail={ thumbnail }
+					trailer={ trailer }
 				/>
 			</article>
 		</li>
