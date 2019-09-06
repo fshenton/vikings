@@ -25,9 +25,6 @@ export default function EpisodePreview(props){
 		}
 	} = props;
 
-	const previewId = `episode__${episodeNo}__preview`;
-
-
 	// handle visibility of active episode and episode preview overlay
 	const isActiveEpisode 	= episodes.get.activeIndex === index;
 	const thisOverlayActive = isActiveEpisode && episodes.get.overlayActive;
@@ -38,6 +35,10 @@ export default function EpisodePreview(props){
 
 	const prevEpisodeNo = episodeNo - 1;
 	const nextEpisodeNo = episodeNo + 1;
+
+	const previewId = `episode__${episodeNo}__preview`;
+	const prevPreviewId = `episode__${prevEpisodeNo}__preview`;
+	const nextPreviewId = `episode__${nextEpisodeNo}__preview`;
 
 	function handleNavPressed(e, newIndex){
 		e.preventDefault();
@@ -67,7 +68,7 @@ export default function EpisodePreview(props){
 			</a>
 			<div
 				id={ previewId }
-				aria-hidden={ hidden }
+				aria-hidden={ hidden.toString() }
 			>
 				<header>
 					<h2>
@@ -79,7 +80,7 @@ export default function EpisodePreview(props){
 					<nav>
 						{ !isFirst && (
 							<a 
-								href={ `#episode__preview__${prevEpisodeNo}` }
+								href={ prevPreviewId }
 								aria-label="Previous."
 								onClick={ (e) => { 
 									handleNavPressed(e, index-1) 
@@ -90,7 +91,7 @@ export default function EpisodePreview(props){
 						)}
 						{ !isLast && (
 							<a 
-								href={ `#episode__preview__${nextEpisodeNo}` } 
+								href={ nextPreviewId } 
 								onClick={ (e) => { 
 									handleNavPressed(e, index+1) 
 								}}
