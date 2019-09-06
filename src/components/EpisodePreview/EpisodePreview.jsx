@@ -13,6 +13,7 @@ export default function EpisodePreview(props){
 	// RENDER
 	// ----------------------------
 	const { 
+		episodeId,
 		index,
 		episodeNo,
 		title,
@@ -36,7 +37,12 @@ export default function EpisodePreview(props){
 	const prevEpisodeNo = episodeNo - 1;
 	const nextEpisodeNo = episodeNo + 1;
 
-	const previewId = `episode__${episodeNo}__preview`;
+	const previewId = title
+		.replace(/\W+/g, '-') // remove non-alphanumeric & replace with -s
+		.toLowerCase()
+		+"-preview"
+		;
+
 	const prevPreviewId = `episode__${prevEpisodeNo}__preview`;
 	const nextPreviewId = `episode__${nextEpisodeNo}__preview`;
 
@@ -100,7 +106,7 @@ export default function EpisodePreview(props){
 							</a>
 						)}
 						<a 
-							href={ `#episode__details__${episodeNo}` }
+							href={ episodeId }
 							onClick={ e => showOverlay(e, false) }
 						> 
 							Close

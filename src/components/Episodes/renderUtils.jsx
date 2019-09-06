@@ -11,7 +11,10 @@ function renderEpisode(data, index){
 		trailer,
 	} = data;
 
-	const id = `episode__details__${episodeNo}`;
+	const id = title
+			.replace(/\W+/g, '-') // remove non-alphanumeric & replace with -s
+			.toLowerCase()
+			;
 
 	return (
 		<Episode
