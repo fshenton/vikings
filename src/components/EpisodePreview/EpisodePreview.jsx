@@ -53,11 +53,14 @@ export default function EpisodePreview(props){
 	}// handleNavPressed
 
 
-	function showOverlay(e, show){
-		e.preventDefault();
+	function setOverlay(active, e){
+		if(e) e.preventDefault();
 
-		episodes.set.overlayActive(show);
+		episodes.set.overlayActive(active);
 	}// showOverlay
+
+	const openOverlay = setOverlay.bind(this, true);
+	const closeOverlay = setOverlay.bind(this, false);
 
 	return (
 		<aside>
@@ -65,7 +68,7 @@ export default function EpisodePreview(props){
 				href={ trailerSrc }
 				aria-controls={ previewId }
 				aria-label={ `Watch preview for episode ${episodeNo}: ${title}.` }
-				onClick={ (e) => { showOverlay(e, true) } }
+				onClick={ (e) => { openOverlay(e) } }
 			>
 				<img
 					src={ thumbSrc }
@@ -107,7 +110,7 @@ export default function EpisodePreview(props){
 						)}
 						<a 
 							href={ episodeId }
-							onClick={ e => showOverlay(e, false) }
+							onClick={ e => closeOverlay(e) }
 						> 
 							Close
 						</a>
