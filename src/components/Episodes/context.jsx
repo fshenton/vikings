@@ -17,11 +17,15 @@ function EpisodesProvider(props){
 	const [overlayActive, setOverlayActive] = useState(initialState.overlayActive);
 
 	const state = {
-		episodeCount,
-		activeIndex,
-		setActiveIndex,
-		overlayActive,
-		setOverlayActive 
+		get: {
+			episodeCount,
+			activeIndex,
+			overlayActive
+		},
+		set: {
+			activeIndex: setActiveIndex,
+			overlayActive: setOverlayActive 
+		}
 	};
  
 	return (
