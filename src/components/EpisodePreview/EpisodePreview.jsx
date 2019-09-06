@@ -27,6 +27,7 @@ export default function EpisodePreview(props){
 
 	const previewId = `episode__${episodeNo}__preview`;
 
+
 	// handle visibility of active episode and episode preview overlay
 	const isActiveEpisode 	= episodes.get.activeIndex === index;
 	const thisOverlayActive = isActiveEpisode && episodes.get.overlayActive;
@@ -56,7 +57,7 @@ export default function EpisodePreview(props){
 			<a
 				href={ videoSrc }
 				aria-controls={ previewId }
-				aria-label="Watch episode preview."
+				aria-label={ `Watch preview for episode ${episodeNo}: ${title}.` }
 				onClick={ (e) => { showOverlay(e, true) } }
 			>
 				<img
