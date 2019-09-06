@@ -111,9 +111,12 @@ export default function EpisodePreview(props){
 						</a>
 					</nav>
 				</header>
-				<video>
-					{/*only render the video when it's activated*/}
-				</video>
+				{ thisOverlayActive && 
+					<video
+						src={ videoSrc }
+					>
+					</video>
+				}
 			</div>	
 		</aside>
 	);
