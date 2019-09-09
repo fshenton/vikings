@@ -7,7 +7,12 @@ export default function Episode(props){
 
 	//CONTEXT
 	//---------------------------
-	const episodes = useContext(Episodes);
+	const {
+		get: {
+			episodeCount,
+			activeIndex
+		}
+	} = useContext(Episodes);
 
 
 	//RENDER
@@ -22,7 +27,7 @@ export default function Episode(props){
 		trailer = {},
 	} = props;
 
-	const hidden = index !== episodes.get.activeIndex;
+	const hidden = index !== activeIndex;
 
 	return (
 		<li
@@ -30,7 +35,7 @@ export default function Episode(props){
 			className={ s.wrapper }
 			role="group"
 			aria-roledescription="slide"
-			aria-label={ `Episode ${episodeNo} of ${episodes.get.episodeCount}.` }
+			aria-label={ `Episode ${episodeNo} of ${episodeCount}.` }
 			aria-hidden={ hidden.toString() }
 		>
 			<article>

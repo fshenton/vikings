@@ -7,8 +7,17 @@ export default function EpisodePreview(props){
 
 	// CONTEXT
 	//-----------------------------
-	const episodes = useContext(Episodes);
-
+	const {
+		get: {
+			episodeCount,
+			activeIndex,
+			overlayActive
+		},
+		set: {
+			activeIndex: setActiveIndex,
+			overlayActive: setOverlayActive
+		}
+	} = useContext(Episodes);
 
 	// RENDER
 	// ----------------------------
@@ -27,12 +36,12 @@ export default function EpisodePreview(props){
 	} = props;
 
 	// handle visibility of active episode and episode preview overlay
-	const isActiveEpisode 	= episodes.get.activeIndex === index;
-	const thisOverlayActive = isActiveEpisode && episodes.get.overlayActive;
+	const isActiveEpisode 	= activeIndex === index;
+	const thisOverlayActive = isActiveEpisode && overlayActive;
 	const hidden 			= !thisOverlayActive;
 
 	const isFirst 	= index === 0;
-	const isLast 	= index === episodes.get.episodeCount - 1;
+	const isLast 	= index === episodeCount - 1;
 
 	const prevEpisodeNo = episodeNo - 1;
 	const nextEpisodeNo = episodeNo + 1;
@@ -49,14 +58,14 @@ export default function EpisodePreview(props){
 	function handleNavPressed(e, newIndex){
 		e.preventDefault();
 
-		episodes.set.activeIndex(newIndex);
+		setActiveIndex(newIndex);
 	}// handleNavPressed
 
 
 	function setOverlay(active, e){
 		if(e) e.preventDefault();
 
-		episodes.set.overlayActive(active);
+		setOverlayActive(active);
 	}// showOverlay
 
 	const openOverlay = setOverlay.bind(this, true);
