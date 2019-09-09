@@ -1,7 +1,6 @@
 import React, { useContext } from "react";
 import { 
-	data,
-	EpisodesContext as Episodes
+	data
 } from "COMPONENTS/Episodes/";
 import { RENDER } from "./";
 
