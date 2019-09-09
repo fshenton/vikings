@@ -1,5 +1,6 @@
 import React from "react";
 import Episode from "COMPONENTS/Episode/";
+import UTILS from "SHARED/utils.js";
 
 function renderEpisode(data, index){
 
@@ -11,10 +12,7 @@ function renderEpisode(data, index){
 		trailer,
 	} = data;
 
-	const id = title
-			.replace(/\W+/g, '-') // remove non-alphanumeric & replace with -s
-			.toLowerCase()
-			;
+	const id = UTILS.convertToHyphenatedString(title);
 
 	return (
 		<Episode

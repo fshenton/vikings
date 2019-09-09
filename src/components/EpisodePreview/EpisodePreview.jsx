@@ -2,6 +2,7 @@ import React, { useContext } from "react";
 import {
 	EpisodesContext as Episodes
 } from "COMPONENTS/Episodes";
+import UTILS from "SHARED/utils.js";
 
 export default function EpisodePreview(props){
 
@@ -46,11 +47,7 @@ export default function EpisodePreview(props){
 	const prevEpisodeNo = episodeNo - 1;
 	const nextEpisodeNo = episodeNo + 1;
 
-	const previewId = title
-		.replace(/\W+/g, '-') // remove non-alphanumeric & replace with -s
-		.toLowerCase()
-		+"-preview"
-		;
+	const previewId = UTILS.convertToHyphenatedString(title) + "-preview";
 
 	const prevPreviewId = `episode__${prevEpisodeNo}__preview`;
 	const nextPreviewId = `episode__${nextEpisodeNo}__preview`;
