@@ -77,7 +77,7 @@ export default function EpisodePreview(props){
 				href={ trailerSrc }
 				aria-controls={ previewId }
 				aria-label={ `Watch preview for episode ${episodeNo}: ${title}.` }
-				onClick={ (e) => { openOverlay(e) } }
+				onClick={ openOverlay }
 			>
 				<img
 					src={ thumbSrc }
@@ -119,7 +119,7 @@ export default function EpisodePreview(props){
 						)}
 						<a 
 							href={ episodeId }
-							onClick={ e => closeOverlay(e) }
+							onClick={ closeOverlay }
 						> 
 							Close
 						</a>
