@@ -20,7 +20,7 @@ export default function Episode(props){
 	const {
 		id,
 		index,
-		episodeNo,
+		number: episodeNo,
 		title,
 		synopsis,
 		thumbnail = {},

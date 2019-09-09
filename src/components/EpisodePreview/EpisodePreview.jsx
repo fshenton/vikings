@@ -24,7 +24,7 @@ export default function EpisodePreview(props){
 	const { 
 		episodeId,
 		index,
-		episodeNo,
+		number: episodeNo,
 		title,
 		thumbnail: {
 			src: thumbSrc,

@@ -4,7 +4,7 @@ import Episode from "COMPONENTS/Episode/";
 function renderEpisode(data, index){
 
 	const { 
-		episodeNo,
+		number,
 		title,
 		synopsis,
 		thumbnail,
@@ -21,7 +21,7 @@ function renderEpisode(data, index){
 			id={ id }
 			key={ id }
 			index={ index }
-			episodeNo={ episodeNo }
+			number={ number }
 			title={ title }
 			synopsis={ synopsis }
 			thumbnail={ thumbnail }

@@ -11,7 +11,7 @@ function renderPaginationLink(data, index){
 
 	// RENDER
 	// --------------------------
-	const { episodeNo } = data;
+	const { number: episodeNo } = data;
 
 	const isActive = index === activeIndex;
 
