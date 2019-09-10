@@ -33,6 +33,12 @@ export default function EpisodePreview(props){
 		},
 		trailer: {
 			src: trailerSrc
+		},
+		prevTrailer: {
+			src: prevTrailerSrc
+		},
+		nextTrailer: {
+			src: nextTrailerSrc
 		}
 	} = props;
 
@@ -48,9 +54,6 @@ export default function EpisodePreview(props){
 	const nextEpisodeNo = episodeNo + 1;
 
 	const previewId = UTILS.convertToHyphenatedString(title) + "-preview";
-
-	const prevPreviewId = `episode__${prevEpisodeNo}__preview`;
-	const nextPreviewId = `episode__${nextEpisodeNo}__preview`;
 
 
 	// CLICK HANDLERS
@@ -98,7 +101,7 @@ export default function EpisodePreview(props){
 					<nav>
 						{ !isFirst && (
 							<a 
-								href={ `#${prevPreviewId}` }
+								href={ prevTrailerSrc }
 								aria-label="Previous."
 								onClick={ (e) => { 
 									handleNavPressed(e, index-1) 
@@ -109,7 +112,7 @@ export default function EpisodePreview(props){
 						)}
 						{ !isLast && (
 							<a 
-								href={ `#${nextPreviewId}` } 
+								href={ nextTrailerSrc } 
 								onClick={ (e) => { 
 									handleNavPressed(e, index+1) 
 								}}
