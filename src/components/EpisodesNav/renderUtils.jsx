@@ -2,7 +2,8 @@ import React, { useContext } from "react";
 import { s } from "./";
 import Link from "COMPONENTS/Link/";
 import { 
-	EpisodesContext as Episodes 
+	EpisodesContext as Episodes,
+	SET_ACTIVE_INDEX
 } from "COMPONENTS/Episodes/";
 import UTILS from "SHARED/utils.js";
 
@@ -32,7 +33,8 @@ function renderPaginationLink(data, index){
 	// --------------------------
 	function handlePageClick(){
 		dispatch({
-			type: actions.SET_ACTIVE_INDEX(index)
+			type: SET_ACTIVE_INDEX,
+			value: index
 		});
 	}// handlePageClick
 

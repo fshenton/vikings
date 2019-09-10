@@ -1,5 +1,5 @@
 import React, { createContext, useReducer } from "react";
-import reducer from "./";
+import { reducer } from "./";
 import { data } from "./";
 
 const EpisodesContext = createContext();
@@ -15,7 +15,7 @@ function EpisodesProvider(props){
 
 	const episodeCount = data.length;
 	const [state, dispatch] = useReducer(reducer, initialState);
- 
+
 	return (
 		<EpisodesContext.Provider value={ {state, dispatch} }>
 			{ children }

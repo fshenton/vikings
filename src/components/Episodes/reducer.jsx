@@ -1,31 +1,29 @@
+import React from "react";
+import {NEXT_EPISODE, PREV_EPISODE, SET_OVERLAY_ACTIVE, SET_ACTIVE_INDEX} from "./";
+
 export default function reducer(state, action){
 	const {
 		type, 
 		value
 	} = action;
 
-	console.log("reducer called");
-
 	switch(type){
-		case actions.NEXT_EPISODE:
+		case NEXT_EPISODE:
 			return {
 				...state,
 				activeIndex: state.activeIndex+1
 			}
-		case actions.PREV_EPISODE:
+		case PREV_EPISODE:
 			return {
 				...state,
 				activeIndex: state.activeIndex-1
 			}
-		case actions.SET_ACTIVE_INDEX:
+		case SET_ACTIVE_INDEX:
 			return {
 				...state,
 				activeIndex: value
 			}
-		case actions.SET_OVERLAY_ACTIVE:
-			
-			console.log("here");
-
+		case SET_OVERLAY_ACTIVE:
 			return {
 				...state,
 				overlayActive: value

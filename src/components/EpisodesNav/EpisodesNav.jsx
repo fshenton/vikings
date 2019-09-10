@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
 import { 
 	data,
-	actions, 
+	SET_ACTIVE_INDEX, 
 	EpisodesContext as Episodes
 } from "COMPONENTS/Episodes/";
 import { s, RENDER } from "./";
@@ -33,7 +33,8 @@ export default function EpisodesNav(){
 		e.preventDefault();
 
 		dispatch({
-			type: actions.SET_ACTIVE_INDEX(newIndex)
+			type: SET_ACTIVE_INDEX,
+			value: newIndex
 		});
 	}// handleNavPressed
 
