@@ -1,6 +1,8 @@
 import React, { createContext, useReducer } from "react";
-import { reducer } from "./";
-import { data } from "./";
+import { 
+	reducer, 
+	data
+} from "./";
 
 const EpisodesContext = createContext();
 
