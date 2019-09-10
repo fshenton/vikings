@@ -13,6 +13,9 @@ function renderPaginationLink(data, index){
 	const { 
 		get: {
 			activeIndex 
+		},
+		set: {
+			activeIndex: setActiveIndex
 		}
 	} = useContext(Episodes);
 
@@ -27,6 +30,12 @@ function renderPaginationLink(data, index){
 
 	const isActive = index === activeIndex;
 
+	// CLICK HANDLER
+	// --------------------------
+	function handlePageClick(){
+		setActiveIndex(index);
+	}// handlePageClick
+
 	return (
 		<li 
 			key={ `episode__pagination__${episodeNo}` }
@@ -35,6 +44,7 @@ function renderPaginationLink(data, index){
 			<Link 
 				destination={ `#${episodeId}` }
 				className={ s.paginationLink }
+				onClick={ handlePageClick }
 			>
 				{ episodeNo }
 			</Link>

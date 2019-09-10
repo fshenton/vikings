@@ -52,6 +52,9 @@ export default function EpisodePreview(props){
 	const prevPreviewId = `episode__${prevEpisodeNo}__preview`;
 	const nextPreviewId = `episode__${nextEpisodeNo}__preview`;
 
+
+	// CLICK HANDLERS
+	// -----------------------------
 	function handleNavPressed(e, newIndex){
 		e.preventDefault();
 
@@ -95,7 +98,7 @@ export default function EpisodePreview(props){
 					<nav>
 						{ !isFirst && (
 							<a 
-								href={ prevPreviewId }
+								href={ `#${prevPreviewId}` }
 								aria-label="Previous."
 								onClick={ (e) => { 
 									handleNavPressed(e, index-1) 
@@ -106,7 +109,7 @@ export default function EpisodePreview(props){
 						)}
 						{ !isLast && (
 							<a 
-								href={ nextPreviewId } 
+								href={ `#${nextPreviewId}` } 
 								onClick={ (e) => { 
 									handleNavPressed(e, index+1) 
 								}}
@@ -115,7 +118,7 @@ export default function EpisodePreview(props){
 							</a>
 						)}
 						<a 
-							href={ episodeId }
+							href={ `#${episodeId}` }
 							onClick={ closeOverlay }
 						> 
 							Close
