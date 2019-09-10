@@ -44,11 +44,11 @@ export default function EpisodePreview(props){
 
 	// handle visibility of active episode and episode preview overlay
 	const isActiveEpisode 	= activeIndex === index;
-	const thisOverlayActive = isActiveEpisode && overlayActive;
-	const hidden 			= !thisOverlayActive;
+	const isOverlayActive   = isActiveEpisode && overlayActive;
+	const hidden 			= !isOverlayActive;
 
-	const isFirst 	= index === 0;
-	const isLast 	= index === episodeCount - 1;
+	const isFirst = index === 0;
+	const isLast  = index === episodeCount - 1;
 
 	const prevEpisodeNo = episodeNo - 1;
 	const nextEpisodeNo = episodeNo + 1;
@@ -128,7 +128,7 @@ export default function EpisodePreview(props){
 						</a>
 					</nav>
 				</header>
-				{ thisOverlayActive && 
+				{ isOverlayActive && 
 					<video
 						src={ trailerSrc }
 					>
