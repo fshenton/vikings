@@ -1,3 +1,14 @@
 .paginationLink {
 	font-size: 1em; //placeholder to have the classname showing in inspector
 }
+
+.navButton {
+	width: 50px;	//placeholder so they are visible
+	height: 50px;
+	margin: 5px;
+
+	&[aria-hidden=true] {
+		pointer-events: none; //disable and hide hidden
+		opacity: 0;
+	}
+}
