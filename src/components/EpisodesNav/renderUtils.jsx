@@ -11,12 +11,10 @@ function renderPaginationLink(data, index){
 	// CONTEXT
 	// --------------------------
 	const { 
-		get: {
+		state: {
 			activeIndex 
 		},
-		set: {
-			activeIndex: setActiveIndex
-		}
+		dispatch
 	} = useContext(Episodes);
 
 	// RENDER
@@ -33,7 +31,9 @@ function renderPaginationLink(data, index){
 	// CLICK HANDLER
 	// --------------------------
 	function handlePageClick(){
-		setActiveIndex(index);
+		dispatch({
+			type: actions.SET_ACTIVE_INDEX(index)
+		});
 	}// handlePageClick
 
 	return (

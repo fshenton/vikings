@@ -1,35 +1,23 @@
-import React, { createContext, useState } from "react";
+import React, { createContext, useReducer } from "react";
+import reducer from "./";
 import { data } from "./";
 
 const EpisodesContext = createContext();
 
 const initialState = {
 	activeIndex: 0,
-	overlayActive: false
+	overlayActive: false,
+	episodeCount: data.length
 }
-
 
 function EpisodesProvider(props){
 	const { children } = props;
 
 	const episodeCount = data.length;
-	const [activeIndex, setActiveIndex] = useState(initialState.activeIndex);
-	const [overlayActive, setOverlayActive] = useState(initialState.overlayActive);
-
-	const state = {
-		get: {
-			episodeCount,
-			activeIndex,
-			overlayActive
-		},
-		set: {
-			activeIndex: setActiveIndex,
-			overlayActive: setOverlayActive 
-		}
-	};
+	const [state, dispatch] = useReducer(reducer, initialState);
  
 	return (
-		<EpisodesContext.Provider value={ state }>
+		<EpisodesContext.Provider value={ {state, dispatch} }>
 			{ children }
 		</EpisodesContext.Provider>
 	);

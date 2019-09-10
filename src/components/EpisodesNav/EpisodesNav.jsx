@@ -1,22 +1,21 @@
 import React, { useContext } from "react";
 import { 
 	data,
+	actions, 
 	EpisodesContext as Episodes
 } from "COMPONENTS/Episodes/";
 import { s, RENDER } from "./";
 
 export default function EpisodesNav(){
-
+	
 	// CONTEXT
 	// -------------------------------
 	const {
-		get: {
-			episodeCount,
-			activeIndex
+		state: {
+			activeIndex,
+			episodeCount
 		},
-		set: {
-			activeIndex: setActiveIndex
-		}
+		dispatch
 	} = useContext(Episodes);
 
 
@@ -33,7 +32,9 @@ export default function EpisodesNav(){
 	function handleNavPressed(e, newIndex){
 		e.preventDefault();
 
-		setActiveIndex(newIndex);
+		dispatch({
+			type: actions.SET_ACTIVE_INDEX(newIndex)
+		});
 	}// handleNavPressed
 
 	return (
