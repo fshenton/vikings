@@ -9,7 +9,15 @@ import {
 
 export default function Episodes(){
 
-	const episodes = data.map(RENDER.episode);
+	const episodes = data.map( (obj, index) => {
+		
+		const prev = index !== 0 ? data[index-1] : {};
+		const next = index !== data.length-1 ? data[index+1] : {};
+
+		return RENDER.episode(obj, index, prev, next);
+	});
+
+	console.log(episodes);
 
 	return (
 		<article>

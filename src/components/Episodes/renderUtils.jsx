@@ -2,7 +2,7 @@ import React from "react";
 import Episode from "COMPONENTS/Episode/";
 import UTILS from "SHARED/utils.js";
 
-function renderEpisode(data, index){
+function renderEpisode(data, index, prev, next){
 
 	const { 
 		number,
@@ -11,6 +11,9 @@ function renderEpisode(data, index){
 		thumbnail,
 		trailer,
 	} = data;
+
+	const { trailer: prevTrailer } = prev; 
+	const { trailer: nextTrailer } = next; 
 
 	const id = UTILS.convertToHyphenatedString(title);
 
@@ -24,6 +27,8 @@ function renderEpisode(data, index){
 			synopsis={ synopsis }
 			thumbnail={ thumbnail }
 			trailer={ trailer }
+			prevTrailer={ prevTrailer }
+			nextTrailer={ nextTrailer }
 		/>
 	);
 }// renderEpisode
