@@ -8,11 +8,9 @@ export default function Episode(props){
 	//CONTEXT
 	//---------------------------
 	const {
-		get: {
-			episodeCount,
-			activeIndex
-		}
-	} = useContext(Episodes);
+		episodeCount,
+		activeIndex
+	} = useContext(Episodes).get;
 
 
 	//RENDER

@@ -26,7 +26,7 @@ function renderPaginationLink(data, index){
 		title
 	} = data;
 
-	const episodeId = UTILS.convertToHyphenatedString(title);
+	const episodeId = UTILS.convertToSafeString(title, "-");
 
 	const isActive = index === activeIndex;
 

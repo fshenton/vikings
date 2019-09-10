@@ -15,7 +15,7 @@ function renderEpisode(data, index, prev, next){
 	const { trailer: prevTrailer } = prev; 
 	const { trailer: nextTrailer } = next; 
 
-	const id = UTILS.convertToHyphenatedString(title);
+	const id = UTILS.convertToSafeString(title, "-");
 
 	return (
 		<Episode

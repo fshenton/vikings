@@ -53,7 +53,7 @@ export default function EpisodePreview(props){
 	const prevEpisodeNo = episodeNo - 1;
 	const nextEpisodeNo = episodeNo + 1;
 
-	const previewId = UTILS.convertToHyphenatedString(title) + "-preview";
+	const previewId = UTILS.convertToSafeString(title, "-") + "-preview";
 
 
 	// CLICK HANDLERS
