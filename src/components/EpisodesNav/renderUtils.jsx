@@ -31,7 +31,7 @@ function renderPaginationLink(data, index){
 
 	// CLICK HANDLER
 	// --------------------------
-	function changeEpisode(){
+	function setActiveIndex(){
 		dispatch({
 			type: ACTIONS.GET_EPISODE,
 			value: index
@@ -46,7 +46,7 @@ function renderPaginationLink(data, index){
 			<Link 
 				destination={ `#${episodeId}` }
 				className={ s.paginationLink }
-				onClick={ changeEpisode }
+				onClick={ setActiveIndex }
 			>
 				{ episodeNo }
 			</Link>
