@@ -7,7 +7,7 @@
 	height: 50px;
 	margin: 5px;
 
-	&[aria-hidden=true] {
+	&[aria-hidden="true"] {
 		pointer-events: none; //disable and hide hidden
 		opacity: 0;
 	}
