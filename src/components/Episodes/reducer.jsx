@@ -1,5 +1,5 @@
 import React from "react";
-import {NEXT_EPISODE, PREV_EPISODE, SET_OVERLAY_ACTIVE, SET_ACTIVE_INDEX} from "./";
+import { ACTIONS } from "./";
 
 export default function reducer(state, action){
 	const {
@@ -8,22 +8,22 @@ export default function reducer(state, action){
 	} = action;
 
 	switch(type){
-		case NEXT_EPISODE:
+		case ACTIONS.NEXT_EPISODE:
 			return {
 				...state,
 				activeIndex: state.activeIndex+1
 			}
-		case PREV_EPISODE:
+		case ACTIONS.PREV_EPISODE:
 			return {
 				...state,
 				activeIndex: state.activeIndex-1
 			}
-		case SET_ACTIVE_INDEX:
+		case ACTIONS.SET_ACTIVE_INDEX:
 			return {
 				...state,
 				activeIndex: value
 			}
-		case SET_OVERLAY_ACTIVE:
+		case ACTIONS.SET_OVERLAY_ACTIVE:
 			return {
 				...state,
 				overlayActive: value

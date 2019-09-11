@@ -2,3 +2,10 @@ export const PREV_EPISODE 			= "PREV_EPISODE";
 export const NEXT_EPISODE 			= "NEXT_EPISODE";
 export const SET_ACTIVE_INDEX 		= "SET_ACTIVE_INDEX";
 export const SET_OVERLAY_ACTIVE		= "SET_OVERLAY_ACTIVE";
+
+export default {
+	PREV_EPISODE,
+	NEXT_EPISODE,
+	SET_ACTIVE_INDEX,
+	SET_OVERLAY_ACTIVE
+};

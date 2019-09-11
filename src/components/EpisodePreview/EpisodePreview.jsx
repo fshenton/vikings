@@ -1,7 +1,6 @@
 import React, { useContext } from "react";
 import {
-	SET_ACTIVE_INDEX,
-	SET_OVERLAY_ACTIVE,
+	ACTIONS,
 	EpisodesContext as Episodes
 } from "COMPONENTS/Episodes";
 import UTILS from "SHARED/utils.js";
@@ -60,7 +59,7 @@ export default function EpisodePreview(props){
 		e.preventDefault();
 
 		dispatch({
-			type: SET_ACTIVE_INDEX,
+			type: ACTIONS.SET_ACTIVE_INDEX,
 			value: newIndex
 		});
 	}// handleNavPressed
@@ -70,7 +69,7 @@ export default function EpisodePreview(props){
 		if(e) e.preventDefault();
 
 		dispatch({
-			type: SET_OVERLAY_ACTIVE,
+			type: ACTIONS.SET_OVERLAY_ACTIVE,
 			value: active
 		});
 	}// setOverlay
