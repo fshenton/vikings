@@ -22,9 +22,7 @@ export default function Episode(props){
 		title,
 		synopsis,
 		thumbnail = {},
-		trailer = {},
-		prevTrailer = {},
-		nextTrailer = {}
+		trailer = {}
 	} = props;
 
 	const hidden = index !== activeIndex;
@@ -55,8 +53,6 @@ export default function Episode(props){
 					title={ title }
 					thumbnail={ thumbnail }
 					trailer={ trailer }
-					prevTrailer={ prevTrailer }
-					nextTrailer={ nextTrailer }
 				/>
 			</article>
 		</li>
