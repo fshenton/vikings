@@ -21,10 +21,10 @@ function CharactersProvider(props){
 	const { children } = props;
 
 	return(
-		<Characters.Provider value={initialState}>
-			{children}
+		<Characters.Provider value={ initialState }>
+			{ children }
 		</Characters.Provider>
 	);
-}//CharactersProvider
+}// CharactersProvider
 
 export { CharactersProvider, Characters };

@@ -20,7 +20,7 @@ export default function Characters(){
 					id="characters__items"
 					aria-live="polite"
 				>
-					{characters}
+					{ characters }
 				</ul>
 			</CharactersProvider>
 		</article>
