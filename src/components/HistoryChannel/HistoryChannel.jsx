@@ -9,4 +9,4 @@ export default function HistoryChannel(){
 			aria-label="The History Channel"
 		/>
 	);
-}//HistoryChannel
+}// HistoryChannel

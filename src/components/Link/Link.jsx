@@ -21,15 +21,14 @@ export default function Link(props){
 		rel: "noopener"
 	};
 
-
 	return (
 		<a 
-			className={className}
-			{...remainingProps}
-			href={destination}
-			{...externalAttributes}
+			className={ className }
+			{ ...remainingProps }
+			href={ destination }
+			{ ...externalAttributes }
 		>
-			{children}
+			{ children }
 		</a>	
 	);
-}//Link
+}// Link

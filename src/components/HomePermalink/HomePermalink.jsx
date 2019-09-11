@@ -8,4 +8,4 @@ export default function HomePermalink(){
 			aria-label="Home."
 		/>
 	);
-}//HomePermalink
+}// HomePermalink

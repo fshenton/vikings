@@ -14,7 +14,7 @@ function checkProps(props){
 		console.error(`The fuck? The link to ${label || children} doesn't have a destination! Sort it out!`);
 	}
 	
-}//checkProps
+}// checkProps
 
 export default {
 	checkProps
