@@ -12,21 +12,30 @@ export default function About(){
 		body: "cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
 	};
 
-	const { image, title, subtitle, body } = data;
-	const { src, description } = image;
+	const { 
+		image, 
+		title, 
+		subtitle, 
+		body 
+	} = data;
+
+	const { 
+		src, 
+		description 
+	} = image;
 
 	return (
 		<article>
-			<img src={src} alt={description} />
+			<img src={ src } alt={ description } />
 			<h1>
-				{title}
+				{ title }
 			</h1>
 			<h2>
-				{subtitle}
+				{ subtitle }
 			</h2>
 			<p>
-				{body}
+				{ body }
 			</p>
 		</article>
-	);z
+	);
 }//About
