@@ -1,6 +1,6 @@
 import React from "react";
 import Episode from "COMPONENTS/Episode/";
-import { TrailersProvider } from "./";
+import { TrailerProvider } from "./";
 import UTILS from "SHARED/utils.js";
 
 function renderEpisode(data, index, prevTrailer, nextTrailer){
@@ -16,7 +16,7 @@ function renderEpisode(data, index, prevTrailer, nextTrailer){
 	const id = UTILS.convertToSafeString(title, "-");
 
 	return (
-		<TrailersProvider 
+		<TrailerProvider 
 			value={ { prevTrailer, nextTrailer } }
 			key={ `${id}-trailer-provider`}
 		>
@@ -30,7 +30,7 @@ function renderEpisode(data, index, prevTrailer, nextTrailer){
 				thumbnail={ thumbnail }
 				trailer={ trailer }
 			/>
-		</TrailersProvider>
+		</TrailerProvider>
 	);
 }// renderEpisode
 

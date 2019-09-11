@@ -2,7 +2,7 @@ import React, { useContext } from "react";
 import {
 	ACTIONS,
 	EpisodesContext as Episodes,
-	TrailersContext as Trailers
+	TrailerContext as Trailer
 } from "COMPONENTS/Episodes";
 import UTILS from "SHARED/utils.js";
 
@@ -26,7 +26,7 @@ export default function EpisodePreview(props){
 		nextTrailer: {
 			src: nextTrailerSrc
 		}
-	} = useContext(Trailers);
+	} = useContext(Trailer);
 
 
 	// RENDER

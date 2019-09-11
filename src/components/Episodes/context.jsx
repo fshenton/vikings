@@ -31,9 +31,9 @@ function EpisodesProvider(props){
 
 // TRAILER CONTEXT
 // ------------------------------
-const TrailersContext = createContext();
+const TrailerContext = createContext();
 
-function TrailersProvider(props){
+function TrailerProvider(props){
 	const {
 		children,
 		value: {
@@ -43,16 +43,16 @@ function TrailersProvider(props){
 	} = props;
 
 	return (
-		<TrailersContext.Provider value={ { prevTrailer, nextTrailer } }>
+		<TrailerContext.Provider value={ { prevTrailer, nextTrailer } }>
 			{ children }
-		</TrailersContext.Provider>
+		</TrailerContext.Provider>
 	);
-}// TrailersProvider
+}// TrailerProvider
 
 
 export { 
 	EpisodesContext,
  	EpisodesProvider,
- 	TrailersContext,
- 	TrailersProvider 
+ 	TrailerContext,
+ 	TrailerProvider 
 };
