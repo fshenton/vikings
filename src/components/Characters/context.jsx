@@ -1,17 +1,8 @@
-import React, { createContext } from "react";
+import React, { createContext, useState } from "react";
 
-/* //////////////////
-
-	NOTE: 
-	
-	this isn't ready or even working yet; we have no way to
-	manipulate the state - it's just to demonstrate how Consumers
-	can access a context from a Provider through the useContext 
-	hook.
-
-/////////////////////*/
 
 const Characters   = createContext();
+
 const initialState = {
 	activeIndex: 0
 };
@@ -20,8 +11,10 @@ function CharactersProvider(props){
 
 	const { children } = props;
 
+	const [ activeIndex, setActiveIndex ] = useState(initialState.activeIndex);
+
 	return(
-		<Characters.Provider value={ initialState }>
+		<Characters.Provider value={ { activeIndex, setActiveIndex } }>
 			{ children }
 		</Characters.Provider>
 	);
