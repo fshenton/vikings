@@ -1,7 +1,8 @@
 import React, { useContext } from "react";
 import {
 	ACTIONS,
-	EpisodesContext as Episodes
+	EpisodesContext as Episodes,
+	TrailersContext as Trailers
 } from "COMPONENTS/Episodes";
 import UTILS from "SHARED/utils.js";
 
@@ -18,6 +19,15 @@ export default function EpisodePreview(props){
 		dispatch
 	} = useContext(Episodes);
 
+	const {
+		prevTrailer: {
+			src: prevTrailerSrc
+		},
+		nextTrailer: {
+			src: nextTrailerSrc
+		}
+	} = useContext(Trailers);
+
 	// RENDER
 	// ----------------------------
 	const { 
@@ -31,12 +41,6 @@ export default function EpisodePreview(props){
 		},
 		trailer: {
 			src: trailerSrc
-		},
-		prevTrailer: {
-			src: prevTrailerSrc
-		},
-		nextTrailer: {
-			src: nextTrailerSrc
 		}
 	} = props;
 
