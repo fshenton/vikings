@@ -29,14 +29,17 @@ export default function EpisodesNav(){
 
 	// CLICK HANDLER
 	// -------------------------------
-	function handleNavPressed(e, newIndex){
+	function changeEpisode(newIndex, e){
 		e.preventDefault();
 
 		dispatch({
 			type: ACTIONS.GET_EPISODE,
 			value: newIndex
 		});
-	}// handleNavPressed
+	}// changeEpisode
+
+	const prevEpisode = changeEpisode.bind(this, activeIndex - 1);
+	const nextEpisode = changeEpisode.bind(this, activeIndex + 1);
 
 	return (
 		<nav>
@@ -45,18 +48,14 @@ export default function EpisodesNav(){
 				aria-label="Previous episode."
 				aria-controls="episodes__items episodes__pagination"
 				aria-hidden={ isFirstEpisodeActive }
-				onClick={ (e) => { 
-					handleNavPressed(e, activeIndex - 1) 
-				}}
+				onClick={ prevEpisode }
 			/>
 			<button 
 				className={ s.navButton }
 				aria-label="Next episode." 
 				aria-controls="episodes__items episodes__pagination"
 				aria-hidden={ isLastEpisodeActive }
-				onClick={ (e) => { 
-					handleNavPressed(e, activeIndex + 1) 
-				}}
+				onClick={ nextEpisode }
 			/>
 			<ol id="episodes__pagination">
 				{ pagination }

@@ -28,6 +28,7 @@ export default function EpisodePreview(props){
 		}
 	} = useContext(Trailers);
 
+
 	// RENDER
 	// ----------------------------
 	const { 
@@ -55,18 +56,22 @@ export default function EpisodePreview(props){
 	const formattedTitle 	= UTILS.convertToSafeString(title, "-");
 	const previewId 	 	= `${formattedTitle}-preview`;
 
+
 	// CLICK HANDLERS
 	// -----------------------------
-	function handleNavPressed(e, newIndex){
+	function changeEpisode(newIndex, e){
 		e.preventDefault();
 
 		dispatch({
 			type: ACTIONS.GET_EPISODE,
 			value: newIndex
 		});
-	}// handleNavPressed
+	}// changeEpisode
 
+	const prevEpisode  = changeEpisode.bind(this, index - 1);
+	const nextEpisode  = changeEpisode.bind(this, index + 1);
 
+	
 	function setOverlay(active, e){
 		if(e) e.preventDefault();
 
@@ -76,8 +81,9 @@ export default function EpisodePreview(props){
 		});
 	}// setOverlay
 
-	const openOverlay = setOverlay.bind(this, true);
+	const openOverlay  = setOverlay.bind(this, true);
 	const closeOverlay = setOverlay.bind(this, false);
+
 
 	return (
 		<aside>
@@ -108,9 +114,7 @@ export default function EpisodePreview(props){
 							<a 
 								href={ prevTrailerSrc }
 								aria-label="Previous."
-								onClick={ (e) => { 
-									handleNavPressed(e, index-1) 
-								}}
+								onClick={ prevEpisode }
 							>
 								Prev
 							</a>
@@ -118,9 +122,7 @@ export default function EpisodePreview(props){
 						{ !isLast && (
 							<a 
 								href={ nextTrailerSrc } 
-								onClick={ (e) => { 
-									handleNavPressed(e, index+1) 
-								}}
+								onClick={ nextEpisode }
 							>
 								Next
 							</a>
