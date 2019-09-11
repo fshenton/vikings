@@ -46,6 +46,8 @@ export default function EpisodePreview(props){
 	const isOverlayActive   = isActiveEpisode && overlayActive;
 	const hidden 			= !isOverlayActive;
 
+	const trailerSrcAttr    = isOverlayActive ? {source: trailerSrc} : {};
+
 	const isFirst 			= index === 0;
 	const isLast  			= index === episodeCount - 1;
 
@@ -55,7 +57,7 @@ export default function EpisodePreview(props){
 
 	// CLICK HANDLERS
 	// -----------------------------
-	function changeEpisode(newIndex, e){
+	function setActiveIndex(newIndex, e){
 		e.preventDefault();
 
 		dispatch({
@@ -64,11 +66,11 @@ export default function EpisodePreview(props){
 		});
 	}// changeEpisode
 
-	const prevEpisode  = changeEpisode.bind(this, index - 1);
-	const nextEpisode  = changeEpisode.bind(this, index + 1);
+	const prevEpisode  = setActiveIndex.bind(this, index - 1);
+	const nextEpisode  = setActiveIndex.bind(this, index + 1);
 
 	
-	function setOverlay(active, e){
+	function setOverlayActive(active, e){
 		if(e) e.preventDefault();
 
 		dispatch({
@@ -77,8 +79,8 @@ export default function EpisodePreview(props){
 		});
 	}// setOverlay
 
-	const openOverlay  = setOverlay.bind(this, true);
-	const closeOverlay = setOverlay.bind(this, false);
+	const openOverlay  = setOverlayActive.bind(this, true);
+	const closeOverlay = setOverlayActive.bind(this, false);
 
 
 	return (
@@ -131,12 +133,10 @@ export default function EpisodePreview(props){
 						</a>
 					</nav>
 				</header>
-				{ isOverlayActive && 
-					<video
-						src={ trailerSrc }
-					>
-					</video>
-				}
+				<video
+					{ ...trailerSrcAttr } 
+				>
+				</video>
 			</div>	
 		</aside>
 	);
