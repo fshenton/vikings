@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
 import { 
 	data as characters,
-	Characters
+	CharactersContext as Characters
 } from "COMPONENTS/Characters/";
 import { RENDER, s } from "./";
 
@@ -9,7 +9,7 @@ export default function Character(props){
 
 	//CONTEXT
 	//---------------------------
-	const { activeIndex } = useContext(Characters);
+	const { activeIndex } = useContext(Characters).get;
 
 
 	//RENDER
