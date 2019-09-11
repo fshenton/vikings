@@ -94,7 +94,7 @@ export default function EpisodePreview(props){
 			</a>
 			<div
 				id={ previewId }
-				aria-hidden={ hidden.toString() }
+				aria-hidden={ hidden }
 			>
 				<header>
 					<h2>

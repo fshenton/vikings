@@ -36,7 +36,7 @@ export default function Episode(props){
 			role="group"
 			aria-roledescription="slide"
 			aria-label={ `Episode ${number} of ${episodeCount}.` }
-			aria-hidden={ hidden.toString() }
+			aria-hidden={ hidden }
 		>
 			<article>
 				<h2>

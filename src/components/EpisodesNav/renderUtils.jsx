@@ -41,7 +41,7 @@ function renderPaginationLink(data, index){
 	return (
 		<li 
 			key={ `episode__pagination__${episodeNo}` }
-			aria-current={ isActive.toString()}
+			aria-current={ isActive }
 		>
 			<Link 
 				destination={ `#${episodeId}` }
