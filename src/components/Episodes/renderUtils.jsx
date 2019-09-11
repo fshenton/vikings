@@ -1,9 +1,9 @@
 import React from "react";
-import Episode from "COMPONENTS/Episode/";
-import { TrailerProvider } from "./";
+import Episode, { TrailerProvider } from "COMPONENTS/Episode/";
+import { data as episodesData } from "./";
 import UTILS from "SHARED/utils.js";
 
-function renderEpisode(data, index, prevTrailer, nextTrailer){
+function renderEpisode(data, index){
 
 	const { 
 		number,
@@ -15,10 +15,14 @@ function renderEpisode(data, index, prevTrailer, nextTrailer){
 
 	const id = UTILS.convertToSafeString(title, "-");
 
+	const { trailer: prevTrailer } = episodesData[index - 1] || {};
+	const { trailer: nextTrailer } = episodesData[index + 1] || {};
+
 	return (
 		<TrailerProvider 
-			value={ { prevTrailer, nextTrailer } }
-			key={ `${id}-trailer-provider`}
+			prev={ prevTrailer }
+			next={ nextTrailer } 
+			key={ `${id}-trailer-provider` }
 		>
 			<Episode
 				id={ id }

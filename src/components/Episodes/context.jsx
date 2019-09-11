@@ -4,9 +4,6 @@ import {
 	data
 } from "./";
 
-
-// EPISODES CONTEXT
-// ----------------------------
 const EpisodesContext = createContext();
 
 const initialState = {
@@ -28,31 +25,7 @@ function EpisodesProvider(props){
 	);
 }// EpisodesProvider
 
-
-// TRAILER CONTEXT
-// ------------------------------
-const TrailerContext = createContext();
-
-function TrailerProvider(props){
-	const {
-		children,
-		value: {
-			prevTrailer,
-			nextTrailer
-		}
-	} = props;
-
-	return (
-		<TrailerContext.Provider value={ { prevTrailer, nextTrailer } }>
-			{ children }
-		</TrailerContext.Provider>
-	);
-}// TrailerProvider
-
-
 export { 
 	EpisodesContext,
  	EpisodesProvider,
- 	TrailerContext,
- 	TrailerProvider 
 };

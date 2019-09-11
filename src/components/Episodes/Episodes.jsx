@@ -9,18 +9,7 @@ import {
 
 export default function Episodes(){
 
-	const episodes = data.map( (obj, index) => {
-		//passing prev and next video src for video nav buttons
-		const prevTrailer = index !== 0 
-			? data[index-1].trailer
-			: {};
-		
-		const nextTrailer = index !== data.length-1 
-			? data[index+1].trailer
-			: {};
-
-		return RENDER.episode(obj, index, prevTrailer, nextTrailer);
-	});
+	const episodes = data.map(RENDER.episode);
 
 	return (
 		<article>
