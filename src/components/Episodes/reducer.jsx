@@ -18,12 +18,12 @@ export default function reducer(state, action){
 				...state,
 				activeIndex: state.activeIndex-1
 			}
-		case ACTIONS.SET_ACTIVE_INDEX:
+		case ACTIONS.GET_EPISODE:
 			return {
 				...state,
 				activeIndex: value
 			}
-		case ACTIONS.SET_OVERLAY_ACTIVE:
+		case ACTIONS.SHOW_TRAILER:
 			return {
 				...state,
 				overlayActive: value

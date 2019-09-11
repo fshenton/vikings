@@ -59,7 +59,7 @@ export default function EpisodePreview(props){
 		e.preventDefault();
 
 		dispatch({
-			type: ACTIONS.SET_ACTIVE_INDEX,
+			type: ACTIONS.GET_EPISODE,
 			value: newIndex
 		});
 	}// handleNavPressed
@@ -69,7 +69,7 @@ export default function EpisodePreview(props){
 		if(e) e.preventDefault();
 
 		dispatch({
-			type: ACTIONS.SET_OVERLAY_ACTIVE,
+			type: ACTIONS.SHOW_TRAILER,
 			value: active
 		});
 	}// setOverlay

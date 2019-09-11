@@ -33,7 +33,7 @@ export default function EpisodesNav(){
 		e.preventDefault();
 
 		dispatch({
-			type: ACTIONS.SET_ACTIVE_INDEX,
+			type: ACTIONS.GET_EPISODE,
 			value: newIndex
 		});
 	}// handleNavPressed

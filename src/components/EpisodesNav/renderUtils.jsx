@@ -33,7 +33,7 @@ function renderPaginationLink(data, index){
 	// --------------------------
 	function handlePageClick(){
 		dispatch({
-			type: ACTIONS.SET_ACTIVE_INDEX,
+			type: ACTIONS.GET_EPISODE,
 			value: index
 		});
 	}// handlePageClick
