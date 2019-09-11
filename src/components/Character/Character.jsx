@@ -48,33 +48,33 @@ export default function Character(props){
 
 	return (
 		<li
-			id={id}
-			className={s.wrapper} 
+			id={ id }
+			className={ s.wrapper } 
 			role="group"
 			aria-roledescription="slide"
 			aria-label={`Character ${index + 1} of ${characters.length}.`}
-			aria-hidden={ hidden.toString() }>
+			aria-hidden={ hidden }>
 			<article>
 				<h1 id={`character__${id}`}>
-					{name}
+					{ name }
 				</h1>
 				<h2>
-					{nickname}
+					{ nickname }
 				</h2>
 				<h3>
-					{actor}
+					{ actor }
 				</h3>
 				<p>
-					{body}
+					{ body }
 				</p>
 				<img 
-					src={src} 
-					alt={description}
-					style={mask}
+					src={ src } 
+					alt={ description }
+					style={ mask }
 				/>
 
-				{prevCharName && RENDER.button(prevCharName, -1)}
-				{nextCharName && RENDER.button(nextCharName, +1)}
+				{ prevCharName && RENDER.button(prevCharName, -1) }
+				{ nextCharName && RENDER.button(nextCharName, +1) }
 
 			</article>
 		</li>
