@@ -2,7 +2,6 @@ import React, { useContext } from "react";
 import { EpisodesContext as Episodes } from "COMPONENTS/Episodes/";
 import EpisodePreview from "COMPONENTS/EpisodePreview/";
 import { s } from "./";
-import { TrailerContext as Trailer } from "./";
 
 export default function Episode(props){
 
