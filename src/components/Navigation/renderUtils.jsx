@@ -13,12 +13,12 @@ function renderItem(data){
 
 	return (
 		<li key={ `navigation__${safeLabel}` }>
-			<Link {...remainingProps}>
-				{label}
+			<Link { ...remainingProps }>
+				{ label }
 			</Link>
 		</li>
 	);
-}//renderItem
+}// renderItem
 
 export default {
 	item: renderItem

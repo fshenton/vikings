@@ -45,9 +45,9 @@ export default function Navigation(){
 		<nav>
 			<button 
 				role="switch"
-				aria-checked={ariaOpen}
+				aria-checked={ ariaOpen }
 				aria-controls="navigation__links"
-				onClick={toggleOpen}
+				onClick={ toggleOpen }
 			>
 				<span>
 					Menu
@@ -58,11 +58,11 @@ export default function Navigation(){
 			</button>
 			<ul 
 				id="navigation__links"
-				aria-expanded={ariaOpen}
+				aria-expanded={ ariaOpen }
 			>
-				{links}
+				{ links }
 			</ul>
 			<Socials />
 		</nav>
 	);
-}//Navigation
+}// Navigation
