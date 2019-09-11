@@ -15,13 +15,13 @@ function renderItem(data){
 	return (
 		<li key={ `social__${safeLabel}` }>
 			<Link
-				aria-label={label}
-				destination={destination} 
-				{...remainingProps}
+				aria-label={ label }
+				destination={ destination } 
+				{ ...remainingProps }
 			/>
 		</li>
 	);
-}//renderItem
+}// renderItem
 
 export default {
 	item: renderItem

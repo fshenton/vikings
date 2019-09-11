@@ -7,4 +7,4 @@ export default function WatchNow(){
 			Watch Now
 		</Link>
 	);
-}//WatchNow
+}// WatchNow
