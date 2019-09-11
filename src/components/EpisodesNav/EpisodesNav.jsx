@@ -29,7 +29,7 @@ export default function EpisodesNav(){
 
 	// CLICK HANDLER
 	// -------------------------------
-	function changeEpisode(newIndex, e){
+	function setActiveIndex(newIndex, e){
 		e.preventDefault();
 
 		dispatch({
@@ -38,8 +38,8 @@ export default function EpisodesNav(){
 		});
 	}// changeEpisode
 
-	const prevEpisode = changeEpisode.bind(this, activeIndex - 1);
-	const nextEpisode = changeEpisode.bind(this, activeIndex + 1);
+	const prevEpisode = setActiveIndex.bind(this, activeIndex - 1);
+	const nextEpisode = setActiveIndex.bind(this, activeIndex + 1);
 
 	return (
 		<nav>
