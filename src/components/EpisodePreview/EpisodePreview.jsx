@@ -49,13 +49,11 @@ export default function EpisodePreview(props){
 	const isOverlayActive   = isActiveEpisode && overlayActive;
 	const hidden 			= !isOverlayActive;
 
-	const isFirst = index === 0;
-	const isLast  = index === episodeCount - 1;
+	const isFirst 			= index === 0;
+	const isLast  			= index === episodeCount - 1;
 
-	const prevEpisodeNo = episodeNo - 1;
-	const nextEpisodeNo = episodeNo + 1;
-
-	const previewId = UTILS.convertToSafeString(title, "-") + "-preview";
+	const formattedTitle 	= UTILS.convertToSafeString(title, "-");
+	const previewId 	 	= `${formattedTitle}-preview`;
 
 	// CLICK HANDLERS
 	// -----------------------------
