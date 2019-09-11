@@ -1,5 +1,6 @@
 import React, { useContext } from "react";
 import {
+	ACTIONS,
 	EpisodesContext as Episodes
 } from "COMPONENTS/Episodes";
 import UTILS from "SHARED/utils.js";
@@ -9,15 +10,12 @@ export default function EpisodePreview(props){
 	// CONTEXT
 	// ----------------------------
 	const {
-		get: {
-			episodeCount,
+		state: {
 			activeIndex,
-			overlayActive
+			overlayActive,
+			episodeCount
 		},
-		set: {
-			activeIndex: setActiveIndex,
-			overlayActive: setOverlayActive
-		}
+		dispatch
 	} = useContext(Episodes);
 
 	// RENDER
@@ -55,21 +53,26 @@ export default function EpisodePreview(props){
 
 	const previewId = UTILS.convertToSafeString(title, "-") + "-preview";
 
-
 	// CLICK HANDLERS
 	// -----------------------------
 	function handleNavPressed(e, newIndex){
 		e.preventDefault();
 
-		setActiveIndex(newIndex);
+		dispatch({
+			type: ACTIONS.GET_EPISODE,
+			value: newIndex
+		});
 	}// handleNavPressed
 
 
 	function setOverlay(active, e){
 		if(e) e.preventDefault();
 
-		setOverlayActive(active);
-	}// showOverlay
+		dispatch({
+			type: ACTIONS.SHOW_TRAILER,
+			value: active
+		});
+	}// setOverlay
 
 	const openOverlay = setOverlay.bind(this, true);
 	const closeOverlay = setOverlay.bind(this, false);

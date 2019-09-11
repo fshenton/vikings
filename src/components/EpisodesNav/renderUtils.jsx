@@ -2,7 +2,8 @@ import React, { useContext } from "react";
 import { s } from "./";
 import Link from "COMPONENTS/Link/";
 import { 
-	EpisodesContext as Episodes 
+	ACTIONS,
+	EpisodesContext as Episodes
 } from "COMPONENTS/Episodes/";
 import UTILS from "SHARED/utils.js";
 
@@ -11,12 +12,10 @@ function renderPaginationLink(data, index){
 	// CONTEXT
 	// --------------------------
 	const { 
-		get: {
+		state: {
 			activeIndex 
 		},
-		set: {
-			activeIndex: setActiveIndex
-		}
+		dispatch
 	} = useContext(Episodes);
 
 	// RENDER
@@ -33,7 +32,10 @@ function renderPaginationLink(data, index){
 	// CLICK HANDLER
 	// --------------------------
 	function handlePageClick(){
-		setActiveIndex(index);
+		dispatch({
+			type: ACTIONS.GET_EPISODE,
+			value: index
+		});
 	}// handlePageClick
 
 	return (
