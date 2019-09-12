@@ -1,5 +1,5 @@
-import React, { createContext, useState } from "react";
-
+import React, { createContext, useReducer } from "react";
+import { reducer } from "./";
 
 const CharactersContext = createContext();
 
@@ -11,22 +11,16 @@ function CharactersProvider(props){
 
 	const { children } = props;
 
-	const [ activeIndex, setActiveIndex ] = useState(initialState.activeIndex);
-
-	const state = {
-		get: {
-			activeIndex
-		},
-		set: {
-			activeIndex: setActiveIndex
-		}
-	};
+	const [state, dispatch] = useReducer(reducer, initialState);
 
 	return(
-		<CharactersContext.Provider value={ state }>
+		<CharactersContext.Provider value={ { state, dispatch } }>
 			{ children }
 		</CharactersContext.Provider>
 	);
 }// CharactersProvider
 
-export { CharactersProvider, CharactersContext };
+export { 
+	CharactersContext, 
+	CharactersProvider 
+};

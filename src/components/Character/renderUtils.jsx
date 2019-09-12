@@ -1,7 +1,10 @@
 import React, { useContext } from "react";
 import UTILS from "SHARED/utils.js";
 import Link from "COMPONENTS/Link/";
-import { CharactersContext as Characters } from "COMPONENTS/Characters/"; 
+import { 
+	CharactersContext as Characters,
+	ACTIONS
+} from "COMPONENTS/Characters/"; 
 import { s } from "./";
 
 
@@ -10,12 +13,10 @@ function renderButton(name, direction){
 	// CONTEXT
 	// ---------------------------------
 	const {
-		get: {
+		state: {
 			activeIndex
 		},
-		set: {
-			activeIndex: setActiveIndex
-		}
+		dispatch
 	} = useContext(Characters);
 
 
@@ -28,11 +29,14 @@ function renderButton(name, direction){
 	// CLICK HANDLER
 	// ---------------------------------
 	function updateCharacterIndex(e){
-		e.preventDefault();
+		if(e) e.preventDefault();
 
 		const newCharIndex = activeIndex + direction;
 
-		setActiveIndex(newCharIndex);
+		dispatch({
+			type: ACTIONS.GET_CHARACTER,
+			value: newCharIndex
+		});
 	}
 
 	return (

@@ -1,7 +1,8 @@
 import React, { useContext } from "react";
 import { 
-	data as characters,
-	CharactersContext as Characters
+	data as characterData,
+	CharactersContext as Characters,
+	ACTIONS
 } from "COMPONENTS/Characters/";
 import { RENDER, s } from "./";
 
@@ -9,7 +10,7 @@ export default function Character(props){
 
 	//CONTEXT
 	//---------------------------
-	const { activeIndex } = useContext(Characters).get;
+	const { activeIndex } = useContext(Characters).state;
 
 
 	//RENDER
@@ -36,8 +37,8 @@ export default function Character(props){
 
 
 	// next & prev button labels
-	const prevCharacter = characters[index-1] || {};
-	const nextCharacter = characters[index+1] || {};
+	const prevCharacter = characterData[index - 1] || {};
+	const nextCharacter = characterData[index + 1] || {};
 
 	const { name: prevCharName } = prevCharacter;
 	const { name: nextCharName } = nextCharacter;
@@ -52,7 +53,7 @@ export default function Character(props){
 			className={ s.wrapper } 
 			role="group"
 			aria-roledescription="slide"
-			aria-label={`Character ${index + 1} of ${characters.length}.`}
+			aria-label={`Character ${index + 1} of ${characterData.length}.`}
 			aria-hidden={ hidden }>
 			<article>
 				<h1 id={`character__${id}`}>
