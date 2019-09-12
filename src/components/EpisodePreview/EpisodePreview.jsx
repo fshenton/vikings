@@ -48,8 +48,6 @@ export default function EpisodePreview(props){
 	const isOverlayActive   = isActiveEpisode && overlayActive;
 	const hidden            = !isOverlayActive;
 
-	const trailerSrcAttr    = isOverlayActive ? {source: trailerSrc} : {};
-
 	const isFirst           = index === 0;
 	const isLast            = index === episodeCount - 1;
 
@@ -135,9 +133,13 @@ export default function EpisodePreview(props){
 						</a>
 					</nav>
 				</header>
-				<video
-					{ ...trailerSrcAttr } 
-				>
+				<video>
+					{ isOverlayActive && (
+						<source 
+							src={trailerSrc}
+							type="video/mp4"
+						/>
+					)}
 				</video>
 			</div>	
 		</aside>
