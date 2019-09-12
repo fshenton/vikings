@@ -22,7 +22,7 @@ function renderEpisode(data, index){
 		<TrailerProvider 
 			prev={ prevTrailer }
 			next={ nextTrailer } 
-			key={ `${id}-trailer-provider` }
+			key={ `provider__trailer__${id}` }
 		>
 			<Episode
 				id={ id }
