@@ -18,15 +18,6 @@ export default function EpisodesNav(){
 		dispatch
 	} = useContext(Episodes);
 
-
-	// RENDER
-	// -------------------------------
-	const isFirstEpisodeActive = activeIndex === 0;
-	const isLastEpisodeActive  = activeIndex === episodeCount - 1;
-
-	const pagination = data.map(RENDER.pagination);
-	
-
 	// CLICK HANDLER
 	// -------------------------------
 	function setActiveIndex(newIndex, e){
@@ -40,6 +31,13 @@ export default function EpisodesNav(){
 
 	const prevEpisode = setActiveIndex.bind(this, activeIndex - 1);
 	const nextEpisode = setActiveIndex.bind(this, activeIndex + 1);
+
+	// RENDER
+	// -------------------------------
+	const isFirstEpisodeActive = activeIndex === 0;
+	const isLastEpisodeActive  = activeIndex === episodeCount - 1;
+	
+	const pagination = data.map(RENDER.pagination);
 
 	return (
 		<nav>
