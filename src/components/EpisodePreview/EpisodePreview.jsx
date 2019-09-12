@@ -19,11 +19,13 @@ export default function EpisodePreview(props){
 		dispatch
 	} = useContext(Episodes);
 
+	const {
+		prev: prevTrailer = {},
+		next: nextTrailer = {}
+	} = useContext(Trailer);
 
-	const trailers = useContext(Trailer);
-
-	const { src: prevTrailerSrc } = trailers.prev || {};
-	const { src: nextTrailerSrc } = trailers.next || {};
+	const { src: prevTrailerSrc } = prevTrailer;
+	const { src: nextTrailerSrc } = nextTrailer;
 
 	// RENDER
 	// ----------------------------
@@ -58,7 +60,7 @@ export default function EpisodePreview(props){
 	// CLICK HANDLERS
 	// -----------------------------
 	function setActiveIndex(newIndex, e){
-		e.preventDefault();
+		if(e) e.preventDefault();
 
 		dispatch({
 			type: ACTIONS.GET_EPISODE,
