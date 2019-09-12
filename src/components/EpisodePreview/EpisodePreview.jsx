@@ -27,6 +27,37 @@ export default function EpisodePreview(props){
 	const { src: prevTrailerSrc } = prevTrailer;
 	const { src: nextTrailerSrc } = nextTrailer;
 
+
+	// CLICK HANDLERS
+	// -----------------------------
+	function setActiveIndex(newIndex, e){
+		if(e) e.preventDefault();
+
+		dispatch({
+			type: ACTIONS.GET_EPISODE,
+			value: newIndex
+		});
+	}// changeEpisode
+
+	function setOverlayActive(active, e){
+		if(e) e.preventDefault();
+
+		dispatch({
+			type: ACTIONS.SHOW_TRAILER,
+			value: active
+		});
+	}// setOverlay
+
+
+	// BINDING
+	// ------------------------------
+	const prevEpisode  = setActiveIndex.bind(this, index - 1);
+	const nextEpisode  = setActiveIndex.bind(this, index + 1);
+	
+	const openOverlay  = setOverlayActive.bind(this, true);
+	const closeOverlay = setOverlayActive.bind(this, false);
+
+	
 	// RENDER
 	// ----------------------------
 	const { 
@@ -53,35 +84,6 @@ export default function EpisodePreview(props){
 
 	const formattedTitle    = UTILS.convertToSafeString(title, "-");
 	const previewId         = `${formattedTitle}-preview`;
-
-
-	// CLICK HANDLERS
-	// -----------------------------
-	function setActiveIndex(newIndex, e){
-		if(e) e.preventDefault();
-
-		dispatch({
-			type: ACTIONS.GET_EPISODE,
-			value: newIndex
-		});
-	}// changeEpisode
-
-	const prevEpisode  = setActiveIndex.bind(this, index - 1);
-	const nextEpisode  = setActiveIndex.bind(this, index + 1);
-
-	
-	function setOverlayActive(active, e){
-		if(e) e.preventDefault();
-
-		dispatch({
-			type: ACTIONS.SHOW_TRAILER,
-			value: active
-		});
-	}// setOverlay
-
-	const openOverlay  = setOverlayActive.bind(this, true);
-	const closeOverlay = setOverlayActive.bind(this, false);
-
 
 	return (
 		<aside>
