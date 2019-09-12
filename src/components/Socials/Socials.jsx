@@ -19,8 +19,8 @@ export default function Socials(){
 	const links = data.map(RENDER.item);
 
 	return (
-		<ul className={s.wrapper}>
-			{links}
+		<ul className={ s.wrapper }>
+			{ links }
 		</ul>
 	);
-}//Socials
+} //Socials

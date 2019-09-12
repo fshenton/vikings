@@ -1,7 +1,8 @@
 import React, { useContext } from "react";
 import { 
-	data as characters,
-	Characters
+	data as characterData,
+	CharactersContext as Characters,
+	ACTIONS
 } from "COMPONENTS/Characters/";
 import { RENDER, s } from "./";
 
@@ -9,7 +10,7 @@ export default function Character(props){
 
 	//CONTEXT
 	//---------------------------
-	const { activeIndex } = useContext(Characters);
+	const { activeIndex } = useContext(Characters).state;
 
 
 	//RENDER
@@ -36,8 +37,8 @@ export default function Character(props){
 
 
 	// next & prev button labels
-	const prevCharacter = characters[index-1] || {};
-	const nextCharacter = characters[index+1] || {};
+	const prevCharacter = characterData[index - 1] || {};
+	const nextCharacter = characterData[index + 1] || {};
 
 	const { name: prevCharName } = prevCharacter;
 	const { name: nextCharName } = nextCharacter;
@@ -48,33 +49,33 @@ export default function Character(props){
 
 	return (
 		<li
-			id={id}
-			className={s.wrapper} 
+			id={ id }
+			className={ s.wrapper } 
 			role="group"
 			aria-roledescription="slide"
-			aria-label={`Character ${index + 1} of ${characters.length}.`}
-			aria-hidden={ hidden.toString() }>
+			aria-label={`Character ${index + 1} of ${characterData.length}.`}
+			aria-hidden={ hidden }>
 			<article>
 				<h1 id={`character__${id}`}>
-					{name}
+					{ name }
 				</h1>
 				<h2>
-					{nickname}
+					{ nickname }
 				</h2>
 				<h3>
-					{actor}
+					{ actor }
 				</h3>
 				<p>
-					{body}
+					{ body }
 				</p>
 				<img 
-					src={src} 
-					alt={description}
-					style={mask}
+					src={ src } 
+					alt={ description }
+					style={ mask }
 				/>
 
-				{prevCharName && RENDER.button(prevCharName, -1)}
-				{nextCharName && RENDER.button(nextCharName, +1)}
+				{ prevCharName && RENDER.button(prevCharName, -1) }
+				{ nextCharName && RENDER.button(nextCharName, +1) }
 
 			</article>
 		</li>

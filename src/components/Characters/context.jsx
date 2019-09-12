@@ -1,17 +1,8 @@
-import React, { createContext } from "react";
+import React, { createContext, useReducer } from "react";
+import { reducer } from "./";
 
-/* //////////////////
+const CharactersContext = createContext();
 
-	NOTE: 
-	
-	this isn't ready or even working yet; we have no way to
-	manipulate the state - it's just to demonstrate how Consumers
-	can access a context from a Provider through the useContext 
-	hook.
-
-/////////////////////*/
-
-const Characters   = createContext();
 const initialState = {
 	activeIndex: 0
 };
@@ -20,11 +11,16 @@ function CharactersProvider(props){
 
 	const { children } = props;
 
-	return(
-		<Characters.Provider value={initialState}>
-			{children}
-		</Characters.Provider>
-	);
-}//CharactersProvider
+	const [state, dispatch] = useReducer(reducer, initialState);
 
-export { CharactersProvider, Characters };
+	return(
+		<CharactersContext.Provider value={ { state, dispatch } }>
+			{ children }
+		</CharactersContext.Provider>
+	);
+}// CharactersProvider
+
+export { 
+	CharactersContext, 
+	CharactersProvider 
+};

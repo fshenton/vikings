@@ -16,13 +16,13 @@ function renderCharacter(data, index){
 
 	return (
 		<Character
-			id={safeName} 
-			name={name}
-			nickname={nickname}
-			actor={actor}
-			body={body}
-			image={image}
-			index={index}
+			id={ safeName } 
+			name={ name }
+			nickname={ nickname }
+			actor={ actor }
+			body={ body } 
+			image={ image }
+			index={ index }
 			key={`${safeName}`}
 		/>
 	);
