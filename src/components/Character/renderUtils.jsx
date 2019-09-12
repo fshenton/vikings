@@ -27,7 +27,7 @@ function renderButton(name, direction){
 
 	// CLICK HANDLER
 	// ---------------------------------
-	function changeCharacter(e){
+	function updateCharacterIndex(e){
 		e.preventDefault();
 
 		const newCharIndex = activeIndex + direction;
@@ -41,7 +41,7 @@ function renderButton(name, direction){
 			destination={ `#${safeName}` }
 			aria-controls="characters__items"
 			aria-label={ `${directionLabel} character: ${name}.` }
-			onClick={ changeCharacter }
+			onClick={ updateCharacterIndex }
 		>
 			{ name }
 		</Link>
