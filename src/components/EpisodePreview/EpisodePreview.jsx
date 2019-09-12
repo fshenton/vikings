@@ -28,6 +28,23 @@ export default function EpisodePreview(props){
 	const { src: nextTrailerSrc } = nextTrailer;
 
 
+	// PROPS
+	// --------------------------
+	const { 
+		episodeId,
+		index,
+		number: episodeNo,
+		title,
+		thumbnail: {
+			src: thumbSrc,
+			description: thumbDesc
+		},
+		trailer: {
+			src: trailerSrc
+		}
+	} = props;
+
+
 	// CLICK HANDLERS
 	// -----------------------------
 	function setActiveIndex(newIndex, e){
@@ -38,6 +55,7 @@ export default function EpisodePreview(props){
 			value: newIndex
 		});
 	}// changeEpisode
+
 
 	function setOverlayActive(active, e){
 		if(e) e.preventDefault();
@@ -58,22 +76,8 @@ export default function EpisodePreview(props){
 	const closeOverlay = setOverlayActive.bind(this, false);
 
 	
-	// RENDER
+	// RENDER LOGIC
 	// ----------------------------
-	const { 
-		episodeId,
-		index,
-		number: episodeNo,
-		title,
-		thumbnail: {
-			src: thumbSrc,
-			description: thumbDesc
-		},
-		trailer: {
-			src: trailerSrc
-		}
-	} = props;
-
 	// handle visibility of active episode and episode preview overlay
 	const isActiveEpisode   = activeIndex === index;
 	const isOverlayActive   = isActiveEpisode && overlayActive;
