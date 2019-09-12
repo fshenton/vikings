@@ -18,6 +18,16 @@ function renderPaginationLink(data, index){
 		dispatch
 	} = useContext(Episodes);
 
+	// CLICK HANDLER
+	// --------------------------
+	function setActiveIndex(){
+		dispatch({
+			type: ACTIONS.GET_EPISODE,
+			value: index
+		});
+	}// changeEpisode
+
+
 	// RENDER
 	// --------------------------
 	const { 
@@ -28,15 +38,6 @@ function renderPaginationLink(data, index){
 	const episodeId = UTILS.convertToSafeString(title, "-");
 
 	const isActive = index === activeIndex;
-
-	// CLICK HANDLER
-	// --------------------------
-	function setActiveIndex(){
-		dispatch({
-			type: ACTIONS.GET_EPISODE,
-			value: index
-		});
-	}// changeEpisode
 
 	return (
 		<li 
