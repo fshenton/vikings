@@ -42,17 +42,17 @@ export default function EpisodePreview(props){
 	} = props;
 
 	// handle visibility of active episode and episode preview overlay
-	const isActiveEpisode 	= activeIndex === index;
+	const isActiveEpisode   = activeIndex === index;
 	const isOverlayActive   = isActiveEpisode && overlayActive;
-	const hidden 			= !isOverlayActive;
+	const hidden            = !isOverlayActive;
 
 	const trailerSrcAttr    = isOverlayActive ? {source: trailerSrc} : {};
 
-	const isFirst 			= index === 0;
-	const isLast  			= index === episodeCount - 1;
+	const isFirst           = index === 0;
+	const isLast            = index === episodeCount - 1;
 
-	const formattedTitle 	= UTILS.convertToSafeString(title, "-");
-	const previewId 	 	= `${formattedTitle}-preview`;
+	const formattedTitle    = UTILS.convertToSafeString(title, "-");
+	const previewId         = `${formattedTitle}-preview`;
 
 
 	// CLICK HANDLERS
