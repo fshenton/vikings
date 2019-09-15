@@ -1,30 +1,55 @@
 import React, { useContext } from "react";
 import { s } from "./";
 import Link from "COMPONENTS/Link/";
-import { EpisodesContext as Episodes } from "COMPONENTS/Episodes/";
+import { 
+	ACTIONS,
+	EpisodesContext as Episodes
+} from "COMPONENTS/Episodes/";
+import UTILS from "SHARED/utils.js";
 
 function renderPaginationLink(data, index){
 
 	// CONTEXT
 	// --------------------------
-	const { activeIndex } = useContext(Episodes);
+	const { 
+		state: {
+			activeIndex 
+		},
+		dispatch
+	} = useContext(Episodes);
+
+	// CLICK HANDLER
+	// --------------------------
+	function setActiveIndex(){
+		dispatch({
+			type: ACTIONS.GET_EPISODE,
+			value: index
+		});
+	}// changeEpisode
+
 
 	// RENDER
 	// --------------------------
-	const { number } = data;
+	const { 
+		number: episodeNo,
+		title
+	} = data;
+
+	const episodeId = UTILS.convertToSafeString(title, "-");
 
 	const isActive = index === activeIndex;
 
 	return (
 		<li 
-			key={`episode__pagination__${number}`}
-			aria-current={isActive.toString()}
+			key={ `episode__pagination__${episodeNo}` }
+			aria-current={ isActive }
 		>
 			<Link 
-				destination={ `#episode-${number}` }
+				destination={ `#${episodeId}` }
 				className={ s.paginationLink }
+				onClick={ setActiveIndex }
 			>
-				{ number }
+				{ episodeNo }
 			</Link>
 		</li>
 	);	

@@ -1,16 +1,16 @@
 import React, { useContext } from "react";
 import { EpisodesContext as Episodes } from "COMPONENTS/Episodes/";
+import EpisodePreview from "COMPONENTS/EpisodePreview/";
 import { s } from "./";
 
 export default function Episode(props){
 
 	//CONTEXT
 	//---------------------------
-	const { 
+	const {
 		activeIndex,
-		episodeCount: episodes
-	} = useContext(Episodes);
-
+		episodeCount
+	} = useContext(Episodes).state;
 
 	//RENDER
 	//---------------------------
@@ -20,17 +20,11 @@ export default function Episode(props){
 		number,
 		title,
 		synopsis,
-		image = {},
-		video = {},
+		thumbnail = {},
+		trailer = {}
 	} = props;
 
-	const {
-		src: thumbSrc,
-		description: thumbDesc
-	} = image;
-
-	const { videoSrc } = video;
-	const hidden       = index !== activeIndex;
+	const hidden = index !== activeIndex;
 
 	return (
 		<li
@@ -38,8 +32,8 @@ export default function Episode(props){
 			className={ s.wrapper }
 			role="group"
 			aria-roledescription="slide"
-			aria-label={ `Episode ${number} of ${episodes}.` }
-			aria-hidden={ hidden.toString() }
+			aria-label={ `Episode ${number} of ${episodeCount}.` }
+			aria-hidden={ hidden }
 		>
 			<article>
 				<h2>
@@ -51,16 +45,14 @@ export default function Episode(props){
 				<p>
 					{ synopsis }
 				</p>
-				<a 
-					href={ videoSrc } 
-					rel="noopener" 
-					target="_blank"
-				>
-					<img 
-						src={ thumbSrc } 
-						alt={ thumbDesc } 
-					/>
-				</a>
+				<EpisodePreview 
+					episodeId={ id }
+					index={ index }
+					number={ number }
+					title={ title }
+					thumbnail={ thumbnail }
+					trailer={ trailer }
+				/>
 			</article>
 		</li>
 	);
