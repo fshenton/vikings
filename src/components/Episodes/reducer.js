@@ -1,4 +1,3 @@
-import React from "react";
 import { ACTIONS } from "./";
 
 export default function reducer(state, action){
