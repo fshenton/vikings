@@ -24,9 +24,6 @@ export default function EpisodePreview(props){
 		next: nextTrailer = {}
 	} = useContext(Trailer);
 
-	const { src: prevTrailerSrc } = prevTrailer;
-	const { src: nextTrailerSrc } = nextTrailer;
-
 
 	// PROPS
 	// --------------------------
@@ -88,6 +85,9 @@ export default function EpisodePreview(props){
 
 	const formattedTitle    = UTILS.convertToSafeString(title, "-");
 	const previewId         = `${formattedTitle}-preview`;
+
+	const { src: prevTrailerSrc } = prevTrailer;
+	const { src: nextTrailerSrc } = nextTrailer;
 
 	return (
 		<aside>
