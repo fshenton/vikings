@@ -1,6 +1,6 @@
-function convertToSafeString(string){
-	return string.replace(/\W/g, '') // remove non-alphanumeric
-			.replace(/ /g, "_")      // replace spaces with underscores
+function convertToSafeString(string, seperator="_"){
+
+	return string.replace(/\W+/g, seperator) // remove non-alphanumeric & space, inset seperators
 			.toLowerCase();
 }//convertToSafeString
 
