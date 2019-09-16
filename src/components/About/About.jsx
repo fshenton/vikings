@@ -28,20 +28,24 @@ export default function About(){
 	} = image;
 
 	return (
-		<article>
+		<article className={ s.wrapper }>
 			<img src={ src } alt={ description } />
-			<h1 className={ s.heading }>
-				{ title }
-			</h1>
-			<h2 className={ s.subheading }>
-				{ subtitle }
-			</h2>
-			<p>
-				{ body1 }
-			</p>
-			<p>
-				{ body2 }
-			</p>
+			<div className={ s.textContent }>	
+				<h1 className={ s.heading }>
+					{ title }
+				</h1>
+				<h2 className={ s.subheading }>
+					{ subtitle }
+				</h2>
+				<div className={ s.bodyContent }>
+					<p>
+						{ body1 }
+					</p>
+					<p>
+						{ body2 }
+					</p>
+				</div>
+			</div>	
 		</article>
 	);
 } //About
