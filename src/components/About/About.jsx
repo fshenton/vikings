@@ -1,4 +1,5 @@
- import React from "react";
+import React from "react";
+import { s } from "./";
 
 export default function About(){
 
@@ -27,10 +28,10 @@ export default function About(){
 	return (
 		<article>
 			<img src={ src } alt={ description } />
-			<h1>
+			<h1 className={ s.heading }>
 				{ title }
 			</h1>
-			<h2>
+			<h2 className={ s.subheading }>
 				{ subtitle }
 			</h2>
 			<p>
