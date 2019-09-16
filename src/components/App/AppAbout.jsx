@@ -8,14 +8,15 @@ import Landing from "COMPONENTS/Landing/";
 import About from "COMPONENTS/About/";
 import Characters from "COMPONENTS/Characters/";
 import Episodes from "COMPONENTS/Episodes/";
+import { s } from "./";
 
 export default function App(){
 
 	return (
-		<div>
+		<div className={ s.pageContainer }>
 			<About />
 		</div>
 	);
 } //App
 
-// DELETE AFTER USE
+// TAKE WHAT YOU NEED AND THEN DELETE AFTER USE
