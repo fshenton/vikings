@@ -11,7 +11,7 @@ export default function About(){
 		title: "About",
 		subtitle: "The world is coming to an end.",
 		body1: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Suscipit, accusantium, iste! Quaerat est voluptate vel nulla sed, eveniet tempore ipsam iure. Modi doloribus repellendus voluptates. Doloremque deleniti non, nobis adipisci!",
-		body2: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias vel, dignissimos saepe! Modi hic possimus ut. Earum deleniti, incidunt rerum beatae deserunt, cum vero similique expedita iusto. Totam perspiciatis, pariatur! Velit, unde, natus. Quam, doloribus dicta? Tempore unde vitae omnis facilis assumenda autem provident consectetur nemo explicabo praesentium nesciunt cupiditate nobis repellat officia, illo nulla molestiae accusamus similique fuga quisquam!"
+		body2: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias vel, dignissimos saepe! Modi hic possimus ut. Earum deleniti, incidunt rerum beatae deserunt, cum vero similique expedita iusto. Totam perspiciatis, pariatur! Velit, unde, natus. Quam, doloribus dicta? Tempore unde vitae omnis facilis assumenda autem provident consectetur nemo explicabo praesentium nesciunt cupiditate nobis repellat officia, illo nulla molestiae accusamus similique fuga quisquam! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nostrum est consequuntur magnam! Voluptatum possimus porro natus hic qui labore dolorem, reiciendis veritatis repellendus incidunt expedita officia odit, culpa, nesciunt pariatur."
 	};
 
 	const { 
@@ -29,15 +29,19 @@ export default function About(){
 
 	return (
 		<article className={ s.wrapper }>
-			<img src={ src } alt={ description } />
-			<div className={ s.textContent }>	
+			<img 
+				className={ s.image }
+				src={ src } 
+				alt={ description } 
+			/>
+			<div className={ s.textContainer }>	
 				<h1 className={ s.heading }>
 					{ title }
 				</h1>
 				<h2 className={ s.subheading }>
 					{ subtitle }
 				</h2>
-				<div className={ s.bodyContent }>
+				<div className={ s.bodyContainer }>
 					<p>
 						{ body1 }
 					</p>
