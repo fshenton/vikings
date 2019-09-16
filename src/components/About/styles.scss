@@ -1,2 +1,9 @@
 @import "SHARED/fonts.scss";
 
+.heading {
+	font-size: 1.15rem;
+}
+
+.subheading {
+	font-size: calc(1.15rem * 1.62)
+}

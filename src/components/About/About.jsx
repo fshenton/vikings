@@ -10,14 +10,16 @@ export default function About(){
 		},
 		title: "About",
 		subtitle: "The world is coming to an end.",
-		body: "cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+		body1: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Suscipit, accusantium, iste! Quaerat est voluptate vel nulla sed, eveniet tempore ipsam iure. Modi doloribus repellendus voluptates. Doloremque deleniti non, nobis adipisci!",
+		body2: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias vel, dignissimos saepe! Modi hic possimus ut. Earum deleniti, incidunt rerum beatae deserunt, cum vero similique expedita iusto. Totam perspiciatis, pariatur! Velit, unde, natus. Quam, doloribus dicta? Tempore unde vitae omnis facilis assumenda autem provident consectetur nemo explicabo praesentium nesciunt cupiditate nobis repellat officia, illo nulla molestiae accusamus similique fuga quisquam!"
 	};
 
 	const { 
 		image, 
 		title, 
 		subtitle, 
-		body 
+		body1,
+		body2 
 	} = data;
 
 	const { 
@@ -35,7 +37,10 @@ export default function About(){
 				{ subtitle }
 			</h2>
 			<p>
-				{ body }
+				{ body1 }
+			</p>
+			<p>
+				{ body2 }
 			</p>
 		</article>
 	);
