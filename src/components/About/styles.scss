@@ -34,6 +34,10 @@
 				margin-bottom: 1.5rem;
 				font-size: calc(1.15rem * 1.62);
 				line-height: 1.5em;
+
+				&:before, &:after {
+					content: '"';
+				}
 			}
 			
 			.bodyContainer {
@@ -50,7 +54,7 @@
 }
 
 
-@media only screen and (min-width: 640px) and (orientation: landscape) {
+@media only screen and (min-width: 640px) and (max-width: 767px) {
 	.wrapper {
 		flex-direction: row;
 		--landscape_spacing: 5vw;
@@ -67,6 +71,7 @@
 			padding-right: var(--landscape_spacing);
 			padding-bottom: 0;
 			padding-left: var(--landscape_spacing);
+			overflow-y: auto;
 
 			.heading {
 				margin-bottom: 0.5rem;
@@ -83,6 +88,38 @@
 				font-size: 0.5rem;
 			}
 		}
+	}
+}
+
+@media only screen and (min-width: 1920px) {
+	.wrapper {
+		flex-direction: row;
+
+			.image {
+				width: 50%;
+				height: 100%;
+			}
+
+			.textContainer {
+				width: 50%;
+				height: 100%;
+				padding-top: 20vh;
+				overflow-y: hidden;
+
+				.heading {
+					
+				}
+
+				.subheading {
+					font-size: calc(1.15rem * 1.62);
+				}
+
+				.bodyContainer {
+					height: 53vh;
+					overflow-y: auto;
+					font-size: 1rem;
+				}
+			}
 	}
 }
 
