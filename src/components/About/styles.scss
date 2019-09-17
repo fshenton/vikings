@@ -27,17 +27,18 @@
 
 		.heading {
 			margin-bottom: 1rem;
-			font-size: 1.15rem;
+			font-size: var(--font_size__heading);
 		}
 
 		.subheading {
 			margin-bottom: 1.5rem;
-			font-size: calc(1.15rem * 1.62);
+			font-size: var(--font_size__subheading);
 			line-height: 1.5em;
 		}
 		
 		.body {
 			margin-bottom: var(--padding__body);
+			font-size: var(--font_size__body);
 			line-height: 1.5em;
 			background-color: green;
 

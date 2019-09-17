@@ -1,3 +1,9 @@
+:root {
+	--font_size__body: 1rem;
+	--font-size__heading: calc(var(--font-size__body) * 1.15);
+	--font-size__subheading: calc(var(--font_size__heading) * 1.62);
+}
+
 html {
 	font-size: 18px;
 }
