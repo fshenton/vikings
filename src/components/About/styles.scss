@@ -53,7 +53,6 @@
 @media (orientation: landscape) {
 	.wrapper {
 		flex-direction: row;
-		--landscape_spacing: 5vw;
 
 		.hero {
 			width: 50%;
@@ -63,10 +62,11 @@
 		.textContainer {
 			width: 50%;
 			height: 100%;
-			padding-top: var(--landscape_spacing);
-			padding-right: var(--landscape_spacing);
+			--padding__body: 5vw;
+			padding-top: var(--padding__body);
+			padding-right: var(--padding__body);
 			padding-bottom: 0;
-			padding-left: var(--landscape_spacing);
+			padding-left: var(--padding__body);
 			overflow-y: auto;
 
 			.heading {
