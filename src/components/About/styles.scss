@@ -1,57 +1,56 @@
-@media only screen and (min-width: 320px) {
-	.wrapper {
-		width: 100%;
-		height: 100%;
-		display: flex;
-		flex-direction: column;
-		background-color: blue;
-		--portrait-spacing: 10vw;
+// Mobile portrait
+.wrapper {
+	width: 100%;
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+	background-color: blue;
+	--portrait-spacing: 10vw;
 
-		.hero {
-			width: 100%;
-			height: 38%;
+	.hero {
+		width: 100%;
+		height: 38%;
+	}
+
+	.textContainer {
+		width: 100%;
+		height: 62%;
+		padding-top: var(--portrait-spacing);
+		padding-right: var(--portrait-spacing);
+		padding-bottom: 0;
+		padding-left: var(--portrait-spacing);
+		overflow-y: auto;
+		background-color: pink;
+
+		.heading {
+			margin-bottom: 1rem;
+			font-size: 1.15rem;
 		}
 
-		.textContainer {
-			width: 100%;
-			height: 62%;
-			padding-top: var(--portrait-spacing);
-			padding-right: var(--portrait-spacing);
-			padding-bottom: 0;
-			padding-left: var(--portrait-spacing);
-			overflow-y: auto;
-			background-color: pink;
+		.subheading {
+			margin-bottom: 1.5rem;
+			font-size: calc(1.15rem * 1.62);
+			line-height: 1.5em;
 
-			.heading {
-				margin-bottom: 1rem;
-				font-size: 1.15rem;
+			&:before, &:after {
+				content: '"';
 			}
+		}
+		
+		.body {
+			margin-bottom: var(--portrait-spacing);
+			line-height: 1.5em;
+			background-color: green;
 
-			.subheading {
-				margin-bottom: 1.5rem;
-				font-size: calc(1.15rem * 1.62);
-				line-height: 1.5em;
-
-				&:before, &:after {
-					content: '"';
-				}
-			}
-			
-			.body {
-				margin-bottom: var(--portrait-spacing);
-				line-height: 1.5em;
-				background-color: green;
-
-				p + p {
-					margin-top: 1em;
-				}
+			p + p {
+				margin-top: 1em;
 			}
 		}
 	}
 }
 
-
-@media only screen and (min-width: 640px) and (max-width: 767px) {
+// Mobile landscape
+@media (orientation: landscape) {
 	.wrapper {
 		flex-direction: row;
 		--landscape_spacing: 5vw;
@@ -88,11 +87,18 @@
 	}
 }
 
-@media only screen and (min-width: 1024px) {
-	//NO CHANGES FOR TABLET, AWAITING FEEDBACK
+// Tablet portrait
+@media (min-width: 768px) {
+
 }
 
-@media only screen and (min-width: 1920px) {
+// Tablet landscape
+@media (min-width: 768px) and (orientation: landscape) {
+
+}
+
+// Desktop landscape
+@media (min-width: 1200px) {
 	.wrapper {
 		flex-direction: row;
 
@@ -118,5 +124,10 @@
 				}
 			}
 	}
+}
+
+// Desktop portrait
+@media (min-width: 1200px) and (max-aspect-ratio: 8/9) {
+
 }
 
