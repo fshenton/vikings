@@ -19,6 +19,7 @@
 		--padding__body: 10vw;
 		padding: var(--padding__body) var(--padding__body) 0 var(--padding__body);
 		overflow-y: auto;
+		font-size: var(--font_size__body);
 		background-color: pink;
 	}
 
@@ -27,19 +28,18 @@
 		}
 
 		.heading {
-			margin-bottom: 1rem;
+			margin-bottom: 1em;
 			font-size: var(--font_size__heading);
 		}
 
 		.subheading {
-			margin-bottom: 1.5rem;
+			margin-bottom: 1.5em;
 			font-size: var(--font_size__subheading);
 			line-height: 1.5em;
 		}
 		
 		.body {
 			margin-bottom: var(--padding__body);
-			font-size: var(--font_size__body);
 			font-family: var(--font_family__body);
 			line-height: 1.5em;
 			background-color: green;
@@ -64,23 +64,7 @@
 			width: 50%;
 			height: 100%;
 			--padding__body: 5vw;
-			overflow-y: auto;
 		}
-
-			.heading {
-				margin-bottom: 0.5rem;
-				font-size: 0.62rem;
-			}
-
-			.subheading {
-				margin-bottom: 1rem;
-				font-size: 1rem;
-			}
-
-			.body {
-				margin-bottom: 1rem;
-				font-size: 0.5rem;
-			}
 }
 
 // Tablet portrait
@@ -95,31 +79,13 @@
 
 // Desktop landscape
 @media (min-width: 1200px) {
-	.wrapper {
-		flex-direction: row;
+
+	.body {
+		height: 100%;
+		max-height: 53vh;
+		overflow-y: auto;
+		font-size: var(--font_size_body);
 	}
-
-		.hero {
-			width: 50%;
-			height: 100%;
-		}
-
-		.textContainer {
-			width: 50%;
-			height: 100%;
-			padding-top: 20vh;
-			overflow-y: hidden;
-		}
-			
-			.subheading {
-				font-size: calc(var(--font_size__heading) * 1.62);
-			}
-
-			.body {
-				height: 53vh;
-				overflow-y: auto;
-				font-size: 1rem;
-			}
 }
 
 // Desktop portrait
