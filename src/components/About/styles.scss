@@ -17,10 +17,7 @@
 		width: 100%;
 		height: 62%;
 		--padding__body: 10vw;
-		padding-top: var(--padding__body);
-		padding-right: var(--padding__body);
-		padding-bottom: 0;
-		padding-left: var(--padding__body);
+		padding: var(--padding__body) var(--padding__body) 0 var(--padding__body);
 		overflow-y: auto;
 		background-color: pink;
 	}
@@ -62,10 +59,6 @@
 			width: 50%;
 			height: 100%;
 			--padding__body: 5vw;
-			padding-top: var(--padding__body);
-			padding-right: var(--padding__body);
-			padding-bottom: 0;
-			padding-left: var(--padding__body);
 			overflow-y: auto;
 		}
 
