@@ -109,6 +109,16 @@
 		height: 100%;
 		--tablet_font__size: 1.25;
 	}
+
+		.body {
+			p {
+				width: 100%;
+			}
+
+			p:nth-child(even) {
+				margin-left: 0;
+			}
+		}
 }
 
 // Desktop portrait
@@ -119,10 +129,19 @@
 // Desktop landscape
 @media (min-width: 1200px) {
 
-	.body {
-		height: 100%;
-		max-height: 53vh;
+	.textContainer {
+		padding-top: 20vh;
+		--padding__body: 10vw;
 	}
+
+		.subheading {
+			width: 100%;
+		}
+
+		.body {
+			height: 100%;
+			max-height: 53vh;
+		}
 }
 
 
