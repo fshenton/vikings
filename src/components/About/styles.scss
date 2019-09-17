@@ -31,14 +31,6 @@
 			margin-bottom: 1.5rem;
 			font-size: calc(1.15rem * 1.62);
 			line-height: 1.5em;
-
-			&:before {
-				content: '\201C';
-			}
-
-			&:after {
-				content: '\201D';
-			}
 		}
 		
 		.body {

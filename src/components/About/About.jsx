@@ -31,7 +31,9 @@ export default function About(){
 					{ title }
 				</h1>
 				<h2 className={ s.subheading }>
-					{ subtitle }
+					<q>
+						{ subtitle }
+					</q>
 				</h2>
 				<div className={ s.body }>
 					{ bodyContent }
