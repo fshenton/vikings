@@ -22,6 +22,10 @@
 		background-color: pink;
 	}
 
+		.heading, .subheading {
+			font-family: var(--font_family__heading);
+		}
+
 		.heading {
 			margin-bottom: 1rem;
 			font-size: var(--font_size__heading);
@@ -36,6 +40,7 @@
 		.body {
 			margin-bottom: var(--padding__body);
 			font-size: var(--font_size__body);
+			font-family: var(--font_family__body);
 			line-height: 1.5em;
 			background-color: green;
 
