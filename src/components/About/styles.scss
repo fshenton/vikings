@@ -76,16 +76,16 @@
 
 	.textContainer {
 		height: 40%;
-		--tablet_font__size: 1.62;
-		font-size: calc(var(--font_size__body)*var(--tablet_font__size));
+		--font_size__factor: 1.62;
+		font-size: calc(var(--font_size__body)*var(--font_size__factor));
 	}
 
 		.heading {
-			font-size: calc(var(--font_size__heading)*var(--tablet_font__size));
+			font-size: calc(var(--font_size__heading)*var(--font_size__factor));
 		}
 
 		.subheading {
-			font-size: calc(var(--font_size__subheading)*var(--tablet_font__size));
+			font-size: calc(var(--font_size__subheading)*var(--font_size__factor));
 		}
 
 		.body {
@@ -107,7 +107,7 @@
 
 	.textContainer {
 		height: 100%;
-		--tablet_font__size: 1.25;
+		--font_size__factor: 1.25;
 	}
 
 		.body {
