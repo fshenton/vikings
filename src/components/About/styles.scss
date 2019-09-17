@@ -69,7 +69,7 @@
 
 			.heading {
 				margin-bottom: 0.5rem;
-				font-size: calc(1rem * 0.62);
+				font-size: 0.62rem;
 			}
 
 			.subheading {
@@ -112,7 +112,7 @@
 		}
 			
 			.subheading {
-				font-size: calc(1.15rem * 1.62);
+				font-size: calc(var(--font_size__heading) * 1.62);
 			}
 
 			.body {
