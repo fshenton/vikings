@@ -5,7 +5,6 @@
 	display: flex;
 	flex-direction: column;
 	background-color: blue;
-	--portrait-spacing: 10vw;
 
 	.hero {
 		width: 100%;
@@ -15,10 +14,8 @@
 	.textContainer {
 		width: 100%;
 		height: 62%;
-		padding-top: var(--portrait-spacing);
-		padding-right: var(--portrait-spacing);
-		padding-bottom: 0;
-		padding-left: var(--portrait-spacing);
+		--padding__body: 10vw;
+		padding: var(--padding__body) var(--padding_body) 0 var(--padding_body);
 		overflow-y: auto;
 		background-color: pink;
 
@@ -38,7 +35,7 @@
 		}
 		
 		.body {
-			margin-bottom: var(--portrait-spacing);
+			margin-bottom: var(--padding__body);
 			line-height: 1.5em;
 			background-color: green;
 

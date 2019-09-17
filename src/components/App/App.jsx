@@ -8,11 +8,12 @@ import Landing from "COMPONENTS/Landing/";
 import About from "COMPONENTS/About/";
 import Characters from "COMPONENTS/Characters/";
 import Episodes from "COMPONENTS/Episodes/";
+import { s } from "./";
 
 export default function App(){
 
 	return (
-		<div>
+		<div className={ s.container }>
 			{ /* STICKIES */}
 			{ false && <HomePermalink /> }
 			{ false && <Socials /> }
@@ -23,13 +24,12 @@ export default function App(){
 			{ false && <Navigation /> }
 
 			{/* PAGES */}
-			<main>
+			<main className={ s.main }>
 				{ false && <Landing /> }
 				{ true && <About /> }
 				{ false && <Characters /> }
 				{ false && <Episodes /> }
 			</main>
-
 		</div>
 	);
 } //App
