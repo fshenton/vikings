@@ -1,4 +1,5 @@
 import React from "react";
+import { renderBody as render } from "SHARED/renderUtils.jsx";
 import { data } from "./";
 import { s } from "./";
 
@@ -16,6 +17,8 @@ export default function About(){
 		description 
 	} = image;
 
+	const bodyContent = render(body); // create spacing at line-breaks
+
 	return (
 		<article className={ s.wrapper }>
 			<img 
@@ -31,9 +34,7 @@ export default function About(){
 					{ subtitle }
 				</h2>
 				<div className={ s.body }>
-					<p>
-						{ body }
-					</p>
+					{ bodyContent }
 				</div>
 			</div>	
 		</article>
