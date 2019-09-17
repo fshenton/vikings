@@ -1,5 +1,9 @@
 .wrapper {
 	font-size: 1em;
+
+	&[aria-hidden="true"]{
+		opacity: 0;
+	}
 }
 	.button {
 		&.next {
@@ -9,4 +13,7 @@
 			font-size: 1em;
 		}
 	}
+
+
+
 	

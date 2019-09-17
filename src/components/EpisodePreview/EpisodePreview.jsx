@@ -4,6 +4,7 @@ import {
 	EpisodesContext as Episodes,
 } from "COMPONENTS/Episodes/";
 import { TrailerContext as Trailer } from "COMPONENTS/Episode/";
+import { s } from "./";
 import UTILS from "SHARED/utils.js";
 
 export default function EpisodePreview(props){
@@ -104,6 +105,7 @@ export default function EpisodePreview(props){
 			</a>
 			<div
 				id={ previewId }
+				className= { s.wrapper }
 				aria-hidden={ hidden }
 			>
 				<header>
