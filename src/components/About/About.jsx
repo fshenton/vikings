@@ -6,7 +6,7 @@ import { s } from "./";
 export default function About(){
 
 	const { 
-		image, 
+		image: heroImg, 
 		title, 
 		subtitle, 
 		body
@@ -15,7 +15,7 @@ export default function About(){
 	const { 
 		src, 
 		description 
-	} = image;
+	} = heroImg;
 
 	const bodyContent = render(body); // create spacing at line-breaks
 
