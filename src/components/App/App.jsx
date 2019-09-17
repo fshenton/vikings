@@ -14,20 +14,20 @@ export default function App(){
 	return (
 		<div>
 			{ /* STICKIES */}
-			<HomePermalink />
-			<Socials />
-			<HistoryChannel />
-			<WatchNow />
+			{ false && <HomePermalink /> }
+			{ false && <Socials /> }
+			{ false && <HistoryChannel /> }
+			{ false && <WatchNow /> }
 
 			{/* COMMON */}
-			<Navigation />
+			{ false && <Navigation /> }
 
 			{/* PAGES */}
 			<main>
-				<Landing />
-				<About />
-				<Characters />
-				<Episodes />
+				{ false && <Landing /> }
+				{ true && <About /> }
+				{ false && <Characters /> }
+				{ false && <Episodes /> }
 			</main>
 
 		</div>

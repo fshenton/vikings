@@ -1,6 +1,3 @@
-@import "SHARED/fonts.scss";
-
-
 @media only screen and (min-width: 320px) {
 	.wrapper {
 		width: 100%;
@@ -109,7 +106,7 @@
 				height: 100%;
 				padding-top: 20vh;
 				overflow-y: hidden;
-				
+
 				.subheading {
 					font-size: calc(1.15rem * 1.62);
 				}
