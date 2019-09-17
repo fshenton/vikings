@@ -22,7 +22,7 @@ export default function About(){
 	return (
 		<article className={ s.wrapper }>
 			<img 
-				className={ s.image }
+				className={ s.hero }
 				src={ src } 
 				alt={ description } 
 			/>

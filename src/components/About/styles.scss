@@ -7,7 +7,7 @@
 		background-color: blue;
 		--portrait-spacing: 10vw;
 
-		.image {
+		.hero {
 			width: 100%;
 			height: 38%;
 		}
@@ -56,7 +56,7 @@
 		flex-direction: row;
 		--landscape_spacing: 5vw;
 
-		.image {
+		.hero {
 			width: 50%;
 			height: 100%;
 		}
@@ -96,7 +96,7 @@
 	.wrapper {
 		flex-direction: row;
 
-			.image {
+			.hero {
 				width: 50%;
 				height: 100%;
 			}
