@@ -5,6 +5,7 @@
 	display: flex;
 	flex-direction: column;
 	background-color: blue;
+}
 
 	.hero {
 		width: 100%;
@@ -21,6 +22,7 @@
 		padding-left: var(--padding__body);
 		overflow-y: auto;
 		background-color: pink;
+	}
 
 		.heading {
 			margin-bottom: 1rem;
@@ -42,13 +44,12 @@
 				margin-top: 1em;
 			}
 		}
-	}
-}
 
 // Mobile landscape
 @media (orientation: landscape) {
 	.wrapper {
 		flex-direction: row;
+	}
 
 		.hero {
 			width: 50%;
@@ -64,6 +65,7 @@
 			padding-bottom: 0;
 			padding-left: var(--padding__body);
 			overflow-y: auto;
+		}
 
 			.heading {
 				margin-bottom: 0.5rem;
@@ -79,8 +81,6 @@
 				margin-bottom: 1rem;
 				font-size: 0.5rem;
 			}
-		}
-	}
 }
 
 // Tablet portrait
@@ -97,29 +97,29 @@
 @media (min-width: 1200px) {
 	.wrapper {
 		flex-direction: row;
-
-			.hero {
-				width: 50%;
-				height: 100%;
-			}
-
-			.textContainer {
-				width: 50%;
-				height: 100%;
-				padding-top: 20vh;
-				overflow-y: hidden;
-
-				.subheading {
-					font-size: calc(1.15rem * 1.62);
-				}
-
-				.body {
-					height: 53vh;
-					overflow-y: auto;
-					font-size: 1rem;
-				}
-			}
 	}
+
+		.hero {
+			width: 50%;
+			height: 100%;
+		}
+
+		.textContainer {
+			width: 50%;
+			height: 100%;
+			padding-top: 20vh;
+			overflow-y: hidden;
+		}
+			
+			.subheading {
+				font-size: calc(1.15rem * 1.62);
+			}
+
+			.body {
+				height: 53vh;
+				overflow-y: auto;
+				font-size: 1rem;
+			}
 }
 
 // Desktop portrait
