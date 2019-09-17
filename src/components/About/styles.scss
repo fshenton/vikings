@@ -37,7 +37,7 @@
 				}
 			}
 			
-			.bodyContainer {
+			.body {
 				margin-bottom: var(--portrait-spacing);
 				line-height: 1.5em;
 				background-color: green;
@@ -80,7 +80,7 @@
 				font-size: 1rem;
 			}
 
-			.bodyContainer {
+			.body {
 				margin-bottom: 1rem;
 				font-size: 0.5rem;
 			}
@@ -111,7 +111,7 @@
 					font-size: calc(1.15rem * 1.62);
 				}
 
-				.bodyContainer {
+				.body {
 					height: 53vh;
 					overflow-y: auto;
 					font-size: 1rem;
