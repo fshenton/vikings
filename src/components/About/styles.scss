@@ -70,11 +70,49 @@
 
 // Tablet portrait
 @media (min-width: 768px) {
+	.hero {
+		height: 60%;
+	}
 
+	.textContainer {
+		height: 40%;
+		--tablet_font__size: 1.62;
+		font-size: calc(var(--font_size__body)*var(--tablet_font__size));
+	}
+
+		.heading {
+			font-size: calc(var(--font_size__heading)*var(--tablet_font__size));
+		}
+
+		.subheading {
+			font-size: calc(var(--font_size__subheading)*var(--tablet_font__size));
+		}
+
+		.body {
+			p {
+				width: 80%;
+			}
+
+			p:nth-child(even) {
+				margin-left: 4em;
+			}
+		}
 }
 
 // Tablet landscape
 @media (min-width: 768px) and (orientation: landscape) {
+	.hero {
+		height: 100%;
+	}
+
+	.textContainer {
+		height: 100%;
+		--tablet_font__size: 1.25;
+	}
+}
+
+// Desktop portrait
+@media (min-width: 1200px) and (max-aspect-ratio: 8/9) {
 
 }
 
@@ -87,8 +125,5 @@
 	}
 }
 
-// Desktop portrait
-@media (min-width: 1200px) and (max-aspect-ratio: 8/9) {
 
-}
 
