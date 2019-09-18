@@ -1,6 +1,7 @@
 import React from "react";
 import Link from "COMPONENTS/Link/";
 import UTILS from "SHARED/utils.js";
+import { s } from "./";
 
 function renderItem(data){
 
@@ -12,7 +13,10 @@ function renderItem(data){
 	const safeLabel = UTILS.convertToSafeString(label);
 
 	return (
-		<li key={ `navigation__${safeLabel}` }>
+		<li 
+			key={ `navigation__${safeLabel}` }
+			className={ s.link }
+		>
 			<Link { ...remainingProps }>
 				{ label }
 			</Link>

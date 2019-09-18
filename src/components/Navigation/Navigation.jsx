@@ -43,7 +43,7 @@ export default function Navigation(){
 	const ariaOpen    = open.toString();
 
 	return (
-		<nav>
+		<nav className={ s.wrapper }>
 			<button 
 				className={ s.button }
 				role="switch"
@@ -51,15 +51,22 @@ export default function Navigation(){
 				aria-controls="navigation__links"
 				onClick={ toggleOpen }
 			>
-				<span className={ s.label }>
+				<span 
+					className={ s.label }
+					aria-hidden="true"
+				>
 					menu
 				</span>
-				<span className={ s.label }>
+				<span 
+					className={ s.label }
+					aria-hidden="false"
+				>
 					close
 				</span>
 			</button>
 			<ul 
 				id="navigation__links"
+				className={ s.menu }
 				aria-expanded={ ariaOpen }
 			>
 				{ links }
