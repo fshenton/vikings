@@ -8,11 +8,11 @@
 
 	.button {
 		display: flex;
-		align-items: center;
 		position: absolute;
 		top: 0.375em;
 		right: 0.425em;
 		height: 1.15em;
+		align-items: center;
 		font-size: 1em;
 
 		&:before {
@@ -41,8 +41,8 @@
 
 	.menu {
 		display: flex;
-		flex-direction: column;
 		padding-top: 20vh;
+		flex-direction: column;
 		align-items: center;
 		list-style: none;
 	}
