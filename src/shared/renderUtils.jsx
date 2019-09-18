@@ -1,6 +1,6 @@
 import React from "react";
 
-export function renderBody(body){
+function renderBody(body){
 	const paragraphs = body.split("\n"); // splits the string at every line-break
 	return paragraphs.map(renderParagraph);
 }// renderBody
@@ -14,3 +14,6 @@ function renderParagraph(text, index){
 	);
 }// renderParagraph
 
+export default {
+	body: renderBody
+}
