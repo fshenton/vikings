@@ -76,16 +76,15 @@
 
 	.textContainer {
 		height: 40%;
-		font-size: calc(var(--font_size__body)*var(--font_size__factor));
-		--font_size__factor: 1.62;
+		font-size: 1.62rem;
 	}
 
 		.heading {
-			font-size: calc(var(--font_size__heading)*var(--font_size__factor));
+			font-size: 1.15em;
 		}
 
 		.subheading {
-			font-size: calc(var(--font_size__subheading)*var(--font_size__factor));
+			font-size: 1.62em;
 		}
 
 		.body {
@@ -107,7 +106,7 @@
 
 	.textContainer {
 		height: 100%;
-		--font_size__factor: 1.25;
+		font-size: 1.25rem;
 	}
 
 		.body {
@@ -131,11 +130,17 @@
 
 	.textContainer {
 		padding-top: 20vh;
+		font-size: 1.1rem;
 		--padding__body: 10vw;
-	}
+	}	
+
+		.heading {
+			font-size: 1.05em;
+		}
 
 		.subheading {
 			width: 100%;
+			font-size: 2.2em;
 		}
 
 		.body {
