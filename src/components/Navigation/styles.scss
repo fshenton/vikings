@@ -60,7 +60,19 @@
 	
 // Mobile landscape
 @media (orientation: landscape) {
+	.wrapper {
+		font-size: 1.25rem;
+		background-color: red;
+	}
 
+		.button {
+			right: 50%;
+			transform: translateX(50%);
+		}
+
+		.menu {
+			padding-top: 15vh;
+		}
 }
 
 // Tablet portrait
