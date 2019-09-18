@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import Socials from "COMPONENTS/Socials/";
 import { RENDER } from "./";
+import { s } from "./";
 
 export default function Navigation(){
 

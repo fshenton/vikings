@@ -22,12 +22,12 @@ export default function App(){
 			{ false && <WatchNow /> }
 
 			{/* COMMON */}
-			{ false && <Navigation /> }
+			{ true && <Navigation /> }
 
 			{/* PAGES */}
 			<main className={ s.container }>
 				{ false && <Landing /> }
-				{ true && <About /> }
+				{ false && <About /> }
 				{ false && <Characters /> }
 				{ false && <Episodes /> }
 			</main>
