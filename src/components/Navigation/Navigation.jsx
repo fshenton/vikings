@@ -14,7 +14,7 @@ export default function Navigation(){
 	//---------------------------
 	function toggleOpen(){
 		setOpen(!open);
-	}//toggleOpen
+	}// toggleOpen
 
 
 	//RENDER
