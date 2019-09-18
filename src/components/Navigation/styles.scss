@@ -11,14 +11,15 @@
 		position: absolute;
 		top: 0.85em;
 		right: 0.75em;
-		height: 1.15em;
+		height: var(--button_height);
 		align-items: center;
 		font-size: 1em;
 		text-transform: uppercase;
+		--button_height: 1.15em;
 
 		&:before {
 			width: 1em;
-			height: 1.15em;
+			height: var(--button_height);
 			content: "";
 			background-color: blue;
 		}
