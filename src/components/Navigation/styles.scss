@@ -73,7 +73,15 @@
 
 // Tablet portrait
 @media (min-width: 768px) {
+	
+	.button {
+		right: 50%;
+		transform: translateX(50%);
+	}
 
+	.menu {
+		line-height: 1.5;
+	}
 }
 
 // Tablet landscape
