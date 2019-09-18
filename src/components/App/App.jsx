@@ -8,28 +8,29 @@ import Landing from "COMPONENTS/Landing/";
 import About from "COMPONENTS/About/";
 import Characters from "COMPONENTS/Characters/";
 import Episodes from "COMPONENTS/Episodes/";
+import Fonts from "SHARED/fonts.scss";
+import { s } from "./";
 
 export default function App(){
 
 	return (
-		<div>
+		<div className={ s.wrapper }>
 			{ /* STICKIES */}
-			<HomePermalink />
-			<Socials />
-			<HistoryChannel />
-			<WatchNow />
+			{ false && <HomePermalink /> }
+			{ false && <Socials /> }
+			{ false && <HistoryChannel /> }
+			{ false && <WatchNow /> }
 
 			{/* COMMON */}
-			<Navigation />
+			{ false && <Navigation /> }
 
 			{/* PAGES */}
-			<main>
-				<Landing />
-				<About />
-				<Characters />
-				<Episodes />
+			<main className={ s.container }>
+				{ false && <Landing /> }
+				{ true && <About /> }
+				{ false && <Characters /> }
+				{ false && <Episodes /> }
 			</main>
-
 		</div>
 	);
 } //App

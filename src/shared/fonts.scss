@@ -1,0 +1,11 @@
+:root {
+	--font_family__body: sans-serif;
+	--font_family__heading: serif;
+	--font_size__body: 1rem;
+	--font_size__heading: calc(var(--font_size__body) * 1.15);
+	--font_size__subheading: calc(var(--font_size__heading) * 1.62);
+}
+
+html {
+	font-size: 16px;
+}

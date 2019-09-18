@@ -11,4 +11,4 @@ function init(){
 		<App />,
 		document.getElementById("app")
 	);
-}//init
+}// init
