@@ -66,11 +66,6 @@
 		background-color: red;
 	}
 
-		.button {
-			right: 50%;
-			transform: translateX(50%);
-		}
-
 		.menu {
 			padding-top: 15vh;
 		}
@@ -93,7 +88,22 @@
 
 // Desktop landscape
 @media (min-width: 1200px) {
+	.wrapper {
+		font-size: 1.4rem;
+	}
 
+		.button {
+			top: 1.875rem;
+		}
+
+
+		.menu {
+			padding-top: 20vh;
+		}
+
+			.link {
+				font-size: 5em;
+			}
 }
 
 
