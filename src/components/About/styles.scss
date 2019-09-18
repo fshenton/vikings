@@ -16,11 +16,11 @@
 	.textContainer {
 		width: 100%;
 		height: 62%;
-		--padding__body: 10vw;
 		padding: var(--padding__body) var(--padding__body) 0 var(--padding__body);
 		overflow-y: auto;
 		font-size: var(--font_size__body);
 		background-color: pink;
+		--padding__body: 10vw;
 	}
 
 		.heading, .subheading {
@@ -76,8 +76,8 @@
 
 	.textContainer {
 		height: 40%;
-		--font_size__factor: 1.62;
 		font-size: calc(var(--font_size__body)*var(--font_size__factor));
+		--font_size__factor: 1.62;
 	}
 
 		.heading {
