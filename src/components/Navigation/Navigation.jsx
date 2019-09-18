@@ -54,9 +54,9 @@ export default function Navigation(){
 				<span className={ s.label }>
 					menu
 				</span>
-				{/*<span className={ s.label }>
+				<span className={ s.label }>
 					close
-				</span>*/}
+				</span>
 			</button>
 			<ul 
 				id="navigation__links"
