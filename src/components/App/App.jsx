@@ -14,7 +14,7 @@ import { s } from "./";
 export default function App(){
 
 	return (
-		<div className={ s.container }>
+		<div className={ s.wrapper }>
 			{ /* STICKIES */}
 			{ false && <HomePermalink /> }
 			{ false && <Socials /> }
@@ -25,7 +25,7 @@ export default function App(){
 			{ false && <Navigation /> }
 
 			{/* PAGES */}
-			<main className={ s.main }>
+			<main className={ s.container }>
 				{ false && <Landing /> }
 				{ true && <About /> }
 				{ false && <Characters /> }
