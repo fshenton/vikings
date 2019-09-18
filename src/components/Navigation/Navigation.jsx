@@ -45,17 +45,18 @@ export default function Navigation(){
 	return (
 		<nav>
 			<button 
+				className={ s.button }
 				role="switch"
 				aria-checked={ ariaOpen }
 				aria-controls="navigation__links"
 				onClick={ toggleOpen }
 			>
-				<span>
-					Menu
+				<span className={ s.label }>
+					menu
 				</span>
-				<span>
-					Close
-				</span>
+				{/*<span className={ s.label }>
+					close
+				</span>*/}
 			</button>
 			<ul 
 				id="navigation__links"

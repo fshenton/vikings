@@ -1,0 +1,30 @@
+// Mobile portrait
+[aria-expanded="false"] {
+	opacity: 0;
+}
+
+[aria-expanded="true"] {
+	opacity: 1;
+}
+
+.button {
+	position: fixed;
+	top: 0.375em;
+	right: 0.425em;
+	font-size: 2rem;
+}
+
+.label {
+	display: inline-block;
+
+	&:before {
+		display: inline-block;
+		position: relative;
+		margin-right: 0.7em;
+		content: "";
+		width: 1em;
+		height: 1.15em;
+		background-color: red;
+	}
+}
+
