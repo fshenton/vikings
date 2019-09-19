@@ -21,23 +21,28 @@
 		}
 	}
 
-		.label {
-			width: 3.8em;
-			margin-left: 0.75em;
-
-
-			&[aria-hidden="true"]{
-				opacity: 0;
-			}
-			&[aria-hidden="false"]{
-				opacity: 1;
-			}
-
-			&:nth-child(1){
-				position: absolute;
-				right: 0;
-			}
+		.labelContainer {
+			display: inline-block;
+			position: relative;
+			margin-left: 1em;
+			text-transform: uppercase;
 		}
+
+			.label {
+				&[aria-hidden="true"]{
+					opacity: 0;
+				}
+
+				&[aria-hidden="false"]{
+					opacity: 1;
+				}
+
+				&.open {
+					position: absolute;
+					top: 0;
+					right: 0;
+				}
+			}
 
 	.container {
 		display: flex;

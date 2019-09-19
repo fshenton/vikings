@@ -51,7 +51,7 @@ export default function Navigation(){
 				aria-controls="navigation__links"
 				onClick={ toggleOpen }
 			>
-				<span className={ s.container }>
+				<span className={ s.labelContainer }>
 					<span 
 						className={`${s.label} ${s.open}`}
 						aria-hidden="true"
