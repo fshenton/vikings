@@ -15,7 +15,7 @@ function renderItem(data){
 	return (
 		<li 
 			key={ `navigation__${safeLabel}` }
-			className={ s.link }
+			className={ s.item }
 		>
 			<Link { ...remainingProps }>
 				{ label }
