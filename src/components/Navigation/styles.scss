@@ -55,6 +55,11 @@
 
 		.item {
 			font-size: 2.8em;
+			line-height: 1em;
+
+			&+item {
+				margin-top: 1em;
+			}
 
 			.link {
 				text-decoration: none;
@@ -80,10 +85,6 @@
 			right: 50%;
 			transform: translateX(50%);
 		}
-
-			.item+.item {
-				margin-bottom: 1rem;
-			}
 }
 
 // Tablet landscape
@@ -91,10 +92,6 @@
 	.wrapper {
 		font-size: 1.5rem;
 	}
-
-			.item {
-				margin-bottom: 0;
-			}
 }
 
 // Desktop portrait
@@ -114,10 +111,6 @@
 
 			.item {
 				font-size: 4.5em;
-				
-				&+.item{
-					margin-bottom: 1rem;
-				}
 			}
 }
 
