@@ -68,7 +68,7 @@ export default function Navigation(){
 			</button>
 			<ul 
 				id="navigation__links"
-				className={ s.container }
+				className={ s.itemContainer }
 				aria-expanded={ ariaOpen }
 			>
 				{ links }
