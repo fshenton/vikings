@@ -83,15 +83,15 @@
 
 // Tablet portrait
 @media (min-width: 768px) {
-	
-	.wrapper {
-		font-size: 1.75rem;
+	.button {
+		right: 50%;
+		font-size: 2rem;
+		transform: translateX(50%);
 	}
 
-		.button {
-			right: 50%;
-			transform: translateX(50%);
-		}
+	.container {
+		font-size: 5rem;
+	}
 }
 
 // Tablet landscape
