@@ -17,7 +17,10 @@ function renderItem(data){
 			key={ `navigation__${safeLabel}` }
 			className={ s.item }
 		>
-			<Link { ...remainingProps }>
+			<Link 
+				className={ s.link }
+				{ ...remainingProps }
+			>
 				{ label }
 			</Link>
 		</li>
