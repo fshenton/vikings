@@ -8,21 +8,84 @@
 }
 
 	.container {
+		position: relative;
+		top: 50vh;
 		padding: 0 var(--padding_container) 0 var(--padding_container);
+		font-size: 1.25rem;
 		--padding_container: 10vw;
 	}
 
-	.button {
+		.name {
+			margin-bottom: 0.4em;
+			font-size: 5em;
+			font-family: var(--font_family__heading);
+		}
 
-	}
+		.nickName {
+			margin-bottom: 1.35em;
+			font-size: 2.6em;
+			font-family: var(--font_family__heading);
+		}
 
-	.prev {
+		.actorName {
+			margin-bottom: 1.7em;
+			font-size: 1em;
+			font-family: var(--font_family__body);
+			text-transform: uppercase;
+			letter-spacing: 0.5em;
+		}
 
-	}
+		.bio {
+			margin-bottom: 2.4em;
+			font-size: 1em;
+			font-family: var(--font_family__body);
+		}
 
-	.next {
+		.hero {
+			position: fixed;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+		}
 
-	}
+		.buttons {
+			font-size: 1.1em;
+			font-family: var(--font_family__heading);
+		}
+
+			.button {
+				display: flex;
+				position: absolute;
+				align-items: center;
+				--button_margin: 1.2em;
+			}
+
+			.previous {
+				left: var(--padding_container);
+
+				&:before {
+					display: inline-block;
+					content: "";
+					width: 1.36em;
+					height: 2em;
+					margin-right: var(--button_margin);
+					background-color: lime;
+				}
+			}
+
+			.next {
+				right: var(--padding_container);
+
+				&:after {
+					display: inline-block;
+					content: "";
+					width: 1.36em;
+					height: 2em;
+					margin-left: var(--button_margin);
+					background-color: lime;
+				}
+			}
 
 // Mobile portrait
 
