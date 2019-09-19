@@ -16,19 +16,19 @@
 	}
 
 		.name {
-			margin-bottom: 0.4em;
+			// margin-bottom: 0.4em;
 			font-size: 5em;
 			font-family: var(--font_family__heading);
 		}
 
 		.nickName {
-			margin-bottom: 1.35em;
+			// margin-bottom: 1.35em;
 			font-size: 2.6em;
 			font-family: var(--font_family__heading);
 		}
 
 		.actorName {
-			margin-bottom: 1.7em;
+			// margin-bottom: 1.7em;
 			font-size: 1em;
 			font-family: var(--font_family__body);
 			text-transform: uppercase;
@@ -38,6 +38,7 @@
 		.bio {
 			margin-bottom: 2.4em;
 			font-size: 1em;
+			line-height: 1.5;
 			font-family: var(--font_family__body);
 		}
 
@@ -58,6 +59,7 @@
 				display: flex;
 				position: absolute;
 				align-items: center;
+				text-decoration: none;
 				--button_margin: 1.2em;
 			}
 

@@ -61,7 +61,7 @@ export default function Character(props){
 				>
 					{ name }
 				</h1>
-				<h2 className={ s.nickname } >
+				<h2 className={ s.nickName } >
 					{ nickname }
 				</h2>
 				<h3 className={ s.actorName } >
