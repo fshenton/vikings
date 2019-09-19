@@ -26,8 +26,8 @@ export default function App(){
 
 			{/* PAGES */}
 			<main className={ s.container }>
-				{ false && <Landing /> }
-				{ true && <About /> }
+				{ true && <Landing /> }
+				{ false && <About /> }
 				{ false && <Characters /> }
 				{ false && <Episodes /> }
 			</main>
