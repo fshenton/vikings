@@ -8,6 +8,7 @@
 	align-items: center;
 	background-color: #FF60D7;
 	font-size: 1.25rem;
+	line-height: 1;
 }
 
 	.heading, .subheading {
@@ -15,28 +16,37 @@
 	}
 
 	.heading {
-		margin-bottom: 1.8em;
+		margin-bottom: 0.1em;
 		font-size: 2.9em;
+		letter-spacing: 0.1em;
 		text-transform: uppercase;
 	}
 
 	.subheading {
-		margin-bottom: 1.8em;
-		font-size: 2.3em;
+		margin-bottom: 0.5em;
+		font-size: 1.8em;
 	}
 
 	.body {
-		font-size: 1em;
+		font-size: 0.7em;
 		font-family: var(--font_family__body);
+		letter-spacing: -0.05em;
 
 		&+.body {
-			margin-top: 1em;
+			margin-top: 0.7em;
 		}
 	}
 
 // Mobile landscape
 @media (orientation: landscape) {
-	
+	.subheading {
+		margin-bottom: 0.25em;
+		font-size: 2.5em;
+	}
+
+	.body {
+		letter-spacing: 0em;
+	}
 }
 
 // Tablet portrait
