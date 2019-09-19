@@ -51,17 +51,19 @@ export default function Navigation(){
 				aria-controls="navigation__links"
 				onClick={ toggleOpen }
 			>
-				<span 
-					className={ s.label }
-					aria-hidden="true"
-				>
-					menu
-				</span>
-				<span 
-					className={ s.label }
-					aria-hidden="false"
-				>
-					close
+				<span className={ s.container }>
+					<span 
+						className={`${s.label} ${s.open}`}
+						aria-hidden="true"
+					>
+						menu
+					</span>
+					<span 
+						className={`${s.label} ${s.close}`}
+						aria-hidden="false"
+					>
+						close
+					</span>
 				</span>
 			</button>
 			<ul 

@@ -2,26 +2,22 @@
 .wrapper {
 	width: 100%;
 	height: 100%;
-	font-size: 1.5rem;
 	background-color: red;
 }
 
 	.button {
-		display: flex;
-		position: absolute;
-		top: 0.85em;
-		right: 0.75em;
-		height: var(--button_height);
+		display: inline-flex;
 		align-items: center;
-		font-size: 1em;
-		text-transform: uppercase;
-		--button_height: 1.15em;
-
+		font-size: 1rem;
+		
 		&:before {
-			width: 1em;
-			height: var(--button_height);
 			content: "";
-			background-color: blue;
+			display: block;
+			width: 1em;
+			height: 1.15em;
+			font-size: 1.33em;
+			background: url(images/icons/cross.svg) center / contain no-repeat;
+			background-color: green;
 		}
 	}
 
