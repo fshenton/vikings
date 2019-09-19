@@ -25,12 +25,14 @@ export default function App(){
 			{ true && <Navigation /> }
 
 			{/* PAGES */}
-			{false && <main className={ s.container }>
-				{ false && <Landing /> }
-				{ false && <About /> }
-				{ false && <Characters /> }
-				{ false && <Episodes /> }
-			</main> }
+			{false && (
+				<main className={ s.container }>
+					{ false && <Landing /> }
+					{ false && <About /> }
+					{ false && <Characters /> }
+					{ false && <Episodes /> }
+				</main> 
+			)}
 		</div>
 	);
 } //App
