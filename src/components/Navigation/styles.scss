@@ -72,9 +72,12 @@
 	
 // Mobile landscape
 @media (orientation: landscape) {
-	.wrapper {
+	.button {
 		font-size: 1rem;
-		background-color: red;
+	}
+
+	.container {
+		font-size: 3rem;
 	}
 }
 
