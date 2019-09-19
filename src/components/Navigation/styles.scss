@@ -7,8 +7,11 @@
 
 	.button {
 		display: inline-flex;
+		position: fixed;
+		top: 1.75em;
+		right: 1.5em;
 		align-items: center;
-		font-size: 1rem;
+		font-size: 1.5rem;
 		
 		&:before {
 			content: "";
@@ -51,14 +54,14 @@
 		flex-direction: column;
 		justify-content: center;
 		align-items: center;
+		font-size: 4rem;
 		list-style: none;
 	}
 
 		.item {
-			font-size: 2.8em;
 			line-height: 1em;
 
-			&+item {
+			&+.item {
 				margin-top: 1em;
 			}
 
