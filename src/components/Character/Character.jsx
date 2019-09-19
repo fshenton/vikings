@@ -55,7 +55,7 @@ export default function Character(props){
 			aria-roledescription="slide"
 			aria-label={`Character ${index + 1} of ${characterData.length}.`}
 			aria-hidden={ hidden }>
-			<article>
+			<article className={ s.container }>
 				<h1 id={`character__${id}`}>
 					{ name }
 				</h1>
