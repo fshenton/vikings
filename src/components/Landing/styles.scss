@@ -32,9 +32,13 @@
 		font-family: var(--font_family__body);
 		letter-spacing: -0.05em;
 
-		&+.body {
-			margin-top: 0.7em;
+		p:nth-child(2) {
+			display: inline-block;
 		}
+	}
+
+	.aboutLink {
+		display: inline-block;
 	}
 
 // Mobile landscape
