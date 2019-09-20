@@ -4,7 +4,7 @@ import { s } from "./";
 
 export default function Landing(){
 
-	const bodyData = `When a king falls, another will rise. But who will it be?\nGet a closer look at: `;
+	const bodyData = `When a king falls, another will rise. But who will it be?\nGet a closer look at `;
 
 	const body = RENDER.body(bodyData, "landing"); //comp name for key
 
