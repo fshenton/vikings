@@ -1,15 +1,15 @@
 import React, { useState } from "react";
 import Socials from "COMPONENTS/Socials/";
 import NavToggle from "COMPONENTS/NavToggle";
-import { RENDER, NavProvider } from "./";
+import { 
+	RENDER, 
+	NavProvider 
+} from "./";
 import { s } from "./";
 
 export default function Navigation(){
 
-	//HOOKS
-	//----------------------------
-	const [ open, setOpen ] = useState(false);
-
+	let [expanded, setExpanded] = useState(false);
 
 	//RENDER
 	//----------------------------
@@ -32,19 +32,20 @@ export default function Navigation(){
 		}
 	];
 
-
-	const links       = linkData.map(RENDER.item);
-	const ariaOpen    = open.toString();
+	const links      	  = linkData.map(RENDER.item);
+	const ariaExpanded    = expanded.toString();
 
 	return (
 		<nav className={ s.wrapper }>
 			<NavProvider>
-				<NavToggle isOpen={ ariaOpen } openMenu={ setOpen } />
+				<NavToggle 
+					setExpanded={ setExpanded }
+				/>
 			</NavProvider>
 			<ul 
 				id="navigation__links"
 				className={ s.itemContainer }
-				aria-expanded={ ariaOpen }
+				aria-expanded={ ariaExpanded }
 			>
 				{ links }
 			</ul>

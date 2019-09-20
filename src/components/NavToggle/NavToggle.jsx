@@ -14,10 +14,16 @@ export default function NavToggle(props){
 		dispatch
 	} = useContext(Nav);
 
+	const {
+		setExpanded //callback for Navigation comp
+	} = props;
+
 	//EVENT HANDLING
 	//---------------------------
 	function toggleOpen(e){
 		if(e) e.preventDefault();
+
+		setExpanded(!isOpen);
 
 		dispatch({
 			type: ACTIONS.OPEN_NAVIGATION,
