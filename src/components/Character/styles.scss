@@ -101,7 +101,10 @@
 
 // Mobile landscape
 @media (orientation: landscape) {
-
+	.container {
+		top: 25vh;
+		width: 75vw;
+	}
 }
 
 // Tablet portrait
@@ -111,7 +114,9 @@
 
 // Tablet landscape
 @media (min-width: 768px) and (orientation: landscape) {
-	
+	.container {
+		width: 50vw;
+	}
 }
 
 // Desktop portrait
@@ -121,7 +126,9 @@
 
 // Desktop landscape
 @media (min-width: 1200px) {
-
+	.next {
+		right: 15em;
+	}
 }
 
 	
