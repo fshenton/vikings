@@ -42,3 +42,37 @@
 					right: 0;
 				}
 			}
+
+// Mobile landscape
+@media (orientation: landscape) {
+	.button {
+		font-size: 1rem;
+	}
+}
+
+// Tablet portrait
+@media (min-width: 768px) {
+	.button {
+		right: 50%;
+		font-size: 2rem;
+		transform: translateX(50%);
+	}
+}
+
+// Tablet landscape
+@media (min-width: 768px) and (orientation: landscape) {
+	.button {
+		font-size: 1.5rem;
+	}
+}
+
+// Desktop portrait
+@media (min-width: 1200px) and (max-aspect-ratio: 8/9) {
+
+}
+
+// Desktop landscape
+@media (min-width: 1200px) {
+
+}
+
