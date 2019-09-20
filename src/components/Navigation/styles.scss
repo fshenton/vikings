@@ -13,7 +13,7 @@
 		align-items: center;
 		font-size: 1.5rem;
 		
-		&:before {
+		&::before {
 			content: "";
 			display: block;
 			width: 1em;
@@ -78,7 +78,7 @@
 		font-size: 1rem;
 	}
 
-	.container {
+	.itemContainer {
 		font-size: 3rem;
 	}
 }
