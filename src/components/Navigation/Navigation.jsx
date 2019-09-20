@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import Socials from "COMPONENTS/Socials/";
 import NavToggle from "COMPONENTS/NavToggle";
-import { RENDER } from "./";
+import { RENDER, NavProvider } from "./";
 import { s } from "./";
 
 export default function Navigation(){
@@ -38,7 +38,9 @@ export default function Navigation(){
 
 	return (
 		<nav className={ s.wrapper }>
-			<NavToggle isOpen={ ariaOpen } openMenu={ setOpen } />
+			<NavProvider>
+				<NavToggle isOpen={ ariaOpen } openMenu={ setOpen } />
+			</NavProvider>
 			<ul 
 				id="navigation__links"
 				className={ s.itemContainer }
