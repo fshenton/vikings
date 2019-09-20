@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import Socials from "COMPONENTS/Socials/";
+import NavToggle from "COMPONENTS/NavToggle";
 import { RENDER } from "./";
 import { s } from "./";
 
@@ -8,13 +9,6 @@ export default function Navigation(){
 	//HOOKS
 	//----------------------------
 	const [ open, setOpen ] = useState(false);
-
-
-	//EVENT HANDLING
-	//---------------------------
-	function toggleOpen(){
-		setOpen(!open);
-	}// toggleOpen
 
 
 	//RENDER
@@ -44,28 +38,7 @@ export default function Navigation(){
 
 	return (
 		<nav className={ s.wrapper }>
-			<button 
-				className={ s.button }
-				role="switch"
-				aria-checked={ ariaOpen }
-				aria-controls="navigation__links"
-				onClick={ toggleOpen }
-			>
-				<span className={ s.labelContainer }>
-					<span 
-						className={`${s.label} ${s.open}`}
-						aria-hidden="true"
-					>
-						menu
-					</span>
-					<span 
-						className={`${s.label} ${s.close}`}
-						aria-hidden="false"
-					>
-						close
-					</span>
-				</span>
-			</button>
+			<NavToggle isOpen={ ariaOpen } openMenu={ setOpen } />
 			<ul 
 				id="navigation__links"
 				className={ s.itemContainer }
