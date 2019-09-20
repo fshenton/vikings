@@ -9,10 +9,6 @@
 			width: 1em;
 			height: 1em;
 			list-style: none;
-
-			&+li {
-				margin-left: 4em;
-			}
 		}
 
 			a {
@@ -34,6 +30,33 @@
 				}
 			}
 }
+
+// Mobile landscape
+@media (orientation: landscape) {
+
+}
+
+// Tablet portrait
+@media (min-width: 768px) {
+
+}
+
+// Tablet landscape
+@media (min-width: 768px) and (orientation: landscape) {
+
+}
+
+// Desktop portrait
+@media (min-width: 1200px) and (max-aspect-ratio: 8/9) {
+
+}
+
+// Desktop landscape
+@media (min-width: 1200px) {
+
+}
+
+
 
 
 
