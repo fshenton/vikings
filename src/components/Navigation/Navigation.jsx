@@ -49,7 +49,9 @@ export default function Navigation(){
 			>
 				{ links }
 			</ul>
-			<Socials />
+			<div className={ s.socials }>
+				<Socials />
+			</div>
 		</nav>
 	);
 }// Navigation

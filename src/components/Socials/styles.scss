@@ -1,3 +1,41 @@
 .wrapper {
+	display: flex;
+	justify-content: center;
+	width: 100%;
 	font-size: 1em; //nothing comment to make sure class appears
+	
+		li {
+			width: 1em;
+			height: 1em;
+			list-style: none;
+
+			&+li {
+				margin-left: 4em;
+			}
+
+			a {
+				display: block;
+				width: 100%;
+				height: 100%;
+			}
+		}
+
+	a {
+		background-color: blue;
+	}
+
+	a[aria-label="Facebook"]{
+		background-image: url("path/to/facebook.jpg");
+	}
+
+	a[aria-label="Twitter"]{
+		background-image: url("path/to/twitter.jpg");
+	}
+
+	a[aria-label="Instagram"]{
+		background-image: url("path/to/instagram.jpg");
+	}
 }
+
+
+
