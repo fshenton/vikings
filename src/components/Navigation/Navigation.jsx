@@ -3,9 +3,9 @@ import Socials from "COMPONENTS/Socials/";
 import NavToggle from "COMPONENTS/NavToggle";
 import { 
 	RENDER, 
-	NavContext as Nav
+	NavContext as Nav,
+	s
 } from "./";
-import { s } from "./";
 
 export default function Navigation(){
 
