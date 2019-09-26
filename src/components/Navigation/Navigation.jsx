@@ -45,7 +45,7 @@ export default function Navigation(){
 			<NavToggle />
 			<ul 
 				id="navigation__links"
-				className={ s.itemContainer }
+				className={ s.container }
 				aria-expanded={ expanded }
 			>
 				{ links }
