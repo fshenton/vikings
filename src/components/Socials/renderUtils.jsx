@@ -19,7 +19,7 @@ function renderItem(data){
 			className={ s.item }
 		>
 			<Link
-				className={ s.safeLabel }
+				className={ `${s.link} ${s[safeLabel]}` }
 				aria-label={ label }
 				destination={ destination } 
 				{ ...remainingProps }
