@@ -2,9 +2,9 @@ import React from "react";
 
 function renderBody(body, scope = "", className = ""){
 	const paragraphs = body.split("\n"); // splits the string at every line-break
-	
+
 	return paragraphs.map(
-		renderParagraph.bind(true, scope, className)
+		renderParagraph.bind(this, scope, className)
 	);
 }// renderBody
 
