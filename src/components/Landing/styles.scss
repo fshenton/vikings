@@ -30,12 +30,8 @@
 		font-size: 1em;
 		font-family: var(--font_family__body);
 
-		p+p {
+		.paragraph+.paragraph {
 			margin-top: 1em;
-		}
-
-		p:nth-child(2) {
-			display: inline-block;
 		}
 	}
 

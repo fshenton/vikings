@@ -1,18 +1,21 @@
 import React from "react";
 
-function renderBody(body, scope = ""){
+function renderBody(body, scope = "", className = ""){
 	const paragraphs = body.split("\n"); // splits the string at every line-break
 	
 	return paragraphs.map(
-		renderParagraph.bind(true, scope)
+		renderParagraph.bind(true, scope, className)
 	);
 }// renderBody
 
-function renderParagraph(scope, text, index){
+function renderParagraph(scope, className, text, index){
 	const key = `${scope}__body__paragraph_${index}`;
 	
 	return (
-		<p key={ key }>
+		<p 
+			className={ className }
+			key={ key }
+		>
 			{ text }
 		</p>
 	);
