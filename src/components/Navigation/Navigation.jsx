@@ -1,15 +1,20 @@
-import React, { useState } from "react";
+import React, { useContext } from "react";
 import Socials from "COMPONENTS/Socials/";
 import NavToggle from "COMPONENTS/NavToggle";
 import { 
 	RENDER, 
-	NavProvider 
+	NavContext as Nav
 } from "./";
 import { s } from "./";
 
 export default function Navigation(){
 
-	let [expanded, setExpanded] = useState(false);
+	//CONTEXT
+	//---------------------------
+	const {
+		open
+	} = useContext(Nav).state;
+
 
 	//RENDER
 	//----------------------------
@@ -32,20 +37,16 @@ export default function Navigation(){
 		}
 	];
 
-	const links      	  = linkData.map(RENDER.item);
-	const ariaExpanded    = expanded.toString();
+	const links      = linkData.map(RENDER.item);
+	const expanded   = open.toString();
 
 	return (
 		<nav className={ s.wrapper }>
-			<NavProvider>
-				<NavToggle 
-					setExpanded={ setExpanded }
-				/>
-			</NavProvider>
+			<NavToggle />
 			<ul 
 				id="navigation__links"
 				className={ s.itemContainer }
-				aria-expanded={ ariaExpanded }
+				aria-expanded={ expanded }
 			>
 				{ links }
 			</ul>
