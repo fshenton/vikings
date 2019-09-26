@@ -3,37 +3,43 @@
 	display: flex;
 	justify-content: center;
 	width: 100%;
-	font-size: 1em; //nothing comment to make sure class appears
+	font-size: 1rem;
 	
-		li {
+		.item {
 			width: 1em;
 			height: 1em;
 			list-style: none;
+
+			&+.item {
+				margin-left: 4em;
+			}
 		}
 
-			a {
+			.link {
 				display: block;
 				width: 100%;
 				height: 100%;
 				background-color: blue;
 
-				&[aria-label="Facebook"]{
-					background-image: url("path/to/facebook.jpg");
+				&.facebook {
+					background-image: url("path/to/facebook.svg");
 				}
 
-				&[aria-label="Twitter"]{
-					background-image: url("path/to/twitter.jpg");
+				&.twitter {
+					background-image: url("path/to/twitter.svg");
 				}
 
-				&[aria-label="Instagram"]{
-					background-image: url("path/to/instagram.jpg");
+				&.instagram {
+					background-image: url("path/to/instagram.svg");
 				}
 			}
 }
 
 // Mobile landscape
 @media (orientation: landscape) {
-
+	.item+.item {
+		margin-left: 2em;
+	}
 }
 
 // Tablet portrait
