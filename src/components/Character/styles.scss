@@ -11,42 +11,49 @@
 }
 
 	.container {
-		position: relative;
-		top: 47vh;
-		padding: 0 var(--padding_container) 0 var(--padding_container);
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
 		font-size: 1.25rem;
 		--padding_container: 10vw;
 	}
 
-		.name, .nickName, .actorName {
-			line-height: 1;
+		.content {
+			position: relative;
+			width: 75%;
+			z-index: 1;
 		}
 
-		.name {
-			margin-bottom: 0.4em;
-			font-size: 5em;
-			font-family: var(--font_family__heading);
-		}
+			.name, .nickName, .actorName {
+				line-height: 1;
+			}
 
-		.nickName {
-			margin-bottom: 1.35em;
-			font-size: 2.6em;
-			font-family: var(--font_family__heading);
-		}
+			.name {
+				margin-bottom: 0.4em;
+				font-size: 5em;
+				font-family: var(--font_family__heading);
+			}
 
-		.actorName {
-			margin-bottom: 1.7em;
-			font-size: 1em;
-			font-family: var(--font_family__body);
-			text-transform: uppercase;
-		}
+			.nickName {
+				margin-bottom: 1.35em;
+				font-size: 2.6em;
+				font-family: var(--font_family__heading);
+			}
 
-		.bio {
-			margin-bottom: 2.4em;
-			font-size: 1em;
-			line-height: 1.5;
-			font-family: var(--font_family__body);
-		}
+			.actorName {
+				margin-bottom: 1.7em;
+				font-size: 1em;
+				font-family: var(--font_family__body);
+				text-transform: uppercase;
+			}
+
+			.bio {
+				margin-bottom: 2.4em;
+				font-size: 1em;
+				line-height: 1.5;
+				font-family: var(--font_family__body);
+			}
 
 		.hero {
 			position: fixed;
@@ -54,7 +61,7 @@
 			height: 100%;
 			top: 0;
 			left: 0;
-			z-index: -1;
+			z-index: 0;
 			background-color: crimson;
 		}
 
