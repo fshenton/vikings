@@ -76,10 +76,10 @@ export default function Character(props){
 					alt={ description }
 					style={ mask }
 				/>
-				<div className={ s.buttons }>
+				<nav className={ s.controls }>
 					{ prevCharName && RENDER.button(prevCharName, -1) }
 					{ nextCharName && RENDER.button(nextCharName, +1) }
-				</div>
+				</nav>
 			</article>
 		</li>
 	);
