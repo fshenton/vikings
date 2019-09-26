@@ -10,7 +10,7 @@ export default function Landing(){
 		body: bodyData
 	} = data;
 
-	const body = RENDER.body(bodyData, "landing", s.paragraph); //scope name for key
+	const body = RENDER.body(bodyData, "landing", s.paragraph); //scope name for key, classname
 
 	return(
 		<header className={ s.wrapper }>
