@@ -1,6 +1,6 @@
 // Mobile first
 
-.button {
+.wrapper {
 		display: inline-flex;
 		position: fixed;
 		top: 1.15em;
@@ -19,7 +19,7 @@
 		}
 	}
 
-		.labelContainer {
+		.container {
 			display: inline-block;
 			position: relative;
 			margin-left: 0.8em;
@@ -45,14 +45,14 @@
 
 // Mobile landscape
 @media (orientation: landscape) {
-	.button {
+	.wrapper {
 		font-size: 1rem;
 	}
 }
 
 // Tablet portrait
 @media (min-width: 768px) {
-	.button {
+	.wrapper {
 		right: 50%;
 		font-size: 2rem;
 		transform: translateX(50%);
@@ -61,7 +61,7 @@
 
 // Tablet landscape
 @media (min-width: 768px) and (orientation: landscape) {
-	.button {
+	.wrapper {
 		font-size: 1.5rem;
 	}
 }

@@ -33,13 +33,13 @@ export default function NavToggle(props){
 
 	return (
 			<button 
-				className={ s.button }
+				className={ s.wrapper }
 				role="switch"
 				aria-checked={ isOpen }
 				aria-controls="navigation__links"
 				onClick={ toggleOpen }
 			>
-				<span className={ s.labelContainer }>
+				<span className={ s.container }>
 					<span 
 						className={`${s.label} ${s.open}`}
 						aria-hidden="true"
