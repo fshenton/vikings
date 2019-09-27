@@ -46,6 +46,8 @@ export default function Character(props){
 	// active character checks
 	const hidden = index !== activeIndex;
 
+	//TODO: run body text through shared renderBody once merged
+
 	return (
 		<li
 			id={ id }

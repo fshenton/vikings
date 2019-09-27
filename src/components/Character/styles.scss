@@ -12,8 +12,10 @@
 
 	.container {
 		display: flex;
+		width: 100%;
+		height: 100%;
 		flex-direction: column;
-		justify-content: center;
+		justify-content: flex-end;
 		align-items: center;
 		font-size: 1.25rem;
 		--padding_container: 10vw;
@@ -22,12 +24,9 @@
 		.content {
 			position: relative;
 			width: 75%;
+			height: 50%;
 			z-index: 1;
 		}
-
-			.name, .nickName, .actorName {
-				line-height: 1;
-			}
 
 			.name {
 				margin-bottom: 0.4em;
