@@ -65,13 +65,15 @@
 		}
 
 		.controls {
+			display: flex;
+			width: 100%;
+			justify-content: space-between;
 			font-size: 1.1em;
 			font-family: var(--font_family__heading);
 		}
 
 			.button {
 				display: flex;
-				position: absolute;
 				align-items: center;
 				text-decoration: none;
 				--button_margin: 1.2em;

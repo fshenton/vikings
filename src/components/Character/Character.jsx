@@ -36,12 +36,17 @@ export default function Character(props){
 	const mask = { clipPath: `url(${maskPath})` };
 
 
-	// next & prev button labels
-	const prevCharacter = characterData[index - 1] || {};
-	const nextCharacter = characterData[index + 1] || {};
+	// wrap indexes if less than 0 or greater than number of characters
+	const prevIndex = index - 1 < 0 ? characterData.length - 1 : index - 1;
+	const nextIndex = index + 1 === characterData.length ? 0 : index + 1;
 
+	const prevCharacter          = characterData[prevIndex];
+	const nextCharacter          = characterData[nextIndex];
 	const { name: prevCharName } = prevCharacter;
 	const { name: nextCharName } = nextCharacter;
+
+	const prevButton = RENDER.button(prevCharName, -1, prevIndex);
+	const nextButton = RENDER.button(nextCharName, 1, nextIndex);
 
 	// active character checks
 	const hidden = index !== activeIndex;
@@ -73,8 +78,8 @@ export default function Character(props){
 						{ body }
 					</p>
 					<nav className={ s.controls }>
-						{ prevCharName && RENDER.button(prevCharName, -1) }
-						{ nextCharName && RENDER.button(nextCharName, +1) }
+						{ prevButton }
+						{ nextButton }
 					</nav>
 				</div>
 				<img 

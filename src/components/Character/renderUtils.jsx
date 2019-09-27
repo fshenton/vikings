@@ -8,7 +8,7 @@ import {
 import { s } from "./";
 
 
-function renderButton(name, direction){
+function renderButton(name, direction, newIndex){
 
 	// CONTEXT
 	// ---------------------------------
@@ -31,11 +31,9 @@ function renderButton(name, direction){
 	function updateCharacterIndex(e){
 		if(e) e.preventDefault();
 
-		const newCharIndex = activeIndex + direction;
-
 		dispatch({
 			type: ACTIONS.GET_CHARACTER,
-			value: newCharIndex
+			value: newIndex
 		});
 	}
 
