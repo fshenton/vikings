@@ -43,7 +43,6 @@ export default function Character(props){
 	const { name: prevCharName } = prevCharacter;
 	const { name: nextCharName } = nextCharacter;
 
-
 	// active character checks
 	const hidden = index !== activeIndex;
 
@@ -71,6 +70,10 @@ export default function Character(props){
 					<p className={ s.bio } > 
 						{ body }
 					</p>
+					<nav className={ s.controls }>
+						{ prevCharName && RENDER.button(prevCharName, -1) }
+						{ nextCharName && RENDER.button(nextCharName, +1) }
+					</nav>
 				</div>
 				<img 
 					className={ s.hero }
@@ -78,10 +81,6 @@ export default function Character(props){
 					alt={ description }
 					style={ mask }
 				/>
-				<nav className={ s.controls }>
-					{ prevCharName && RENDER.button(prevCharName, -1) }
-					{ nextCharName && RENDER.button(nextCharName, +1) }
-				</nav>
 			</article>
 		</li>
 	);
