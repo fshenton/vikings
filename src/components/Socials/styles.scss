@@ -1,7 +1,7 @@
 // Mobile portrait
 .wrapper {
 	display: flex;
-	justify-content: center;
+	justify-content: space-between;
 	width: 100%;
 	font-size: 1rem;
 	
@@ -10,9 +10,9 @@
 			height: 1em;
 			list-style: none;
 
-			&+.item {
-				margin-left: 4em;
-			}
+			// &+.item {
+			// 	margin-left: 4em;
+			// }
 		}
 
 			.link {
