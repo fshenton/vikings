@@ -90,23 +90,17 @@
 					height: 1.5em;
 					background-color: lime;
 				}
-			}
 
-			.previous {
-				left: var(--padding_container);
-
-				&::before {
-					content: "";
-					margin-right: var(--button_margin);
+				&.previous {
+					&::before {
+						content: "";
+					}
 				}
-			}
 
-			.next {
-				right: var(--padding_container);
-
-				&::after {
-					content: "";
-					margin-left: var(--button_margin);
+				&.next {
+					&::after {
+						content: "";
+					}
 				}
 			}
 
@@ -128,7 +122,7 @@
 // Tablet landscape
 @media (min-width: 768px) and (orientation: landscape) {
 	.container {
-		width: 50vw;
+		width: 50%;
 	}
 }
 
@@ -139,9 +133,7 @@
 
 // Desktop landscape
 @media (min-width: 1200px) {
-	.next {
-		right: 15em;
-	}
+
 }
 
 	
