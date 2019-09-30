@@ -2,8 +2,6 @@ import React from "react";
 
 function renderBody(data, options = {}){ 
 	const { scope, className } = options;
-
-	console.log(scope, className, options);
 	
 	const paragraphs = data.split("\n"); // splits the string at every line-break
 
@@ -36,25 +34,25 @@ function renderParagraph(scope, className, text, index){
 }// renderParagraph
 
 function findLink(text){
-	const linkLabelStart = text.indexOf("[");
+	const labelStart = text.indexOf("[");
 
-	if(linkLabelStart === -1){
+	if(labelStart === -1){
 		return false;
 	}
 	else {
 		//pull out the link label, discarding the braces
-		const linkLabelEnd = text.indexOf("]");
-		const linkText = text.substring(linkLabelStart+1, linkLabelEnd);
+		const labelEnd     = text.indexOf("]");
+		const labelText    = text.substring(labelStart+1, labelEnd);
 
-		//pull out the link destination, discarding the braces
-		const linkDestStart = text.indexOf("(");
-		const linkDestEnd = text.indexOf(")");
-		const linkDest = text.substring(linkDestStart+1, linkDestEnd);
+		//pull out the link destination without braces
+		const destStart    = labelEnd+2; //skip opening brace
+		const destEnd      = text.indexOf(")");
+		const destination  = text.substring(destStart, destEnd);
 
 		return {
-			index: linkLabelStart,
-			text: linkText,
-			destination: linkDest
+			index: labelStart,
+			text: labelText,
+			destination: destination
 		};
 	}
 }// findLink
