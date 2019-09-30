@@ -39,13 +39,13 @@ export default function NavToggle(props){
 				<span className={ s.container }>
 					<span 
 						className={`${s.label} ${s.open}`}
-						aria-hidden="true"
+						aria-hidden={ isOpen }
 					>
 						menu
 					</span>
 					<span 
 						className={`${s.label} ${s.close}`}
-						aria-hidden="false"
+						aria-hidden={ !isOpen }
 					>
 						close
 					</span>
