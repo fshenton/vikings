@@ -37,8 +37,11 @@ export default function Character(props){
 
 
 	// wrap indexes if less than 0 or greater than number of characters
-	const prevIndex = index - 1 < 0 ? characterData.length - 1 : index - 1;
-	const nextIndex = index + 1 === characterData.length ? 0 : index + 1;
+	let nextIndex = index + 1;
+	let prevIndex = index - 1;
+	
+	if (nextIndex === characterData.length) nextIndex = 0;
+	if (prevIndex < 0)                      prevIndex = characterData.length-1;
 
 	const prevCharacter          = characterData[prevIndex];
 	const nextCharacter          = characterData[nextIndex];
