@@ -19,6 +19,16 @@
 		font-size: 4rem;
 		font-family: var(--font_family__heading);
 		list-style: none;
+
+		&[aria-expanded="false"] {
+			opacity: 0;
+			pointer-events: none;
+		}
+
+		&[aria-expanded="true"] {
+			opacity: 1;
+			pointer-events: all;
+		}
 	}
 
 		.item {

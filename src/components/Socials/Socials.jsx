@@ -3,7 +3,7 @@ import { RENDER, s, data } from "./";
 
 export default function Socials(props = {}){
 
-	//Apply different styling to socials if the navigation is open
+	// IF NAV OPEN, CHANGE STYLING
 	const { 
 		navOpen: open = false
 	} = props;

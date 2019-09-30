@@ -2,11 +2,12 @@
 .wrapper {
 	display: flex;
 	justify-content: space-between;
-	width: 100%;
-	font-size: 1rem;
+	font-size: 2rem;
+	opacity: 0;
 
 	&.navOpen {
-		opacity: 0;
+		width: 50%;
+		opacity: 1;
 	}
 	
 		.item {
@@ -40,6 +41,10 @@
 
 // Mobile landscape
 @media (orientation: landscape) {
+	.wrapper.navOpen {
+		//width: 35%;
+	}
+
 	.item+.item {
 		margin-left: 2em;
 	}
