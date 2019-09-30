@@ -45,8 +45,8 @@ export default function Character(props){
 	const { name: prevCharName } = prevCharacter;
 	const { name: nextCharName } = nextCharacter;
 
-	const prevButton = RENDER.button(prevCharName, -1, prevIndex);
-	const nextButton = RENDER.button(nextCharName, 1, nextIndex);
+	const prevButton = RENDER.button(prevCharName, "Prev", prevIndex);
+	const nextButton = RENDER.button(nextCharName, "Next", nextIndex);
 
 	// active character checks
 	const hidden = index !== activeIndex;
