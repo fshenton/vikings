@@ -32,20 +32,12 @@
 				text-decoration: none;
 			}
 		}
-
-	.socials {
-		width: 50%;
-	}
 	
 // Mobile landscape
 @media (orientation: landscape) {
 	.container {
 		margin-bottom: 0.5em;
 		font-size: 3rem;
-	}
-
-	.socials {
-		width: 15%;
 	}
 }
 
@@ -54,17 +46,11 @@
 	.container {
 		font-size: 5rem;
 	}
-
-	.socials {
-		width: 35%;
-	}
 }
 
 // Tablet landscape
 @media (min-width: 768px) and (orientation: landscape) {
-	.socials {
-		width: 15%;
-	}
+
 }
 
 // Desktop portrait
@@ -76,10 +62,6 @@
 @media (min-width: 1200px) {
 	.container {
 		margin-bottom: 0;
-	}
-
-	.socials {
-		width: 10%;
 	}
 }
 

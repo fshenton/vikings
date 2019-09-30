@@ -1,25 +1,26 @@
 import React from "react";
-import { RENDER, s } from "./";
+import { RENDER, s, data } from "./";
 
-export default function Socials(){
+export default function Socials(props = {}){
 
-	const data = [
-		{
-			label: "Facebook",
-			destination: "https://www.facebook.com/"
-		}, {
-			label: "Twitter",
-			destination: "https://www.twitter.com/"
-		}, {
-			label: "Instagram",
-			destination: "https://www.instagram.com/"
-		}
-	];
+	//Apply different styling to socials if the navigation is open
+	const { 
+		navOpen: open = false
+	} = props;
 
+	let socialClass  = s.wrapper;
+
+	if(open){
+		const navOpenClass = s.navOpen;
+		socialClass        = `${socialClass} ${s.navOpen}`;
+	}
+
+	// RENDER
+	// ---------------------------------
 	const links = data.map(RENDER.item);
 
 	return (
-		<ul className={ s.wrapper }>
+		<ul className={ socialClass }>
 			{ links }
 		</ul>
 	);

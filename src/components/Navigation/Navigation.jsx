@@ -37,8 +37,7 @@ export default function Navigation(){
 		}
 	];
 
-	const links      = linkData.map(RENDER.item);
-	const expanded   = open.toString();
+	const links = linkData.map(RENDER.item);
 
 	return (
 		<nav className={ s.wrapper }>
@@ -46,13 +45,11 @@ export default function Navigation(){
 			<ul 
 				id="navigation__links"
 				className={ s.container }
-				aria-expanded={ expanded }
+				aria-expanded={ open }
 			>
 				{ links }
 			</ul>
-			<div className={ s.socials }>
-				<Socials />
-			</div>
+			<Socials navOpen={ open } />
 		</nav>
 	);
 }// Navigation

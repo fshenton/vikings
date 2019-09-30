@@ -4,15 +4,15 @@
 	justify-content: space-between;
 	width: 100%;
 	font-size: 1rem;
+
+	&.navOpen {
+		opacity: 0;
+	}
 	
 		.item {
 			width: 1em;
 			height: 1em;
 			list-style: none;
-
-			// &+.item {
-			// 	margin-left: 4em;
-			// }
 		}
 
 			.link {
