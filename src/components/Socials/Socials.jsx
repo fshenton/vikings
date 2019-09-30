@@ -1,26 +1,21 @@
-import React from "react";
+import React, { useContext } from "react";
 import { RENDER, s, data } from "./";
+import { NavContext as Nav } from "COMPONENTS/Navigation/";
 
-export default function Socials(props = {}){
+export default function Socials(props){
 
-	const { 
-		navOpen: open = false
-	} = props;
-
-	let socialClass  = s.wrapper;
-
-	// add styling if navigation is open
-	if(open){
-		const navOpenClass = s.navOpen;
-		socialClass        = `${socialClass} ${s.navOpen}`;
-	}
+	//CONTEXT
+	//---------------------------
+	const {
+		open
+	} = useContext(Nav).state;
 
 	// RENDER
 	// ---------------------------------
 	const links = data.map(RENDER.item);
 
 	return (
-		<ul className={ socialClass }>
+		<ul className={ `${s.wrapper} ${open ? s.open : s.closed}` }>
 			{ links }
 		</ul>
 	);

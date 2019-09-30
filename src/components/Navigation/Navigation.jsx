@@ -31,7 +31,7 @@ export default function Navigation(){
 			>
 				{ links }
 			</ul>
-			<Socials navOpen={ open } />
+			<Socials />
 		</nav>
 	);
 }// Navigation
