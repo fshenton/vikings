@@ -15,6 +15,7 @@ function renderParagraph(scope, className, text, index){
 	
 	//if there is a link inside the text, cut it out
 	const link = findLink(text) || {};
+	console.log(link);
 	if(link) text = text.slice(0, link.index);
 
 	return (
@@ -33,28 +34,23 @@ function renderParagraph(scope, className, text, index){
 	);
 }// renderParagraph
 
-function findLink(text){
-	const labelStart = text.indexOf("[");
+function findLink(markdown){
+	const labelStart = markdown.indexOf("[");
 
-	if(labelStart === -1){
-		return false;
-	}
-	else {
-		//pull out the link label, discarding the braces
-		const labelEnd     = text.indexOf("]");
-		const labelText    = text.substring(labelStart+1, labelEnd);
+	if(labelStart === -1) return false; //no link found
 
-		//pull out the link destination without braces
-		const destStart    = labelEnd+2; //skip opening brace
-		const destEnd      = text.indexOf(")");
-		const destination  = text.substring(destStart, destEnd);
+	const labelEnd     = markdown.indexOf("]", labelStart);
+	const labelText    = markdown.substring(labelStart+1, labelEnd);
+	
+	const destStart    = labelEnd+2; 
+	const destEnd      = markdown.indexOf(")", destStart);
+	const destination  = markdown.substring(destStart, destEnd);
 
-		return {
-			index: labelStart,
-			text: labelText,
-			destination: destination
-		};
-	}
+	return {
+		index: labelStart,
+		text: labelText,
+		destination: destination
+	};
 }// findLink
 
 export default {
