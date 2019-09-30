@@ -51,7 +51,7 @@ export default function Character(props){
 	// active character checks
 	const hidden = index !== activeIndex;
 
-	//TODO: run body text through shared renderBody once merged
+	//TODO: run body text through shared renderBody once merged. Div body containing p children
 
 	return (
 		<li
@@ -69,13 +69,13 @@ export default function Character(props){
 						>
 							{ name }
 						</h1>
-						<h2 className={ s.nickName } >
+						<h2 className={ s.nickname } >
 							{ nickname }
 						</h2>
-						<h3 className={ s.actorName } >
+						<h3 className={ s.actor } >
 							{ actor }
 						</h3>
-						<p className={ s.bio } > 
+						<p className={ s.body } > 
 							{ body }
 						</p>	
 					</div>
