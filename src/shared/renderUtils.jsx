@@ -1,21 +1,21 @@
 import React from "react";
 
 function renderBody(data, options = {}){ 
-	const { scope, className } = options;
-	
 	const paragraphs = data.split("\n"); // splits the string at every line-break
 
 	return paragraphs.map(
-		renderParagraph.bind(this, scope, className)
+		renderParagraph.bind(this, options)
 	);
 }// renderBody
 
-function renderParagraph(scope, className, text, index){
+
+function renderParagraph(options, text, index){
+	const { scope, className } = options;
+
 	const key = `${scope}__body__paragraph_${index}`;
 	
 	//if there is a link inside the text, cut it out
 	const link = findLink(text) || {};
-	console.log(link);
 	if(link) text = text.slice(0, link.index);
 
 	return (
@@ -34,13 +34,14 @@ function renderParagraph(scope, className, text, index){
 	);
 }// renderParagraph
 
+
 function findLink(markdown){
 	const labelStart = markdown.indexOf("[");
 
 	if(labelStart === -1) return false; //no link found
 
 	const labelEnd     = markdown.indexOf("]", labelStart);
-	const labelText    = markdown.substring(labelStart+1, labelEnd);
+	const text         = markdown.substring(labelStart+1, labelEnd);
 	
 	const destStart    = labelEnd+2; 
 	const destEnd      = markdown.indexOf(")", destStart);
@@ -48,8 +49,8 @@ function findLink(markdown){
 
 	return {
 		index: labelStart,
-		text: labelText,
-		destination: destination
+		text,
+		destination
 	};
 }// findLink
 
