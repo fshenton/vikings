@@ -42,32 +42,34 @@
 // Mobile landscape
 @media (orientation: landscape) {
 	.wrapper.navOpen {
-		//width: 35%;
-	}
-
-	.item+.item {
-		margin-left: 2em;
+		width: 25%;
 	}
 }
 
 // Tablet portrait
 @media (min-width: 768px) {
-
+	.wrapper.navOpen {
+		width: 35%;
+	}
 }
 
 // Tablet landscape
 @media (min-width: 768px) and (orientation: landscape) {
-
+	.wrapper.navOpen {
+		width: 25%;
+	}
 }
 
 // Desktop portrait
 @media (min-width: 1200px) and (max-aspect-ratio: 8/9) {
-
+	
 }
 
 // Desktop landscape
 @media (min-width: 1200px) {
-
+	.wrapper.navOpen {
+		width: 10%;
+	}
 }
 
 

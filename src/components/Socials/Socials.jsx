@@ -3,13 +3,13 @@ import { RENDER, s, data } from "./";
 
 export default function Socials(props = {}){
 
-	// IF NAV OPEN, CHANGE STYLING
 	const { 
 		navOpen: open = false
 	} = props;
 
 	let socialClass  = s.wrapper;
 
+	// add styling if navigation is open
 	if(open){
 		const navOpenClass = s.navOpen;
 		socialClass        = `${socialClass} ${s.navOpen}`;
