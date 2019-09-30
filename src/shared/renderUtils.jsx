@@ -1,7 +1,11 @@
 import React from "react";
 
-function renderBody(body, scope = "", className = ""){
-	const paragraphs = body.split("\n"); // splits the string at every line-break
+function renderBody(data, options = {}){ 
+	const { scope, className } = options;
+
+	console.log(scope, className, options);
+	
+	const paragraphs = data.split("\n"); // splits the string at every line-break
 
 	return paragraphs.map(
 		renderParagraph.bind(this, scope, className)
