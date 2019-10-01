@@ -58,23 +58,23 @@
 
 		.content {
 			position: relative;
-			margin-top: 50vh;
+			margin-top: 40vh;
 		}
 	
 			.name {
-				margin-bottom: 0.4em; //REVIEW MEASUREMENTS
+				margin-bottom: 0.1em; //REVIEW MEASUREMENTS
 				font-size: 5em;
 				font-family: var(--font_family__heading);
 			}
 
 			.nickname {
-				margin-bottom: 1.35em; //REVIEW MEASUREMENTS
+				margin-bottom: 0.5em; //REVIEW MEASUREMENTS
 				font-size: 2.6em;
 				font-family: var(--font_family__heading);
 			}
 
 			.actor {
-				margin-bottom: 1.7em; //REVIEW MEASUREMENTS
+				margin-bottom: 1em; //REVIEW MEASUREMENTS
 				font-size: 1em;
 				font-family: var(--font_family__body);
 				font-weight: normal;
@@ -83,7 +83,7 @@
 			}
 
 			.body {
-				margin-bottom: 2.4em; //REVIEW MEASUREMENTS
+				margin-bottom: 8em; //REVIEW MEASUREMENTS
 				font-size: 1em;
 				line-height: 1.5;
 				font-family: var(--font_family__body);
