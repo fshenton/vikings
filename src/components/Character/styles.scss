@@ -108,7 +108,7 @@
 			display: flex;
 			position: sticky;
 			width: 100%;
-			bottom: 1.62em; // GUESS!
+			bottom: 10vw; // GUESS!
 			justify-content: space-between;
 			font-size: 1.1em;
 			font-family: var(--font_family__heading);
@@ -147,9 +147,7 @@
 
 // Mobile landscape
 @media (orientation: landscape) {
-	.container {
-		width: 75%;
-	}
+
 }
 
 // Tablet portrait
@@ -159,9 +157,7 @@
 
 // Tablet landscape
 @media (min-width: 768px) and (orientation: landscape) {
-	.container {
-		width: 50%;
-	}
+
 }
 
 // Desktop portrait
