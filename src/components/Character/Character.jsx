@@ -66,34 +66,35 @@ export default function Character(props){
 			aria-hidden={ hidden }>
 			<article className={ s.container }>
 				<div className={ s.content }>
-					<div className={ s.text }> 
-						<h1 className={ s.name } 
-							id={`character__${id}`}
-						>
-							{ name }
-						</h1>
-						<h2 className={ s.nickname } >
-							{ nickname }
-						</h2>
-						<h3 className={ s.actor } >
-							{ actor }
-						</h3>
-						<p className={ s.body } > 
-							{ body }
-						</p>	
-					</div>
-					<nav className={ s.controls }>
-						{ prevButton }
-						{ nextButton }
-					</nav>	
+					<h1 className={ s.name } 
+						id={`character__${id}`}
+					>
+						{ name }
+					</h1>
+					<h2 className={ s.nickname } >
+						{ nickname }
+					</h2>
+					<h3 className={ s.actor } >
+						{ actor }
+					</h3>
+					<p className={ s.body } > 
+						{ body }
+					</p>	
 				</div>
+				<nav className={ s.controls }>
+					{ prevButton }
+					{ nextButton }
+				</nav>	
+			</article>
+			<div className={ s.hero } id="hero"> 
+				<div className={ s.glow } id="glow"></div>
 				<img 
-					className={ s.hero }
+					className={ s.image }
 					src={ src } 
 					alt={ description }
 					style={ mask }
 				/>
-			</article>
+			</div>
 		</li>
 	);
 }// Character
