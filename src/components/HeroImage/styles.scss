@@ -37,7 +37,17 @@
 
 // Mobile landscape
 @media (orientation: landscape) {
+	.hero {
+		width: 75%; // GUESS
+	}
 
+		.glow {
+			font-size: 50vw; // GUESS
+		}
+
+			.glow::before {
+				transform: translate(-25%, -66%); // GUESS
+			}
 }
 
 // Tablet portrait
@@ -57,14 +67,5 @@
 
 // Desktop landscape
 @media (min-width: 1200px) {
-	.hero {
-		width: 75%; // GUESS
-	}
-		.glow {
-			font-size: 50vw; // GUESS
-		}
 
-			.glow::before {
-				transform: translate(-50%, -66%); // GUESS
-			}
 }
