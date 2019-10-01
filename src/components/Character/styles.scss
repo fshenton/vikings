@@ -1,3 +1,4 @@
+// Mobile portrait
 .wrapper {
 	display: flex;
 	position: absolute;
@@ -71,6 +72,7 @@
 			display: flex;
 			position: sticky;
 			width: 100%;
+			max-width: 25rem; // GUESS
 			bottom: 10vw; // GUESS!
 			justify-content: space-between;
 			font-size: 1.1em;
@@ -81,7 +83,7 @@
 				display: flex;
 				align-items: center;
 				text-decoration: none;
-				--button_margin: 1.2em;
+				--button_margin: 1em;
 
 				&::before, 
 				&::after {
@@ -95,18 +97,17 @@
 				&.previous {
 					&::before {
 						content: "";
+						margin-right: var(--button_margin);
 					}
 				}
 
 				&.next {
 					&::after {
 						content: "";
+						margin-left: var(--button_margin);
 					}
 				}
 			}
-
-// Mobile portrait
-
 
 // Mobile landscape
 @media (orientation: landscape) {
@@ -131,6 +132,12 @@
 // Desktop landscape
 @media (min-width: 1200px) {
 
-}
+	.container {
+		width: 50%; 
+	}
 
+		.content {
+			margin-top: 0;
+		}
+}
 	

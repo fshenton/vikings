@@ -25,6 +25,4 @@ export default function HeroImage(props){
 			<div className={ s.glow } id="glow"></div>
 		</div>
 	);
-}
-
-
+}// HeroImage
