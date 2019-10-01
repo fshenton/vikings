@@ -1,8 +1,11 @@
 .wrapper {
 	display: flex;
+	position: absolute;
 	width: 100%;
 	min-height: 100%;
-	padding: 10%;
+	top: 0;
+	left: 0;
+	padding: 10%; 		//GUESS
 	flex-direction: column;
 
 	&[aria-hidden="true"]{
@@ -10,7 +13,6 @@
 		pointer-events: none
 	}
 }
-
 
 	.hero {
 		position: fixed;
@@ -66,7 +68,9 @@
 
 		.controls {
 			display: flex;
+			position: sticky;
 			width: 100%;
+			bottom: 1.62em; // GUESS!
 			justify-content: space-between;
 			font-size: 1.1em;
 			font-family: var(--font_family__heading);
