@@ -4,6 +4,7 @@ import {
 	CharactersContext as Characters,
 	ACTIONS
 } from "COMPONENTS/Characters/";
+import HeroImage from "COMPONENTS/HeroImage/";
 import { RENDER, s } from "./";
 
 export default function Character(props){
@@ -24,17 +25,6 @@ export default function Character(props){
 		index,
 		id
 	} = props;
-
-	const {
-		src,
-		mask: maskPath,
-		description
-	} = image;
-
-
-	// inline style to prevent the need for a huge png asset
-	const mask = { clipPath: `url(${maskPath})` };
-
 
 	// wrap indexes if less than 0 or greater than number of characters
 	let nextIndex = index + 1;
@@ -86,16 +76,7 @@ export default function Character(props){
 					{ nextButton }
 				</nav>	
 			</article>
-			<div className={ s.hero } id="hero"> 
-				
-				<img 
-					className={ s.image }
-					src={ src } 
-					alt={ description }
-					style={ mask }
-				/>
-				<div className={ s.glow } id="glow"></div>
-			</div>
+			<HeroImage image={ image } />
 		</li>
 	);
 }// Character
