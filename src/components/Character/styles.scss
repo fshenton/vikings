@@ -119,6 +119,7 @@
 		.container {
 			width: 50%; 
 			height: 100%;
+			--button__bottom_spacing: 5vw;
 		}
 
 			.content {
@@ -132,13 +133,13 @@
 				}
 
 			.controls {
-				bottom: 5vw; //GUESS
+				bottom: var(--button__bottom_spacing); //GUESS
 			}
 
 			.content::after {
 				position: fixed;
-				bottom: 0; //GUESS
-				height: 8em; //GUESS
+				bottom: var(--button__bottom_spacing); //GUESS
+				height: 6em; //GUESS
 				pointer-events: none;
 				background-image: linear-gradient(
 				    rgba(237, 20, 61, 0) 0%,
@@ -150,12 +151,18 @@
 
 // Tablet portrait
 @media (min-width: 768px) {
-
+	
 }
 
 // Tablet landscape
 @media (min-width: 768px) and (orientation: landscape) {
+	.wrapper {
+		justify-content: center;
+	}
 
+		.container {
+			--button__bottom_spacing: 15vw; //GUESS
+		}
 }
 
 // Desktop portrait
@@ -165,7 +172,13 @@
 
 // Desktop landscape
 @media (min-width: 1200px) {
+	.wrapper {
+		padding: 10%; // GUESS
+	}
 
+		.body {
+			max-width: 30vw; // GUESS
+		}
 
 }
 	
