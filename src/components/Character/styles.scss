@@ -47,8 +47,7 @@
 			}
 
 			.body {
-				margin-bottom: 6em; // GUESS
-				font-size: 1em;
+				margin-bottom: 4em; // GUESS
 				line-height: 1.5;
 				font-family: var(--font_family__body);
 			}
@@ -151,7 +150,9 @@
 
 // Tablet portrait
 @media (min-width: 768px) {
-	
+	.wrapper {
+		padding: 10%;
+	}
 }
 
 // Tablet landscape
@@ -167,18 +168,22 @@
 
 // Desktop portrait
 @media (min-width: 1200px) and (max-aspect-ratio: 8/9) {
-
+	
 }
 
 // Desktop landscape
 @media (min-width: 1200px) {
-	.wrapper {
-		padding: 10%; // GUESS
+
+	.name {
+		font-size: 8rem;
 	}
 
-		.body {
-			max-width: 30vw; // GUESS
-		}
+	.nickname {
+		font-size: 3.25rem;
+	}
 
+	.body {
+		max-width: 30vw; // GUESS
+	}
 }
 	
