@@ -2,7 +2,7 @@ import React, { useContext } from "react";
 import { RENDER, s, data } from "./";
 import { NavContext as Nav } from "COMPONENTS/Navigation/";
 
-export default function Socials(props){
+export default function Socials(){
 
 	//CONTEXT
 	//---------------------------
