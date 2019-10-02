@@ -2,10 +2,9 @@ import React from "react";
 
 function renderBody(data, options = {}){ 
 	const paragraphs = data.split("\n"); // splits the string at every line-break
+	const customisedRenderParagraph = renderParagraph.bind(this, options);
 
-	return paragraphs.map(
-		renderParagraph.bind(this, options)
-	);
+	return paragraphs.map(customisedRenderParagraph);
 }// renderBody
 
 
