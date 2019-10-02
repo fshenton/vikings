@@ -2,13 +2,15 @@ import React from "react";
 import RENDER from "SHARED/renderUtils.jsx";
 import { s, data } from "./";
 import LogoArtwork from "COMPONENTS/LogoArtwork/";
+import BackgroundVideo from "COMPONENTS/BackgroundVideo/";
 
 export default function Landing(){
 
 	const {
 		heading,
 		subheading,
-		body: bodyData
+		body: bodyData,
+		video = {}
 	} = data;
 
 	const body = RENDER.body(bodyData, {
@@ -19,6 +21,7 @@ export default function Landing(){
 	return(
 		<>
 			<LogoArtwork />
+			<BackgroundVideo video={ video }/>
 			<header className={ s.wrapper }>
 				<h1 className={ s.heading }>
 					{ heading }
