@@ -34,11 +34,14 @@ function renderButton(name, label, newIndex){
 
 	//RENDER
 	// ---------------------------------
-	const safeName       = UTILS.convertToSafeString(name);
+	const safeName        = UTILS.convertToSafeString(name);
+
+	const safeLabel       = UTILS.convertToSafeString(label);
+	const className       = s[safeLabel];
 
 	return (
 		<Link
-			className={ `${s.button} ${label === "Next" ? s.next : s.previous}` } 
+			className={ `${s.button} ${className}` } 
 			destination={ `#${safeName}` }
 			aria-controls="characters__items"
 			aria-label={ `${label} character: ${name}.` }
