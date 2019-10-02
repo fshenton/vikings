@@ -50,6 +50,10 @@
 				margin-bottom: 4em; // GUESS
 				line-height: 1.5;
 				font-family: var(--font_family__body);
+
+				.paragraph+.paragraph {
+					margin-top: 1em;
+				}
 			}
 
 		.content::after {

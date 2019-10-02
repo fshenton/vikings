@@ -6,6 +6,7 @@ import {
 } from "COMPONENTS/Characters/";
 import HeroImage from "COMPONENTS/HeroImage/";
 import { RENDER, s } from "./";
+import RENDER_TEXT from "SHARED/renderUtils.jsx";
 
 export default function Character(props){
 
@@ -20,7 +21,7 @@ export default function Character(props){
 		name,
 		nickname,
 		actor,
-		body,
+		body: bodyData,
 		image = {},
 		index,
 		id
@@ -44,7 +45,10 @@ export default function Character(props){
 	// active character checks
 	const hidden = index !== activeIndex;
 
-	//TODO: run body text through shared renderBody once merged. Div body containing p children
+	const body = RENDER_TEXT.body(bodyData, {
+		scope: "character", //for key names
+		className: s.paragraph
+	});
 
 	return (
 		<li
@@ -67,9 +71,9 @@ export default function Character(props){
 					<h3 className={ s.actor } >
 						{ actor }
 					</h3>
-					<p className={ s.body } > 
-						{ body }
-					</p>	
+						<div className={ s.body } > 
+							{ body }
+						</div>	
 				</div>
 				<nav className={ s.controls }>
 					{ prevButton }
