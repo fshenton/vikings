@@ -1,12 +1,12 @@
 // Mobile portrait
 .wrapper {
 	display: flex;
-	position: absolute;
 	width: 100%;
 	min-height: 100%;
+	padding: 10%; 		//GUESS
+	position: absolute;
 	top: 0;
 	left: 0;
-	padding: 10%; 		//GUESS
 	flex-direction: column;
 
 	&[aria-hidden="true"]{
@@ -22,6 +22,7 @@
 
 		.content {
 			margin-top: 40vh;
+			max-width: 35em;
 		}
 	
 			.name {
@@ -135,12 +136,12 @@
 				}
 
 			.controls {
-				bottom: var(--button__bottom_spacing); //GUESS
+				// bottom: var(--button__bottom_spacing); //GUESS
 			}
 
 			.content::after {
-				position: fixed;
-				bottom: var(--button__bottom_spacing); //GUESS
+				position: absolute;
+				bottom: 0; //GUESS
 				height: 6em; //GUESS
 				pointer-events: none;
 				background-image: linear-gradient(
@@ -169,24 +170,15 @@
 		}
 }
 
-// Desktop portrait
-@media (min-width: 1200px) and (max-aspect-ratio: 8/9) {
-	
-}
-
 // Desktop landscape
 @media (min-width: 1200px) {
 
 	.name {
-		font-size: 8rem;
+		font-size: 8em;
 	}
 
 	.nickname {
-		font-size: 3.25rem;
-	}
-
-	.body {
-		max-width: 30vw; // GUESS
+		font-size: 3.25em;
 	}
 }
 	
