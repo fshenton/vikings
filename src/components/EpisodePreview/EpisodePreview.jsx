@@ -91,18 +91,20 @@ export default function EpisodePreview(props){
 	const { src: nextTrailerSrc } = nextTrailer;
 
 	return (
-		<aside>
-			<a
-				href={ trailerSrc }
-				aria-controls={ previewId }
-				aria-label={ `Watch preview for episode ${episodeNo}: ${title}.` }
-				onClick={ openOverlay }
-			>
-				<img
-					src={ thumbSrc }
-					alt={ thumbDesc }
-				/>
-			</a>
+		<aside className={ s.container }>
+			<div className={ s.thumbnail }>
+				<a
+					href={ trailerSrc }
+					aria-controls={ previewId }
+					aria-label={ `Watch preview for episode ${episodeNo}: ${title}.` }
+					onClick={ openOverlay }
+				>
+					<img
+						src={ thumbSrc }
+						alt={ thumbDesc }
+					/>
+				</a>
+			</div>
 			<div
 				id={ previewId }
 				className= { s.wrapper }

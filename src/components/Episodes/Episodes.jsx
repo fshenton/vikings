@@ -4,6 +4,7 @@ import EpisodesNav from "COMPONENTS/EpisodesNav/";
 import { 
 	data,
 	RENDER,
+	s,
 	EpisodesProvider
 } from "./";
 
@@ -12,7 +13,7 @@ export default function Episodes(){
 	const episodes = data.map(RENDER.episode);
 
 	return (
-		<article>
+		<article className={ s.wrapper }>
 			<EpisodesProvider>
 				<ol 
 					id="episodes__items"

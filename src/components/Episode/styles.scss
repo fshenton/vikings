@@ -1,7 +1,26 @@
 .wrapper {
-	font-size: 1em; //placeholder styling
-
+	margin-top: 20vh; //21%
+	
 	&[aria-hidden="true"]{
 		opacity: 0;
 	}
 }
+
+	.content {
+		padding: 10%; 
+	}
+
+		.episode {
+			font-size: 21px;
+			font-family: var(--font_family__heading);
+		}
+
+		.title {
+			font-size: 36px;
+			font-family: var(--font_family__heading);
+		}
+
+		.body {
+			font-size: 21px;
+			font-family: var(--font_family__body);
+		}
