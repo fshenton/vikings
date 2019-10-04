@@ -1,5 +1,6 @@
 .wrapper {
-	margin-top: 20vh; 
+	margin-top: 20vh;
+	position: absolute;
 	
 	&[aria-hidden="true"]{
 		opacity: 0;

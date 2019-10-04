@@ -17,6 +17,7 @@ export default function Episodes(){
 			<EpisodesProvider>
 				<ol 
 					id="episodes__items"
+					className={ s.list }
 					aria-live="polite"
 				>
 					{ episodes }
