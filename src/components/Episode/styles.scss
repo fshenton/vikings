@@ -1,5 +1,5 @@
 .wrapper {
-	margin-top: 20vh; //21%
+	margin-top: 20vh; 
 	
 	&[aria-hidden="true"]{
 		opacity: 0;
@@ -8,19 +8,23 @@
 
 	.content {
 		padding: 10%; 
+		font-size: 1.3rem;
 	}
 
 		.episode {
-			font-size: 21px;
+			margin-bottom: 1.67em;
+			font-size: 1em;
 			font-family: var(--font_family__heading);
 		}
 
 		.title {
-			font-size: 36px;
+			font-size: 1.7em;
 			font-family: var(--font_family__heading);
 		}
 
 		.body {
-			font-size: 21px;
+			margin-top: 1.5em;
+			line-height: 1.5em;
+			font-size: 1em;
 			font-family: var(--font_family__body);
 		}
