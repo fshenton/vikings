@@ -1,14 +1,25 @@
-.paginationLink {
-	font-size: 1em; //placeholder to have the classname showing in inspector
+.controls {
+	position: sticky;
+	bottom: 0; //placeholder
 }
 
-.navButton {
-	width: 50px;	//placeholder so they are visible
-	height: 50px;
-	margin: 5px;
-
-	&[aria-hidden="true"] {
-		pointer-events: none; //disable and hide hidden
-		opacity: 0;
+	.wrapper {
+		display: flex;
+		padding: 0 10%; 
+		justify-content: space-between;
 	}
-}
+
+	.navButton {
+		font-size: 1.75rem;
+		width: 1em;	
+		height: 1.42em;
+
+		&[aria-hidden="true"] {
+			pointer-events: none; //disable and hide hidden
+			opacity: 0;
+		}
+	}
+	
+	.paginationLink {
+		font-size: 1em; //placeholder to have the classname showing in inspector
+	}

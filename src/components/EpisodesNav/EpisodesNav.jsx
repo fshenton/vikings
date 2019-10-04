@@ -40,21 +40,23 @@ export default function EpisodesNav(){
 	const pagination = data.map(RENDER.pagination);
 
 	return (
-		<nav>
-			<button 
-				className={ s.navButton }
-				aria-label="Previous episode."
-				aria-controls="episodes__items episodes__pagination"
-				aria-hidden={ isFirstEpisodeActive }
-				onClick={ prevEpisode }
-			/>
-			<button 
-				className={ s.navButton }
-				aria-label="Next episode." 
-				aria-controls="episodes__items episodes__pagination"
-				aria-hidden={ isLastEpisodeActive }
-				onClick={ nextEpisode }
-			/>
+		<nav className={ s.controls }>
+			<div className={ s.wrapper }>
+				<button 
+					className={ s.navButton }
+					aria-label="Previous episode."
+					aria-controls="episodes__items episodes__pagination"
+					aria-hidden={ isFirstEpisodeActive }
+					onClick={ prevEpisode }
+				/>
+				<button 
+					className={ s.navButton }
+					aria-label="Next episode." 
+					aria-controls="episodes__items episodes__pagination"
+					aria-hidden={ isLastEpisodeActive }
+					onClick={ nextEpisode }
+				/>
+			</div> 
 			<ol id="episodes__pagination">
 				{ pagination }
 			</ol>
