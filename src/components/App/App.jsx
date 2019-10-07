@@ -2,7 +2,7 @@ import React from "react";
 import HomePermalink from "COMPONENTS/HomePermalink/";
 import HistoryChannel from "COMPONENTS/HistoryChannel/";
 import WatchNow from "COMPONENTS/WatchNow/";
-import Navigation from "COMPONENTS/Navigation/";
+import Navigation, { NavProvider } from "COMPONENTS/Navigation/";
 import Socials from "COMPONENTS/Socials/"
 import Landing from "COMPONENTS/Landing/";
 import About from "COMPONENTS/About/";
@@ -22,15 +22,21 @@ export default function App(){
 			{ false && <WatchNow /> }
 
 			{/* COMMON */}
-			{ false && <Navigation /> }
+			{ false && (
+				<NavProvider>
+					<Navigation /> 
+				</NavProvider>
+			)}
 
 			{/* PAGES */}
-			<main className={ s.container }>
-				{ true && <Landing /> }
-				{ false && <About /> }
-				{ false && <Characters /> }
-				{ false && <Episodes /> }
-			</main>
+			{true && (
+				<main className={ s.container }>
+					{ true && <Landing /> }
+					{ false && <About /> }
+					{ false && <Characters /> }
+					{ false && <Episodes /> }
+				</main> 
+			)}
 		</div>
 	);
 } //App
