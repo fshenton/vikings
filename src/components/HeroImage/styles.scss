@@ -50,3 +50,11 @@
 			}
 		}
 }
+
+// Tablet portrait
+@media (min-width: 768px) {
+	.hero {
+		left: auto;
+		right: 0;
+	}
+}
