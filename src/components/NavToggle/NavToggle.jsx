@@ -29,27 +29,27 @@ export default function NavToggle(props){
 	}// toggleOpen
 
 	return (
-			<button 
-				className={ s.wrapper }
-				role="switch"
-				aria-checked={ isOpen }
-				aria-controls="navigation__links"
-				onClick={ toggleOpen }
-			>
-				<span className={ s.container }>
-					<span 
-						className={`${s.label} ${s.open}`}
-						aria-hidden={ isOpen }
-					>
-						menu
-					</span>
-					<span 
-						className={`${s.label} ${s.close}`}
-						aria-hidden={ !isOpen }
-					>
-						close
-					</span>
+		<button 
+			className={ s.wrapper }
+			role="switch"
+			aria-checked={ isOpen }
+			aria-controls="navigation__links"
+			onClick={ toggleOpen }
+		>
+			<span className={ s.container }>
+				<span 
+					className={`${s.label} ${s.open}`}
+					aria-hidden={ isOpen }
+				>
+					menu
 				</span>
-			</button>
+				<span 
+					className={`${s.label} ${s.close}`}
+					aria-hidden={ !isOpen }
+				>
+					close
+				</span>
+			</span>
+		</button>
 	)
 }
