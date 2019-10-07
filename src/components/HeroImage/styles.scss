@@ -16,8 +16,7 @@
 		left: 50%;
 		font-size: 100vw;
 
-	}
-		.glow::before {
+		&::before {
 			content: "";
 			display: block;
 			width: 100%;
@@ -27,6 +26,7 @@
 			transform: translate(-50%, -50%);
 			filter: blur(0.2em);
 		}
+	}
 
 	.image {
 		display: block;
@@ -43,29 +43,9 @@
 
 		.glow {
 			font-size: 50vw; // GUESS
-		}
 
-			.glow::before {
+			&::before {
 				transform: translate(-25%, -66%); // GUESS
 			}
-}
-
-// Tablet portrait
-@media (min-width: 768px) {
-
-}
-
-// Tablet landscape
-@media (min-width: 768px) and (orientation: landscape) {
-
-}
-
-// Desktop portrait
-@media (min-width: 1200px) and (max-aspect-ratio: 8/9) {
-
-}
-
-// Desktop landscape
-@media (min-width: 1200px) {
-
+		}
 }

@@ -7,6 +7,7 @@ import {
 import HeroImage from "COMPONENTS/HeroImage/";
 import { RENDER, s } from "./";
 import RENDER_TEXT from "SHARED/renderUtils.jsx";
+import UTILS from "SHARED/utils.js";
 
 export default function Character(props){
 
@@ -54,6 +55,8 @@ export default function Character(props){
 		className: s.paragraph
 	});
 
+	const idString = UTILS.convertToSafeString(`${name} ${nickname}`);
+
 	return (
 		<li
 			id={ id }
@@ -86,6 +89,7 @@ export default function Character(props){
 				</nav>	
 			</article>
 			<HeroImage 
+				idString={ idString }
 				src={ src } 
 				mask={ mask }
 				description={ description }
