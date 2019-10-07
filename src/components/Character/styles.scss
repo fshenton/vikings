@@ -98,16 +98,19 @@
 					background-color: lime;
 				}
 
+				&.prev::before,
+				&.next::after {
+					content: "";
+				}
+
 				&.prev {
 					&::before {
-						content: "";
 						margin-right: var(--button_margin);
 					}
 				}
 
 				&.next {
 					&::after {
-						content: "";
 						margin-left: var(--button_margin);
 					}
 				}
@@ -123,7 +126,6 @@
 		.container {
 			width: 50%; 
 			height: 100%;
-			--button__bottom_spacing: 5vw;
 		}
 
 			.content {
@@ -135,10 +137,6 @@
 					margin-bottom: 2em; //GUESS
 					overflow-y: scroll;
 				}
-
-			.controls {
-				// bottom: var(--button__bottom_spacing); //GUESS
-			}
 
 			.content::after {
 				height: 6em; //GUESS
@@ -165,10 +163,6 @@
 	.wrapper {
 		justify-content: center;
 	}
-
-		.container {
-			--button__bottom_spacing: 15vw; //GUESS
-		}
 }
 
 // Desktop landscape
