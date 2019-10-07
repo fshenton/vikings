@@ -4,22 +4,19 @@ import { s } from "./";
 export default function BackgroundVideo(props){
 
 	const {
-		sources: {
-			mp4 = {},
-			webm = {}
-		},
+		sources,
 		poster
-	} = props.video;
+	} = props;
 
 	return (
 		<div className={ s.wrapper }>	
 			<video poster={ poster }>
 				<source 
-					src={ mp4 }
+					src={ sources["mp4"] }
 					type="video/mp4"
 				/>
 				<source 
-					src={ webm }
+					src={ sources["webm"] }
 					type="video/webm"
 				/>
 			</video>

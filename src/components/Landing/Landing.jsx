@@ -10,7 +10,10 @@ export default function Landing(){
 		heading,
 		subheading,
 		body: bodyData,
-		video = {}
+		video: {
+			sources,
+			poster
+		}
 	} = data;
 
 	const body = RENDER.body(bodyData, {
@@ -21,7 +24,10 @@ export default function Landing(){
 	return(
 		<>
 			<LogoArtwork />
-			<BackgroundVideo video={ video }/>
+			<BackgroundVideo 
+				sources={ sources } 
+				poster={ poster }
+			/>
 			<header className={ s.wrapper }>
 				<h1 className={ s.heading }>
 					{ heading }
