@@ -60,7 +60,8 @@ export default function Character(props){
 			aria-hidden={ hidden }>
 			<article className={ s.container }>
 				<div className={ s.content }>
-					<h1 className={ s.name } 
+					<h1 
+						className={ s.name } 
 						id={`character__${id}`}
 					>
 						{ name }
@@ -71,9 +72,9 @@ export default function Character(props){
 					<h3 className={ s.actor } >
 						{ actor }
 					</h3>
-						<div className={ s.body } > 
-							{ body }
-						</div>	
+					<div className={ s.body } > 
+						{ body }
+					</div>	
 				</div>
 				<nav className={ s.controls }>
 					{ prevButton }
