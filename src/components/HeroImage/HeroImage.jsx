@@ -4,11 +4,9 @@ import { s } from "./";
 export default function HeroImage(props){
 
 	const {
-		image: {
-			src,
-			mask: maskPath,
-			description
-		}
+		src,
+		mask: maskPath,
+		description
 	} = props;
 
 	// inline style to prevent the need for a huge png asset

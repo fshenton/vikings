@@ -35,7 +35,6 @@ function renderButton(name, label, newIndex){
 	//RENDER
 	// ---------------------------------
 	const safeName        = UTILS.convertToSafeString(name);
-
 	const safeLabel       = UTILS.convertToSafeString(label);
 	const className       = s[safeLabel];
 

@@ -22,7 +22,11 @@ export default function Character(props){
 		nickname,
 		actor,
 		body: bodyData,
-		image = {},
+		image:{
+			src,
+			mask,
+			description
+		} = {},
 		index,
 		id
 	} = props;
@@ -81,7 +85,11 @@ export default function Character(props){
 					{ nextButton }
 				</nav>	
 			</article>
-			<HeroImage image={ image } />
+			<HeroImage 
+				src={ src } 
+				mask={ mask }
+				description={ description }
+			/>
 		</li>
 	);
 }// Character
