@@ -1,0 +1,78 @@
+// Mobile first
+
+.wrapper {
+		display: inline-flex;
+		position: fixed;
+		top: 1.15em;
+		right: 1em;
+		align-items: center;
+		font-size: 1.5rem;
+		
+		&::before {
+			content: "";
+			display: block;
+			width: 1em;
+			height: 1.15em;
+			font-size: 1.33em;
+			background: url(images/icons/cross.svg) center / contain no-repeat;
+			background-color: green;
+		}
+	}
+
+	.container {
+		display: inline-block;
+		position: relative;
+		margin-left: 0.8em;
+		font-family: var(--font_family__body);
+		text-transform: uppercase;
+	}
+
+		.label {
+			&[aria-hidden="true"]{
+				opacity: 0;
+			}
+
+			&[aria-hidden="false"]{
+				opacity: 1;
+			}
+
+			&.open {
+				position: absolute;
+				top: 0;
+				right: 0;
+			}
+		}
+
+// Mobile landscape
+@media (orientation: landscape) {
+	.wrapper {
+		font-size: 1rem;
+	}
+}
+
+// Tablet portrait
+@media (min-width: 768px) {
+	.wrapper {
+		left: 50%;
+		transform: translateX(-50%);
+		font-size: 2rem;
+	}
+}
+
+// Tablet landscape
+@media (min-width: 768px) and (orientation: landscape) {
+	.wrapper {
+		font-size: 1.5rem;
+	}
+}
+
+// Desktop portrait
+@media (min-width: 1200px) and (max-aspect-ratio: 8/9) {
+
+}
+
+// Desktop landscape
+@media (min-width: 1200px) {
+
+}
+

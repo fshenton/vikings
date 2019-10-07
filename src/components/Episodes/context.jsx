@@ -10,7 +10,7 @@ const initialState = {
 	activeIndex: 0,
 	overlayActive: false,
 	episodeCount: data.length
-}
+};
 
 function EpisodesProvider(props){
 	const { children } = props;
