@@ -13,8 +13,8 @@ function renderParagraph(options, text, index){
 
 	const key = `${scope}__body__paragraph_${index}`;
 	
-	//if there is a link inside the text, cut it out
-	const link = findLink(text) || {};
+	//if there is a link inside the text, cut it out, else link is false
+	const link = findLink(text);
 	if(link) text = text.slice(0, link.index);
 
 	return (

@@ -27,7 +27,11 @@ export default function Episode(props){
 
 	const hidden = index !== activeIndex;
 
-	const synopsis = RENDER.body(synopsisData);
+	const synopsis = RENDER.body(synopsisData, {
+		scope: "episode", //for key 
+		className: s.paragraph
+	});
+	
 
 	return (
 		<li
