@@ -91,7 +91,7 @@ export default function EpisodePreview(props){
 	const { src: nextTrailerSrc } = nextTrailer;
 
 	return (
-		<aside className={ s.container }>
+		<aside className={ s.wrapper }>
 			<div className={ s.thumbnail }>
 				<a
 					href={ trailerSrc }
@@ -113,7 +113,7 @@ export default function EpisodePreview(props){
 			</div>
 			<div
 				id={ previewId }
-				className= { s.wrapper }
+				className= { s.content }
 				aria-hidden={ hidden }
 			>
 				<header>

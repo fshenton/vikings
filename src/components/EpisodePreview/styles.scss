@@ -1,4 +1,4 @@
-.container {
+.wrapper {
 	width: 100%;
 }
 
@@ -30,7 +30,7 @@
 			}
 	}
 
-	.wrapper {
+	.content {
 		position: absolute; //placeholder
 
 		&[aria-hidden="true"]{

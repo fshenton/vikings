@@ -51,7 +51,7 @@ export default function Episode(props){
 					thumbnail={ thumbnail }
 					trailer={ trailer }
 				/>
-				<div className={ s.content }>
+				<div className={ s.container }>
 					<h1 className={ s.title }>
 						{ title }
 					</h1>
