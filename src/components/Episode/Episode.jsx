@@ -45,12 +45,12 @@ export default function Episode(props){
 					trailer={ trailer }
 				/>
 				<div className={ s.content }>
-					<h2 className={ s.episode }>
-						Episode { number }
-					</h2>
 					<h1 className={ s.title }>
 						{ title }
 					</h1>
+					<h2 className={ s.episode }>
+						Episode { number }
+					</h2>
 					<p className={ s.body }>
 						{ synopsis }
 					</p>

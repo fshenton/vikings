@@ -8,22 +8,27 @@
 }
 
 	.content {
+		display: flex;
 		padding: 10%; 
+		flex-direction: column;
 		font-size: 1.3rem;
 	}
 
 		.episode {
+			order: 1;
 			margin-bottom: 1.67em;
 			font-size: 1em;
 			font-family: var(--font_family__heading);
 		}
 
 		.title {
+			order: 2;
 			font-size: 1.7em;
 			font-family: var(--font_family__heading);
 		}
 
 		.body {
+			order: 3;
 			margin-top: 1.5em;
 			line-height: 1.5em;
 			font-size: 1em;
