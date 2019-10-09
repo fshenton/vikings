@@ -2,6 +2,7 @@ import React, { useContext } from "react";
 import { EpisodesContext as Episodes } from "COMPONENTS/Episodes/";
 import EpisodePreview from "COMPONENTS/EpisodePreview/";
 import { s } from "./";
+import RENDER from "SHARED/renderUtils.jsx";
 
 export default function Episode(props){
 
@@ -19,12 +20,14 @@ export default function Episode(props){
 		index,
 		number,
 		title,
-		synopsis,
+		synopsis: synopsisData,
 		thumbnail = {},
 		trailer = {}
 	} = props;
 
 	const hidden = index !== activeIndex;
+
+	const synopsis = RENDER.body(synopsisData);
 
 	return (
 		<li
@@ -51,9 +54,9 @@ export default function Episode(props){
 					<h2 className={ s.episode }>
 						Episode { number }
 					</h2>
-					<p className={ s.body }>
+					<div className={ s.body }>
 						{ synopsis }
-					</p>
+					</div>
 				</div>
 			</article>
 		</li>
