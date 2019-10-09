@@ -1,15 +1,15 @@
-.controls {
+.wrapper {
 	position: sticky;
 	bottom: 0; //placeholder
 }
 
-	.wrapper {
+	.container {
 		display: flex;
 		padding: 0 10%; 
 		justify-content: space-between;
 	}
 
-	.navButton {
+	.button {
 		font-size: 1.75rem;
 		width: 1em;	
 		height: 1.42em;
