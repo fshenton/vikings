@@ -8,7 +8,9 @@ export default function Play(props) {
 	return (
 		<svg className={ s.icon } 
 			 viewBox="0 0 128 128" 
-			 alt="Play video">
+			 alt="Play video"
+			 preserveAspectRatio="true"
+		>
 	        <circle 
 	        	cx="64" 
 	        	cy="64" 
