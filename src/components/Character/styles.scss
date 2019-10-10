@@ -183,6 +183,20 @@
 	.wrapper {
 		justify-content: center;
 	}
+
+		.content {
+			flex-direction: column;
+		}
+
+			.body {
+				height: 25vh;
+				padding-bottom: 3.5em;
+			}
+
+		.content::after {
+			height: 6em;
+			left: 0;
+		}
 }
 
 // Desktop landscape
