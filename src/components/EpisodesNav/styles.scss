@@ -9,17 +9,31 @@
 		justify-content: space-between;
 	}
 
-	.button {
-		font-size: 1.75rem;
-		width: 1em;	
-		height: 1.42em;
+		.button {
+			font-size: 1.75rem;
+			width: 1em;	
+			height: 1.42em;
 
-		&[aria-hidden="true"] {
-			pointer-events: none; //disable and hide hidden
-			opacity: 0;
+			&[aria-hidden="true"] {
+				pointer-events: none; //disable and hide hidden
+				opacity: 0;
+			}
 		}
-	}
-	
-	.paginationLink {
-		font-size: 1em; //placeholder to have the classname showing in inspector
-	}
+
+		.prev {
+			order: 1;
+		}
+
+		.next {
+			order: 3;
+		}
+
+		.pagination {
+			order: 2;
+			display: flex;
+			list-style: none;
+		}
+		
+			.paginationLink {
+				font-size: 1em; //placeholder to have the classname showing in inspector
+			}
