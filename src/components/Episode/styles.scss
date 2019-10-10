@@ -28,7 +28,9 @@
 
 		.body {
 			order: 3;
+			height: 20vh;
 			margin-top: 1.5em;
+			overflow-y: scroll;
 			line-height: 1.5;
 			font-size: 1em;
 			font-family: var(--font_family__body);

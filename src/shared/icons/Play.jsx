@@ -9,7 +9,7 @@ export default function Play(props) {
 		<svg className={ s.icon } 
 			 viewBox="0 0 128 128" 
 			 alt="Play video"
-			 preserveAspectRatio="true"
+			 preserveAspectRatio="xMaxYMax"
 		>
 	        <circle 
 	        	cx="64" 
