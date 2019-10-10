@@ -22,40 +22,44 @@
 
 		.content {
 			margin-top: 40vh;
-			max-width: 35em;
+			max-width: 40em;
 			position: relative;
 		}
+
+			.headings {
+				opacity: 1; //placeholder
+			}
 	
-			.name {
-				margin-bottom: 0.1em; // GUESS
-				font-size: 5em;
-				font-family: var(--font_family__heading);
-			}
-
-			.nickname {
-				margin-bottom: 0.5em; // GUESS
-				font-size: 2.6em;
-				font-family: var(--font_family__heading);
-			}
-
-			.actor {
-				margin-bottom: 1em; // GUESS
-				font-size: 1em;
-				font-family: var(--font_family__body);
-				font-weight: normal;
-				letter-spacing: 0.25em;
-				text-transform: uppercase;
-			}
-
-			.body {
-				margin-bottom: 4em; // GUESS
-				line-height: 1.5;
-				font-family: var(--font_family__body);
-
-				.paragraph+.paragraph {
-					margin-top: 1em;
+				.name {
+					margin-bottom: 0.1em; // GUESS
+					font-size: 5em;
+					font-family: var(--font_family__heading);
 				}
-			}
+
+				.nickname {
+					margin-bottom: 0.5em; // GUESS
+					font-size: 2.6em;
+					font-family: var(--font_family__heading);
+				}
+
+				.actor {
+					margin-bottom: 1em; // GUESS
+					font-size: 1em;
+					font-family: var(--font_family__body);
+					font-weight: normal;
+					letter-spacing: 0.25em;
+					text-transform: uppercase;
+				}
+
+					.body {
+						margin-bottom: 4em; // GUESS
+						line-height: 1.5;
+						font-family: var(--font_family__body);
+
+						.paragraph+.paragraph {
+							margin-top: 1em;
+						}
+					}
 
 		.content::after {
 			content: "";
@@ -124,26 +128,46 @@
 	}
 
 		.container {
-			width: 50%; 
+			width: 100%; 
 			height: 100%;
+			overflow-y: hidden;
 		}
 
 			.content {
-				margin-top: 60px;
+				display: flex;
+				margin-top: 10vh;
+				flex-direction: row;
 			}
 
+				.headings {
+					width: 50%;
+				}
+
 				.body {
-					height: 25vh; //GUESS
+					width: 50%;
+					height: 75vh; //GUESS
 					margin-bottom: 2em; //GUESS
-					transform: translate(100%, -200%);
+					overflow-y: scroll;
 				}
 
 			.content::after {
-				display: none;
+				display: block;
+				width: 50%;
+				height: 10em; //GUESS
+				position: absolute;
+				left: 50%;
+				bottom: 0; //GUESS
+				pointer-events: none;
+				background-image: linear-gradient(
+				    rgba(237, 20, 61, 0) 0%,
+				    rgba(237, 20, 61, 1) 50%,
+				    rgba(237, 20, 61, 1) 100%	
+				);
 			}
 
 			.controls {
 				max-width: 15rem; // EYE BALLED
+				bottom: 5vw;
 			}
 }
 
@@ -159,26 +183,6 @@
 	.wrapper {
 		justify-content: center;
 	}
-
-		.content {}
-
-			.body {
-				transform: translate(0, 0);
-				overflow-y: scroll;
-			}
-
-		.content::after {
-			display: block;
-			height: 6em; //GUESS
-			position: absolute;
-			bottom: 0; //GUESS
-			pointer-events: none;
-			background-image: linear-gradient(
-			    rgba(237, 20, 61, 0) 0%,
-			    rgba(237, 20, 61, 1) 50%,
-			    rgba(237, 20, 61, 1) 100%	
-			);
-		}
 }
 
 // Desktop landscape
