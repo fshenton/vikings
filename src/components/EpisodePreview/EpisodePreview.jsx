@@ -6,6 +6,7 @@ import {
 import { TrailerContext as Trailer } from "COMPONENTS/Episode/";
 import { s } from "./";
 import UTILS from "SHARED/utils.js";
+import { Play as PlayIcon } from "SHARED/icons/";
 
 export default function EpisodePreview(props){
 
@@ -103,12 +104,7 @@ export default function EpisodePreview(props){
 						src={ thumbSrc }
 						alt={ thumbDesc }
 					/>
-					<svg className={ s.playButton } 
-						 viewBox="0 0 200 200" 
-						 alt="Play video">
-	                    <circle cx="100" cy="100" r="90" fill="none" strokeWidth="15" stroke="#fff"/>\
-	                    <polygon points="70, 55 70, 145 145, 100" fill="#fff"/>\
-                	</svg>
+					<PlayIcon colour="#FFF" />
 				</a>
 			</div>
 			<div
