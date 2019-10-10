@@ -6,19 +6,20 @@ export default function Play(props) {
 	const { colour } = props;
 
 	return (
-		<svg className={ s.playButton } 
-			 viewBox="0 0 200 200" 
+		<svg className={ s.icon } 
+			 viewBox="0 0 128 128" 
 			 alt="Play video">
 	        <circle 
-	        	cx="100" 
-	        	cy="100" 
-	        	r="90" 
+	        	cx="64" 
+	        	cy="64" 
+	        	r="56.5" 
 	        	fill="none" 
 	        	strokeWidth="15" 
-	        	stroke={ colour }/>
+	        	stroke={ colour }
+	        />
 	        <polygon 
-	        	points="70, 55 70, 145 145, 100" 
-	        	fill="#fff"
+	        	points="48,48 48,80 80,64" 
+	        	fill={ colour }
 	        />
 		</svg>
 	);
