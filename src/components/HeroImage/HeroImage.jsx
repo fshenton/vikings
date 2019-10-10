@@ -4,7 +4,7 @@ import { s } from "./";
 export default function HeroImage(props){
 
 	const {
-		idString,
+		heroId: id,
 		src,
 		mask: maskPath,
 		description
@@ -16,7 +16,8 @@ export default function HeroImage(props){
 	return (
 		<div 
 			className={ s.hero } 
-			id={ `character__hero__${idString}` }> 	
+			id={ `character__hero__${id}` }
+			> 	
 			<img 
 				className={ s.image }
 				src={ src } 

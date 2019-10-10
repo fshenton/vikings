@@ -57,7 +57,7 @@ export default function Character(props){
 		className: s.paragraph
 	});
 
-	const idString = UTILS.convertToSafeString(`${name} ${nickname}`);
+	const heroId = UTILS.convertToSafeString(`${name} ${nickname}`);
 
 	return (
 		<li
@@ -93,7 +93,7 @@ export default function Character(props){
 				</nav>	
 			</article>
 			<HeroImage 
-				idString={ idString }
+				heroId={ heroId }
 				src={ src } 
 				mask={ mask }
 				description={ description }
