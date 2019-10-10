@@ -5,8 +5,8 @@ import {
 	ACTIONS
 } from "COMPONENTS/Characters/";
 import HeroImage from "COMPONENTS/HeroImage/";
-import { RENDER, s } from "./";
-import RENDER_TEXT from "SHARED/renderUtils.jsx";
+import { RENDER as RENDER_A, s } from "./";
+import RENDER_B from "SHARED/renderUtils.jsx";
 import UTILS from "SHARED/utils.js";
 
 export default function Character(props){
@@ -18,6 +18,8 @@ export default function Character(props){
 
 	//RENDER
 	//----------------------------
+	const RENDER = { ...RENDER_A, ...RENDER_B };
+
 	const {
 		name,
 		nickname,
@@ -50,7 +52,7 @@ export default function Character(props){
 	// active character checks
 	const hidden = index !== activeIndex;
 
-	const body = RENDER_TEXT.body(bodyData, {
+	const body = RENDER.body(bodyData, {
 		scope: "character", //for key names
 		className: s.paragraph
 	});
