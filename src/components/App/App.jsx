@@ -1,4 +1,5 @@
 import React from "react";
+import { ClientProvider } from "./";
 import HomePermalink from "COMPONENTS/HomePermalink/";
 import HistoryChannel from "COMPONENTS/HistoryChannel/";
 import WatchNow from "COMPONENTS/WatchNow/";
@@ -14,23 +15,25 @@ import { s } from "./";
 export default function App(){
 
 	return (
-		<div className={ s.wrapper }>
-			{ /* STICKIES */}
-			{ false && <HomePermalink /> }
-			{ false && <Socials /> }
-			{ false && <HistoryChannel /> }
-			{ false && <WatchNow /> }
+		<ClientProvider>
+			<div className={ s.wrapper }>
+				{ /* STICKIES */}
+				{ false && <HomePermalink /> }
+				{ false && <Socials /> }
+				{ false && <HistoryChannel /> }
+				{ false && <WatchNow /> }
 
-			{/* COMMON */}
-			{ false && <Navigation /> }
+				{/* COMMON */}
+				{ false && <Navigation /> }
 
-			{/* PAGES */}
-			<main className={ s.container }>
-				{ false && <Landing /> }
-				{ false && <About /> }
-				{ false && <Characters /> }
-				{ true && <Episodes /> }
-			</main>
-		</div>
+				{/* PAGES */}
+				<main className={ s.container }>
+					{ false && <Landing /> }
+					{ false && <About /> }
+					{ false && <Characters /> }
+					{ true && <Episodes /> }
+				</main>
+			</div>
+		</ClientProvider>
 	);
 } //App

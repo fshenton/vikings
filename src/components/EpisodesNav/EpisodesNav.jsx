@@ -4,6 +4,9 @@ import {
 	ACTIONS,
 	EpisodesContext as Episodes
 } from "COMPONENTS/Episodes/";
+import {
+	ClientContext as Client
+} from "COMPONENTS/App/";
 import { s, RENDER } from "./";
 
 export default function EpisodesNav(){
@@ -17,6 +20,12 @@ export default function EpisodesNav(){
 		},
 		dispatch
 	} = useContext(Episodes);
+
+	const {
+		isSmall, 
+		isMedium,
+		isLarge
+	} = useContext(Client).state;
 
 	// CLICK HANDLER
 	// -------------------------------
@@ -56,15 +65,19 @@ export default function EpisodesNav(){
 					aria-hidden={ isLastEpisodeActive }
 					onClick={ nextEpisode }
 				/>
-				<ol 
-					className={ s.pagination }
-					id="episodes__pagination"
-				>
-					{ pagination }
-				</ol>
+				{ isSmall && 
+					<ol 
+						className={ s.pagination }
+						id="episodes__pagination"
+					>
+						{ pagination }
+					</ol> 
+				}
 			</div> 
-			{ false && 
-				<ol id="episodes__pagination">
+			{ isLarge && 
+				<ol 
+					className={ s.pagination }	
+					id="episodes__pagination">
 					{ pagination }
 				</ol> 
 			}
