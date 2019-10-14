@@ -1,4 +1,5 @@
 import { ACTIONS }  from "./";
+import UTILS from "SHARED/utils.js";
 
 export default function reducer(state, action){
 
@@ -8,35 +9,14 @@ export default function reducer(state, action){
 	} = action;
 
 	switch(type){
-		case ACTIONS.SET_SMALL:
+		case ACTIONS.UPDATE_VIEW_SIZE: //Should be called if window is resized (not implemented)
+			const w = UTILS.getDeviceWidth();
+			const h = UTILS.getDeviceHeight();
 			return {
 				...state,
-				isSmall: value;
-			};
-		case ACTIONS.SET_MEDIUM:
-			return {
-				...state,
-				isMedium: value;
-			};
-		case ACTIONS.SET_LARGE:
-			return {
-				...state,
-				isLarge: value;
-			};
-		case ACTIONS.SET_TOUCH:
-			return {
-				...state,
-				isTouch: value;
-			};
-		case ACTIONS.SET_GYRO:
-			return {
-				...state,
-				hasGyro: value;
-			};
-		case ACTIONS.SET_4G:
-			return {
-				...state,
-				is4G: value;
+				isSmall:  w < 768 ? true : false,
+				isMedium: w >= 768 && w <= 1200 ? true : false,
+				isLarge: w >= 1200 ? true : false,
 			};
 		default:
 			throw new Error("Invalid action used.")

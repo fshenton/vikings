@@ -1,10 +1,14 @@
 import React, { createContext, useReducer } from "react";
 import { reducer } from "./";
+import UTILS from "SHARED/utils.js";
+
+const w = UTILS.getDeviceWidth();
+const h = UTILS.getDeviceHeight();
 
 const initialState = {
-	isSmall: false,
-	isMedium: false,
-	isLarge: false,
+	isSmall:  w < 768 ? true : false,
+	isMedium: w >= 768 && w <= 1200 ? true : false,
+	isLarge: w >= 1200 ? true : false,
 	isTouch: false,
 	hasGyro: false,
 	is4G: false,
