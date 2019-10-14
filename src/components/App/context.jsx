@@ -4,9 +4,11 @@ import UTILS from "SHARED/utils.js";
 
 const w = UTILS.getDeviceWidth(); //just using width to determine viewport size
 
+console.log(w);
+
 const initialState = {
 	isSmall:  w < 768 ? true : false,
-	isMedium: w >= 768 && w <= 1200 ? true : false,
+	isMedium: w >= 768 && w < 1200 ? true : false,
 	isLarge: w >= 1200 ? true : false,
 	isTouch: false,
 	hasGyro: false,

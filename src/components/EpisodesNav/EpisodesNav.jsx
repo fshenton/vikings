@@ -21,11 +21,7 @@ export default function EpisodesNav(){
 		dispatch
 	} = useContext(Episodes);
 
-	const {
-		isSmall, 
-		isMedium,
-		isLarge
-	} = useContext(Client).state;
+	const { isSmall } = useContext(Client).state;
 
 	// CLICK HANDLER
 	// -------------------------------
@@ -74,10 +70,11 @@ export default function EpisodesNav(){
 					</ol> 
 				}
 			</div> 
-			{ isLarge && 
+			{ !isSmall && 
 				<ol 
 					className={ s.pagination }	
-					id="episodes__pagination">
+					id="episodes__pagination"
+				>
 					{ pagination }
 				</ol> 
 			}
