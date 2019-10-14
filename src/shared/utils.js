@@ -21,6 +21,8 @@ function getDeviceHeight(){
 		window.innerHeight
 		|| 0
 	);
+
+	return h;
 }// getDeviceHeight
 
 export default {

@@ -2,8 +2,7 @@ import React, { createContext, useReducer } from "react";
 import { reducer } from "./";
 import UTILS from "SHARED/utils.js";
 
-const w = UTILS.getDeviceWidth();
-const h = UTILS.getDeviceHeight();
+const w = UTILS.getDeviceWidth(); //just using width to determine viewport size
 
 const initialState = {
 	isSmall:  w < 768 ? true : false,
