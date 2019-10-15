@@ -31,11 +31,31 @@
 		.pagination {
 			order: 2;
 			display: flex;
-			max-width: 40%;
+			width: 40%;
 			align-items: center;
 			list-style: none;
 			overflow-x: hidden;
 			--pagination__center_left: 50%;
+
+
+			//SORT DUPING
+			&::before { 
+				content: "";
+				display: block;
+				width: 1em;
+				height: 1em;
+				background-color: red;
+				//gradient
+			}
+
+			&::after {
+				content: "";
+				display: block;
+				width: 1em;
+				height: 1em;
+				background-color: red;
+				//gradient
+			}
 		}
 
 			.before, .after {
@@ -43,11 +63,13 @@
 			}
 			
 			.before {
+				left: 0;
 				//want to do something with nth-child and adding offset to --pagination__center_left
 				//the idea is that .before elements are positioned with -offsets to the left of the active element
 			}
 
 			.after {
+				right: 0;
 				//want to do something with nth-child and adding offset to --pagination__center_left
 				//the idea is that .before elements are positioned with +offsets to the left of the active element
 			}
