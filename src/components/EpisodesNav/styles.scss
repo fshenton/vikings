@@ -31,19 +31,36 @@
 		.pagination {
 			order: 2;
 			display: flex;
-			width: 40%;
+			max-width: 40%;
+			align-items: center;
 			list-style: none;
 			overflow-x: hidden;
+			--pagination__center_left: 50%;
 		}
-		
+
+			.before, .after {
+				position: absolute;
+			}
+			
+			.before {
+				//want to do something with nth-child and adding offset to --pagination__center_left
+				//the idea is that .before elements are positioned with -offsets to the left of the active element
+			}
+
+			.after {
+				//want to do something with nth-child and adding offset to --pagination__center_left
+				//the idea is that .before elements are positioned with +offsets to the left of the active element
+			}
+
 			.inactive {
 				opacity: 0.5; //placeholder
 			}
 
 			.active {
+				position: absolute;
+				left: var(--pagination__center_left);
 				font-size: 2.62em; //placeholder
 			}
-
 
 				.paginationLink {
 					font-size: 1.62em; //placeholder to have the classname showing in inspector		

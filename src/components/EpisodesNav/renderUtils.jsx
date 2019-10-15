@@ -37,11 +37,18 @@ function renderPaginationLink(data, index){
 
 	const episodeId = UTILS.convertToSafeString(title, "-");
 
-	const isActive = index === activeIndex;
+	const isActive 			= index === activeIndex;
+	const isBeforeActive 	= index < activeIndex;
+	const isAfterActive	 	= index > activeIndex;
 
 	return (
 		<li 
-			className={ isActive ? s.active : s.inactive }
+			className=
+				{ 
+					`${isActive ? s.active : s.inactive} 
+					${isBeforeActive ? s.before : ""} 
+				 	${isAfterActive ? s.after : ""}`  //needs sorting
+				}
 			key={ `episode__pagination__${episodeNo}` }
 			aria-current={ isActive }
 		>
