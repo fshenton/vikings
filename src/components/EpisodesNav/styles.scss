@@ -31,9 +31,21 @@
 		.pagination {
 			order: 2;
 			display: flex;
+			width: 40%;
 			list-style: none;
+			overflow-x: hidden;
 		}
 		
-			.paginationLink {
-				font-size: 1em; //placeholder to have the classname showing in inspector
+			.inactive {
+				opacity: 0.5; //placeholder
 			}
+
+			.active {
+				font-size: 2.62em; //placeholder
+			}
+
+
+				.paginationLink {
+					font-size: 1.62em; //placeholder to have the classname showing in inspector		
+				}
+			
