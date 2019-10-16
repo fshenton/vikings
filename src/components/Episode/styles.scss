@@ -63,13 +63,20 @@
 
 //Mobile Landscape
 @media (orientation: landscape){
-	.article {
-		display: flex;
-		flex-direction: row;
+	.wrapper {
+		max-height: 100%;
+		padding: 0;
 	}
 
-		.container {
-			order: 1;
-			width: 50%;
+		.article {
+			display: flex;
+			flex-direction: row;
+
 		}
+
+			.container {
+				order: 1;
+				width: 50%;
+				padding: 5%;
+			}
 }
