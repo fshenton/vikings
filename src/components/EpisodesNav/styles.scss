@@ -1,6 +1,9 @@
 .wrapper {
-	position: sticky;
-	bottom: 0; //placeholder
+	position: absolute;
+	width: 80%;
+	left: 50%;
+	bottom: 10vh; //placeholder
+	transform: translateX(-50%);
 }
 
 	.container {
@@ -31,59 +34,25 @@
 		.pagination {
 			order: 2;
 			display: flex;
-			width: 40%;
-			align-items: center;
+			align-items: center; //works inconsistently!?
 			list-style: none;
-			overflow-x: hidden;
-			--pagination__center_left: 50%;
-
-
-			//SORT DUPING
-			&::before { 
-				content: "";
-				display: block;
-				width: 1em;
-				height: 1em;
-				background-color: red;
-				//gradient
-			}
-
-			&::after {
-				content: "";
-				display: block;
-				width: 1em;
-				height: 1em;
-				background-color: red;
-				//gradient
-			}
 		}
 
-			.before, .after {
+			.inactive, .active {
 				position: absolute;
-			}
-			
-			.before {
-				left: 0;
-				//want to do something with nth-child and adding offset to --pagination__center_left
-				//the idea is that .before elements are positioned with -offsets to the left of the active element
-			}
+				left: 50%;
+			} 
 
-			.after {
-				right: 0;
-				//want to do something with nth-child and adding offset to --pagination__center_left
-				//the idea is that .before elements are positioned with +offsets to the left of the active element
-			}
+				.inactive {
+					font-size: 1em;
+					pointer-events: none;
+				}
 
-			.inactive {
-				opacity: 0.5; //placeholder
-			}
-
-			.active {
-				position: absolute;
-				left: var(--pagination__center_left);
-				font-size: 2.62em; //placeholder
-			}
-
+				.active {
+					font-size: 1.62em;
+					pointer-events: all;
+				}
+	
 				.paginationLink {
 					font-size: 1.62em; //placeholder to have the classname showing in inspector		
 				}

@@ -37,18 +37,29 @@ function renderPaginationLink(data, index){
 
 	const episodeId = UTILS.convertToSafeString(title, "-");
 
-	const isActive 			= index === activeIndex;
-	const isBeforeActive 	= index < activeIndex;
-	const isAfterActive	 	= index > activeIndex;
+	const isActive 	= index === activeIndex;
+
+	let opacity = 1;
+	if(!isActive){
+		const decayDistance = 4;
+		const decayRate     = 1/decayDistance;
+		const fadeOffset    = Math.abs(index - activeIndex);
+		
+		opacity -= fadeOffset * decayRate;
+	}
+
+	const offset = index - activeIndex;
+	console.log(activeIndex);
+
+	const style = {
+		transform: `translateX(${offset}em)`,
+		opacity: opacity
+	};
 
 	return (
 		<li 
-			className=
-				{ 
-					`${isActive ? s.active : s.inactive} 
-					${isBeforeActive ? s.before : ""} 
-				 	${isAfterActive ? s.after : ""}`  //needs sorting
-				}
+			className={ isActive ? s.active : s.inactive }
+			style={ style }
 			key={ `episode__pagination__${episodeNo}` }
 			aria-current={ isActive }
 		>

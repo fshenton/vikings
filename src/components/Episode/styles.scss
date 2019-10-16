@@ -1,41 +1,50 @@
+// Mobile Portrait
 .wrapper {
-	position: absolute;
+	position: relative;
+	height: auto;
+	min-height: 100%;
+	padding-top: 20vh;
 	
 	&[aria-hidden="true"]{
+		position: absolute;
+		top: 0;
 		opacity: 0;
 	}
 }
-
-	.container {
-		display: flex;
-		padding: 10vw; 
-		flex-direction: column;
-		font-size: 1.3rem;
-	}
-
-		.episode {
-			order: 1;
-			margin-bottom: 1.67em;
-			font-size: 1em;
-			font-family: var(--font_family__heading);
+		.container {
+			display: flex;
+			padding: 10vw; 
+			flex-direction: column;
+			font-size: 1.3rem;
 		}
 
-		.title {
-			order: 2;
-			font-size: 1.7em;
-			font-family: var(--font_family__heading);
-		}
-
-		.body {
-			order: 3;
-			height: 20vh;
-			margin-top: 1.5em;
-			overflow-y: scroll;
-			line-height: 1.5;
-			font-size: 1em;
-			font-family: var(--font_family__body);
-		}
-
-			.paragraph {
-				opacity: 1; //placeholder to get it showing
+			.episode {
+				order: 1;
+				margin-bottom: 1.67em;
+				font-size: 1em;
+				font-family: var(--font_family__heading);
 			}
+
+			.title {
+				order: 2;
+				font-size: 1.7em;
+				font-family: var(--font_family__heading);
+			}
+
+			.body {
+				order: 3;
+				margin-top: 1.5em;
+				line-height: 1.5;
+				overflow-y: hidden;
+				font-size: 1em;
+				font-family: var(--font_family__body);
+			}
+
+				.paragraph {
+					opacity: 1; //placeholder to get it showing
+				}
+
+//Mobile Landscape
+@media (orientation: landscape){
+
+}

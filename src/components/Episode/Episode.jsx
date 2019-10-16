@@ -42,7 +42,7 @@ export default function Episode(props){
 			aria-label={ `Episode ${number} of ${episodeCount}.` }
 			aria-hidden={ hidden }
 		>
-			<article>
+			<article className={ s.content }>
 				<EpisodePreview 
 					episodeId={ id }
 					index={ index }
