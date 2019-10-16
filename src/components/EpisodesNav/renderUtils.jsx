@@ -47,9 +47,8 @@ function renderPaginationLink(data, index){
 		
 		opacity -= fadeOffset * decayRate;
 	}
-
+	
 	const offset = index - activeIndex;
-	console.log(activeIndex);
 
 	const style = {
 		transform: `translateX(${offset}em)`,

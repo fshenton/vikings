@@ -61,6 +61,9 @@ export default function Episode(props){
 					<div className={ s.body }>
 						{ synopsis }
 					</div>
+					<div 
+						className={ s.fade }>
+					</div>
 				</div>
 			</article>
 		</li>
