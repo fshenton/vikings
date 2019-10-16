@@ -1,3 +1,4 @@
+//Mobile portrait
 .wrapper {
 	width: 100%;
 	--thumbnail_width: 100%;
@@ -68,3 +69,16 @@
 			opacity: 0;
 		}
 	}
+
+//Mobile landscape
+@media (orientation: landscape) {
+	.wrapper {
+		order: 2;
+		width: 50%;
+		--thumbnail_height: 50vh;
+	}
+
+		.thumbnail {
+			
+		}
+}
