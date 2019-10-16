@@ -78,5 +78,12 @@
 		padding-top: 10%;
 		--thumbnail_height: 50vh;
 	}
+}
 
+//Desktop fullscreen
+@media (min-width: 1200px) {
+	.wrapper {
+		padding-top: 0;
+		width: 50%;
+	}
 }

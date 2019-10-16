@@ -77,6 +77,52 @@
 			.container {
 				order: 1;
 				width: 50%;
-				padding: 5%;
+				padding-left: 5%;
+				padding-right: 5%;
+				justify-content: center;
 			}
+}
+
+//Tablet portrait
+@media (min-width: 768px) {
+	.wrapper {
+		padding-top: 10vh;
+	}
+
+		.container {
+			padding: 10%;
+			font-size: 1.62rem;
+		}
+}
+
+//Tablet landscape
+@media (min-width: 768px) {
+	.wrapper {
+		padding-top: 5%;
+	}
+
+		.container {
+			padding-left: 5%;
+			padding-right: 5%;
+			font-size: 1.3rem;
+		}
+}
+
+//Desktop fullscreen
+@media (min-width: 1200px) {
+	.wrapper {
+		width: 95%;
+		padding: 0;
+		padding-left: 10em;
+		padding-right: 10em;
+		display: flex;
+		align-items: center;
+	}
+
+		.container {
+			width: 50%;
+			padding-left: 0;
+			padding-right: 0;
+			font-size: 1.05rem;
+		}
 }

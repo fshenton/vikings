@@ -70,3 +70,51 @@
 		width: 33%;
 	}
 }
+
+//Tablet portrait
+@media (min-width: 768px) {
+	.wrapper {
+		width: 50%;
+	}
+
+		.button {
+			font-size: 2rem;
+		}
+
+		.inactive {
+			font-size: 1.62em;
+		}
+
+		.active {
+			font-size: 2.62em;
+
+		}
+}
+
+//Tablet landscape 
+@media (min-width: 768px) and (orientation: landscape) {
+	.wrapper {
+		width: 33%;
+	}
+}
+
+//Desktop fullscreen
+@media (min-width: 1200px) {
+	.wrapper {
+		position: fixed;
+		width: 2em;
+		height: 10em;
+	    left: 90%;
+	    bottom: 28%;
+	}
+
+		.container {
+			flex-direction: column;
+			width: 100%;
+			height: 100%;
+		}
+
+			.button {
+				transform: rotateZ(90deg);
+			}
+}
