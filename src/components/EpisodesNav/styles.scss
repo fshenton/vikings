@@ -2,7 +2,7 @@
 	position: fixed; //with absolute it will scroll with page
 	width: 80%;
 	left: 50%;
-	bottom: 5%; //placeholder
+	bottom: 5%;
 	transform: translateX(-50%);
 }
 
@@ -64,4 +64,9 @@
 					pointer-events: all;
 				}
 	
-			
+//Mobile landscape
+@media (orientation: landscape) {
+	.wrapper {
+		width: 33%;
+	}
+}
