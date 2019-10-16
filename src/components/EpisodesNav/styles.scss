@@ -1,15 +1,15 @@
 .wrapper {
-	position: absolute;
+	position: fixed; //with absolute it will scroll with page
 	width: 80%;
 	left: 50%;
-	bottom: 10vh; //placeholder
+	bottom: 5%; //placeholder
 	transform: translateX(-50%);
 }
 
 	.container {
 		display: flex;
-		padding: 0 10%; 
 		justify-content: space-between;
+		align-items: center;
 	}
 
 		.button {
@@ -34,26 +34,34 @@
 		.pagination {
 			order: 2;
 			display: flex;
-			align-items: center; //works inconsistently!?
+			width: 40%;
+			height: 1.5em;
+			align-items: center;
 			list-style: none;
 		}
 
 			.inactive, .active {
+				display: flex;
 				position: absolute;
+				height: 100%;
 				left: 50%;
+				align-items: center; 
+
+				a {
+					text-decoration: none;
+				}
 			} 
 
 				.inactive {
-					font-size: 1em;
-					pointer-events: none;
+					font-size: 1.15em;
+					font-weight: normal;
+					pointer-events: none; //prevents overlap with prev/next
 				}
 
 				.active {
-					font-size: 1.62em;
+					font-size: 1.5em;
+					font-weight: bold;
 					pointer-events: all;
 				}
 	
-				.paginationLink {
-					font-size: 1.62em; //placeholder to have the classname showing in inspector		
-				}
 			
