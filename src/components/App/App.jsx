@@ -16,7 +16,7 @@ export default function App(){
 	return (
 		<div className={ s.wrapper }>
 			{ /* STICKIES */}
-			{ false && <HomePermalink /> }
+			{ true && <HomePermalink /> }
 			{ false && <Socials /> }
 			{ false && <HistoryChannel /> }
 			{ false && <WatchNow /> }
