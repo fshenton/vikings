@@ -1,23 +1,22 @@
 // Mobile portrait
 .wrapper {
 	display: flex;
-	position: absolute;
-	width: 5.75em;
-	height: 1.125em;
-	top: 3.75em;
-	right: 3.25em;
-	font-size: 1rem;
 	justify-content: space-between;
-	//font-size: 2rem; //for navmenu
+	
 	
 	&.closed {
-		opacity: 0;
+		position: absolute;
+		width: 5.75em;
+		height: 1.125em;
+		top: 3.75em;
+		right: 3.25em;
+		font-size: 1rem;
 	}
 
 	&.open {
 		width: 50%;
 		max-width: 6em;
-		opacity: 1;
+		font-size: 2rem;
 	}
 
 		.item {

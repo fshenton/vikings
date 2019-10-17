@@ -19,10 +19,10 @@ export default function Socials(){
 	// ---------------------------------
 	const links = data.map(RENDER.item);
 
-	//s.open / s.closed needed for navmenu?
+	const isVisible = !isSmall || open;
 
 	return (
-		!isSmall &&
+		isVisible &&
 			<ul className={ `${s.wrapper} ${open ? s.open : s.closed}` }>
 				{ links }
 			</ul>
