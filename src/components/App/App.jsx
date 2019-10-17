@@ -21,7 +21,7 @@ export default function App(){
 				<HomePermalink />
 				{ false && <Socials /> }
 				<HistoryChannel />
-				{ false && <WatchNow /> }
+				<WatchNow />
 
 				{/* COMMON */}
 				{ false && <Navigation /> }
