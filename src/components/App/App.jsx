@@ -20,7 +20,7 @@ export default function App(){
 				{ /* STICKIES */}
 				<HomePermalink />
 				{ false && <Socials /> }
-				{ false && <HistoryChannel /> }
+				<HistoryChannel />
 				{ false && <WatchNow /> }
 
 				{/* COMMON */}
