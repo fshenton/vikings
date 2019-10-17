@@ -1,5 +1,6 @@
 import React from "react";
 import { ClientProvider } from "./";
+import { NavProvider } from "COMPONENTS/Navigation/";
 import HomePermalink from "COMPONENTS/HomePermalink/";
 import HistoryChannel from "COMPONENTS/HistoryChannel/";
 import WatchNow from "COMPONENTS/WatchNow/";
@@ -17,14 +18,14 @@ export default function App(){
 	return (
 		<ClientProvider>
 			<div className={ s.wrapper }>
-				{ /* STICKIES */}
-				<HomePermalink />
-				<Socials />
-				<HistoryChannel />
-				<WatchNow />
-
-				{/* COMMON */}
-				{ false && <Navigation /> }
+				
+				<NavProvider>
+					<HomePermalink />
+					<Navigation />
+					<Socials />
+					<HistoryChannel />
+					<WatchNow />
+				</NavProvider>
 
 				{/* PAGES */}
 				<main className={ s.container }>

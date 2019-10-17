@@ -1,6 +1,6 @@
 import React, { useContext } from "react";
 import { RENDER, s, data } from "./";
-// import { NavContext as Nav } from "COMPONENTS/Navigation/";
+import { NavContext as Nav } from "COMPONENTS/Navigation/";
 import { ClientContext as Client } from "COMPONENTS/App/";
 
 export default function Socials(){
@@ -11,10 +11,9 @@ export default function Socials(){
 		isSmall
 	} = useContext(Client).state;
 
-	//used for navmenu
-	// const {
-	// 	open
-	// } = useContext(Nav).state;
+	const {
+		open
+	} = useContext(Nav).state;
 
 	// RENDER
 	// ---------------------------------
@@ -23,8 +22,8 @@ export default function Socials(){
 	//s.open / s.closed needed for navmenu?
 
 	return (
-		!isSmall && 
-			<ul className={ `${s.wrapper}` }>
+		!isSmall &&
+			<ul className={ `${s.wrapper} ${open ? s.open : s.closed}` }>
 				{ links }
 			</ul>
 	);

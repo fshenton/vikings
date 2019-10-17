@@ -16,7 +16,6 @@ export default function Navigation(){
 		open
 	} = useContext(Nav).state;
 
-
 	//RENDER
 	//----------------------------
 	const links = data.map(RENDER.item);
