@@ -1,9 +1,11 @@
 import React from "react";
 import Link from "COMPONENTS/Link/";
+import { s } from "./";
 
 export default function HomePermalink(){
 	return (
-		<Link 
+		<Link
+			className={ s.home } 
 			destination="/"
 			aria-label="Home."
 		/>
