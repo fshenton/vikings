@@ -124,19 +124,20 @@ export default function EpisodePreview(props){
 			</div>
 			<div
 				id={ previewId }
-				className= { s.content }
+				className= { s.container }
 				aria-hidden={ hidden }
 			>
-				<header>
-					<h2>
+				<header className={ s.header }>
+					<h2 className={ s.episode }>
 						{ `Episode ${episodeNo}` } 
 					</h2>
-					<h1>
+					<h1 className={ s.title }>
 						{ title }
 					</h1>
-					<nav>
+					<nav className={ s.controls }>
 						{ !isFirst && (
 							<a 
+								className={ `${s.prev} ${s.button}` }
 								href={ prevTrailerSrc }
 								aria-label="Previous."
 								onClick={ prevEpisode }
@@ -146,6 +147,7 @@ export default function EpisodePreview(props){
 						)}
 						{ !isLast && (
 							<a 
+								className={ `${s.next} ${s.button}` }
 								href={ nextTrailerSrc } 
 								onClick={ nextEpisode }
 							>
@@ -153,6 +155,7 @@ export default function EpisodePreview(props){
 							</a>
 						)}
 						<a 
+							className={ s.close }
 							href={ `#${episodeId}` }
 							onClick={ closeOverlay }
 						> 
