@@ -18,7 +18,7 @@ export default function App(){
 		<ClientProvider>
 			<div className={ s.wrapper }>
 				{ /* STICKIES */}
-				{ false && <HomePermalink /> }
+				<HomePermalink />
 				{ false && <Socials /> }
 				{ false && <HistoryChannel /> }
 				{ false && <WatchNow /> }
