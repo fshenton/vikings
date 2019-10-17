@@ -19,7 +19,7 @@ export default function App(){
 			<div className={ s.wrapper }>
 				{ /* STICKIES */}
 				<HomePermalink />
-				{ false && <Socials /> }
+				<Socials />
 				<HistoryChannel />
 				<WatchNow />
 
