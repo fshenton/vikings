@@ -134,26 +134,28 @@ export default function EpisodePreview(props){
 					<h1 className={ s.title }>
 						{ title }
 					</h1>
-					<nav className={ s.controls }>
-						{ !isFirst && (
-							<a 
-								className={ `${s.prev} ${s.button}` }
-								href={ prevTrailerSrc }
-								aria-label="Previous."
-								onClick={ prevEpisode }
-							>
-								Prev
-							</a>
-						)}
-						{ !isLast && (
-							<a 
-								className={ `${s.next} ${s.button}` }
-								href={ nextTrailerSrc } 
-								onClick={ nextEpisode }
-							>
-								Next
-							</a>
-						)}
+					<nav>
+						<div className={ s.controls }>
+							{ !isFirst && (
+								<a 
+									className={ `${s.prev} ${s.button}` }
+									href={ prevTrailerSrc }
+									aria-label="Previous."
+									onClick={ prevEpisode }
+								>
+									Prev
+								</a>
+							)}
+							{ !isLast && (
+								<a 
+									className={ `${s.next} ${s.button}` }
+									href={ nextTrailerSrc } 
+									onClick={ nextEpisode }
+								>
+									Next
+								</a>
+							)}
+						</div>
 						<a 
 							className={ s.close }
 							href={ `#${episodeId}` }
@@ -163,7 +165,7 @@ export default function EpisodePreview(props){
 						</a>
 					</nav>
 				</header>
-				<video>
+				<video className={ s.video }>
 					{ isOverlayActive && (
 						<source 
 							src={trailerSrc}

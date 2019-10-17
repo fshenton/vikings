@@ -88,6 +88,7 @@
 		.header {
 			position: absolute;
 			top: 70%;
+			z-index: 2;
 		}
 
 			.episode, .title {
@@ -104,6 +105,8 @@
 
 			.controls {
 				font-size: 1em; //close enough
+				min-width: 11em;
+				max-width: 13em;
 			}
 
 				.button {
@@ -146,15 +149,22 @@
 					right: 0;
 				}
 
-				.close {
-					position: fixed;
-					width: 1.65em;
-					height: 1.46em;
-					top: 2.38em;
-					left: 50%;
-					font-size: 1em;
-					transform: translateX(-50%);
-				}
+			.close {
+				position: fixed;
+				width: 1.65em;
+				height: 1.46em;
+				top: 2.38em;
+				left: 50%;
+				font-size: 1em;
+				transform: translateX(-50%);
+			}
+
+		.video {
+			position: absolute;
+			height: 100%;
+			width: 100%;
+			z-index: 1;
+		}
 
 //Mobile landscape
 @media (orientation: landscape) {
