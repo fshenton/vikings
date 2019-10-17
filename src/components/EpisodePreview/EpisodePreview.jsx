@@ -161,7 +161,17 @@ export default function EpisodePreview(props){
 							href={ `#${episodeId}` }
 							onClick={ closeOverlay }
 						> 
-							Close
+							<span className={ s.label }> 
+								Close
+							</span> 
+							<div className={ s.icon }>
+								<div 
+									className={ `${s.bar} ${s.bar1}` }>
+								</div>
+								<div 
+									className={ `${s.bar} ${s.bar2}` }>
+								</div>
+							</div>
 						</a>
 					</nav>
 				</header>
