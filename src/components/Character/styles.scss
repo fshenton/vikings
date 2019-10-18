@@ -107,16 +107,12 @@
 					content: "";
 				}
 
-				&.prev {
-					&::before {
-						margin-right: var(--button_margin);
-					}
+				&.prev::before {
+					margin-right: var(--button_margin);
 				}
 
-				&.next {
-					&::after {
-						margin-left: var(--button_margin);
-					}
+				&.next::after {
+					margin-left: var(--button_margin);
 				}
 			}
 
