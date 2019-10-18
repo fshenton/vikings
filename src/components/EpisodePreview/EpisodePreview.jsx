@@ -127,7 +127,7 @@ export default function EpisodePreview(props){
 				className= { s.container }
 				aria-hidden={ hidden }
 			>
-				<header className={ s.header }>
+				<header className={ s.details }>
 					<h2 className={ s.episode }>
 						{ `Episode ${episodeNo}` } 
 					</h2>
@@ -165,12 +165,8 @@ export default function EpisodePreview(props){
 								Close
 							</span> 
 							<div className={ s.icon }>
-								<div 
-									className={ `${s.bar} ${s.bar1}` }>
-								</div>
-								<div 
-									className={ `${s.bar} ${s.bar2}` }>
-								</div>
+								<div className={ `${s.bar} ${s.bar1}` } />
+								<div className={ `${s.bar} ${s.bar2}` } />
 							</div>
 						</a>
 					</nav>

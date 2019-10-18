@@ -63,37 +63,25 @@
 	}
 
 	.container {
-		position: absolute; 
-
-		&[aria-hidden="false"]{
-			opacity: 1;
-			display: flex;
-			height: 100%;
-			width: 100%;
-			top: 0;
-			left: 0;
-			z-index: 3;
-			flex-direction: column;
-			align-items: center;
-			font-size: 1.62rem;
-			background-color: green;
-		}
-
-		&[aria-hidden="true"]{
-			opacity: 0;
-			pointer-events: none;
-		}
+		position: fixed; 
+		display: flex;
+		height: 100%;
+		width: 100%;
+		padding-bottom: 4em;
+		top: 0;
+		left: 0;
+		z-index: 3;
+		flex-direction: column;
+		align-items: center;
+		justify-content: flex-end;
+		text-align: center;
+		font-size: 1.62rem;
+		background-color: green;
 	}
 
-		.header {
-			position: absolute;
-			top: 70%;
+		.details {
 			z-index: 2;
 		}
-
-			.episode, .title {
-				text-align: center;
-			}
 
 			.episode {
 				font-size: 1em;
@@ -104,9 +92,11 @@
 			}
 
 			.controls {
-				font-size: 1em; //close enough
-				min-width: 11em;
-				max-width: 13em;
+				display: flex;
+				width: 9em;
+				margin-top: 1em;
+				flex-direction: row;
+				justify-content: space-between;
 			}
 
 				.button {
@@ -139,21 +129,11 @@
 					}
 				}
 				
-				.prev {
-					position: absolute;
-					left: 0;
-				}
-
-				.next {
-					position: absolute;
-					right: 0;
-				}
 
 			.close {
 				position: fixed;
-				width: 1.65em;
-				height: 1.46em;
-				top: 2.38em;
+				width: 1.62em;
+				top: 2.62em;
 				left: 50%;
 				font-size: 1em;
 				transform: translateX(-50%);
@@ -164,6 +144,7 @@
 				}
 
 				.icon {
+					position: relative;
 					height: 100%;
 					width: 100%;
 				}
@@ -171,18 +152,19 @@
 					.bar {						
 						width: 100%;
 						height: 5px;	
-						background-color: black;					
+						position: absolute;
+						top: 50%;
+						left: 50%;
+						background-color: black;	
+
+						&.bar1 {
+		  					transform: translate(-50%, -50%) rotate(-45deg);
+					 	}
+
+					 	&.bar2 {
+		  					transform: translate(-50%, -50%) rotate(45deg);
+					 	}				
 					}
-
-					 	.bar1 {
-							-webkit-transform: rotate(-45deg);
-		  					transform: rotate(-45deg);
-					 	}
-
-					 	.bar2 {
-							-webkit-transform: rotate(45deg);
-		  					transform: rotate(45deg);
-					 	}
 
 		.video {
 			position: absolute;
@@ -199,6 +181,26 @@
 		padding-top: 10%;
 		--thumbnail_height: 50vh;
 	}
+
+		.container {
+			padding-bottom: 1em;
+		}
+
+			.close {
+				top: 1.62em;
+			}
+
+}
+
+//Tablet landscape
+@media (min-width: 768px) and (orientation: landscape) {
+	.container {
+		padding-bottom: 3em;
+	}
+
+		.close {
+			top: 2.62em;
+		}
 }
 
 //Desktop fullscreen
