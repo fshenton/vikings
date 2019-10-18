@@ -74,6 +74,8 @@
 @media (orientation: landscape) {
 	.wrapper {
 		order: 2;
+		position: fixed;
+		left: 50%;
 		width: 50%;
 		padding-top: 10%;
 		--thumbnail_height: 50vh;
