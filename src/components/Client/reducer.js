@@ -18,7 +18,7 @@ export default function reducer(state, action){
 			return {
 				...state,
 				isSmall:  width < tabletStart,
-				isMedium: width >= tabletStart && width <= desktopStart,
+				isMedium: width >= tabletStart && width < desktopStart,
 				isLarge: width >= desktopStart
 			};
 		default:
