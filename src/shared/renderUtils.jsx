@@ -9,7 +9,10 @@ function renderBody(data, options = {}){
 
 
 function renderParagraph(options, text, index){
-	const { scope, className } = options;
+	const {
+		scope, 
+		className = "";
+	} = options;
 
 	const key = `${scope}__body__paragraph_${index}`;
 	
