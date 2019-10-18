@@ -7,6 +7,20 @@ import {
 } from "COMPONENTS/Episodes/";
 import UTILS from "SHARED/utils.js";
 
+function renderPagination(data){
+	const pagination = data.map(renderPaginationLink);	
+
+	return (
+		<ol 
+			className={ s.pagination }
+			id="episodes__pagination"
+		>
+			{ pagination }
+		</ol> 
+	);
+}//renderPagination
+
+
 function renderPaginationLink(data, index){
 
 	// CONTEXT
@@ -75,5 +89,5 @@ function renderPaginationLink(data, index){
 }// renderPaginationLink
 
 export default {
-	pagination: renderPaginationLink
+	pagination: renderPagination
 };

@@ -40,7 +40,7 @@ export default function EpisodesNav(){
 	const isFirstEpisodeActive = activeIndex === 0;
 	const isLastEpisodeActive  = activeIndex === episodeCount - 1;
 	
-	const pagination = data.map(RENDER.pagination);
+	const pagination = RENDER.pagination(data);
 
 	return (
 		<nav className={ s.wrapper }>
@@ -59,23 +59,9 @@ export default function EpisodesNav(){
 					aria-hidden={ isLastEpisodeActive }
 					onClick={ nextEpisode }
 				/>
-				{ isSmall && 
-					<ol 
-						className={ s.pagination }
-						id="episodes__pagination"
-					>
-						{ pagination }
-					</ol> 
-				}
+				{ isSmall && pagination }				
 			</div> 
-			{ !isSmall && 
-				<ol 
-					className={ s.pagination }	
-					id="episodes__pagination"
-				>
-					{ pagination }
-				</ol> 
-			}
+			{ !isSmall && pagination }
 		</nav>
 	);
 }// EpisodesNav
