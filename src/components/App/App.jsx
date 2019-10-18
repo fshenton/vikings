@@ -1,5 +1,5 @@
-import React from "react";
-import { ClientProvider } from "./";
+import React, { useContext } from "react";
+import { ClientContext as Client } from "COMPONENTS/Client/";
 import HomePermalink from "COMPONENTS/HomePermalink/";
 import HistoryChannel from "COMPONENTS/HistoryChannel/";
 import WatchNow from "COMPONENTS/WatchNow/";
@@ -14,26 +14,30 @@ import { s } from "./";
 
 export default function App(){
 
+	const {
+		isSmall
+	} = useContext(Client).state;
+
+	console.log(useContext(Client));
+
 	return (
-		<ClientProvider>
-			<div className={ s.wrapper }>
-				{ /* STICKIES */}
-				{ false && <HomePermalink /> }
-				{ false && <Socials /> }
-				{ false && <HistoryChannel /> }
-				{ false && <WatchNow /> }
+		<div className={ s.wrapper }>
+			{ /* STICKIES */}
+			{ false && <HomePermalink /> }
+			{ false && <Socials /> }
+			{ false && <HistoryChannel /> }
+			{ false && <WatchNow /> }
 
-				{/* COMMON */}
-				{ false && <Navigation /> }
+			{/* COMMON */}
+			{ false && <Navigation /> }
 
-				{/* PAGES */}
-				<main className={ s.container }>
-					{ false && <Landing /> }
-					{ false && <About /> }
-					{ false && <Characters /> }
-					{ true && <Episodes /> }
-				</main>
-			</div>
-		</ClientProvider>
+			{/* PAGES */}
+			<main className={ s.container }>
+				{ false && <Landing /> }
+				{ false && <About /> }
+				{ false && <Characters /> }
+				{ true && <Episodes /> }
+			</main>
+		</div>
 	);
 } //App

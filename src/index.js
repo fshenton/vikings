@@ -1,6 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import App from "./components/App/";
+import Client from "COMPONENTS/Client/";
 import "SHARED/global.scss";
 import "SHARED/reset.scss";
 
@@ -8,7 +8,7 @@ window.addEventListener("DOMContentLoaded", init);
 
 function init(){
 	ReactDOM.render(
-		<App />,
+		<Client />, //Client wraps App
 		document.getElementById("app")
 	);
 }// init

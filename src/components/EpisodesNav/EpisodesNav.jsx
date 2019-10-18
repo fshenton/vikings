@@ -4,9 +4,7 @@ import {
 	ACTIONS,
 	EpisodesContext as Episodes
 } from "COMPONENTS/Episodes/";
-import {
-	ClientContext as Client
-} from "COMPONENTS/App/";
+import { ClientContext as Client } from "COMPONENTS/Client/";
 import { s, RENDER } from "./";
 
 export default function EpisodesNav(){
