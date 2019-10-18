@@ -8,6 +8,8 @@
 
 	.container {
 		display: flex;
+		position: relative;
+		z-index: 1;
 		justify-content: space-between;
 		align-items: center;
 	}
@@ -47,22 +49,24 @@
 				left: 50%;
 				align-items: center; 
 
-				a {
-					text-decoration: none;
-				}
-			} 
-
-				.inactive {
+				&.inactive {
 					font-size: 1.15em;
 					font-weight: normal;
 					pointer-events: none; //prevents overlap with prev/next
 				}
 
-				.active {
+				&.active {
 					font-size: 1.5em;
 					font-weight: bold;
 					pointer-events: all;
 				}
+
+				.paginationLink {
+					text-decoration: none;
+				}
+			} 
+
+				
 	
 //Mobile landscape
 @media (orientation: landscape) {
@@ -104,8 +108,8 @@
 		position: fixed;
 		width: 2em;
 		height: 10em;
-	    left: 90%;
-	    bottom: 28%;
+		left: 90%;
+		bottom: 28%;
 	}
 
 		.container {
