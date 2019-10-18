@@ -107,9 +107,9 @@
 	.wrapper {
 		position: fixed;
 		width: 2em;
-		height: 10em;
+		height: 8em;
 		left: 90%;
-		bottom: 28%;
+		bottom: 25%;
 	}
 
 		.container {
@@ -123,7 +123,10 @@
 			}
 
 		.pagination {
-
+			flex-direction: column;
+			position: absolute;
+			left: 7em;
+			bottom: 20vh;
 		}
 
 			.item {

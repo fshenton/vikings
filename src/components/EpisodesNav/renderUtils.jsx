@@ -5,6 +5,7 @@ import {
 	ACTIONS,
 	EpisodesContext as Episodes
 } from "COMPONENTS/Episodes/";
+import { ClientContext as Client } from "COMPONENTS/Client/";
 import UTILS from "SHARED/utils.js";
 
 function renderPagination(data){
@@ -31,6 +32,10 @@ function renderPaginationLink(data, index){
 		},
 		dispatch
 	} = useContext(Episodes);
+
+	const {
+		isLarge
+	} = useContext(Client).state;
 
 	// CLICK HANDLER
 	// --------------------------
@@ -63,10 +68,20 @@ function renderPaginationLink(data, index){
 		opacity = 1 - (fadeOffset * decayRate);
 	}
 	
-	const offset = index - activeIndex;
+	const offset 	= index - activeIndex;
+	
+	let axis, factor;
+	if(isLarge){
+		axis = "Y";
+		factor = 1.5;
+	}
+	else{ 
+		axis = "X";
+		factor = 1;
+	}
 
 	const style = {
-		transform: `translateX(${offset}em)`,
+		transform: `translate${axis}(${factor*offset}em)`,
 		opacity
 	};
 
