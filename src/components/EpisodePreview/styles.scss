@@ -63,11 +63,7 @@
 	}
 
 	.content {
-		position: absolute; //placeholder
-
-		&[aria-hidden="true"]{
-			opacity: 0;
-		}
+		position: absolute; 
 	}
 
 //Mobile landscape
