@@ -97,7 +97,7 @@ $fade-color: rgb(237, 20, 61);
 }
 
 //Tablet landscape
-@media (min-width: 768px) {
+@media (min-width: 768px) and (orientation: landscape) {
 	.wrapper {
 		padding-top: 5%;
 	}
