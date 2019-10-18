@@ -1,5 +1,8 @@
-import React, { useContext } from "react";
-import { ClientContext as Client } from "COMPONENTS/Client/";
+import React, { useContext, useEffect } from "react";
+import { 
+	ClientContext as Client,
+	ACTIONS 
+} from "COMPONENTS/Client/";
 import HomePermalink from "COMPONENTS/HomePermalink/";
 import HistoryChannel from "COMPONENTS/HistoryChannel/";
 import WatchNow from "COMPONENTS/WatchNow/";
@@ -14,11 +17,22 @@ import { s } from "./";
 
 export default function App(){
 
-	const {
-		isSmall
-	} = useContext(Client).state;
+	// CONTEXT
+	// ------------------------
 
-	console.log(useContext(Client));
+	const {
+		state: {
+			isSmall //defaults true, before mounted
+		},
+		dispatch
+	} = useContext(Client);
+
+	//set device dimensions on mount
+	useEffect(() => {
+		dispatch({
+			type: ACTIONS.UPDATE_VIEW_SIZE
+		});
+	}, []); //don't repeat
 
 	return (
 		<div className={ s.wrapper }>
