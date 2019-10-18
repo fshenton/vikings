@@ -95,12 +95,14 @@ export default function EpisodePreview(props){
 		<aside className={ s.wrapper }>
 			<div className={ s.thumbnail }>
 				<a
+					className= { s.button }
 					href={ trailerSrc }
 					aria-controls={ previewId }
 					aria-label={ `Watch preview for episode ${episodeNo}: ${title}.` }
 					onClick={ openOverlay }
 				>
 					<img
+						className={ s.image }
 						src={ thumbSrc }
 						alt={ thumbDesc }
 					/>
