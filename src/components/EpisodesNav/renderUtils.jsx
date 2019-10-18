@@ -58,7 +58,7 @@ function renderPaginationLink(data, index){
 
 	return (
 		<li 
-			className={ isActive ? s.active : s.inactive }
+			className={ `${s.item} ${isActive ? s.active : s.inactive}` }
 			style={ style }
 			key={ `episode__pagination__${episodeNo}` }
 			aria-current={ isActive }
