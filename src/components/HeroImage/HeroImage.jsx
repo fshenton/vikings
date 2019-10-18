@@ -4,7 +4,7 @@ import { s } from "./";
 export default function HeroImage(props){
 
 	const {
-		heroId: id,
+		id,
 		src,
 		mask: maskPath,
 		description

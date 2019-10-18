@@ -93,7 +93,7 @@ export default function Character(props){
 				</nav>	
 			</article>
 			<HeroImage 
-				heroId={ heroId }
+				id={ heroId }
 				src={ src } 
 				mask={ mask }
 				description={ description }
