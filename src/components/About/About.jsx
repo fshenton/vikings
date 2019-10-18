@@ -17,7 +17,7 @@ export default function About(){
 		description 
 	} = heroImg;
 
-	const body = RENDER.body(bodyData); // create spacing at line-breaks
+	const body = RENDER.body(bodyData, "about"); //comp name for key
 
 	return (
 		<article className={ s.wrapper }>

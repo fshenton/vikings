@@ -1,64 +1,33 @@
-import React, { useState } from "react";
+import React, { useContext } from "react";
 import Socials from "COMPONENTS/Socials/";
-import { RENDER } from "./";
+import NavToggle from "COMPONENTS/NavToggle";
+import { 
+	RENDER, 
+	NavContext as Nav,
+	s,
+	data
+} from "./";
 
 export default function Navigation(){
 
-	//HOOKS
-	//----------------------------
-	const [ open, setOpen ] = useState(false);
-
-
-	//EVENT HANDLING
+	//CONTEXT
 	//---------------------------
-	function toggleOpen(){
-		setOpen(!open);
-	}//toggleOpen
+	const {
+		open
+	} = useContext(Nav).state;
 
 
 	//RENDER
 	//----------------------------
-	const linkData = [
-		{
-			label: "Home",
-			destination: "/home"
-		}, {
-			label: "About",
-			destination: "/about"
-		}, {
-			label: "Characters",
-			destination: "/characters"
-		}, {
-			label: "Episodes",
-			destination: "/episodes"
-		}, {
-			label: "Watch Now",
-			destination: "https://www.history.co.uk/shows/vikings"
-		}
-	];
-
-
-	const links       = linkData.map(RENDER.item);
-	const ariaOpen    = open.toString();
+	const links = data.map(RENDER.item);
 
 	return (
-		<nav>
-			<button 
-				role="switch"
-				aria-checked={ ariaOpen }
-				aria-controls="navigation__links"
-				onClick={ toggleOpen }
-			>
-				<span>
-					Menu
-				</span>
-				<span>
-					Close
-				</span>
-			</button>
+		<nav className={ s.wrapper }>
+			<NavToggle />
 			<ul 
 				id="navigation__links"
-				aria-expanded={ ariaOpen }
+				className={ s.container }
+				aria-expanded={ open }
 			>
 				{ links }
 			</ul>

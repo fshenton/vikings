@@ -1,6 +1,7 @@
 import React from "react";
 import Link from "COMPONENTS/Link/";
 import UTILS from "SHARED/utils.js";
+import { s } from "./";
 
 function renderItem(data){
 
@@ -13,8 +14,12 @@ function renderItem(data){
 	const safeLabel = UTILS.convertToSafeString(label);
 
 	return (
-		<li key={ `social__${safeLabel}` }>
+		<li 
+			key={ `social__${safeLabel}` }
+			className={ s.item }
+		>
 			<Link
+				className={ `${s.link} ${s[safeLabel]}` }
 				aria-label={ label }
 				destination={ destination } 
 				{ ...remainingProps }
