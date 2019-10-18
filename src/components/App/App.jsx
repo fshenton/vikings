@@ -29,14 +29,12 @@ export default function App(){
 			)}
 
 			{/* PAGES */}
-			{true && (
-				<main className={ s.container }>
-					{ true && <Landing /> }
-					{ false && <About /> }
-					{ false && <Characters /> }
-					{ false && <Episodes /> }
-				</main> 
-			)}
+			<main className={ s.container }>
+				{ false && <Landing /> }
+				{ false && <About /> }
+				{ true && <Characters /> }
+				{ false && <Episodes /> }
+			</main>
 		</div>
 	);
 } //App
