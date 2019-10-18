@@ -109,7 +109,7 @@ $fade-color: rgb(237, 20, 61);
 		}
 }
 
-//Desktop fullscreen
+//Desktop half screen
 @media (min-width: 1200px) {
 	.wrapper {
 		width: 95%;
@@ -129,8 +129,20 @@ $fade-color: rgb(237, 20, 61);
 			.content {
 				width: 50%;
 				padding-left: 0;
-				padding-right: 17.25em;
-				align-self: flex-end;
+				padding-right: 5em;
+				align-self: center;
 				font-size: 1rem;
 			}
+}
+
+//Desktop fullscreen
+@media (min-width: 1200px) and (min-aspect-ratio: 16/9) {
+
+	.content {
+		width: 50%;
+		padding-left: 0;
+		padding-right: 17.25em;
+		align-self: flex-end;
+		font-size: 1rem;
+	}
 }
