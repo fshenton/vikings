@@ -5,8 +5,8 @@ import {
 	ACTIONS
 } from "COMPONENTS/Characters/";
 import HeroImage from "COMPONENTS/HeroImage/";
-import { RENDER as RENDER_A, s } from "./";
-import RENDER_B from "SHARED/renderUtils.jsx";
+import { RENDER as CHARACTER_RENDER, s } from "./";
+import SHARED_RENDER from "SHARED/renderUtils.jsx";
 import UTILS from "SHARED/utils.js";
 
 export default function Character(props){
@@ -18,7 +18,7 @@ export default function Character(props){
 
 	//RENDER
 	//----------------------------
-	const RENDER = { ...RENDER_A, ...RENDER_B };
+	const RENDER = { ...CHARACTER_RENDER, ...SHARED_RENDER };
 
 	const {
 		name,
