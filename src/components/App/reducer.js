@@ -10,13 +10,16 @@ export default function reducer(state, action){
 
 	switch(type){
 		case ACTIONS.UPDATE_VIEW_SIZE: //Should be called if window is resized (not implemented)
-			const w = UTILS.getDeviceWidth();
-			const h = UTILS.getDeviceHeight();
+			const { width } = UTILS.getDeviceDimensions(); // currently just using width
+
+			const tabletStart = 768;
+			const desktopStart = 1200;
+
 			return {
 				...state,
-				isSmall:  w < 768 ? true : false,
-				isMedium: w >= 768 && w <= 1200 ? true : false,
-				isLarge: w >= 1200 ? true : false,
+				isSmall:  width < tabletStart,
+				isMedium: width >= tabletStart && width <= desktopStart,
+				isLarge: width >= desktopStart
 			};
 		default:
 			throw new Error("Invalid action used.")
