@@ -115,8 +115,9 @@ $fade-color: rgb(237, 20, 61);
 		width: 95%;
 		height: 100%;
 		padding: 0;
-		padding-left: 10em;
-		padding-right: 10em;
+		padding-left: var(--episode_desktop__padding);
+		padding-right: var(--episode_desktop__padding);
+		--episode_desktop__padding: 10em;
 	}
 
 		.container {
@@ -128,8 +129,8 @@ $fade-color: rgb(237, 20, 61);
 			.content {
 				width: 50%;
 				padding-left: 0;
-				padding-right: 0;
+				padding-right: 17.25em;
 				align-self: flex-end;
-				font-size: 1.05rem;
+				font-size: 1rem;
 			}
 }
