@@ -39,20 +39,21 @@ function renderPaginationLink(data, index){
 
 	const isActive 	= index === activeIndex;
 
-	let opacity = 1;
-	if(!isActive){
+	let opacity;
+	if(isActive) opacity = 1;
+	else {
 		const decayDistance = 4;
 		const decayRate     = 1/decayDistance;
 		const fadeOffset    = Math.abs(index - activeIndex);
 		
-		opacity -= fadeOffset * decayRate;
+		opacity = 1 - (fadeOffset * decayRate);
 	}
 	
 	const offset = index - activeIndex;
 
 	const style = {
 		transform: `translateX(${offset}em)`,
-		opacity: opacity
+		opacity
 	};
 
 	return (
