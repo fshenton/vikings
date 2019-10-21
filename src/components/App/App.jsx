@@ -27,12 +27,35 @@ export default function App(){
 		dispatch
 	} = useContext(Client);
 
+
+	// EFFECTS
+	// ------------------------
+
 	//set device dimensions on mount
 	useEffect(() => {
 		dispatch({
 			type: ACTIONS.UPDATE_VIEW_SIZE
 		});
 	}, []); //don't repeat
+
+	useEffect(updateResizeListeners, []);
+
+
+	function updateResizeListeners(){
+		window.addEventListener("resize", syncViewSize);
+		return () => {
+			window.removeEventListener("resize", syncView)
+		};
+	}// updateResizeListeners
+
+
+	function syncViewSize(event){
+		const { innerWidth } = event.target; //window width
+
+		dispatch({
+			type: ACTIONS.UPDATE_VIEW_SIZE
+		});
+	}// syncViewSize
 
 	return (
 		<div className={ s.wrapper }>
