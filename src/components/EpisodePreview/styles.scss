@@ -117,12 +117,18 @@
 					}
 
 					&.prev {
+						margin-left: 0;
+						margin-right: auto;
+
 						&::before {
 							margin-right: 1em;
 						}
 					}
 
 					&.next {
+						margin-left: auto;
+						margin-right: 0;
+
 						&::after {
 							margin-left: 1em;
 						}
