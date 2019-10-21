@@ -90,7 +90,7 @@ export default function EpisodePreview(props){
 
 	const { src: prevTrailerSrc } = prevTrailer;
 	const { src: nextTrailerSrc } = nextTrailer;
-
+	
 	return (
 		<aside className={ s.wrapper }>
 			<div className={ s.thumbnail }>
@@ -108,7 +108,7 @@ export default function EpisodePreview(props){
 					/>
 					<PlayIcon 
 						colour="#FFF" 
-						className="preview"
+						className={ s.preview }
 					/>
 				</a>
 				<div className={ `${s.ghost} ${s.top}` } />

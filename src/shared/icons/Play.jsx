@@ -9,7 +9,7 @@ export default function Play(props) {
 	} = props;
 
 	return (
-		<svg className={ `${s.icon} ${s[className]}` } 
+		<svg className={ `${s.icon} ${s.preview}` } 
 			 viewBox="0 0 100 100" 
 			 alt="Play video"
 			 preserveAspectRatio="xMaxYMax"
