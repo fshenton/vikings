@@ -15,15 +15,15 @@ export default function Play(props) {
 			 preserveAspectRatio="xMaxYMax"
 		>
 			<circle 
-				cx="64" 
-				cy="64" 
-				r="56.5" 
+				cx="50" 
+				cy="50" 
+				r="42" 
 				fill="none" 
 				strokeWidth="15" 
 				stroke={ colour }
 			/>
 			<polygon 
-				points="48,48 48,80 80,64" 
+				points="37.5,37.5 37.5,62.5 62.5,50" 
 				fill={ colour }
 			/>
 		</svg>
