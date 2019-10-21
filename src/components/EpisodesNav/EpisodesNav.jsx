@@ -19,7 +19,11 @@ export default function EpisodesNav(){
 		dispatch
 	} = useContext(Episodes);
 
-	const { isSmall } = useContext(Client).state;
+	const { 
+		isSmall,
+		isMedium, 
+		isLarge
+	} = useContext(Client).state;
 
 	// CLICK HANDLER
 	// -------------------------------
@@ -59,9 +63,9 @@ export default function EpisodesNav(){
 					aria-hidden={ isLastEpisodeActive }
 					onClick={ nextEpisode }
 				/>
-				{ isSmall && pagination }				
+				{ (isSmall || isMedium) && pagination }				
 			</div> 
-			{ !isSmall && pagination }
+			{ isLarge && pagination }
 		</nav>
 	);
 }// EpisodesNav

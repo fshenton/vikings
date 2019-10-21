@@ -68,15 +68,15 @@ function renderPaginationLink(data, index){
 		opacity = 1 - (fadeOffset * decayRate);
 	}
 	
-	const offset 	= index - activeIndex;
+	const offset = index - activeIndex;
 	
 	let axis, factor;
 	if(isLarge){
-		axis = "Y";
+		axis   = "Y";
 		factor = 1.5;
 	}
 	else{ 
-		axis = "X";
+		axis   = "X";
 		factor = 1;
 	}
 
