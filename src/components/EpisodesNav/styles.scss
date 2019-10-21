@@ -18,11 +18,6 @@
 			font-size: 1.75rem;
 			width: 1em;	
 			height: 1.42em;
-
-			&[aria-hidden="true"] {
-				pointer-events: none; //disable and hide hidden
-				opacity: 0;
-			}
 		}
 
 		.prev {
