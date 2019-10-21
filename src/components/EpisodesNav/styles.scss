@@ -1,9 +1,9 @@
 .wrapper {
 	position: fixed; //with absolute it will scroll with page
 	width: 80%;
-	left: 50%;
+	right: 50%;
 	bottom: 5%;
-	transform: translateX(-50%);
+	transform: translateX(50%);
 }
 
 	.container {
@@ -103,7 +103,7 @@
 		position: fixed;
 		width: 2em;
 		height: 8em;
-		left: 85%;
+		right: 15%;
 		bottom: 25%;
 	}
 
@@ -132,6 +132,6 @@
 //Desktop fullscreen
 @media (min-width: 1200px) and (min-aspect-ratio: 16/9) {
 	.wrapper {
-		left: 90%;
+		right: 10%;
 	}
 }
