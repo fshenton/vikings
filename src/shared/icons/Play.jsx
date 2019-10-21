@@ -3,13 +3,10 @@ import { s } from "./";
 
 export default function Play(props) {
 	
-	const { 
-		colour,
-		className = ""
-	} = props;
+	const { colour } = props;
 
 	return (
-		<svg className={ `${s.icon} ${s.preview}` } 
+		<svg className={ s.icon } 
 			 viewBox="0 0 100 100" 
 			 alt="Play video"
 			 preserveAspectRatio="xMaxYMax"

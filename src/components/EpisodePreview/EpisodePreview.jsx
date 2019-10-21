@@ -106,10 +106,11 @@ export default function EpisodePreview(props){
 						src={ thumbSrc }
 						alt={ thumbDesc }
 					/>
-					<PlayIcon 
-						colour="#FFF" 
-						className={ s.preview }
-					/>
+					<div className={ s.icon }>
+						<PlayIcon 
+							colour="#FFF" 
+						/>
+					</div>
 				</a>
 				<div className={ `${s.ghost} ${s.top}` } />
 				<div className={ `${s.ghost} ${s.top} ${s.left}` } />

@@ -25,8 +25,13 @@
 				object-fit: cover;
 			}
 
-			.preview {
-				opacity: 1; 
+			.icon {
+				position: absolute;
+				height: 128px;
+				top: 50%;
+				left: 50%;
+				font-size: 128px;
+				transform: translate(-50%, -50%);
 			}
 	}
 
