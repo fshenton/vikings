@@ -1,18 +1,19 @@
+$fade-color: rgb(237, 20, 61);
+
 // Mobile Portrait
 .wrapper {
 	position: relative;
 	height: auto;
 	min-height: 100%;
 	padding-top: 20vh;
-	background-color: rgb(237, 20, 61);
+	background-color: $fade-color;
 	
 	&[aria-hidden="true"]{
 		position: absolute;
 		top: 0;
-		opacity: 0;
 	}
 }
-		.container {
+		.content {
 			display: flex;
 			padding: 10vw; 
 			flex-direction: column;
@@ -21,14 +22,14 @@
 
 			.episode {
 				order: 1;
-				margin-bottom: 1.67em;
+				margin-bottom: 1.62em;
 				font-size: 1em;
 				font-family: var(--font_family__heading);
 			}
 
 			.title {
 				order: 2;
-				font-size: 1.7em;
+				font-size: 1.62em;
 				font-family: var(--font_family__heading);
 			}
 
@@ -56,9 +57,9 @@
 				left: 0;
 				z-index: 2;
 				background-image: linear-gradient(
-				    rgba(237, 20, 61, 0) 0%,
-				    rgba(237, 20, 61, 1) 80%,
-				    rgba(237, 20, 61, 1) 100%	
+				    rgba($fade-color, 0) 0%,
+				    rgba($fade-color, 1) 80%,
+				    rgba($fade-color, 1) 100%	
 				);
 			}
 
@@ -69,13 +70,13 @@
 		padding: 0;
 	}
 
-		.article {
+		.container {
 			display: flex;
 			flex-direction: row;
 
 		}
 
-			.container {
+			.content {
 				order: 1;
 				width: 50%;
 				padding-left: 5%;
@@ -90,38 +91,59 @@
 		padding-top: 10vh;
 	}
 
-		.container {
+		.content {
 			padding: 10%;
 			font-size: 1.62rem;
 		}
 }
 
 //Tablet landscape
-@media (min-width: 768px) {
+@media (min-width: 768px) and (orientation: landscape) {
 	.wrapper {
 		padding-top: 5%;
 	}
 
-		.container {
+		.content {
 			padding-left: 5%;
 			padding-right: 5%;
 			font-size: 1.3rem;
 		}
 }
 
-//Desktop fullscreen
+//Desktop half screen
 @media (min-width: 1200px) {
 	.wrapper {
-		padding-left: 10em;
-		padding-right: 15em;
-		display: flex;
-		align-items: center;
+		width: 95%;
+		height: 100%;
+		padding: 0;
+		padding-left: var(--episode_desktop__padding);
+		padding-right: var(--episode_desktop__padding);
+		overflow: hidden;
+		--episode_desktop__padding: 10em;
 	}
 
 		.container {
-			width: 50%;
-			padding-left: 0;
-			padding-right: 0;
-			font-size: 1.05rem;
+			width: 100%;
+			height: 100%;
+			align-items: center;
 		}
+
+			.content {
+				width: 50%;
+				padding-left: 0;
+				padding-right: 5em;
+				align-self: center;
+				font-size: 1rem;
+			}
+}
+
+//Desktop fullscreen
+@media (min-width: 1200px) and (min-aspect-ratio: 16/9) {
+
+	.content {
+		padding-left: 0;
+		padding-right: 17.25em;
+		align-self: flex-end;
+		font-size: 1rem;
+	}
 }

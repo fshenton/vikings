@@ -62,37 +62,33 @@ export default function EpisodePreview(props){
 	// ---------------------------
 	const formattedTitle    = UTILS.convertToSafeString(title, "-");
 	const previewId         = `${formattedTitle}-preview`;
-
+  
 	return (
 		<aside className={ s.wrapper }>
 			<div className={ s.thumbnail }>
 				<a
+					className= { s.button }
 					href={ trailerSrc }
 					aria-controls={ previewId }
 					aria-label={ `Watch preview for episode ${episodeNo}: ${title}.` }
 					onClick={ openOverlay }
 				>
 					<img
+						className={ s.image }
 						src={ thumbSrc }
 						alt={ thumbDesc }
 					/>
-					<PlayIcon colour="#FFF" />
+					<div className={ s.icon }>
+						<PlayIcon 
+							colour="#FFF" 
+						/>
+					</div>
 				</a>
-				<div 
-					className={ `${s.ghost} ${s.top}` }>
-				</div>
-				<div 
-					className={ `${s.ghost} ${s.top} ${s.left}` }>
-				</div>
-				<div 
-					className={ `${s.ghost} ${s.left}` }>
-				</div>
-				<div 
-					className={ `${s.ghost} ${s.bottom} ${s.left}`}>
-				</div>
-				<div 
-					className={ `${s.ghost} ${s.bottom}` }>
-				</div>
+				<div className={ `${s.ghost} ${s.top}` } />
+				<div className={ `${s.ghost} ${s.top} ${s.left}` } />
+				<div className={ `${s.ghost} ${s.left}` } />
+				<div className={ `${s.ghost} ${s.bottom} ${s.left}`} />
+				<div className={ `${s.ghost} ${s.bottom}` } />
 			</div>
 			<PreviewOverlay 
 				episodeId={ episodeId }

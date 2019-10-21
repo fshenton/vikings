@@ -1,5 +1,8 @@
-import React from "react";
-import { ClientProvider } from "./";
+import React, { useContext, useEffect } from "react";
+import { 
+	ClientContext as Client,
+	ACTIONS 
+} from "COMPONENTS/Client/";
 import HomePermalink from "COMPONENTS/HomePermalink/";
 import HistoryChannel from "COMPONENTS/HistoryChannel/";
 import WatchNow from "COMPONENTS/WatchNow/";
@@ -14,26 +17,64 @@ import { s } from "./";
 
 export default function App(){
 
+	// CONTEXT
+	// ------------------------
+
+	const {
+		state: {
+			isSmall //defaults true, before mounted
+		},
+		dispatch
+	} = useContext(Client);
+
+
+	// EFFECTS
+	// ------------------------
+
+	//set device dimensions on mount
+	useEffect(() => {
+		dispatch({
+			type: ACTIONS.UPDATE_VIEW_SIZE
+		});
+	}, []); //don't repeat
+
+	useEffect(updateResizeListeners, []);
+
+
+	function updateResizeListeners(){
+		window.addEventListener("resize", syncViewSize);
+		return () => {
+			window.removeEventListener("resize", syncView)
+		};
+	}// updateResizeListeners
+
+
+	function syncViewSize(event){
+		const { innerWidth } = event.target; //window width
+
+		dispatch({
+			type: ACTIONS.UPDATE_VIEW_SIZE
+		});
+	}// syncViewSize
+
 	return (
-		<ClientProvider>
-			<div className={ s.wrapper }>
-				{ /* STICKIES */}
-				{ false && <HomePermalink /> }
-				{ false && <Socials /> }
-				{ false && <HistoryChannel /> }
-				{ false && <WatchNow /> }
+		<div className={ s.wrapper }>
+			{ /* STICKIES */}
+			{ false && <HomePermalink /> }
+			{ false && <Socials /> }
+			{ false && <HistoryChannel /> }
+			{ false && <WatchNow /> }
 
-				{/* COMMON */}
-				{ false && <Navigation /> }
+			{/* COMMON */}
+			{ false && <Navigation /> }
 
-				{/* PAGES */}
-				<main className={ s.container }>
-					{ false && <Landing /> }
-					{ false && <About /> }
-					{ false && <Characters /> }
-					{ true && <Episodes /> }
-				</main>
-			</div>
-		</ClientProvider>
+			{/* PAGES */}
+			<main className={ s.container }>
+				{ false && <Landing /> }
+				{ false && <About /> }
+				{ false && <Characters /> }
+				{ true && <Episodes /> }
+			</main>
+		</div>
 	);
 } //App

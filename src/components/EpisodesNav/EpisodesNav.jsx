@@ -4,9 +4,7 @@ import {
 	ACTIONS,
 	EpisodesContext as Episodes
 } from "COMPONENTS/Episodes/";
-import {
-	ClientContext as Client
-} from "COMPONENTS/App/";
+import { ClientContext as Client } from "COMPONENTS/Client/";
 import { s, RENDER } from "./";
 
 export default function EpisodesNav(){
@@ -21,7 +19,11 @@ export default function EpisodesNav(){
 		dispatch
 	} = useContext(Episodes);
 
-	const { isSmall } = useContext(Client).state;
+	const { 
+		isSmall,
+		isMedium, 
+		isLarge
+	} = useContext(Client).state;
 
 	// CLICK HANDLER
 	// -------------------------------
@@ -42,7 +44,7 @@ export default function EpisodesNav(){
 	const isFirstEpisodeActive = activeIndex === 0;
 	const isLastEpisodeActive  = activeIndex === episodeCount - 1;
 	
-	const pagination = data.map(RENDER.pagination);
+	const pagination = RENDER.pagination(data);
 
 	return (
 		<nav className={ s.wrapper }>
@@ -61,23 +63,9 @@ export default function EpisodesNav(){
 					aria-hidden={ isLastEpisodeActive }
 					onClick={ nextEpisode }
 				/>
-				{ isSmall && 
-					<ol 
-						className={ s.pagination }
-						id="episodes__pagination"
-					>
-						{ pagination }
-					</ol> 
-				}
+				{ (isSmall || isMedium) && pagination }				
 			</div> 
-			{ !isSmall && 
-				<ol 
-					className={ s.pagination }	
-					id="episodes__pagination"
-				>
-					{ pagination }
-				</ol> 
-			}
+			{ isLarge && pagination }
 		</nav>
 	);
 }// EpisodesNav

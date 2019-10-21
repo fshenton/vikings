@@ -42,7 +42,7 @@ export default function Episode(props){
 			aria-label={ `Episode ${number} of ${episodeCount}.` }
 			aria-hidden={ hidden }
 		>
-			<article className={ s.article }>
+			<article className={ s.container }>
 				<EpisodePreview 
 					episodeId={ id }
 					index={ index }
@@ -51,7 +51,7 @@ export default function Episode(props){
 					thumbnail={ thumbnail }
 					trailer={ trailer }
 				/>
-				<div className={ s.container }>
+				<div className={ s.content }>
 					<h1 className={ s.title }>
 						{ title }
 					</h1>
@@ -61,9 +61,7 @@ export default function Episode(props){
 					<div className={ s.body }>
 						{ synopsis }
 					</div>
-					<div 
-						className={ s.fade }>
-					</div>
+					<div className={ s.fade } />
 				</div>
 			</article>
 		</li>

@@ -1,14 +1,16 @@
 .wrapper {
 	position: fixed; //with absolute it will scroll with page
 	width: 80%;
-	left: 50%;
+	right: 50%;
 	bottom: 5%;
 	z-index: 2;
-	transform: translateX(-50%);
+	transform: translateX(50%);
 }
 
 	.container {
 		display: flex;
+		position: relative;
+		z-index: 1;
 		justify-content: space-between;
 		align-items: center;
 	}
@@ -17,11 +19,7 @@
 			font-size: 1.75rem;
 			width: 1em;	
 			height: 1.42em;
-
-			&[aria-hidden="true"] {
-				pointer-events: none; //disable and hide hidden
-				opacity: 0;
-			}
+			z-index: 2;
 		}
 
 		.prev {
@@ -41,29 +39,30 @@
 			list-style: none;
 		}
 
-			.inactive, .active {
+			.item {
 				display: flex;
 				position: absolute;
 				height: 100%;
 				left: 50%;
 				align-items: center; 
 
-				a {
+				&.inactive {
+					font-size: 1.15em;
+					font-weight: normal;
+				}
+
+				&.active {
+					font-size: 1.5em;
+					font-weight: bold;
+					pointer-events: none;
+				}
+
+				.paginationLink {
 					text-decoration: none;
 				}
 			} 
 
-				.inactive {
-					font-size: 1.15em;
-					font-weight: normal;
-					pointer-events: none; //prevents overlap with prev/next
-				}
-
-				.active {
-					font-size: 1.5em;
-					font-weight: bold;
-					pointer-events: all;
-				}
+				
 	
 //Mobile landscape
 @media (orientation: landscape) {
@@ -99,14 +98,14 @@
 	}
 }
 
-//Desktop fullscreen
+//Desktop half screen
 @media (min-width: 1200px) {
 	.wrapper {
 		position: fixed;
 		width: 2em;
-		height: 10em;
-	    left: 90%;
-	    bottom: 28%;
+		height: 8em;
+		right: 10%;
+		bottom: 25%;
 	}
 
 		.container {
@@ -118,4 +117,22 @@
 			.button {
 				transform: rotateZ(90deg);
 			}
+
+		.pagination {
+			flex-direction: column;
+			position: absolute;
+			left: 7em;
+			bottom: 20vh;
+		}
+
+			.item {
+				height: 1em;
+			}
+}
+
+//Desktop fullscreen
+@media (min-width: 1200px) and (min-aspect-ratio: 16/9) {
+	.wrapper {
+		right: 10%;
+	}
 }

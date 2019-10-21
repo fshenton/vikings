@@ -5,28 +5,24 @@ function convertToSafeString(string, seperator="_"){
 }//convertToSafeString
 
 
-function getDeviceWidth(){
-	const w = Math.max(
+function getDeviceDimensions(){
+	const width = Math.max(
 		document.documentElement.clientWidth, 
 		window.innerWidth 
 		|| 0
 	);
 
-	return w;
-}// getDeviceWidth
-
-function getDeviceHeight(){
-	const h = Math.max(
+	const height = Math.max(
 		document.documentElement.clientHeight,
 		window.innerHeight
 		|| 0
 	);
 
-	return h;
-}// getDeviceHeight
+	return { width, height} ;
+}// getDeviceDimensions
+
 
 export default {
 	convertToSafeString,
-	getDeviceWidth,
-	getDeviceHeight
+	getDeviceDimensions
 };
