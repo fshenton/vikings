@@ -1,31 +1,11 @@
 import React, { useContext } from "react";
-import {
-	ACTIONS,
-	EpisodesContext as Episodes,
-} from "COMPONENTS/Episodes/";
-import { TrailerContext as Trailer } from "COMPONENTS/Episode/";
-import { s } from "./";
-import UTILS from "SHARED/utils.js";
 import { Play as PlayIcon } from "SHARED/icons/";
+import PreviewOverlay from "COMPONENTS/PreviewOverlay/";
+import { ACTIONS, EpisodesContext as Episodes } from "COMPONENTS/Episodes/";
+import UTILS from "SHARED/utils.js";
+import { s } from "./";
 
 export default function EpisodePreview(props){
-
-	// CONTEXT
-	// ----------------------------
-	const {
-		state: {
-			activeIndex,
-			overlayActive,
-			episodeCount
-		},
-		dispatch
-	} = useContext(Episodes);
-
-	const {
-		prev: prevTrailer = {},
-		next: nextTrailer = {}
-	} = useContext(Trailer);
-
 
 	// PROPS
 	// --------------------------
@@ -43,6 +23,11 @@ export default function EpisodePreview(props){
 		}
 	} = props;
 
+	// CONTEXT
+	// ----------------------------
+	const {
+		dispatch
+	} = useContext(Episodes);
 
 	// CLICK HANDLERS
 	// -----------------------------
@@ -65,32 +50,19 @@ export default function EpisodePreview(props){
 		});
 	}// setOverlay
 
-
 	// BINDING
 	// ------------------------------
 	const prevEpisode  = setActiveIndex.bind(this, index - 1);
 	const nextEpisode  = setActiveIndex.bind(this, index + 1);
-	
-	const openOverlay  = setOverlayActive.bind(this, true);
+
 	const closeOverlay = setOverlayActive.bind(this, false);
+	const openOverlay  = setOverlayActive.bind(this, true);
 
-	
-	// RENDER LOGIC
-	// ----------------------------
-	// handle visibility of active episode and episode preview overlay
-	const isActiveEpisode   = activeIndex === index;
-	const isOverlayActive   = isActiveEpisode && overlayActive;
-	const hidden            = !isOverlayActive;
-
-	const isFirst           = index === 0;
-	const isLast            = index === episodeCount - 1;
-
+	// RENDER
+	// ---------------------------
 	const formattedTitle    = UTILS.convertToSafeString(title, "-");
 	const previewId         = `${formattedTitle}-preview`;
-
-	const { src: prevTrailerSrc } = prevTrailer;
-	const { src: nextTrailerSrc } = nextTrailer;
-	
+  
 	return (
 		<aside className={ s.wrapper }>
 			<div className={ s.thumbnail }>
@@ -118,53 +90,17 @@ export default function EpisodePreview(props){
 				<div className={ `${s.ghost} ${s.bottom} ${s.left}`} />
 				<div className={ `${s.ghost} ${s.bottom}` } />
 			</div>
-			<div
-				id={ previewId }
-				className= { s.content }
-				aria-hidden={ hidden }
-			>
-				<header>
-					<h2>
-						{ `Episode ${episodeNo}` } 
-					</h2>
-					<h1>
-						{ title }
-					</h1>
-					<nav>
-						{ !isFirst && (
-							<a 
-								href={ prevTrailerSrc }
-								aria-label="Previous."
-								onClick={ prevEpisode }
-							>
-								Prev
-							</a>
-						)}
-						{ !isLast && (
-							<a 
-								href={ nextTrailerSrc } 
-								onClick={ nextEpisode }
-							>
-								Next
-							</a>
-						)}
-						<a 
-							href={ `#${episodeId}` }
-							onClick={ closeOverlay }
-						> 
-							Close
-						</a>
-					</nav>
-				</header>
-				<video>
-					{ isOverlayActive && (
-						<source 
-							src={trailerSrc}
-							type="video/mp4"
-						/>
-					)}
-				</video>
-			</div>	
+			<PreviewOverlay 
+				episodeId={ episodeId }
+				index={ index }
+				episodeNo={ episodeNo }
+				title={ title }
+				previewId={ previewId }
+				trailerSrc={ trailerSrc }
+				prevEpisode={ prevEpisode }
+				nextEpisode={ nextEpisode }
+				closeOverlay={ closeOverlay }
+			/>
 		</aside>
 	);
 }// EpisodePreview
