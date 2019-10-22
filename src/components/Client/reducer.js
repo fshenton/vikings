@@ -10,19 +10,12 @@ export default function reducer(state, action){
 
 	switch(type){
 		case ACTIONS.UPDATE_VIEW_SIZE: 
-
-			let width; //can be passed as value or grabbed from shared utils
-
-			if(!value){
-				const dimensions = UTILS.getDeviceDimensions(); // currently just using width
-				width = dimensions["width"];
-			}	
-			else {
-				width = value;
-			}
+			const { width } = UTILS.getDeviceDimensions(); // currently just using width
 			
 			const tabletStart = 768;
 			const desktopStart = 1200;
+
+			console.log("width: " + width);
 
 			return {
 				...state,

@@ -32,14 +32,10 @@ export default function App(){
 	// ------------------------
 
 	//set device dimensions on mount
-	useEffect(() => {
-		dispatch({
-			type: ACTIONS.UPDATE_VIEW_SIZE
-		});
-	}, []); //don't repeat
+	useEffect(syncViewSize, []); 
 
+	//add/remove resize listeners
 	useEffect(updateResizeListeners, []);
-
 
 	function updateResizeListeners(){
 		window.addEventListener("resize", syncViewSize);
@@ -49,9 +45,7 @@ export default function App(){
 	}// updateResizeListeners
 
 
-	function syncViewSize(event){
-		const { innerWidth } = event.target; //window width
-
+	function syncViewSize(){
 		dispatch({
 			type: ACTIONS.UPDATE_VIEW_SIZE
 		});
