@@ -70,18 +70,19 @@ function renderPaginationLink(data, index){
 	
 	const offset = index - activeIndex;
 	
-	let axis, factor;
+	let translate, factor;
 	if(isLarge){
-		axis   = "Y";
-		factor = 1.5;
-	}
-	else{ 
-		axis   = "X";
-		factor = 1;
+		translate   = "translateY";
+		factor      = 1.5;
+	} else { 
+		translate   = "translateX";
+		factor      = 1;
 	}
 
+	const translation = `${factor * offset}em`;
+
 	const style = {
-		transform: `translate${axis}(${factor*offset}em)`,
+		transform: `${translate}(${translation})`,
 		opacity
 	};
 
