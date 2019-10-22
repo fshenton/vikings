@@ -15,11 +15,15 @@ export default function reducer(state, action){
 			const tabletStart = 768;
 			const desktopStart = 1200;
 
+			const isSmall = width < tabletStart;
+			const isMedium = width >= tabletStart && width < desktopStart;
+			const isLarge = width >= desktopStart; 
+
 			return {
 				...state,
-				isSmall:  width < tabletStart,
-				isMedium: width >= tabletStart && width < desktopStart,
-				isLarge: width >= desktopStart
+				isSmall,
+				isMedium,
+				isLarge
 			};
 		default:
 			throw new Error("Invalid action used.")
