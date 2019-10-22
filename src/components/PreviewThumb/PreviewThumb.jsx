@@ -1,7 +1,10 @@
 import React, { useContext } from "react";
 import { Play as PlayIcon } from "SHARED/icons/";
 import PreviewOverlay from "COMPONENTS/PreviewOverlay/";
-import { ACTIONS, EpisodesContext as Episodes } from "COMPONENTS/Episodes/";
+import { 
+	ACTIONS, 
+	EpisodesContext as Episodes 
+} from "COMPONENTS/Episodes/";
 import UTILS from "SHARED/utils.js";
 import { s } from "./";
 
@@ -29,39 +32,20 @@ export default function PreviewThumb(props){
 		dispatch
 	} = useContext(Episodes);
 
-	// CLICK HANDLERS
-	// -----------------------------
-	function setActiveIndex(newIndex, e){
-		if(e) e.preventDefault();
 
-		dispatch({
-			type: ACTIONS.GET_EPISODE,
-			value: newIndex
-		});
-	}// changeEpisode
-
-
-	function setOverlayActive(active, e){
+	function openOverlay(e){
 		if(e) e.preventDefault();
 
 		dispatch({
 			type: ACTIONS.SHOW_TRAILER,
-			value: active
+			value: true
 		});
-	}// setOverlay
-
-	// BINDING
-	// ------------------------------
-	const prevEpisode  = setActiveIndex.bind(this, index - 1);
-	const nextEpisode  = setActiveIndex.bind(this, index + 1);
-
-	const closeOverlay = setOverlayActive.bind(this, false);
-	const openOverlay  = setOverlayActive.bind(this, true);
+	}// setOverlayActive
 
 	// RENDER
 	// ---------------------------
 	const formattedTitle    = UTILS.convertToSafeString(title, "-");
-	const previewId         = `${formattedTitle}-preview`;
+	const id                = `${formattedTitle}-preview`;
   
 	return (
 		<aside className={ s.wrapper }>
@@ -69,7 +53,7 @@ export default function PreviewThumb(props){
 				<a
 					className= { s.button }
 					href={ trailerSrc }
-					aria-controls={ previewId }
+					aria-controls={ id }
 					aria-label={ `Watch preview for episode ${episodeNo}: ${title}.` }
 					onClick={ openOverlay }
 				>
@@ -95,11 +79,8 @@ export default function PreviewThumb(props){
 				index={ index }
 				episodeNo={ episodeNo }
 				title={ title }
-				previewId={ previewId }
+				id={ id }
 				trailerSrc={ trailerSrc }
-				prevEpisode={ prevEpisode }
-				nextEpisode={ nextEpisode }
-				closeOverlay={ closeOverlay }
 			/>
 		</aside>
 	);

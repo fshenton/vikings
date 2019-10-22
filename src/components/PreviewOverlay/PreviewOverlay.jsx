@@ -1,5 +1,8 @@
 import React, { useContext } from "react";
-import { EpisodesContext as Episodes } from "COMPONENTS/Episodes/";
+import { 
+	ACTIONS, 
+	EpisodesContext as Episodes 
+} from "COMPONENTS/Episodes/";
 import { TrailerContext as Trailer } from "COMPONENTS/Episode/";
 import { s } from "./";
 
@@ -12,26 +15,27 @@ export default function PreviewOverlay(props){
 		index,
 		episodeNo,
 		title,
-		previewId,
-		trailerSrc,
-		prevEpisode, //bound callback
-		nextEpisode, //bound callback
-		closeOverlay //bound callback
+		id,
+		trailerSrc
 	} = props;
+
+	// CONTEXT
+	// ----------------------------
 
 	const {
 		prev: prevTrailer = {},
 		next: nextTrailer = {}
 	} = useContext(Trailer);
 
-
-	// CONTEXT
-	// ----------------------------
 	const {
-		activeIndex,
-		overlayActive,
-		episodeCount
-	} = useContext(Episodes).state;
+		state: {
+			activeIndex,
+			overlayActive,
+			episodeCount
+		},
+		dispatch
+	} = useContext(Episodes);
+
 
 	// RENDER LOGIC
 	// ----------------------------
@@ -47,13 +51,38 @@ export default function PreviewOverlay(props){
 	const { src: nextTrailerSrc } = nextTrailer;
 
 
+	// CLICK HANDLERS
+	// -----------------------------
+	function setActiveIndex(newIndex, e){
+		if(e) e.preventDefault();
+
+		dispatch({
+			type: ACTIONS.GET_EPISODE,
+			value: newIndex
+		});
+	}// setActiveIndex
+
+	function closeOverlay(e){
+		if(e) e.preventDefault();
+
+		dispatch({
+			type: ACTIONS.SHOW_TRAILER,
+			value: false
+		});
+	}// closeOverlay
+
+	// BINDING
+	// ------------------------------
+	const prevEpisode  = setActiveIndex.bind(this, index - 1);
+	const nextEpisode  = setActiveIndex.bind(this, index + 1);
+
 	return (
 		<div
-			id={ previewId }
-			className= { s.container }
+			id={ id }
+			className= { s.wrapper }
 			aria-hidden={ hidden }
 		>
-			<header className={ s.details }>
+			<header className={ s.container }>
 				<h2 className={ s.episode }>
 					{ `Episode ${episodeNo}` } 
 				</h2>
