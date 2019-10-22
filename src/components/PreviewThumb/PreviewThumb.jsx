@@ -5,7 +5,7 @@ import { ACTIONS, EpisodesContext as Episodes } from "COMPONENTS/Episodes/";
 import UTILS from "SHARED/utils.js";
 import { s } from "./";
 
-export default function EpisodePreview(props){
+export default function PreviewThumb(props){
 
 	// PROPS
 	// --------------------------
@@ -103,4 +103,4 @@ export default function EpisodePreview(props){
 			/>
 		</aside>
 	);
-}// EpisodePreview
+}// PreviewThumb

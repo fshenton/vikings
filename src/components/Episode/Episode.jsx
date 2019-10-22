@@ -1,6 +1,6 @@
 import React, { useContext } from "react";
 import { EpisodesContext as Episodes } from "COMPONENTS/Episodes/";
-import EpisodePreview from "COMPONENTS/EpisodePreview/";
+import PreviewThumb from "COMPONENTS/PreviewThumb/";
 import { s } from "./";
 import RENDER from "SHARED/renderUtils.jsx";
 
@@ -43,7 +43,7 @@ export default function Episode(props){
 			aria-hidden={ hidden }
 		>
 			<article className={ s.container }>
-				<EpisodePreview 
+				<PreviewThumb 
 					episodeId={ id }
 					index={ index }
 					number={ number }
