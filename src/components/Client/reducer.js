@@ -15,8 +15,6 @@ export default function reducer(state, action){
 			const tabletStart = 768;
 			const desktopStart = 1200;
 
-			console.log("width: " + width);
-
 			return {
 				...state,
 				isSmall:  width < tabletStart,

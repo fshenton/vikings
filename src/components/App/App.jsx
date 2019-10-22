@@ -1,8 +1,4 @@
-import React, { useContext, useEffect } from "react";
-import { 
-	ClientContext as Client,
-	ACTIONS 
-} from "COMPONENTS/Client/";
+import React, { useContext } from "react";
 import HomePermalink from "COMPONENTS/HomePermalink/";
 import HistoryChannel from "COMPONENTS/HistoryChannel/";
 import WatchNow from "COMPONENTS/WatchNow/";
@@ -16,40 +12,6 @@ import Fonts from "SHARED/fonts.scss";
 import { s } from "./";
 
 export default function App(){
-
-	// CONTEXT
-	// ------------------------
-
-	const {
-		state: {
-			isSmall //defaults true, before mounted
-		},
-		dispatch
-	} = useContext(Client);
-
-
-	// EFFECTS
-	// ------------------------
-
-	//set device dimensions on mount
-	useEffect(syncViewSize, []); 
-
-	//add/remove resize listeners
-	useEffect(updateResizeListeners, []);
-
-	function updateResizeListeners(){
-		window.addEventListener("resize", syncViewSize);
-		return () => {
-			window.removeEventListener("resize", syncView)
-		};
-	}// updateResizeListeners
-
-
-	function syncViewSize(){
-		dispatch({
-			type: ACTIONS.UPDATE_VIEW_SIZE
-		});
-	}// syncViewSize
 
 	return (
 		<div className={ s.wrapper }>
