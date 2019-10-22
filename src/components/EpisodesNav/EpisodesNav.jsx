@@ -46,6 +46,9 @@ export default function EpisodesNav(){
 	
 	const pagination = RENDER.pagination(data);
 
+	const bottomPagination = isSmall || isMedium;
+	const sidePagination = isLarge;
+
 	return (
 		<nav className={ s.wrapper }>
 			<div className={ s.container }>
@@ -63,9 +66,9 @@ export default function EpisodesNav(){
 					aria-hidden={ isLastEpisodeActive }
 					onClick={ nextEpisode }
 				/>
-				{ (isSmall || isMedium) && pagination }				
+				{ bottomPagination && pagination }				
 			</div> 
-			{ isLarge && pagination }
+			{ sidePagination && pagination }
 		</nav>
 	);
 }// EpisodesNav
