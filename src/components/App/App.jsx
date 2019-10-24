@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext } from "react";
 import HomePermalink from "COMPONENTS/HomePermalink/";
 import HistoryChannel from "COMPONENTS/HistoryChannel/";
 import WatchNow from "COMPONENTS/WatchNow/";
@@ -32,8 +32,8 @@ export default function App(){
 			<main className={ s.container }>
 				{ false && <Landing /> }
 				{ false && <About /> }
-				{ true && <Characters /> }
-				{ false && <Episodes /> }
+				{ false && <Characters /> }
+				{ true && <Episodes /> }
 			</main>
 		</div>
 	);

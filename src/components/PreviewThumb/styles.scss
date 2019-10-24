@@ -1,0 +1,104 @@
+//Mobile portrait
+.wrapper {
+	position: relative;
+	width: 100%;
+	z-index: 3;
+	--thumbnail_width: 100%;
+	--thumbnail_height: 38vh;
+}
+
+	.thumbnail {
+		display: flex;
+		position: relative;
+		width: var(--thumbnail_width);
+		height: var(--thumbnail_height);
+		background-color: blue;
+
+		.button { 
+			display: flex;
+			width: 100%;
+			height: 100%;  //width/height 100% for everything!???
+		}
+	
+			.image { 
+				display: block;
+				width: 100%;
+				height: 100%;
+				object-fit: cover;
+			}
+
+			.icon {
+				position: absolute;
+				height: 128px;
+				top: 50%;
+				left: 50%;
+				font-size: 128px;
+				transform: translate(-50%, -50%);
+			}
+	}
+
+	.ghost {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		opacity: 0.1;
+		pointer-events: none;
+
+		&.left {
+			transform: translateX(-100%);
+			background-color: pink;
+			background-image: url("/path/to/lord-of-the-rings-1.jpg");
+		}
+
+		&.top {
+			transform: translateY(-100%);
+			background-color: green;
+			background-image: url("/path/to/lord-of-the-rings-2.jpg");
+
+			&.left {
+				transform: translate(-100%, -100%);
+				background-color: blue;
+				background-image: url("/path/to/lord-of-the-rings-3.jpg");
+			}
+		}
+
+		&.bottom {
+			transform: translateY(100%);	
+			background-color: yellow;
+			background-image: url("/path/to/lord-of-the-rings-4.jpg");
+
+			&.left {
+				transform: translate(-100%, 100%);
+				background-color: purple;
+				background-image: url("/path/to/lord-of-the-rings-5.jpg");
+			}
+		}
+	}
+
+	.content {
+		position: absolute; 
+	}
+
+
+//Mobile landscape
+@media (orientation: landscape) {
+	.wrapper {
+		order: 2;
+		position: fixed;
+		left: 50%;
+		width: 50%;
+		padding-top: 10%;
+		--thumbnail_height: 50vh;
+	}
+}
+
+//Desktop fullscreen
+@media (min-width: 1200px) {
+	.wrapper {
+		position: initial;
+		padding-top: 0;
+		width: 50%;
+	}
+}
