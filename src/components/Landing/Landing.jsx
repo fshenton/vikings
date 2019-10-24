@@ -2,6 +2,7 @@ import React from "react";
 import RENDER from "SHARED/renderUtils.jsx";
 import { s, data } from "./";
 import LogoArtwork from "COMPONENTS/LogoArtwork/";
+import WatchNow from "COMPONENTS/WatchNow/";
 import BackgroundVideo from "COMPONENTS/BackgroundVideo/";
 
 export default function Landing(){
@@ -39,6 +40,7 @@ export default function Landing(){
 					{ body }
 				</div>
 			</header>
+			<WatchNow />
 		</>
 	);
 }// Landing

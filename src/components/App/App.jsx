@@ -17,11 +17,7 @@ export default function App(){
 	// CONTEXT
 	// -------------------------
 
-	const {
-		isSmall,
-		isMedium,
-		isLarge
-	} = useContext(Client).state;
+	const { isSmall } = useContext(Client).state;
 
 
 	// RENDER
@@ -33,17 +29,17 @@ export default function App(){
 			<NavProvider>
 				<Navigation /> 
 				<HomePermalink /> 
-				<Socials /> 
-				<HistoryChannel />
-				<WatchNow /> 
+				{ !isSmall && <Socials /> }
+				{ !isSmall && <HistoryChannel /> }
+				{ !isSmall && <WatchNow /> }
 			</NavProvider>
 
 			{/* PAGES */}
 			<main className={ s.container }>
-				{ false && <Landing /> }
+				{ true && <Landing /> }
 				{ false && <About /> }
 				{ false && <Characters /> }
-				{ true && <Episodes /> }
+				{ false && <Episodes /> }
 			</main>
 		</div>
 	);
