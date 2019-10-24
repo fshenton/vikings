@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useContext } from "react";
+import { ClientContext as Client } from "COMPONENTS/Client/"; 
 import HomePermalink from "COMPONENTS/HomePermalink/";
 import HistoryChannel from "COMPONENTS/HistoryChannel/";
 import WatchNow from "COMPONENTS/WatchNow/";
@@ -13,20 +14,29 @@ import { s } from "./";
 
 export default function App(){
 
+	// CONTEXT
+	// -------------------------
+
+	const {
+		isSmall,
+		isMedium,
+		isLarge
+	} = useContext(Client).state;
+
+
+	// RENDER
+	// -------------------------
+
 	return (
 		<div className={ s.wrapper }>
 			{ /* STICKIES */}
-			{ true && <HomePermalink /> }
-			{ false && <Socials /> }
-			{ false && <HistoryChannel /> }
-			{ false && <WatchNow /> }
-
-			{/* COMMON */}
-			{ false && (
-				<NavProvider>
-					<Navigation /> 
-				</NavProvider>
-			)}
+			<NavProvider>
+				<Navigation /> 
+				<HomePermalink /> 
+				<Socials /> 
+				<HistoryChannel />
+				<WatchNow /> 
+			</NavProvider>
 
 			{/* PAGES */}
 			<main className={ s.container }>
