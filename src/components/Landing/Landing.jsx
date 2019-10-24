@@ -40,7 +40,6 @@ export default function Landing(){
 					{ body }
 				</div>
 			</header>
-			<WatchNow />
 		</>
 	);
 }// Landing

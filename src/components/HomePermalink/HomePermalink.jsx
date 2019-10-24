@@ -12,7 +12,7 @@ export default function HomePermalink(){
 	// RENDER 
 	// -----------------------
 
-	if(open) return null
+	if(open) return null;
 	else {
 		return (
 			<Link

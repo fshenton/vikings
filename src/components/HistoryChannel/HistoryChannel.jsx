@@ -14,7 +14,7 @@ export default function HistoryChannel(){
 	// RENDER 
 	// ------------------------------
 
-	if(open) return null
+	if(open) return null;
 	else {
 		return (
 			<Link
