@@ -2,20 +2,14 @@ import React, { useContext } from "react";
 import { RENDER, s, data } from "./";
 import { NavContext as Nav } from "COMPONENTS/Navigation/";
 
-export default function Socials(){
+export default function Socials(props){
 
-	//CONTEXT
-	//---------------------------
-	const {
-		open
-	} = useContext(Nav).state;
+	const { className = "" } = props;
 
-	// RENDER
-	// ---------------------------------
 	const links = data.map(RENDER.item);
 
 	return (
-		<ul className={ `${s.wrapper} ${open ? s.open : s.closed}` }>
+		<ul className={ `${s.wrapper} ${className}` }>
 			{ links }
 		</ul>
 	);

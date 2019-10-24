@@ -19,12 +19,14 @@
 		font-family: var(--font_family__heading);
 		list-style: none;
 
-		&[aria-expanded="false"] {
+		&[aria-expanded="false"], 
+		&[aria-expanded="false"] ~ .socials {
 			opacity: 0;
 			pointer-events: none;
 		}
 
-		&[aria-expanded="true"] {
+		&[aria-expanded="true"],
+		&[aria-expanded="true"] ~ .socials {
 			opacity: 1;
 			pointer-events: all;
 		}
@@ -41,6 +43,12 @@
 				text-decoration: none;
 			}
 		}
+
+	.socials {
+		width: 50%;
+		max-width: 6em;
+		font-size: 2rem;
+	}
 	
 // Mobile landscape
 @media (orientation: landscape) {

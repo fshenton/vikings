@@ -31,7 +31,7 @@ export default function Navigation(){
 			>
 				{ links }
 			</ul>
-			<Socials />
+			<Socials className={ s.socials }/>
 		</nav>
 	);
 }// Navigation

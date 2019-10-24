@@ -29,7 +29,7 @@ export default function App(){
 			<NavProvider>
 				<Navigation /> 
 				<HomePermalink /> 
-				{ !isSmall && <Socials /> }
+				{ !isSmall && <Socials className={ s.socials }/> }
 				{ !isSmall && <HistoryChannel /> }
 				{ !isSmall && <WatchNow /> }
 			</NavProvider>
