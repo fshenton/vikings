@@ -1,3 +1,19 @@
+// Mobile portrait
 .home {
+	position: absolute;
+	width: 4em;
+	height: 5.4em;
+	top: var(--home-spacing);
+	left: var(--home-spacing);
+	font-size: 1rem;
+	background-color: red;
+	--home-spacing: 3em;
+}
 
+
+// Desktop 
+@media (min-width: 1200px) {
+	.home {
+		--home-spacing: 3.75em;
+	}
 }
