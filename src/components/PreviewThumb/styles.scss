@@ -1,6 +1,8 @@
 //Mobile portrait
 .wrapper {
+	position: relative;
 	width: 100%;
+	z-index: 3;
 	--thumbnail_width: 100%;
 	--thumbnail_height: 38vh;
 }
