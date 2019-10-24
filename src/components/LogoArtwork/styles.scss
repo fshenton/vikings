@@ -1,0 +1,54 @@
+// Mobile Portrait
+.wrapper {
+	display: flex;
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	z-index: 1;
+	justify-content: center;
+	align-items: center;
+	transform: translate(-50%, -50%);
+}
+	
+	.logo {
+		font-size: 75vw;
+		width: 1em;
+		height: 1.4em;
+		background-color: navy;
+		text-indent: -9999px; // REMOVE ONCE WE HAVE AN IMAGE TO USE
+	}
+
+// Mobile landscape
+@media (orientation: landscape) {
+	.logo {
+		font-size: 35vw;
+	}
+}
+
+// Tablet portrait
+@media (min-width: 768px) {
+	.logo {
+		font-size: 50vw;
+	}
+}
+
+// Tablet Landscape
+@media (min-width: 768px) and (orientation: landscape) {
+	.logo {
+		font-size: 40vw;
+	}
+}
+
+// Desktop portrait
+@media (min-width: 1200px) and (max-aspect-ratio: 8/9){
+	.logo {
+		font-size: 25vw;
+	}
+}
+
+// Desktop landscape
+@media (min-width: 1200px){
+	.logo {
+		font-size: 25vw;
+	}
+}

@@ -1,25 +1,21 @@
-import React from "react";
-import { RENDER, s } from "./";
+import React, { useContext } from "react";
+import { RENDER, s, data } from "./";
+import { NavContext as Nav } from "COMPONENTS/Navigation/";
 
 export default function Socials(){
 
-	const data = [
-		{
-			label: "Facebook",
-			destination: "https://www.facebook.com/"
-		}, {
-			label: "Twitter",
-			destination: "https://www.twitter.com/"
-		}, {
-			label: "Instagram",
-			destination: "https://www.instagram.com/"
-		}
-	];
+	//CONTEXT
+	//---------------------------
+	const {
+		open
+	} = useContext(Nav).state;
 
+	// RENDER
+	// ---------------------------------
 	const links = data.map(RENDER.item);
 
 	return (
-		<ul className={ s.wrapper }>
+		<ul className={ `${s.wrapper} ${open ? s.open : s.closed}` }>
 			{ links }
 		</ul>
 	);

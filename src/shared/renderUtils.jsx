@@ -18,6 +18,7 @@ function renderParagraph(options, text, index){
 	
 	//if there is a link inside the text, cut it out, else link is false
 	const link = findLink(text);
+
 	if(link) text = text.slice(0, link.index);
 
 	return (

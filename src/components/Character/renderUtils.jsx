@@ -8,7 +8,7 @@ import {
 import { s } from "./";
 
 
-function renderButton(name, direction){
+function renderButton(name, label, newIndex){
 
 	// CONTEXT
 	// ---------------------------------
@@ -20,31 +20,30 @@ function renderButton(name, direction){
 	} = useContext(Characters);
 
 
-	//RENDER
-	// ---------------------------------
-	const safeName       = UTILS.convertToSafeString(name);
-	const directionLabel = direction > 0 ? "Next" : "Previous";
-
-
 	// CLICK HANDLER
 	// ---------------------------------
 	function updateCharacterIndex(e){
 		if(e) e.preventDefault();
 
-		const newCharIndex = activeIndex + direction;
-
 		dispatch({
 			type: ACTIONS.GET_CHARACTER,
-			value: newCharIndex
+			value: newIndex
 		});
 	}
 
+
+	//RENDER
+	// ---------------------------------
+	const safeName        = UTILS.convertToSafeString(name);
+	const safeLabel       = UTILS.convertToSafeString(label);
+	const className       = s[safeLabel];
+
 	return (
 		<Link
-			className={ `${s.button} ${direction > 0 ? s.next : s.previous}` } 
+			className={ `${s.button} ${className}` } 
 			destination={ `#${safeName}` }
 			aria-controls="characters__items"
-			aria-label={ `${directionLabel} character: ${name}.` }
+			aria-label={ `${label} character: ${name}.` }
 			onClick={ updateCharacterIndex }
 		>
 			{ name }

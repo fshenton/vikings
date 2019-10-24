@@ -4,7 +4,10 @@ import {
 	CharactersContext as Characters,
 	ACTIONS
 } from "COMPONENTS/Characters/";
-import { RENDER, s } from "./";
+import HeroImage from "COMPONENTS/HeroImage/";
+import { RENDER as CHARACTER_RENDER, s } from "./";
+import SHARED_RENDER from "SHARED/renderUtils.jsx";
+import UTILS from "SHARED/utils.js";
 
 export default function Character(props){
 
@@ -15,37 +18,46 @@ export default function Character(props){
 
 	//RENDER
 	//----------------------------
+	const RENDER = { ...CHARACTER_RENDER, ...SHARED_RENDER };
+
 	const {
 		name,
 		nickname,
 		actor,
-		body,
-		image = {},
+		body: bodyData,
+		image:{
+			src,
+			mask,
+			description
+		} = {},
 		index,
 		id
 	} = props;
 
-	const {
-		src,
-		mask: maskPath,
-		description
-	} = image;
+	// wrap indexes if less than 0 or greater than number of characters
+	let nextIndex = index + 1;
+	let prevIndex = index - 1;
+	
+	if (nextIndex === characterData.length) nextIndex = 0;
+	if (prevIndex < 0)                      prevIndex = characterData.length-1;
 
-
-	// inline style to prevent the need for a huge png asset
-	const mask = { clipPath: `url(${maskPath})` };
-
-
-	// next & prev button labels
-	const prevCharacter = characterData[index - 1] || {};
-	const nextCharacter = characterData[index + 1] || {};
-
+	const prevCharacter          = characterData[prevIndex];
+	const nextCharacter          = characterData[nextIndex];
 	const { name: prevCharName } = prevCharacter;
 	const { name: nextCharName } = nextCharacter;
 
+	const prevButton = RENDER.button(prevCharName, "prev", prevIndex);
+	const nextButton = RENDER.button(nextCharName, "next", nextIndex);
 
 	// active character checks
 	const hidden = index !== activeIndex;
+
+	const body = RENDER.body(bodyData, {
+		scope: "character", //for key names
+		className: s.paragraph
+	});
+
+	const heroId = UTILS.convertToSafeString(`${name} ${nickname}`);
 
 	return (
 		<li
@@ -55,29 +67,37 @@ export default function Character(props){
 			aria-roledescription="slide"
 			aria-label={`Character ${index + 1} of ${characterData.length}.`}
 			aria-hidden={ hidden }>
-			<article>
-				<h1 id={`character__${id}`}>
-					{ name }
-				</h1>
-				<h2>
-					{ nickname }
-				</h2>
-				<h3>
-					{ actor }
-				</h3>
-				<p>
-					{ body }
-				</p>
-				<img 
-					src={ src } 
-					alt={ description }
-					style={ mask }
-				/>
-
-				{ prevCharName && RENDER.button(prevCharName, -1) }
-				{ nextCharName && RENDER.button(nextCharName, +1) }
-
+			<article className={ s.container }>
+				<div className={ s.content }>
+					<div className={ s.headings }>
+						<h1 
+							className={ s.name } 
+							id={`character__${id}`}
+						>
+							{ name }
+						</h1>
+						<h2 className={ s.nickname } >
+							{ nickname }
+						</h2>
+						<h3 className={ s.actor } >
+							{ actor }
+						</h3>
+					</div>
+					<div className={ s.body } > 
+						{ body }
+					</div>	
+				</div>
+				<nav className={ s.controls }>
+					{ prevButton }
+					{ nextButton }
+				</nav>	
 			</article>
+			<HeroImage 
+				id={ heroId }
+				src={ src } 
+				mask={ mask }
+				description={ description }
+			/>
 		</li>
 	);
 }// Character

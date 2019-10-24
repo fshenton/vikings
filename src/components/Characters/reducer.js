@@ -19,8 +19,6 @@ export default function reducer(state, action){
 				activeIndex:  state.activeIndex + 1
 			}
 		case ACTIONS.GET_CHARACTER:
-			console.log(value);	
-
 			return {
 				...state,
 				activeIndex: value
