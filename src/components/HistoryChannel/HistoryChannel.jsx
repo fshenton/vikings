@@ -8,8 +8,7 @@ export default function HistoryChannel(){
 	// CONTEXT
 	// -----------------------------
 
-	const { open } = useContext(Nav);
-
+	const { open } = useContext(Nav).state;
 
 	// RENDER 
 	// ------------------------------

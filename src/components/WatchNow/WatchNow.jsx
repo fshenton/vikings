@@ -7,7 +7,7 @@ export default function WatchNow(){
 
 	// CONTEXT
 	// --------------------------
-	const { open } = useContext(Nav);
+	const { open } = useContext(Nav).state;
 
 	// RENDER
 	// --------------------------
