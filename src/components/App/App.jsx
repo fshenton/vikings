@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React from "react";
 import HomePermalink from "COMPONENTS/HomePermalink/";
 import HistoryChannel from "COMPONENTS/HistoryChannel/";
 import WatchNow from "COMPONENTS/WatchNow/";
