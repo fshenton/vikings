@@ -19,7 +19,6 @@ export default function App(){
 
 	const { isSmall } = useContext(Client).state;
 
-
 	// RENDER
 	// -------------------------
 
