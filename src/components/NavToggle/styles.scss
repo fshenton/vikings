@@ -1,22 +1,23 @@
 // Mobile first
 .wrapper {
-		display: inline-flex;
-		position: fixed;
-		top: 1.15em;
-		right: 1em;
-		align-items: center;
-		font-size: 1.5rem;
-		
-		&::before {
-			content: "";
-			display: block;
-			width: 1em;
-			height: 1.15em;
-			font-size: 1.33em;
-			background: url(images/icons/cross.svg) center / contain no-repeat;
-			background-color: green;
-		}
+	display: inline-flex;
+	position: fixed;
+	top: 1.15em;
+	right: 1em;
+	align-items: center;
+	font-size: 1.5rem;
+	pointer-events: auto;
+	
+	&::before {
+		content: "";
+		display: block;
+		width: 1em;
+		height: 1.15em;
+		font-size: 1.33em;
+		background: url(images/icons/cross.svg) center / contain no-repeat;
+		background-color: green;
 	}
+}
 
 	.container {
 		display: inline-block;
