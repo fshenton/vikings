@@ -1,14 +1,25 @@
+// Mobile portrait
 .watch {
 	display: flex;
 	position: absolute;
 	width: 11em;
 	height: 3.45em;
-	bottom: 2.88em;
-	left: 2.88em;
+	bottom: 5%;
+	left: 50%;
+	transform: translateX(-50%);
 	z-index: 3;
 	align-items: center;
 	justify-content: center;
 	font-size: 1.125em;
 	font-family: var(--font_family__body);
 	background-color: orange;
+}
+
+// Tablet up
+@media (min-width: 768px) {
+	.watch {
+		bottom: 2.88em;
+		left: 2.88em;
+		transform: translateX(0);
+	}
 }
