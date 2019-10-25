@@ -21,8 +21,12 @@ export default function Navigation(){
 	//----------------------------
 	const links = data.map(RENDER.item);
 
+	const isOpen = open ? s.open : "";
+
 	return (
-		<nav className={ s.wrapper }>
+		<nav 
+			className={ `${s.wrapper} ${isOpen}` }
+		>
 			<NavToggle />
 			<ul 
 				id="navigation__links"

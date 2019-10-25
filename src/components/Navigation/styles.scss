@@ -12,6 +12,10 @@
 	align-items: center;
 }
 
+	.open {
+		background-color: red;
+	}
+
 	.container {
 		display: flex;
 		width: 100%;
@@ -22,7 +26,6 @@
 		font-size: 4rem;
 		font-family: var(--font_family__heading);
 		list-style: none;
-		background-color: red;
 
 		&[aria-expanded="false"], 
 		&[aria-expanded="false"] ~ .socials {
