@@ -1,41 +1,44 @@
- import React from "react";
+import React from "react";
+import RENDER from "SHARED/renderUtils.jsx";
+import { data } from "./";
+import { s } from "./";
 
 export default function About(){
 
-	const data = {
-		image: {
-			src: "path/to/whatever.jpg",
-			description: "A bunch of vikings screaming up (improve this later)."
-		},
-		title: "About",
-		subtitle: "The world is coming to an end.",
-		body: "cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
-	};
-
 	const { 
-		image, 
+		image: heroImg, 
 		title, 
 		subtitle, 
-		body 
+		body: bodyData
 	} = data;
 
 	const { 
 		src, 
 		description 
-	} = image;
+	} = heroImg;
+
+	const body = RENDER.body(bodyData, "about"); //comp name for key
 
 	return (
-		<article>
-			<img src={ src } alt={ description } />
-			<h1>
-				{ title }
-			</h1>
-			<h2>
-				{ subtitle }
-			</h2>
-			<p>
-				{ body }
-			</p>
+		<article className={ s.wrapper }>
+			<img 
+				className={ s.hero }
+				src={ src } 
+				alt={ description } 
+			/>
+			<div className={ s.textContainer }>	
+				<h1 className={ s.heading }>
+					{ title }
+				</h1>
+				<h2 className={ s.subheading }>
+					<q>
+						{ subtitle }
+					</q>
+				</h2>
+				<div className={ s.body }>
+					{ body }
+				</div>
+			</div>	
 		</article>
 	);
 } //About

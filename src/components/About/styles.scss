@@ -1,0 +1,153 @@
+// Mobile portrait
+.wrapper {
+	display: flex;
+	width: 100%;
+	height: 100%;
+	flex-direction: column;
+	background-color: blue;
+}
+
+	.hero {
+		display: block;
+		width: 100%;
+		height: 38%;
+	}
+
+	.textContainer {
+		width: 100%;
+		height: 62%;
+		padding: var(--padding__body) var(--padding__body) 0 var(--padding__body);
+		overflow-y: auto;
+		font-size: var(--font_size__body);
+		background-color: pink;
+		--padding__body: 10vw;
+	}
+
+		.heading, .subheading {
+			font-family: var(--font_family__heading);
+		}
+
+		.heading {
+			margin-bottom: 0.5rem;
+			font-size: var(--font_size__heading);
+		}
+
+		.subheading {
+			width: 85%;
+			margin-bottom: 1rem;
+			font-size: var(--font_size__subheading);
+			line-height: 1.5em;
+		}
+		
+		.body {
+			margin-bottom: var(--padding__body);
+			font-family: var(--font_family__body);
+			line-height: 1.5em;
+			background-color: green;
+
+			p + p {
+				margin-top: 1em;
+			}
+		}
+
+// Mobile landscape
+@media (orientation: landscape) {
+	.wrapper {
+		flex-direction: row;
+	}
+
+		.hero {
+			width: 50%;
+			height: 100%;
+		}
+
+		.textContainer {
+			width: 50%;
+			height: 100%;
+			--padding__body: 5vw;
+		}
+}
+
+// Tablet portrait
+@media (min-width: 768px) {
+	.hero {
+		height: 60%;
+	}
+
+	.textContainer {
+		height: 40%;
+		font-size: 1.62rem;
+	}
+
+		.heading {
+			font-size: 1.15em;
+		}
+
+		.subheading {
+			font-size: 1.62em;
+		}
+
+		.body {
+			p {
+				width: 80%;
+			}
+
+			p:nth-child(even) {
+				margin-left: 4em;
+			}
+		}
+}
+
+// Tablet landscape
+@media (min-width: 768px) and (orientation: landscape) {
+	.hero {
+		height: 100%;
+	}
+
+	.textContainer {
+		height: 100%;
+		font-size: 1.25rem;
+	}
+
+		.body {
+			p {
+				width: 100%;
+			}
+
+			p:nth-child(even) {
+				margin-left: 0;
+			}
+		}
+}
+
+// Desktop portrait
+@media (min-width: 1200px) and (max-aspect-ratio: 8/9) {
+
+}
+
+// Desktop landscape
+@media (min-width: 1200px) {
+
+	.textContainer {
+		padding-top: 20vh;
+		font-size: 1.1rem;
+		--padding__body: 10vw;
+	}	
+
+		.heading {
+			font-size: 1.05em;
+		}
+
+		.subheading {
+			width: 100%;
+			font-size: 2.2em;
+		}
+
+		.body {
+			height: 100%;
+			max-height: 53vh; //overflow will be hidden by gradient
+		}
+}
+
+
+

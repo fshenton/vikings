@@ -5,7 +5,22 @@ import {
 	ACTIONS,
 	EpisodesContext as Episodes
 } from "COMPONENTS/Episodes/";
+import { ClientContext as Client } from "COMPONENTS/Client/";
 import UTILS from "SHARED/utils.js";
+
+function renderPagination(data){
+	const pagination = data.map(renderPaginationLink);	
+
+	return (
+		<ol 
+			className={ s.pagination }
+			id="episodes__pagination"
+		>
+			{ pagination }
+		</ol> 
+	);
+}//renderPagination
+
 
 function renderPaginationLink(data, index){
 
@@ -17,6 +32,10 @@ function renderPaginationLink(data, index){
 		},
 		dispatch
 	} = useContext(Episodes);
+
+	const {
+		isLarge
+	} = useContext(Client).state;
 
 	// CLICK HANDLER
 	// --------------------------
@@ -37,10 +56,40 @@ function renderPaginationLink(data, index){
 
 	const episodeId = UTILS.convertToSafeString(title, "-");
 
-	const isActive = index === activeIndex;
+	const isActive 	= index === activeIndex;
+
+	let opacity;
+	if(isActive) opacity = 1;
+	else {
+		const decayDistance = 4;
+		const decayRate     = 1/decayDistance;
+		const fadeOffset    = Math.abs(index - activeIndex);
+		
+		opacity = 1 - (fadeOffset * decayRate);
+	}
+	
+	const offset = index - activeIndex;
+	
+	let translate, factor;
+	if(isLarge){
+		translate   = "translateY";
+		factor      = 1.5;
+	} else { 
+		translate   = "translateX";
+		factor      = 1;
+	}
+
+	const translation = `${factor * offset}em`;
+
+	const style = {
+		transform: `${translate}(${translation})`,
+		opacity
+	};
 
 	return (
 		<li 
+			className={ `${s.item} ${isActive ? s.active : s.inactive}` }
+			style={ style }
 			key={ `episode__pagination__${episodeNo}` }
 			aria-current={ isActive }
 		>
@@ -56,5 +105,5 @@ function renderPaginationLink(data, index){
 }// renderPaginationLink
 
 export default {
-	pagination: renderPaginationLink
+	pagination: renderPagination
 };

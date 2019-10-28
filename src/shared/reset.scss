@@ -4,3 +4,12 @@
 	margin: 0;
 	box-sizing: border-box;
 }
+
+[aria-hidden="true"]{
+	opacity: 0;
+	pointer-events: none;
+}
+  
+h1, h2, h3 {
+	line-height: 1;
+}

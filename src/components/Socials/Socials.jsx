@@ -1,25 +1,26 @@
-import React from "react";
-import { RENDER, s } from "./";
+import React, { useContext } from "react";
+import { RENDER, s, data } from "./";
+import { NavContext as Nav } from "COMPONENTS/Navigation/";
 
-export default function Socials(){
+export default function Socials(props){
 
-	const data = [
-		{
-			label: "Facebook",
-			destination: "https://www.facebook.com/"
-		}, {
-			label: "Twitter",
-			destination: "https://www.twitter.com/"
-		}, {
-			label: "Instagram",
-			destination: "https://www.instagram.com/"
-		}
-	];
+	const { className = "" } = props;
+
+	let hidden;
+	if(useContext(Nav) != undefined){ 
+		const { open } = useContext(Nav).state;
+		hidden = open;
+	} else {
+		hidden = false;
+	}
 
 	const links = data.map(RENDER.item);
 
 	return (
-		<ul className={ s.wrapper }>
+		<ul 
+			className={ `${s.wrapper} ${className}` }
+			aria-hidden={ hidden }
+		>
 			{ links }
 		</ul>
 	);

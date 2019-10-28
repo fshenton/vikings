@@ -1,35 +1,48 @@
-import React from "react";
+import React, { useContext } from "react";
+import { ClientContext as Client } from "COMPONENTS/Client/"; 
 import HomePermalink from "COMPONENTS/HomePermalink/";
 import HistoryChannel from "COMPONENTS/HistoryChannel/";
 import WatchNow from "COMPONENTS/WatchNow/";
-import Navigation from "COMPONENTS/Navigation/";
+import Navigation, { NavProvider } from "COMPONENTS/Navigation/";
 import Socials from "COMPONENTS/Socials/"
 import Landing from "COMPONENTS/Landing/";
 import About from "COMPONENTS/About/";
 import Characters from "COMPONENTS/Characters/";
 import Episodes from "COMPONENTS/Episodes/";
+import Fonts from "SHARED/fonts.scss";
+import { s } from "./";
 
 export default function App(){
 
-	return (
-		<div>
-			{ /* STICKIES */}
-			<HomePermalink />
-			<Socials />
-			<HistoryChannel />
-			<WatchNow />
+	// CONTEXT
+	// -------------------------
 
-			{/* COMMON */}
-			<Navigation />
+	const { isSmall } = useContext(Client).state;
+
+	// RENDER
+	// -------------------------
+
+	return (
+		<div className={ s.wrapper }>
+			{ /* STICKIES */}
+			<NavProvider>
+				<Navigation /> 
+				<HomePermalink /> 
+				{ !isSmall && 
+					<Socials 
+						className={ s.socials }
+					/> }
+				{ !isSmall && <HistoryChannel /> }
+ 				<WatchNow />
+			</NavProvider>
 
 			{/* PAGES */}
-			<main>
-				<Landing />
-				<About />
-				<Characters />
-				<Episodes />
+			<main className={ s.container }>
+				{ false && <Landing /> }
+				{ false && <About /> }
+				{ false && <Characters /> }
+				{ true && <Episodes /> }
 			</main>
-
 		</div>
 	);
 } //App

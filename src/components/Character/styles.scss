@@ -1,12 +1,227 @@
+// Mobile portrait
 .wrapper {
-	font-size: 1em;
-}
-	.button {
-		&.next {
-			font-size: 1em;
-		}
-		&.previous {
-			font-size: 1em;
-		}
+	display: flex;
+	width: 100%;
+	min-height: 100%;
+	padding: 10%; 		//GUESS
+	position: absolute;
+	top: 0;
+	left: 0;
+	flex-direction: column;
+
+	&[aria-hidden="true"]{
+		opacity: 0;
+		pointer-events: none
 	}
+}
+
+	.container {
+		position: relative;
+		z-index: 1;
+	}
+
+		.content {
+			margin-top: 40vh;
+			max-width: 40em;
+			position: relative;
+		}
+
+			.headings {
+				opacity: 1; //placeholder
+			}
+	
+				.name {
+					margin-bottom: 0.1em; // GUESS
+					font-size: 5em;
+					font-family: var(--font_family__heading);
+				}
+
+				.nickname {
+					margin-bottom: 0.5em; // GUESS
+					font-size: 2.6em;
+					font-family: var(--font_family__heading);
+				}
+
+				.actor {
+					margin-bottom: 1em; // GUESS
+					font-size: 1em;
+					font-family: var(--font_family__body);
+					font-weight: normal;
+					letter-spacing: 0.25em;
+					text-transform: uppercase;
+				}
+
+					.body {
+						margin-bottom: 4em; // GUESS
+						line-height: 1.5;
+						font-family: var(--font_family__body);
+
+						.paragraph+.paragraph {
+							margin-top: 1em;
+						}
+					}
+
+		.content::after {
+			content: "";
+			display: block;
+			width: 100%;
+			height: 12em;
+			position: fixed;
+			bottom: 0;
+			left: 0;
+			background-image: linear-gradient(
+			    rgba(237, 20, 61, 0) 0%,
+			    rgba(237, 20, 61, 1) 50%,
+			    rgba(237, 20, 61, 1) 100%	
+			);
+		}
+
+		.controls {
+			display: flex;
+			width: 100%;
+			max-width: 25rem; // GUESS
+			position: sticky;
+			bottom: 10vw; // GUESS!
+			justify-content: space-between;
+			font-size: 1.1em;
+			font-family: var(--font_family__heading);
+		}
+
+			.button {
+				display: flex;
+				align-items: center;
+				text-decoration: none;
+				--button_margin: 1em;
+
+				&::before, 
+				&::after {
+					display: inline-block;
+					width: 1em;
+					height: 1.5em;
+					font-size: 1.36em;
+					background-color: lime;
+				}
+
+				&.prev::before,
+				&.next::after {
+					content: "";
+				}
+
+				&.prev::before {
+					margin-right: var(--button_margin);
+				}
+
+				&.next::after {
+					margin-left: var(--button_margin);
+				}
+			}
+
+// Mobile landscape
+@media (orientation: landscape) {
+	.wrapper {
+		max-height: 100%;
+		padding: 5%; //GUESS
+	}
+
+		.container {
+			width: 100%; 
+			height: 100%;
+			overflow-y: hidden;
+		}
+
+			.content {
+				display: flex;
+				margin-top: 10vh;
+				flex-direction: row;
+				--body_width: 50%;
+			}
+
+				.headings {
+					width: 50%;
+				}
+
+				.body {
+					width: var(--body_width);
+					height: 75vh; //GUESS
+					margin-bottom: 2em; //GUESS
+					overflow-y: scroll;
+				}
+
+			.content::after {
+				display: block;
+				width: var(--body_width);
+				height: 10em; //GUESS
+				position: absolute;
+				left: 50%;
+				bottom: 0; //GUESS
+				pointer-events: none;
+				background-image: linear-gradient(
+				    rgba(237, 20, 61, 0) 0%,
+				    rgba(237, 20, 61, 1) 50%,
+				    rgba(237, 20, 61, 1) 100%	
+				);
+			}
+
+			.controls {
+				max-width: 15rem; // EYE BALLED
+				bottom: 5vw;
+			}
+}
+
+// Tablet portrait
+@media (min-width: 768px) {
+	.wrapper {
+		padding: 10%;
+	}
+}
+
+// Tablet landscape
+@media (min-width: 768px) and (orientation: landscape) {
+	.wrapper {
+		justify-content: center;
+	}
+
+		.content {
+			flex-direction: column;
+		}
+
+			.body {
+				height: 25vh;
+				padding-bottom: 3.5em;
+			}
+
+		.content::after {
+			height: 6em;
+			left: 0;
+		}
+}
+
+// Desktop landscape
+@media (min-width: 1200px) {
+
+	.content {
+		margin-top: 0;
+		--body_width: 75%;
+	}
+			.name {
+				font-size: 8em;
+			}
+
+			.nickname {
+				font-size: 3.25em;
+			}
+
+		.body {
+			height: 100%;
+		}
+
+	.content::after {
+		display: none;
+	}
+
+	.controls {
+		max-width: 20rem;
+		bottom: 0;
+	}
+}
 	

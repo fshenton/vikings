@@ -1,3 +1,149 @@
+$fade-color: rgb(237, 20, 61);
+
+// Mobile Portrait
 .wrapper {
-	font-size: 1em; //placeholder styling
+	position: relative;
+	height: auto;
+	min-height: 100%;
+	padding-top: 20vh;
+	background-color: $fade-color;
+	
+	&[aria-hidden="true"]{
+		position: absolute;
+		top: 0;
+	}
+}
+		.content {
+			display: flex;
+			padding: 10vw; 
+			flex-direction: column;
+			font-size: 1.3rem;
+		}
+
+			.episode {
+				order: 1;
+				margin-bottom: 1.62em;
+				font-size: 1em;
+				font-family: var(--font_family__heading);
+			}
+
+			.title {
+				order: 2;
+				font-size: 1.62em;
+				font-family: var(--font_family__heading);
+			}
+
+			.body {
+				order: 3;
+				padding-bottom: 3em;
+				margin-top: 1.5em;
+				line-height: 1.5;
+				overflow-y: hidden;
+				font-size: 1em;
+				font-family: var(--font_family__body);
+			}
+
+				.paragraph {
+					opacity: 1; //placeholder to get it showing
+				}
+
+			.fade {
+				content: "";
+				display: block;
+				width: 100%;
+				height: 10em;
+				position: fixed;
+				bottom: 0;
+				left: 0;
+				z-index: 2;
+				background-image: linear-gradient(
+				    rgba($fade-color, 0) 0%,
+				    rgba($fade-color, 1) 80%,
+				    rgba($fade-color, 1) 100%	
+				);
+			}
+
+//Mobile Landscape
+@media (orientation: landscape){
+	.wrapper {
+		max-height: 100%;
+		padding: 0;
+	}
+
+		.container {
+			display: flex;
+			flex-direction: row;
+
+		}
+
+			.content {
+				order: 1;
+				width: 50%;
+				padding-left: 5%;
+				padding-right: 5%;
+				justify-content: center;
+			}
+}
+
+//Tablet portrait
+@media (min-width: 768px) {
+	.wrapper {
+		padding-top: 10vh;
+	}
+
+		.content {
+			padding: 10%;
+			font-size: 1.62rem;
+		}
+}
+
+//Tablet landscape
+@media (min-width: 768px) and (orientation: landscape) {
+	.wrapper {
+		padding-top: 5%;
+	}
+
+		.content {
+			padding-left: 5%;
+			padding-right: 5%;
+			font-size: 1.3rem;
+		}
+}
+
+//Desktop half screen
+@media (min-width: 1200px) {
+	.wrapper {
+		width: 95%;
+		height: 100%;
+		padding: 0;
+		padding-left: var(--episode_desktop__padding);
+		padding-right: var(--episode_desktop__padding);
+		overflow: hidden;
+		--episode_desktop__padding: 10em;
+	}
+
+		.container {
+			width: 100%;
+			height: 100%;
+			align-items: center;
+		}
+
+			.content {
+				width: 50%;
+				padding-left: 0;
+				padding-right: 5em;
+				align-self: center;
+				font-size: 1rem;
+			}
+}
+
+//Desktop fullscreen
+@media (min-width: 1200px) and (min-aspect-ratio: 16/9) {
+
+	.content {
+		padding-left: 0;
+		padding-right: 17.25em;
+		align-self: flex-end;
+		font-size: 1rem;
+	}
 }

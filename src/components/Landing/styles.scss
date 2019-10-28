@@ -1,0 +1,53 @@
+// Mobile portrait
+.wrapper {
+	display: flex;
+	position: relative;
+	width: 100%;
+	height: 100%;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	z-index: 1;
+	font-size: 1.15rem;
+	color: white;
+}
+
+	.heading, .subheading {
+		font-family: var(--font_family__heading);
+	}
+
+	.heading {
+		margin-bottom: 0.6em;
+		font-size: 3.33em;
+		text-transform: uppercase;
+	}
+
+	.subheading {
+		margin-bottom: 1em;
+		font-size: 2.5em;
+	}
+
+	.body {
+		text-align: center;
+		font-size: 1em;
+		font-family: var(--font_family__body);
+
+		.paragraph+.paragraph {
+			margin-top: 1em;
+		}
+	}
+
+// Mobile landscape
+@media (orientation: landscape) {
+	.subheading {
+		margin-bottom: 0.25em;
+		font-size: 2.5em;
+	}
+}
+
+// Tablet portrait
+@media (min-width: 768px) {
+	.wrapper {
+		font-size: 1.5rem;
+	}
+}

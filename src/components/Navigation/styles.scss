@@ -1,0 +1,85 @@
+// Mobile portrait
+.wrapper {
+	display: flex; 
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	top: 0; 
+	left: 0;
+	z-index: 4;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	pointer-events: none;
+}
+
+	.open {
+		background-color: red;
+	}
+
+	.container {
+		display: flex;
+		width: 100%;
+		height: 75%;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		font-size: 4rem;
+		font-family: var(--font_family__heading);
+		list-style: none;
+
+		&[aria-expanded="false"], 
+		&[aria-expanded="false"] ~ .socials {
+			opacity: 0;
+			pointer-events: none;
+		}
+
+		&[aria-expanded="true"],
+		&[aria-expanded="true"] ~ .socials {
+			opacity: 1;
+			pointer-events: all;
+		}
+	}
+
+		.item {
+			line-height: 0.7em;
+
+			&+.item {
+				margin-top: 0.7em
+			}
+
+			.link {
+				text-decoration: none;
+			}
+		}
+
+	.socials {
+		width: 50%;
+		max-width: 6em;
+		font-size: 2rem;
+	}
+	
+// Mobile landscape
+@media (orientation: landscape) {
+	.container {
+		margin-bottom: 0.5em;
+		font-size: 3rem;
+	}
+}
+
+// Tablet portrait
+@media (min-width: 768px) {
+	.container {
+		font-size: 5rem;
+	}
+}
+
+// Desktop landscape
+@media (min-width: 1200px) {
+	.container {
+		margin-bottom: 0;
+	}
+}
+
+
+

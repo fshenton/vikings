@@ -1,7 +1,8 @@
 import React, { useContext } from "react";
 import { EpisodesContext as Episodes } from "COMPONENTS/Episodes/";
-import EpisodePreview from "COMPONENTS/EpisodePreview/";
+import PreviewThumb from "COMPONENTS/PreviewThumb/";
 import { s } from "./";
+import RENDER from "SHARED/renderUtils.jsx";
 
 export default function Episode(props){
 
@@ -19,12 +20,18 @@ export default function Episode(props){
 		index,
 		number,
 		title,
-		synopsis,
+		synopsis: synopsisData,
 		thumbnail = {},
 		trailer = {}
 	} = props;
 
 	const hidden = index !== activeIndex;
+
+	const synopsis = RENDER.body(synopsisData, {
+		scope: "episode", //for key 
+		className: s.paragraph
+	});
+	
 
 	return (
 		<li
@@ -35,17 +42,8 @@ export default function Episode(props){
 			aria-label={ `Episode ${number} of ${episodeCount}.` }
 			aria-hidden={ hidden }
 		>
-			<article>
-				<h2>
-					Episode { number }
-				</h2>
-				<h1>
-					{ title }
-				</h1>
-				<p>
-					{ synopsis }
-				</p>
-				<EpisodePreview 
+			<article className={ s.container }>
+				<PreviewThumb 
 					episodeId={ id }
 					index={ index }
 					number={ number }
@@ -53,6 +51,18 @@ export default function Episode(props){
 					thumbnail={ thumbnail }
 					trailer={ trailer }
 				/>
+				<div className={ s.content }>
+					<h1 className={ s.title }>
+						{ title }
+					</h1>
+					<h2 className={ s.episode }>
+						Episode { number }
+					</h2>
+					<div className={ s.body }>
+						{ synopsis }
+					</div>
+					<div className={ s.fade } />
+				</div>
 			</article>
 		</li>
 	);

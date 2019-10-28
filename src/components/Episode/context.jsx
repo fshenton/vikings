@@ -10,7 +10,7 @@ function TrailerProvider(props){
 	} = props;
 
 	return (
-		<TrailerContext.Provider value={ { prev, next} }>
+		<TrailerContext.Provider value={ { prev, next } }>
 			{ children }
 		</TrailerContext.Provider>
 	);
