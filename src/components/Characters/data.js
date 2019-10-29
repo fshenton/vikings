@@ -6,8 +6,8 @@ export default [
 		body: `Ivar Ragnarsson, named Ivar the Boneless by his father due to his disease, is the evil sociopathic youngest son of Ragnar Lothbrok and Aslaug 
 		He becomes the King of Kattegat but later becomes an evil tyrant and after being defeated by the forces of his half-brothers Hvitserk and Bjorn Ironside along with his former allie King Harald Finhair and King Olaf.`,
 		image: {
-			src: "path/to/ivar/portrait.jpg",
-			mask: "path/to/ivar/mask.png",
+			src: "/assets/2d/characters/ivar-1440.jpg",
+			mask: "/assets/2d/characters/ivar-1440-MASK.svg",
 			description: "Scary dude in a crown of bones."
 		}
 	}, {
@@ -17,8 +17,8 @@ export default [
 		body: `Ubbe is the first son of Ragnar Lothbrok and Aslaug. He was conceived out of wedlock which would have made him a bastard, but with Ragnar’s marriage to Aslaug and divorce of Largetha he became Ragnar’s legitmate son and heir. 
 		He is the second oldest of Ragnar’s son and arguably the most mellow. He also closely resembles his father when he was a young man. He is married to Margrethe, but his lover is Torvi, who was previously his older brother, Bjorn’s wife.`,
 		image: {
-			src: "path/to/ubbe/portrait.jpg",
-			mask: "path/to/ubbe/mask.png",
+			src: "/assets/2d/characters/ubbe-1440.jpg",
+			mask: "/assets/2d/characters/ubbe-1440-MASK.png",
 			description: "Heroic man with a strong beard."
 		}
 	}, {
