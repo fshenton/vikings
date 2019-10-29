@@ -1,13 +1,23 @@
+:root {
+	//FONTS
+	--font_family__body: Lato, sans-serif;
+	--font_family__heading: 'Bodoni 11', serif;
+	--font_size__body: 1rem;
+	--font_size__heading: calc(var(--font_size__body) * 1.15);
+	--font_size__subheading: calc(var(--font_size__heading) * 1.62);
+	
+	//COLOURS
+	--font_color: #cacbca;
+	--background_color: #020201;
+}
+
 :global(#app){
 	height: 100%;
 }
 
-html {
-	color: #cacbca;
-	background-color: #020201;
-}
-
 html, body {
 	height: 100%;
+	color: var(--font_color);
+	background-color: var(--background_color);
 }
 
