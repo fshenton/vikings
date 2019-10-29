@@ -40,8 +40,8 @@ export default function App(){
 			<main className={ s.container }>
 				{ false && <Landing /> }
 				{ false && <About /> }
-				{ true && <Characters /> }
-				{ false && <Episodes /> }
+				{ false && <Characters /> }
+				{ true && <Episodes /> }
 			</main>
 		</div>
 	);

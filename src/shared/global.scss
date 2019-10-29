@@ -1,7 +1,13 @@
+:global(#app){
+	height: 100%;
+}
+
+html {
+	color: #cacbca;
+	background-color: #020201;
+}
+
 html, body {
 	height: 100%;
 }
 
-:global(#app){
-	height: 100%;
-}
