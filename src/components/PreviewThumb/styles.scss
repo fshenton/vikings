@@ -14,7 +14,7 @@ $ghost_fade__color: rgba(255, 255, 255, 0.1);
 		position: relative;
 		width: var(--thumbnail_width);
 		height: var(--thumbnail_height);
-		background-color: blue;
+		background-color: var(--font_color);
 
 		.button { 
 			display: flex;
