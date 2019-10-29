@@ -10,6 +10,7 @@
 	--font_color: #cacbca;
 	--background_color: #020201;
 	--watchnow_border__color: #4e4e4e;
+	--glow_color: #a29573;
 }
 
 :global(#app){
@@ -21,4 +22,5 @@ html, body {
 	color: var(--font_color);
 	background-color: var(--background_color);
 }
+
 
