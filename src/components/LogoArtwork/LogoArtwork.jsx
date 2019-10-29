@@ -7,7 +7,7 @@ export default function LogoArtwork(){
 		<div className={ s.wrapper }>
 			<img 
 				className={ s.logo }
-				src="path/to/file.png" 
+				src="/assets/2d/landing/v.jpg" 
 				alt="Vikings Logo; an ornate 'V' carved out of wood." 
 			/>
 		</div>

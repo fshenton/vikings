@@ -14,8 +14,13 @@
 		font-size: 75vw;
 		width: 1em;
 		height: 1.4em;
-		background-color: navy;
-		text-indent: -9999px; // REMOVE ONCE WE HAVE AN IMAGE TO USE
+		-webkit-mask-image: url("/assets/2d/landing/v-MASK.png");
+		-webkit-mask-size: cover;
+		-moz-mask-image: url("/assets/2d/landing/v-MASK.png");
+		-moz-mask-size: cover;
+		mask-image: url("/assets/2d/landing/v-MASK.png");
+		mask-size: cover;
+		filter: brightness(0.75);
 	}
 
 // Mobile landscape
