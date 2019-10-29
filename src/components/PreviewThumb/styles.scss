@@ -1,3 +1,5 @@
+$ghost_fade__color: rgba(255, 255, 255, 0.1);
+
 //Mobile portrait
 .wrapper {
 	position: relative;
@@ -45,33 +47,29 @@
 		height: 100%;
 		opacity: 0.1;
 		pointer-events: none;
+		background-color: $ghost_fade__color;
 
 		&.left {
-			transform: translateX(-100%);
-			background-color: pink;
+			transform: translateX(-100%);			
 			background-image: url("/path/to/lord-of-the-rings-1.jpg");
 		}
 
 		&.top {
 			transform: translateY(-100%);
-			background-color: green;
 			background-image: url("/path/to/lord-of-the-rings-2.jpg");
 
 			&.left {
 				transform: translate(-100%, -100%);
-				background-color: blue;
 				background-image: url("/path/to/lord-of-the-rings-3.jpg");
 			}
 		}
 
 		&.bottom {
 			transform: translateY(100%);	
-			background-color: yellow;
 			background-image: url("/path/to/lord-of-the-rings-4.jpg");
 
 			&.left {
 				transform: translate(-100%, 100%);
-				background-color: purple;
 				background-image: url("/path/to/lord-of-the-rings-5.jpg");
 			}
 		}
