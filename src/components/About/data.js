@@ -1,6 +1,6 @@
 export default {
 	image: {
-		src: "path/to/whatever.jpg",
+		src: "/assets/2d/about/about-1440.jpg",
 		description: "A bunch of vikings screaming up (improve this later)."
 	},
 	title: "About",
