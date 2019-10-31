@@ -1,9 +1,10 @@
+//for font-families, see global.scss
+
 html {
 	font-size: 16px;
 }
 
 a {
-	font-family: var(--font_family__heading);
 	color: var(--font_color);
 	text-decoration: none;
 }
