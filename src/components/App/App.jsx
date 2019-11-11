@@ -39,8 +39,8 @@ export default function App(){
 			{/* PAGES */}
 			<main className={ s.container }>
 				{ false && <Landing /> }
-				{ false && <About /> }
-				{ true && <Characters /> }
+				{ true && <About /> }
+				{ false && <Characters /> }
 				{ false && <Episodes /> }
 			</main>
 		</div>
