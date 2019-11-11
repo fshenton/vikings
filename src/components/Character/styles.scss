@@ -99,7 +99,9 @@
 					width: 1em;
 					height: 1.5em;
 					font-size: 1.36em;
-					background-color: lime; //needs button assets
+					background-image: url("/assets/2d/arrows/arrow.png");
+					background-size: contain;
+					cursor: pointer;
 				}
 
 				&.prev::before,
@@ -113,6 +115,7 @@
 
 				&.next::after {
 					margin-left: var(--button_margin);
+					transform: scaleX(-1);
 				}
 			}
 
