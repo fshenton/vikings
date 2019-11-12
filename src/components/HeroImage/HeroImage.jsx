@@ -10,14 +10,14 @@ export default function HeroImage(props){
 		description
 	} = props;
 
-	// inline style to prevent the need for a huge png asset
+	// using mask to prevent the need for a huge png asset
 	const mask = { 
-		"-webkit-mask-image": `url(${maskPath})`,
-		"-webkit-mask-size": "100% 100%",
-		"-moz-mask-image": `url(${maskPath})`,
-		"-moz-mask-size": "100% 100%",
-		"mask-image": `url(${maskPath})`,
-		"mask-size": "100% 100%"
+		"WebkitMaskImage": `url(${maskPath})`,
+		"WebkitMaskSize": "100% 100%",
+		"MozMaskImage": `url(${maskPath})`,
+		"MozMaskSize": "100% 100%",
+		"maskImage": `url(${maskPath})`,
+		"maskSize": "100% 100%"
 	};
 
 	return (
