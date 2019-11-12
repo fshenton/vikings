@@ -34,11 +34,14 @@
 		display: block;
 		width: 100%;
 		height: 100%;
-		object-fit: cover;
+		object-fit: contain;
 		object-position: right;
-		-webkit-mask-size: cover;
-		-moz-mask-size: cover;
-		mask-size: cover;
+		-webkit-mask-size: contain;
+		-moz-mask-size: contain;
+		mask-size: contain;
+		-webkit-mask-position: right;
+		-moz-mask-positon: right;
+		mask-position: right;
 	}
 
 // Mobile landscape

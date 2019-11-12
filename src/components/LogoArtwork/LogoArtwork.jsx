@@ -4,6 +4,7 @@ import { s } from "./";
 export default function LogoArtwork(){
 
 	// using masks to reduce image size 
+	// there's a nicer way to do this, one to come back to later
 
 	const boneMasks = {
 		bigBone: "/assets/2d/landing/V-big-bone-mask.png",
@@ -15,47 +16,32 @@ export default function LogoArtwork(){
 
 	const bigBoneMask = { 
 		"WebkitMaskImage": `url(${boneMasks["bigBone"]})`,
-		"WebkitMaskSize": "100% 100%",
 		"MozMaskImage": `url(${boneMasks["bigBone"]})`,
-		"MozMaskSize": "100% 100%",
-		"maskImage": `url(${boneMasks["bigBone"]})`,
-		"maskSize": "100% 100%"
+		"maskImage": `url(${boneMasks["bigBone"]})`
 	};
 
 	const topBonesMask = { 
 		"WebkitMaskImage": `url(${boneMasks["topBones"]})`,
-		"WebkitMaskSize": "100% 100%",
 		"MozMaskImage": `url(${boneMasks["topBones"]})`,
-		"MozMaskSize": "100% 100%",
-		"maskImage": `url(${boneMasks["topBones"]})`,
-		"maskSize": "100% 100%"
+		"maskImage": `url(${boneMasks["topBones"]})`
 	};
 
 	const firstRingMask = { 
 		"WebkitMaskImage": `url(${boneMasks["firstRing"]})`,
-		"WebkitMaskSize": "100% 100%",
 		"MozMaskImage": `url(${boneMasks["firstRing"]})`,
-		"MozMaskSize": "100% 100%",
-		"maskImage": `url(${boneMasks["firstRing"]})`,
-		"maskSize": "100% 100%"
+		"maskImage": `url(${boneMasks["firstRing"]})`
 	};
 
 	const bottomRingsMask = { 
 		"WebkitMaskImage": `url(${boneMasks["bottomRings"]})`,
-		"WebkitMaskSize": "100% 100%",
 		"MozMaskImage": `url(${boneMasks["bottomRings"]})`,
-		"MozMaskSize": "100% 100%",
-		"maskImage": `url(${boneMasks["bottomRings"]})`,
-		"maskSize": "100% 100%"
+		"maskImage": `url(${boneMasks["bottomRings"]})`
 	};
 
 	const eyeMask = { 
 		"WebkitMaskImage": `url(${boneMasks["eye"]})`,
-		"WebkitMaskSize": "100% 100%",
 		"MozMaskImage": `url(${boneMasks["eye"]})`,
-		"MozMaskSize": "100% 100%",
-		"maskImage": `url(${boneMasks["eye"]})`,
-		"maskSize": "100% 100%"
+		"maskImage": `url(${boneMasks["eye"]})`
 	};
 
 	return (

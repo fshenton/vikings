@@ -16,6 +16,9 @@
 		width: 1em;
 		height: 1.4em;
 		filter: brightness(0.75);
+		-webkit-mask-size: contain;
+		-moz-mask-size: contain;
+		mask-size: contain;
 	}
 
 // Mobile landscape

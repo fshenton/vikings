@@ -13,11 +13,8 @@ export default function HeroImage(props){
 	// using mask to prevent the need for a huge png asset
 	const mask = { 
 		"WebkitMaskImage": `url(${maskPath})`,
-		"WebkitMaskSize": "100%",
 		"MozMaskImage": `url(${maskPath})`,
-		"MozMaskSize": "100%",
 		"maskImage": `url(${maskPath})`,
-		"maskSize": "100%"
 	};
 
 	return (
