@@ -15,13 +15,14 @@
 		top: 0;
 		left: 50%;
 		font-size: 100vw;
+		z-index: -1;
 
 		&::before {
 			content: "";
 			display: block;
 			width: 100%;
 			height: 100%;
-			background-color: yellow;
+			background-color: #d2beaf;
 			opacity: 40%;
 			border-radius: 100%;
 			transform: translate(-50%, -50%);
@@ -35,6 +36,9 @@
 		height: 100%;
 		object-fit: cover;
 		object-position: right;
+		-webkit-mask-size: cover;
+		-moz-mask-size: cover;
+		mask-size: cover;
 	}
 
 // Mobile landscape
