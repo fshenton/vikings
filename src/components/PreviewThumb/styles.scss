@@ -46,31 +46,33 @@ $ghost_fade__color: rgba(255, 255, 255, 0.1);
 		width: 100%;
 		height: 100%;
 		opacity: 0.1;
+		filter: grayscale(1.0);
 		pointer-events: none;
 		background-color: $ghost_fade__color;
+		--ghost_translate__distance: 100%;
 
 		&.left {
-			transform: translateX(-100%);			
-			background-image: url("/path/to/lord-of-the-rings-1.jpg");
+			transform: translateX(calc(-1*var(--ghost_translate__distance)));			
+			background-image: url("/assets/2d/episodes/ep1-large.jpg");
 		}
 
 		&.top {
-			transform: translateY(-100%);
-			background-image: url("/path/to/lord-of-the-rings-2.jpg");
+			transform: translateY(calc(-1*var(--ghost_translate__distance)));
+			background-image: url("/assets/2d/episodes/ep1-large.jpg");
 
 			&.left {
-				transform: translate(-100%, -100%);
-				background-image: url("/path/to/lord-of-the-rings-3.jpg");
+				transform: translate(calc(-1*var(--ghost_translate__distance)), calc(-1*var(--ghost_translate__distance)));
+				background-image: url("/assets/2d/episodes/ep3-large.jpg");
 			}
 		}
 
 		&.bottom {
-			transform: translateY(100%);	
-			background-image: url("/path/to/lord-of-the-rings-4.jpg");
+			transform: translateY(var(--ghost_translate__distance));	
+			background-image: url("/assets/2d/episodes/ep1-large.jpg");
 
 			&.left {
-				transform: translate(-100%, 100%);
-				background-image: url("/path/to/lord-of-the-rings-5.jpg");
+				transform: translate(calc(-1*var(--ghost_translate__distance)), var(--ghost_translate__distance));
+				background-image: url("/assets/2d/episodes/ep3-large.jpg");
 			}
 		}
 	}
@@ -99,4 +101,8 @@ $ghost_fade__color: rgba(255, 255, 255, 0.1);
 		padding-top: 0;
 		width: 50%;
 	}
+
+		.ghost {
+			--ghost_translate__distance: 115%;
+		}
 }
