@@ -1,5 +1,10 @@
 //for font-families, see global.scss
 
+h1, h2 { 
+	font-weight: normal;
+	letter-spacing: 0.1em;
+}
+
 html {
 	font-size: 16px;
 }
