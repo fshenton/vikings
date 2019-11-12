@@ -11,6 +11,7 @@ function renderEpisode(data, index){
 		synopsis,
 		thumbnail,
 		trailer,
+		poster
 	} = data;
 
 	const id = UTILS.convertToSafeString(title, "-");
@@ -33,6 +34,7 @@ function renderEpisode(data, index){
 				synopsis={ synopsis }
 				thumbnail={ thumbnail }
 				trailer={ trailer }
+				poster={ poster }
 			/>
 		</TrailerProvider>
 	);

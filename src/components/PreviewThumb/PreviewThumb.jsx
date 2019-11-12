@@ -23,6 +23,9 @@ export default function PreviewThumb(props){
 		},
 		trailer: {
 			src: trailerSrc
+		},
+		poster: {
+			src: posterSrc
 		}
 	} = props;
 
@@ -81,6 +84,7 @@ export default function PreviewThumb(props){
 				title={ title }
 				id={ id }
 				trailerSrc={ trailerSrc }
+				posterSrc={ posterSrc }
 			/>
 		</aside>
 	);
