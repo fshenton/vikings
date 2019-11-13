@@ -1,6 +1,6 @@
 // Mobile first
 .wrapper {
-	display: inline-flex;
+	display: flex;
 	position: fixed;
 	top: 1.15em;
 	right: 1em;
@@ -9,14 +9,15 @@
 	pointer-events: auto;
 	background-color: transparent;
 	
-	&::before {
-		content: "";
-		display: block;
-		width: 1em;
-		height: 1.15em;
-		font-size: 1.33em;
-		background: url(images/icons/cross.svg) center / contain no-repeat;
-		background-color: green;
+	&[aria-checked="true"] {
+
+		.bar:nth-child(1) {
+			transform: translateY(0.45em) rotateZ(45deg);
+		}
+
+		.bar:nth-child(2) {
+			transform: translateY(-0.3em) rotateZ(-45deg);
+		}
 	}
 }
 
@@ -29,7 +30,37 @@
 		color: var(--font_color);
 	}
 
+		.icon {
+			width: 1em;
+			height: 1em;
+			position: relative;
+			right: 3.62em;
+			// font-size: 1.33em;
+			cursor: pointer;
+		}
+
+			.bar {
+				display: block;
+				width: 100%;
+				height: 3px;
+				position: absolute;
+				left: 0;
+				background-color: var(--font_color);
+			}
+
+			.bar:nth-child(1) {
+				top: 0px;
+			}
+
+			.bar:nth-child(2) {
+				bottom: 3px;
+			}
+
+
 		.label {
+
+			cursor: pointer;
+
 			&[aria-hidden="true"]{
 				opacity: 0;
 			}
@@ -38,7 +69,7 @@
 				opacity: 1;
 			}
 
-			&.open {
+			&.open, &.close {
 				position: absolute;
 				top: 0;
 				right: 0;
