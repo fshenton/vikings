@@ -11,7 +11,8 @@ function buildConfig(env, args){
 			modeOptions = {
 				mode: "development",
 				devServer: {
-					contentBase: "./dist"
+					contentBase: "./dist",
+					historyApiFallback: true
 				},
 				output: {
 					filename: "bundle.js",

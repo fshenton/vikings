@@ -1,4 +1,6 @@
 import React, { useContext } from "react";
+import { BrowserRouter as Router } from 'react-router-dom';
+import Route from 'react-router-dom/Route';
 import { ClientContext as Client } from "COMPONENTS/Client/"; 
 import HomePermalink from "COMPONENTS/HomePermalink/";
 import HistoryChannel from "COMPONENTS/HistoryChannel/";
@@ -37,12 +39,15 @@ export default function App(){
 			</NavProvider>
 
 			{/* PAGES */}
-			<main className={ s.container }>
-				{ false && <Landing /> }
-				{ false && <About /> }
-				{ false && <Characters /> }
-				{ true && <Episodes /> }
-			</main>
+			
+			<Router>
+				<main className={ s.container }>
+					<Route path="/" exact component={ Landing }/> 
+					<Route path="/about" exact component={ About }/> 
+					<Route path="/characters" exact component={ Characters }/> 
+					<Route path="/episodes" exact component={ Episodes }/> 
+				</main>
+			</Router>
 		</div>
 	);
 } //App
