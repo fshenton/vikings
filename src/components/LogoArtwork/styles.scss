@@ -15,11 +15,34 @@
 		font-size: 75vw;
 		width: 1em;
 		height: 1.4em;
+		opacity: 0;
 		filter: brightness(0.75);
 		-webkit-mask-size: contain;
 		-moz-mask-size: contain;
 		mask-size: contain;
 	}
+
+		/*V LOGO BONES*/
+
+		.topBones, .bottomRings {
+			animation: fade-in-and-scale 2.75s forwards ease-in-out;
+		}
+
+		.topRing, .bigBone, .eye {
+			animation: fade-in-and-scale 2s 0.75s forwards ease-in-out;
+		}
+
+
+		@keyframes fade-in-and-scale {
+			0% {
+				opacity: 0;
+				transform: scale(0.8);
+			}
+			100% {
+				opacity: 1;
+				transform: scale(1);
+			}
+		}
 
 // Mobile landscape
 @media (orientation: landscape) {

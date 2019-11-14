@@ -47,31 +47,31 @@ export default function LogoArtwork(){
 	return (
 		<div className={ s.wrapper }>
 			<img 
-				className={ s.logo }
+				className={ `${s.logo} ${s.bigBone}` }
 				src="/assets/2d/landing/V-big-bone.jpg" 
 				alt="Vikings Logo; an ornate 'V' carved out of wood." 
 				style={ bigBoneMask }
 			/>
 			<img 
-				className={ s.logo }
+				className={ `${s.logo} ${s.topBones}` }
 				src="/assets/2d/landing/V-top-bones.jpg" 
 				alt="Vikings Logo; an ornate 'V' carved out of wood." 
 				style={ topBonesMask }
 			/>
 			<img 
-				className={ s.logo }
+				className={ `${s.logo} ${s.topRing}` }
 				src="/assets/2d/landing/V-top-ring.jpg" 
 				alt="Vikings Logo; an ornate 'V' carved out of wood." 
 				style={ firstRingMask }
 			/>
 			<img 
-				className={ s.logo }
+				className={ `${s.logo} ${s.bottomRings}` }
 				src="/assets/2d/landing/V-bottom-rings.jpg" 
 				alt="Vikings Logo; an ornate 'V' carved out of wood." 
 				style={ bottomRingsMask }
 			/>
 			<img 
-				className={ s.logo }
+				className={ `${s.logo} ${s.eye}` }
 				src="/assets/2d/landing/V-eye.jpg" 
 				alt="Vikings Logo; an ornate 'V' carved out of wood." 
 				style={ eyeMask }
