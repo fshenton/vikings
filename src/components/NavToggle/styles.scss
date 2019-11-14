@@ -1,35 +1,70 @@
 // Mobile first
 .wrapper {
-	display: inline-flex;
+	display: flex;
 	position: fixed;
 	top: 1.15em;
 	right: 1em;
 	align-items: center;
-	font-size: 1.5rem;
 	pointer-events: auto;
 	background-color: transparent;
 	
-	&::before {
-		content: "";
-		display: block;
-		width: 1em;
-		height: 1.15em;
-		font-size: 1.33em;
-		background: url(images/icons/cross.svg) center / contain no-repeat;
-		background-color: green;
+	&[aria-checked="true"] {
+
+		.bar:nth-child(1) {
+			transform: rotateZ(45deg);
+		}
+
+		.bar:nth-child(2) {
+			transform: rotateZ(-45deg);
+		}
 	}
 }
 
 	.container {
 		display: inline-block;
 		position: relative;
-		margin-left: 0.8em;
 		font-family: var(--font_family__body);
 		text-transform: uppercase;
 		color: var(--font_color);
 	}
 
+		.icon {
+			display: inline-block;
+			width: 1em;
+			height: 1em;
+			position: relative;
+			margin-right: 0.5em;
+			cursor: pointer;
+			font-size: 1.5em
+		}
+
+			.bar {
+				display: block;
+				width: 100%;
+				height: 3px;
+				position: absolute;
+				top: 50%;
+				left: 0;
+				background-color: var(--font_color);
+			}
+
+			.bar:nth-child(1) {
+				transform: translateY(-0.25em);
+			}
+
+			.bar:nth-child(2) {
+				transform: translateY(0.25em);
+			}
+
+
 		.label {
+			cursor: pointer;
+			font-size: 0;
+
+			&.open, &.close {
+				font-size: 1.5rem;
+			}
+
 			&[aria-hidden="true"]{
 				opacity: 0;
 			}
@@ -43,11 +78,15 @@
 				top: 0;
 				right: 0;
 			}
+
+			&.close {
+				position: relative;
+			}
 		}
 
 // Mobile landscape
 @media (orientation: landscape) {
-	.wrapper {
+	&.open, &.close {
 		font-size: 1rem;
 	}
 }
@@ -57,24 +96,16 @@
 	.wrapper {
 		left: 50%;
 		transform: translateX(-50%);
-		font-size: 2rem;
 	}
+
+		&.open, &.close {
+			font-size: 2rem;
+		}
 }
 
 // Tablet landscape
 @media (min-width: 768px) and (orientation: landscape) {
-	.wrapper {
+	&.open, &.close {
 		font-size: 1.5rem;
 	}
 }
-
-// Desktop portrait
-@media (min-width: 1200px) and (max-aspect-ratio: 8/9) {
-
-}
-
-// Desktop landscape
-@media (min-width: 1200px) {
-
-}
-

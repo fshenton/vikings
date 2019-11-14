@@ -10,8 +10,12 @@ export default function HeroImage(props){
 		description
 	} = props;
 
-	// inline style to prevent the need for a huge png asset
-	const mask = { clipPath: `url(${maskPath})` };
+	// using mask to prevent the need for a huge png asset
+	const mask = { 
+		"WebkitMaskImage": `url(${maskPath})`,
+		"MozMaskImage": `url(${maskPath})`,
+		"maskImage": `url(${maskPath})`,
+	};
 
 	return (
 		<div 

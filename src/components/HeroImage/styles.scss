@@ -15,13 +15,15 @@
 		top: 0;
 		left: 50%;
 		font-size: 100vw;
+		z-index: -1;
 
 		&::before {
 			content: "";
 			display: block;
 			width: 100%;
 			height: 100%;
-			background-color: yellow;
+			background-color: #d2beaf;
+			opacity: 40%;
 			border-radius: 100%;
 			transform: translate(-50%, -50%);
 			filter: blur(0.2em);
@@ -32,7 +34,14 @@
 		display: block;
 		width: 100%;
 		height: 100%;
-		background-color: crimson;
+		object-fit: contain;
+		object-position: right;
+		-webkit-mask-size: contain;
+		-moz-mask-size: contain;
+		mask-size: contain;
+		-webkit-mask-position: right;
+		-moz-mask-positon: right;
+		mask-position: right;
 	}
 
 // Mobile landscape

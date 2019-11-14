@@ -16,7 +16,8 @@ export default function PreviewOverlay(props){
 		episodeNo,
 		title,
 		id,
-		trailerSrc
+		trailerSrc,
+		posterSrc
 	} = props;
 
 	// CONTEXT
@@ -128,10 +129,17 @@ export default function PreviewOverlay(props){
 					</a>
 				</nav>
 			</header>
-			<video className={ s.video }>
+			<video 
+				className={ s.video }
+				autoPlay={ true }
+				muted={true } //to reduce annoyance during dev
+				loop={ true }
+				poster={ posterSrc }
+				controls
+			>
 				{ isOverlayActive && (
 					<source 
-						src={trailerSrc}
+						src={ trailerSrc }
 						type="video/mp4"
 					/>
 				)}

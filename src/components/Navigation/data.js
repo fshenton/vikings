@@ -1,7 +1,7 @@
 const data = [
 	{
 		label: "Home",
-		destination: "/home"
+		destination: "/"
 	}, {
 		label: "About",
 		destination: "/about"

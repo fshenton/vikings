@@ -22,7 +22,8 @@ export default function Episode(props){
 		title,
 		synopsis: synopsisData,
 		thumbnail = {},
-		trailer = {}
+		trailer = {},
+		poster = {}
 	} = props;
 
 	const hidden = index !== activeIndex;
@@ -50,6 +51,7 @@ export default function Episode(props){
 					title={ title }
 					thumbnail={ thumbnail }
 					trailer={ trailer }
+					poster={ poster }
 				/>
 				<div className={ s.content }>
 					<h1 className={ s.title }>

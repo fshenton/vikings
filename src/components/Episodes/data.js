@@ -2,33 +2,42 @@ export default [
 	{
 		number: 1,
 		thumbnail: {
-			src: "/assets/images/episode-1.jpg",
-			description: "Description of episode 1 thumbnail."
+			src: "/assets/2d/episodes/ep1-large.jpg",
+			description: "Man looks on, concerned."
 		},
 		trailer: {
-			src: "/assets/video/episode-1.mp4"
+			src: "/assets/video/vikings-large.mp4"
+		},
+		poster: {
+			src: "/assets/2d/episodes/ep1-poster.jpg",
 		},
 		title: "The Fisher King",
 		synopsis: "Guided by Bishop Heahmund's visions, the Saxons devise a battle plan. Ivar the Boneless strategizes on his own as the Vikings undergo increasing pressure. Bjorn Ironside finds himself in a new territory and must convince the local commander he is a trader and not a raider."
 	}, {
 		number: 2,
 		thumbnail: {
-			src: "/assets/images/episode-2.jpg",
-			description: "Description of episode 2 thumbnail."
+			src: "/assets/2d/episodes/ep2-large.jpg",
+			description: "Man dramatically looks out at the sea."
 		},
 		trailer: {
-			src: "/assets/video/episode-2.mp4"
+			src: "/assets/video/vikings-large.mp4"
+		},
+		poster: {
+			src: "/assets/2d/episodes/ep2-poster.jpg",
 		},
 		title: "The Departed",
 		synopsis: "As the Vikings establish their stronghold in York, Ivar is determined to lead the Great Army. In Kattegat, Lagertha misjudges King Harald and pays a heavy price. Floki arrives at a mysterious land."
 	}, {
 		number: 3,
 		thumbnail: {
-			src: "/assets/images/episode-3.jpg",
-			description: "Description of episode 3 thumbnail."
+			src: "/assets/2d/episodes/ep3-large.jpg",
+			description: "Man yells angrily."
 		},
 		trailer: {
-			src: "/assets/video/episode-3.mp4"
+			src: "/assets/video/vikings-large.mp4"
+		},
+		poster: {
+			src: "/assets/2d/episodes/ep3-poster.jpg",
 		},
 		title: "Homeland",
 		synopsis: "Celebrations are cut short in the aftermath of the battle at York; Ragnar Lothbrok's sons are pitted against each other as tensions reach an all-time high, and each one is forced to choose a side."
@@ -42,6 +51,9 @@ export default [
 		trailer: {
 			src: "/assets/video/episode-4.mp4"
 		},
+		poster: {
+			src: "",
+		},
 		title: "The Plan",
 		synopsis: "Guided by Bishop Heahmund's visions, the Saxons devise a battle plan. Ivar the Boneless strategizes on his own as the Vikings undergo increasing pressure. Bjorn Ironside finds himself in a new territory and must convince the local commander he is a trader and not a raider."
 	}
@@ -54,6 +66,9 @@ export default [
 		trailer: {
 			src: "/assets/video/episode-5.mp4"
 		},
+		poster: {
+			src: "",
+		},
 		title: "The Prisoner",
 		synopsis: "Ivar meets his match in Bishop Heahmund. Floki returns to Kattegat. Bjorn receives a lavish welcome in North Africa."
 	}, {
@@ -64,6 +79,9 @@ export default [
 		},
 		trailer: {
 			src: "/assets/video/episode-6.mp4"
+		},
+		poster: {
+			src: "",
 		},
 		title: "The Message",
 		synopsis: "Lagertha is betrayed, and Bjorn must find a way to support the distraught queen; Floki and his settlers arrive in a new land, but it is far from what they expected."
@@ -77,6 +95,9 @@ export default [
 		trailer: {
 			src: "/assets/video/episode-7.mp4"
 		},
+		poster: {
+			src: "",
+		},
 		title: "Full Moon",
 		synopsis: "Bjorn returns to Kattegat to learn that an attack will take place during the next full moon; Ivar must decide if he can place his trust in a former enemy on the battlefield."
 	}
@@ -88,6 +109,9 @@ export default [
 		},
 		trailer: {
 			src: "/assets/video/episode-8.mp4"
+		},
+		poster: {
+			src: "",
 		},
 		title: "The Joke",
 		synopsis: "The battle for Kattegat begins. As the two armies line up to fight, the Great Heathen Army must decide between a final plea for peace or all-out war. Floki faces discord amongst the settlers."
@@ -101,6 +125,9 @@ export default [
 		trailer: {
 			src: "/assets/video/episode-9.mp4"
 		},
+		poster: {
+			src: "",
+		},
 		title: "A Simple Story",
 		synopsis: "The army leaders consider their options in the aftermath of the battle. In Floki's camp, all hopes of binding the community together are dashed as tragedy unfolds."
 	}
@@ -113,6 +140,9 @@ export default [
 		trailer: {
 			src: "/assets/video/episode-10.mp4"
 		},
+		poster: {
+			src: "",
+		},
 		title: "Moments of Vision",
 		synopsis: "A sense of doom looms over Kattegat as bloodshed ensues, but as the defeated army flees in the face of the victors, a legendary warrior makes his way home."
 	}, {
@@ -123,6 +153,9 @@ export default [
 		},
 		trailer: {
 			src: "/assets/video/episode-11.mp4"
+		},
+		poster: {
+			src: "",
 		},
 		title: "The Revelation",
 		synopsis: "Ivar is crowned the new king of Kattegat just in time to welcome Rollo home; Bjorn, Lagertha and Ubbe must rely on unsteady alliances to survive."
@@ -146,6 +179,9 @@ export default [
 		trailer: {
 			src: "/assets/video/episode-13.mp4"
 		},
+		poster: {
+			src: "",
+		},
 		title: "A New God",
 		synopsis: "Synopsis: Heahmund must convince King Alfred that his actions are in defense of the crown; Ubbe and Torvi strengthen the position of the Vikings, but not all in the Viking camp support their strategy; another settler disappears in Iceland."
 	}, {
@@ -156,6 +192,9 @@ export default [
 		},
 		trailer: {
 			src: "/assets/video/episode-14.mp4"
+		},
+		poster: {
+			src: "",
 		},
 		title: "The Lost Moment",
 		synopsis: "King Harald and his army approaches Wessex while Aethelred is about to make a huge decision about his brother's fate."
@@ -168,6 +207,9 @@ export default [
 		trailer: {
 			src: "/assets/video/episode-15.mp4"
 		},
+		poster: {
+			src: "",
+		},
 		title: "Hell",
 		synopsis: "Bishop Heahmund is wracked with guilt as he fights to renounce his passions. Viking will clash with Saxon on the battlefield leaving a key figure lost in the balance."
 	}, {
@@ -178,6 +220,9 @@ export default [
 		},
 		trailer: {
 			src: "/assets/video/episode-16.mp4"
+		},
+		poster: {
+			src: "",
 		},
 		title: "The Buddha",
 		synopsis: "Ubbe achieves one of Ragnar's dreams; Ivar hatches a new plan in Kattegat, while preparing for a divine arrival; a settler in Iceland returns in a terrible state; King Alfred faces his greatest threat yet."
@@ -190,6 +235,9 @@ export default [
 		trailer: {
 			src: "/assets/video/episode-17.mp4"
 		},
+		poster: {
+			src: "",
+		},
 		title: "The Most Terrible Thing",
 		synopsis: "An unexpected turn among the settlers leaves Floki powerless. King Alfred confronts Judith. Bjorn must strike a deal with Harald. Wessex is once again threatened by a Viking force, but who will lead the Saxon army to defend the Realm?"
 	}, {
@@ -200,6 +248,9 @@ export default [
 		},
 		trailer: {
 			src: "/assets/video/episode-18.mp4"
+		},
+		poster: {
+			src: "",
 		},
 		title: "Baldur",
 		synopsis: "Hvitserk is severely tested. Floki makes an amazing discovery. Freydis gives Ivar a surprise. Ubbe negotiates with the three Danish Kings that have massed their armies in Reading, but the negotiations may have a perilous outcome."
@@ -212,6 +263,9 @@ export default [
 		trailer: {
 			src: "/assets/video/episode-19.mp4"
 		},
+		poster: {
+			src: "",
+		},
 		title: "What Happens in the Cave",
 		synopsis: "Ubbe is forced into hand-to-hand combat. Floki reaches new depths and is met by a shocking sight. Bjorn sets off for Scandinavia with an old rival."
 	}, {
@@ -222,6 +276,9 @@ export default [
 		},
 		trailer: {
 			src: "/assets/video/episode-20.mp4"
+		},
+		poster: {
+			src: "",
 		},
 		title: "Ragnarok",
 		synopsis: "A new battle for Kattegat is on and only the gods know who will emerge victorious."

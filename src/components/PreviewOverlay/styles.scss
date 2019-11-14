@@ -4,7 +4,6 @@
 	display: flex;
 	height: 100%;
 	width: 100%;
-	padding-bottom: 4em;
 	top: 0;
 	left: 0;
 	flex-direction: column;
@@ -16,6 +15,8 @@
 }
 
 	.container {
+		position: absolute;
+		bottom: 5%;
 		z-index: 2;
 	}
 
@@ -45,7 +46,8 @@
 					width: 1em;
 					height: 1.38em;
 					font-size: 0.8em;
-					background-color: lime;
+					background-image: url("/assets/2d/arrows/arrow.png");
+					background-size: cover;
 				}
 
 				&.prev::before,
@@ -68,6 +70,7 @@
 
 					&::after {
 						margin-left: 1em;
+						transform: scaleX(-1);
 					}
 				}
 			}
@@ -115,33 +118,21 @@
 		height: 100%;
 		width: 100%;
 		z-index: 1;
+		object-fit: cover;
 	}
 
 //Mobile Landscape
 @media (orientation: landscape) {
-	.wrapper {
-		padding-bottom: 1em;
-	}
 
-		.close {
-			top: 1.62em;
-		}
+	.close {
+		top: 1.62em;
+	}
 }
 
 //Tablet landscape
 @media (min-width: 768px) and (orientation: landscape) {
-	.wrapper {
-		padding-bottom: 3em;
-	}
-
-		.close {
-			top: 2.62em;
-		}
-}
-
-//Desktop fullscreen
-@media (min-width: 1200px) {
-	.container {
-		top: 80%;
+	
+	.close {
+		top: 2.62em;
 	}
 }

@@ -37,6 +37,10 @@ export default function NavToggle(props){
 			onClick={ toggleOpen }
 		>
 			<span className={ s.container }>
+				<div className={ s.icon }>
+				  	<span className={ s.bar }/>
+				  	<span className={ s.bar }/>
+				</div>
 				<span 
 					className={`${s.label} ${s.open}`}
 					aria-hidden={ isOpen }

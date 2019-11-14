@@ -1,3 +1,4 @@
+// Mobile Portrait
 .wrapper {
 	position: fixed; //with absolute it will scroll with page
 	width: 80%;
@@ -20,6 +21,10 @@
 			width: 1em;	
 			height: 1.42em;
 			z-index: 2;
+			background-color: transparent;
+			background: url("/assets/2d/arrows/arrow.png") no-repeat;
+			background-size: contain;
+			cursor: pointer;
 		}
 
 		.prev {
@@ -28,6 +33,7 @@
 
 		.next {
 			order: 3;
+			transform: scaleX(-1);
 		}
 
 		.pagination {
@@ -115,8 +121,12 @@
 			height: 100%;
 		}
 
-			.button {
-				transform: rotateZ(90deg);
+			.prev {
+				transform: rotateZ(90deg)
+			}
+
+			.next {
+				transform: rotateZ(-90deg);
 			}
 
 		.pagination {
