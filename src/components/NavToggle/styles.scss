@@ -12,11 +12,11 @@
 	&[aria-checked="true"] {
 
 		.bar:nth-child(1) {
-			transform: translateY(0.45em) rotateZ(45deg);
+			transform: rotateZ(45deg);
 		}
 
 		.bar:nth-child(2) {
-			transform: translateY(-0.3em) rotateZ(-45deg);
+			transform: rotateZ(-45deg);
 		}
 	}
 }
@@ -24,18 +24,17 @@
 	.container {
 		display: inline-block;
 		position: relative;
-		margin-left: 0.8em;
 		font-family: var(--font_family__body);
 		text-transform: uppercase;
 		color: var(--font_color);
 	}
 
 		.icon {
+			display: inline-block;
 			width: 1em;
 			height: 1em;
 			position: relative;
-			right: 3.62em;
-			// font-size: 1.33em;
+			margin-right: 0.5em;
 			cursor: pointer;
 		}
 
@@ -44,21 +43,21 @@
 				width: 100%;
 				height: 3px;
 				position: absolute;
+				top: 50%;
 				left: 0;
 				background-color: var(--font_color);
 			}
 
 			.bar:nth-child(1) {
-				top: 0px;
+				transform: translateY(-0.25em);
 			}
 
 			.bar:nth-child(2) {
-				bottom: 3px;
+				transform: translateY(0.25em);
 			}
 
 
 		.label {
-
 			cursor: pointer;
 
 			&[aria-hidden="true"]{
@@ -69,10 +68,14 @@
 				opacity: 1;
 			}
 
-			&.open, &.close {
+			&.open {
 				position: absolute;
 				top: 0;
 				right: 0;
+			}
+
+			&.close {
+				position: relative;
 			}
 		}
 
