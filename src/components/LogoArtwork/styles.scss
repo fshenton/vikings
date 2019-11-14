@@ -22,7 +22,7 @@
 		mask-size: contain;
 	}
 
-		/*V LOGO BONES*/
+		/* V LOGO BONES */
 
 		.topBones, .bottomRings {
 			animation: fade-in-and-scale 2.75s forwards ease-in-out;
@@ -32,17 +32,6 @@
 			animation: fade-in-and-scale 2s 0.75s forwards ease-in-out;
 		}
 
-
-		@keyframes fade-in-and-scale {
-			0% {
-				opacity: 0;
-				transform: scale(0.8);
-			}
-			100% {
-				opacity: 1;
-				transform: scale(1);
-			}
-		}
 
 // Mobile landscape
 @media (orientation: landscape) {
@@ -76,5 +65,18 @@
 @media (min-width: 1200px){
 	.logo {
 		font-size: 25vw;
+	}
+}
+
+/* ANIMATIONS */
+
+@keyframes fade-in-and-scale {
+	0% {
+		opacity: 0;
+		transform: scale(0.8);
+	}
+	100% {
+		opacity: 1;
+		transform: scale(1);
 	}
 }
