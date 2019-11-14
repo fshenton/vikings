@@ -9,7 +9,7 @@ export default function LogoArtwork(){
 	const boneMasks = {
 		bigBone: "/assets/2d/landing/V-big-bone-mask.png",
 		topBones: "/assets/2d/landing/V-top-bones-mask.png",
-		firstRing: "/assets/2d/landing/V-first-ring-mask.png",
+		firstRing: "/assets/2d/landing/V-top-ring-mask.png",
 		bottomRings: "/assets/2d/landing/V-bottom-rings-mask.png",
 		eye: "/assets/2d/landing/V-eye-mask.png"
 	};
@@ -60,7 +60,7 @@ export default function LogoArtwork(){
 			/>
 			<img 
 				className={ s.logo }
-				src="/assets/2d/landing/V-first-ring.jpg" 
+				src="/assets/2d/landing/V-top-ring.jpg" 
 				alt="Vikings Logo; an ornate 'V' carved out of wood." 
 				style={ firstRingMask }
 			/>
