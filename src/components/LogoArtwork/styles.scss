@@ -15,23 +15,84 @@
 		font-size: 75vw;
 		width: 1em;
 		height: 1.4em;
-		opacity: 1;
-		filter: brightness(0.75);
+		opacity: 0;
 		-webkit-mask-size: contain;
 		-moz-mask-size: contain;
 		mask-size: contain;
 	}
 
 		/* V LOGO BONES */
+		//2.97 and 0.75 are consistent durations
 
-		.topBones, .bottomRings {
-			animation: fade-in-and-scale 2.75s forwards ease-in-out;
+		.big-bone {
+			animation: 	scale-in 2.97s 2.15s forwards,
+						fade-in 0.75s 2.6s forwards;
 		}
 
-		.topRing, .bigBone, .eye {
-			animation: fade-in-and-scale 2s 0.75s forwards ease-in-out;
+		.rib-1 {
+			animation: 	scale-in 2.97s 1.48s forwards,
+						fade-in 0.75s 1.93s forwards;
 		}
 
+		.rib-2 {
+			animation: 	scale-in 2.97s 1.73s forwards,
+						fade-in 0.75s 2.18s forwards;
+		}
+
+		.rib-3 {
+			animation: 	scale-in 2.97s 1.92s forwards,
+						fade-in 0.75s 2.37s forwards;
+		}
+
+		.x-1 {
+			animation: 	scale-in 2.97s 1.97s forwards,
+						fade-in 0.75s 2.42s forwards;
+		}
+
+		.x-2 {
+			animation: 	scale-in 2.97s 2.2s forwards,
+						fade-in 0.75s 2.65s forwards;
+		}
+
+		.shape-1 {
+			animation: 	scale-in 2.97s 2.07s forwards,
+						fade-in 0.75s 2.52s forwards;
+		}
+
+		.shape-2 {
+			animation: 	scale-in 2.97s 2.40s forwards,
+						fade-in 0.75s 2.85s forwards;
+		}
+
+		.shape-3 {
+			animation: 	scale-in 2.97s 2.68s forwards,
+						fade-in 0.75s 3.13s forwards;
+		}
+
+		.shape-4 {
+			animation: 	scale-in 2.97s 1.12s forwards,
+						fade-in 0.75s 1.57s forwards;
+		}
+
+		.dot-1 {
+			animation: 	scale-in 2.97s 2.65s forwards,
+						fade-in 0.75s 3.1s forwards;
+		}
+
+		.dot-2 {
+			animation: 	scale-in 2.97s 2.1s forwards,
+						fade-in 0.75s 2.55s forwards;
+		}
+
+		.teeth {
+			animation: 	scale-in 2.97s 1.87s forwards,
+						fade-in 0.75s 2.32s forwards;
+		}
+
+		.v-bone {
+			animation: 	scale-in 2.97s 1.42s forwards,
+						fade-in 0.75s 1.87s forwards;
+		}
 
 // Mobile landscape
 @media (orientation: landscape) {
@@ -70,13 +131,20 @@
 
 /* ANIMATIONS */
 
-@keyframes fade-in-and-scale {
+@keyframes scale-in {
+	0% {
+		transform: scale(0.79);
+	}
+	100% {
+		transform: scale(1);
+	}
+}
+
+@keyframes fade-in {
 	0% {
 		opacity: 0;
-		transform: scale(0.8);
 	}
 	100% {
 		opacity: 1;
-		transform: scale(1);
 	}
 }
