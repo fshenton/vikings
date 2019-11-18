@@ -1,3 +1,6 @@
+$scale_duration: 2.97s;
+$fade_duration: 0.75s;
+
 // Mobile Portrait
 .wrapper {
 	display: flex;
@@ -25,73 +28,73 @@
 		//2.97 and 0.75 are consistent durations
 
 		.big-bone {
-			animation: 	scale-in 2.97s 2.15s forwards,
-						fade-in 0.75s 2.6s forwards;
+			animation: 	scale-in $scale_duration 2.15s forwards,
+						fade-in $fade_duration 2.6s forwards;
 		}
 
 		.rib-1 {
-			animation: 	scale-in 2.97s 1.48s forwards,
-						fade-in 0.75s 1.93s forwards;
+			animation: 	scale-in $scale_duration 1.48s forwards,
+						fade-in $fade_duration 1.93s forwards;
 		}
 
 		.rib-2 {
-			animation: 	scale-in 2.97s 1.73s forwards,
-						fade-in 0.75s 2.18s forwards;
+			animation: 	scale-in $scale_duration 1.73s forwards,
+						fade-in $fade_duration 2.18s forwards;
 		}
 
 		.rib-3 {
-			animation: 	scale-in 2.97s 1.92s forwards,
-						fade-in 0.75s 2.37s forwards;
+			animation: 	scale-in $scale_duration 1.92s forwards,
+						fade-in $fade_duration 2.37s forwards;
 		}
 
 		.x-1 {
-			animation: 	scale-in 2.97s 1.97s forwards,
-						fade-in 0.75s 2.42s forwards;
+			animation: 	scale-in $scale_duration 1.97s forwards,
+						fade-in $fade_duration 2.42s forwards;
 		}
 
 		.x-2 {
-			animation: 	scale-in 2.97s 2.2s forwards,
-						fade-in 0.75s 2.65s forwards;
+			animation: 	scale-in $scale_duration 2.2s forwards,
+						fade-in $fade_duration 2.65s forwards;
 		}
 
 		.shape-1 {
-			animation: 	scale-in 2.97s 2.07s forwards,
-						fade-in 0.75s 2.52s forwards;
+			animation: 	scale-in $scale_duration 2.07s forwards,
+						fade-in $fade_duration 2.52s forwards;
 		}
 
 		.shape-2 {
-			animation: 	scale-in 2.97s 2.40s forwards,
-						fade-in 0.75s 2.85s forwards;
+			animation: 	scale-in $scale_duration 2.40s forwards,
+						fade-in $fade_duration 2.85s forwards;
 		}
 
 		.shape-3 {
-			animation: 	scale-in 2.97s 2.68s forwards,
-						fade-in 0.75s 3.13s forwards;
+			animation: 	scale-in $scale_duration 2.68s forwards,
+						fade-in $fade_duration 3.13s forwards;
 		}
 
 		.shape-4 {
-			animation: 	scale-in 2.97s 1.12s forwards,
-						fade-in 0.75s 1.57s forwards;
+			animation: 	scale-in $scale_duration 1.12s forwards,
+						fade-in $fade_duration 1.57s forwards;
 		}
 
 		.dot-1 {
-			animation: 	scale-in 2.97s 2.65s forwards,
-						fade-in 0.75s 3.1s forwards;
+			animation: 	scale-in $scale_duration 2.65s forwards,
+						fade-in $fade_duration 3.1s forwards;
 		}
 
 		.dot-2 {
-			animation: 	scale-in 2.97s 2.1s forwards,
-						fade-in 0.75s 2.55s forwards;
+			animation: 	scale-in $scale_duration 2.1s forwards,
+						fade-in $fade_duration 2.55s forwards;
 		}
 
 		.teeth {
-			animation: 	scale-in 2.97s 1.87s forwards,
-						fade-in 0.75s 2.32s forwards;
+			animation: 	scale-in $scale_duration 1.87s forwards,
+						fade-in $fade_duration 2.32s forwards;
 		}
 
 		.v-bone {
-			animation: 	scale-in 2.97s 1.42s forwards,
-						fade-in 0.75s 1.87s forwards;
+			animation: 	scale-in $scale_duration 1.42s forwards,
+						fade-in $fade_duration 1.87s forwards;
 		}
 
 // Mobile landscape
