@@ -11,6 +11,11 @@ $fade_duration: 0.75s;
 	justify-content: center;
 	align-items: center;
 	transform: translate(-50%, -50%);
+	animation-name: blur-in;
+	// animation-duration: 2.05s, 0.8s, 0.5s, 0.53s, 0.85s, 0.93s;
+	// animation-direction: normal, reverse;
+	// animation-delay: 0s, 2.05s, 2.85s, 3.35s, 4.48s, 5.33s;
+	// animation-fill-mode: both;
 }
 	
 	.logo {
@@ -25,7 +30,6 @@ $fade_duration: 0.75s;
 	}
 
 		/* V LOGO BONES */
-		//2.97 and 0.75 are consistent durations
 
 		.big-bone {
 			animation: 	scale-in $scale_duration 2.15s forwards,
@@ -149,5 +153,14 @@ $fade_duration: 0.75s;
 	}
 	100% {
 		opacity: 1;
+	}
+}
+
+@keyframes blur-in {
+	0% {
+		filter: blur(0px)
+	}
+	100% {
+		filter: blur(5px);
 	}
 }

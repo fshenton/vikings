@@ -22,13 +22,15 @@
 		margin-bottom: 0.6em;
 		font-size: 3.33em;
 		text-transform: uppercase;
-		animation: slide-up 1.5s 1s forwards ease-in-out;
+		animation:  slide-up 1.5s 1s forwards ease-in-out,
+					fade-in 1.98s 0.83s forwards;
 	}
 
 	.subheading {
 		margin-bottom: 1em;
 		font-size: 2.5em;
-		animation: slide-up 1s 1.5s forwards ease-in-out;
+		animation:  slide-up 1s 1.5s forwards ease-in-out,
+					fade-in 1.92s 0.83s forwards;
 	}
 
 	.body {
@@ -36,7 +38,7 @@
 		text-align: center;
 		font-size: 1em;
 		font-family: var(--font_family__body);
-		animation: fade-in 0.25s 2.5s forwards;
+		animation: fade-in 0.52s 2.13s forwards;
 
 		.paragraph+.paragraph {
 			margin-top: 1em;
