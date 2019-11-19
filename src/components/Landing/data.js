@@ -5,7 +5,10 @@ const data = {
 	Get a closer look at [Vikings Season 5](#about)`,
 	video: {
 		sources: {
-			mp4:  "path/to/video.mp4",
+			mp4:  [
+				"assets/video/particles-floating-720p.mp4",
+				"assets/video/storms1-720p.mp4"
+			],
 			webm: "path/to/video.webm"
 		},
 		poster: "path/to/poster.jpg"

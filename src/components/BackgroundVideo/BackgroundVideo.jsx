@@ -10,9 +10,29 @@ export default function BackgroundVideo(props){
 
 	return (
 		<div className={ s.wrapper }>	
-			<video poster={ poster }>
+			<video poster={ poster } 
+				className={ s.first }
+				autoPlay 
+				loop
+				muted
+			>
 				<source 
-					src={ sources["mp4"] }
+					src={ sources["mp4"][0] }
+					type="video/mp4"
+				/>
+				<source 
+					src={ sources["webm"] }
+					type="video/webm"
+				/>
+			</video>
+			<video poster={ poster } 
+				className={ s.second }
+				autoPlay 
+				loop
+				muted
+			>
+				<source 
+					src={ sources["mp4"][1] }
 					type="video/mp4"
 				/>
 				<source 

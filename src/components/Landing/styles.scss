@@ -7,7 +7,7 @@
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
-	z-index: 1;
+	z-index: 2;
 	font-size: 1.15rem;
 }
 
@@ -22,15 +22,15 @@
 		margin-bottom: 0.6em;
 		font-size: 3.33em;
 		text-transform: uppercase;
-		animation:  slide-up 1.5s 1s forwards ease-in-out,
-					fade-in 1.98s 0.83s forwards;
+		animation:  slide-up 1.5s 2s forwards ease-in-out,
+					fade-in 1.98s 1.83s forwards;
 	}
 
 	.subheading {
 		margin-bottom: 1em;
 		font-size: 2.5em;
-		animation:  slide-up 1s 1.5s forwards ease-in-out,
-					fade-in 1.92s 0.83s forwards;
+		animation:  slide-up 1s 2.5s forwards ease-in-out,
+					fade-in 1.92s 1.83s forwards;
 	}
 
 	.body {
