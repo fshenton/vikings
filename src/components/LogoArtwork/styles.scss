@@ -13,10 +13,9 @@ $animation_delay: 0s; //originally 1s but was very slow start
 	align-items: center;
 	transform: translate(-50%, -50%);
 	animation-name: blur-in;
-	// animation-duration: 2.05s, 0.8s, 0.5s, 0.53s, 0.85s, 0.93s;
-	// animation-direction: normal, reverse;
-	// animation-delay: 0s, 2.05s, 2.85s, 3.35s, 4.48s, 5.33s;
-	// animation-fill-mode: both;
+	animation-duration: 2.85s, 1s, 1.7s;
+	animation-delay: 0s, 0s, 1.1s;
+	animation-iteration-count: 3;
 }
 	
 	.logo {
@@ -161,7 +160,10 @@ $animation_delay: 0s; //originally 1s but was very slow start
 	0% {
 		filter: blur(0px)
 	}
-	100% {
+	50% {
 		filter: blur(5px);
+	}
+	100% {
+		filter: blur(0px)
 	}
 }
