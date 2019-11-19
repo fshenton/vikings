@@ -40,6 +40,7 @@ export default function Landing(){
 					{ body }
 				</div>
 			</header>
+			<div className={ s.glow }/>
 		</>
 	);
 }// Landing
