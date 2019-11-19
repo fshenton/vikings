@@ -10,11 +10,23 @@
 	background-color: red;
 	--home-spacing: 3em;
 	background: center/contain no-repeat url("/assets/2d/static-elements/viking-home.png");
+	animation: fade-in-and-move 1s 0.5s;
 }
 
 // Desktop 
 @media (min-width: 1200px) {
 	.home {
 		--home-spacing: 3.75em;
+	}
+}
+
+@keyframes fade-in-and-move {
+	0% {
+		opacity: 0;
+		transform: translateY(20%);
+	}
+	100% {
+		opacity: 1;
+		transform: translateY(0);
 	}
 }
