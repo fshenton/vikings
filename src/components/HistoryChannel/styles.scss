@@ -9,7 +9,22 @@
 	opacity: 0;
 	background: center/contain no-repeat url("/assets/2d/static-elements/history-logo.png");
 	animation: fade-in-and-move 1s 0.5s forwards;
-} 
+
+	&:hover .circle {
+		animation: encircle 2s linear forwards;
+	}
+}
+
+	.circle {
+		stroke-dasharray: 1000;
+		stroke-dashoffset: 1000;
+	}
+
+	svg {
+		position: relative;
+		right: 50%;
+		bottom: 50%;
+	}
 
 @keyframes fade-in-and-move {
 	0% {
@@ -19,5 +34,11 @@
 	100% {
 		opacity: 1;
 		transform: translateY(0);
+	}
+}
+
+@keyframes encircle {
+	to {
+		stroke-dashoffset: 0;
 	}
 }
