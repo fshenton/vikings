@@ -1,5 +1,6 @@
 $scale_duration: 2.97s;
 $fade_duration: 0.75s;
+$animation_delay: 0s; //originally 1s but was very slow start
 
 // Mobile Portrait
 .wrapper {
@@ -32,73 +33,73 @@ $fade_duration: 0.75s;
 		/* V LOGO BONES */
 
 		.big-bone {
-			animation: 	scale-in $scale_duration 2.15s forwards,
-						fade-in $fade_duration 2.6s forwards;
+			animation: 	scale-in $scale_duration $animation_delay+1.15s forwards,
+						fade-in $fade_duration $animation_delay+1.6s forwards;
 		}
 
 		.rib-1 {
-			animation: 	scale-in $scale_duration 1.48s forwards,
-						fade-in $fade_duration 1.93s forwards;
+			animation: 	scale-in $scale_duration $animation_delay+0.48s forwards,
+						fade-in $fade_duration $animation_delay+0.93s forwards;
 		}
 
 		.rib-2 {
-			animation: 	scale-in $scale_duration 1.73s forwards,
-						fade-in $fade_duration 2.18s forwards;
+			animation: 	scale-in $scale_duration $animation_delay+0.73s forwards,
+						fade-in $fade_duration $animation_delay+1.18s forwards;
 		}
 
 		.rib-3 {
-			animation: 	scale-in $scale_duration 1.92s forwards,
-						fade-in $fade_duration 2.37s forwards;
+			animation: 	scale-in $scale_duration $animation_delay+0.92s forwards,
+						fade-in $fade_duration $animation_delay+1.37s forwards;
 		}
 
 		.x-1 {
-			animation: 	scale-in $scale_duration 1.97s forwards,
-						fade-in $fade_duration 2.42s forwards;
+			animation: 	scale-in $scale_duration $animation_delay+0.97s forwards,
+						fade-in $fade_duration $animation_delay+1.42s forwards;
 		}
 
 		.x-2 {
-			animation: 	scale-in $scale_duration 2.2s forwards,
-						fade-in $fade_duration 2.65s forwards;
+			animation: 	scale-in $scale_duration $animation_delay+1.2s forwards,
+						fade-in $fade_duration $animation_delay+1.65s forwards;
 		}
 
 		.shape-1 {
-			animation: 	scale-in $scale_duration 2.07s forwards,
-						fade-in $fade_duration 2.52s forwards;
+			animation: 	scale-in $scale_duration $animation_delay+1.07s forwards,
+						fade-in $fade_duration $animation_delay+1.52s forwards;
 		}
 
 		.shape-2 {
-			animation: 	scale-in $scale_duration 2.40s forwards,
-						fade-in $fade_duration 2.85s forwards;
+			animation: 	scale-in $scale_duration $animation_delay+1.40s forwards,
+						fade-in $fade_duration $animation_delay+1.85s forwards;
 		}
 
 		.shape-3 {
-			animation: 	scale-in $scale_duration 2.68s forwards,
-						fade-in $fade_duration 3.13s forwards;
+			animation: 	scale-in $scale_duration $animation_delay+1.68s forwards,
+						fade-in $fade_duration $animation_delay+2.13s forwards;
 		}
 
 		.shape-4 {
-			animation: 	scale-in $scale_duration 1.12s forwards,
-						fade-in $fade_duration 1.57s forwards;
+			animation: 	scale-in $scale_duration $animation_delay+0.12s forwards,
+						fade-in $fade_duration $animation_delay+0.57s forwards;
 		}
 
 		.dot-1 {
-			animation: 	scale-in $scale_duration 2.65s forwards,
-						fade-in $fade_duration 3.1s forwards;
+			animation: 	scale-in $scale_duration $animation_delay+1.65s forwards,
+						fade-in $fade_duration $animation_delay+2.1s forwards;
 		}
 
 		.dot-2 {
-			animation: 	scale-in $scale_duration 2.1s forwards,
-						fade-in $fade_duration 2.55s forwards;
+			animation: 	scale-in $scale_duration $animation_delay+1.1s forwards,
+						fade-in $fade_duration $animation_delay+1.55s forwards;
 		}
 
 		.teeth {
-			animation: 	scale-in $scale_duration 1.87s forwards,
-						fade-in $fade_duration 2.32s forwards;
+			animation: 	scale-in $scale_duration $animation_delay+0.87s forwards,
+						fade-in $fade_duration $animation_delay+1.32s forwards;
 		}
 
 		.v-bone {
-			animation: 	scale-in $scale_duration 1.42s forwards,
-						fade-in $fade_duration 1.87s forwards;
+			animation: 	scale-in $scale_duration $animation_delay+0.42s forwards,
+						fade-in $fade_duration $animation_delay+0.87s forwards;
 		}
 
 // Mobile landscape
