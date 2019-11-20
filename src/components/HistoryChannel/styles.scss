@@ -11,7 +11,7 @@
 	animation: fade-in-and-move 1s 0.5s forwards;
 
 	&:hover .circle {
-		animation: encircle 2s linear forwards;
+		animation: encircle 2s ease-in-out forwards;
 	}
 }
 
@@ -21,9 +21,8 @@
 	}
 
 	svg {
-		position: relative;
-		right: 50%;
-		bottom: 50%;
+		transform: scale(2);
+		opacity: 0.5;
 	}
 
 @keyframes fade-in-and-move {
