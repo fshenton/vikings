@@ -11,7 +11,7 @@
 	animation: fade-in-and-move 1s 0.5s forwards;
 
 	&:hover .circle {
-		animation: encircle 2s ease-in-out forwards;
+		animation: encircle 1s linear forwards;
 	}
 }
 
