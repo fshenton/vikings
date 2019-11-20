@@ -19,6 +19,14 @@ $border__color: #4e4e4e;
 	border: solid transparent;
 	animation:  fade-in-and-move 1s 0.5s forwards,
 				border-color 1s 0.5s forwards linear;
+	transition: all 0.3s;
+
+	&:hover {
+		background-color: var(--font_color);
+		color: var(--background_color);
+		border-color: transparent;
+		border-width: 5px;
+	}
 } 
 
 // Tablet up
