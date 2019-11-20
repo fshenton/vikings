@@ -27,6 +27,10 @@ $border__color: #4e4e4e;
 		border-color: transparent;
 		border-width: 5px;
 	}
+
+	&:active {
+		border-width: 3px;
+	}
 } 
 
 // Tablet up

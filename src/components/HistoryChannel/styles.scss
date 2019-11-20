@@ -13,6 +13,11 @@
 	&:hover .circle {
 		animation: encircle 1s linear forwards;
 	}
+
+	&:active svg {
+		opacity: 1;
+		transform: scale(1.95);
+	}
 }
 
 	.circle {
@@ -21,8 +26,8 @@
 	}
 
 	svg {
-		transform: scale(2);
 		opacity: 0.5;
+		transform: scale(2);
 	}
 
 @keyframes fade-in-and-move {
