@@ -22,12 +22,12 @@ export default function HistoryChannel(){
 				aria-label="The History Channel"
 			>
 				<svg viewBox="0 0 100 100" preserveAspectRatio="xMidYMin">
-					<path className={ s.circle } fill="none" stroke="#FFF" strokeWidth="2"
+					<path className={ s.circle } fill="none" stroke="#FFF" strokeWidth="1"
 						d="
 					        M 50, 50
-					        m -48, 0
-					        a 48,48 0 1,0 96,0
-					        a 48,48 0 1,0 -96,0
+					        m -49, 0
+					        a 49,49 0 1,0 98,0
+					        a 49,49 0 1,0 -98,0
 					    "
 					/>
 				</svg>
