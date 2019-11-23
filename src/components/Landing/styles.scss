@@ -76,7 +76,6 @@
 	width: 100%;
 	top: 0;
 	left: 0;
-	overflow: hidden;
 	z-index: 3;
 }
 
@@ -95,10 +94,9 @@
 			height: 100%;
 			background-color: #d2beaf;
 			border-radius: 100%;
-			opacity: 55%;
-			animation: fade-in 4s;
+			animation: fade-in 4s forwards,
+						blur-in 4s forwards;
 			transform: translate(-50%, -80%);
-			filter: blur(0.2em);
 		}
 	}
 
@@ -141,5 +139,11 @@
 
 	100% {
 		opacity: 1;
+	}
+}
+
+@keyframes blur-in {
+	to {
+		filter: blur(0.2em);
 	}
 }
