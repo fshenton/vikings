@@ -54,8 +54,9 @@ export default function Landing(){
 					{ body }
 				</div>
 			</header>
-			<div className={s.glowWrapper}>
-				<div className={ s.glow }/>
+			<div className={ s.glowWrapper }>
+				<div className={ `${s.glow} ${s.gold}` }/>
+				<div className={ `${s.glow} ${s.blue}`}/>
 			</div>
 		</div>
 	);
