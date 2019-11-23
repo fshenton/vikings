@@ -1,12 +1,14 @@
 import React from "react";
 import { RENDER, data, s } from "./";
 
-export default function LogoArtwork(){
+export default function LogoArtwork(props){
+
+	const { className } = props;
 
 	const images = data.map(RENDER.images);
 
 	return (
-		<div className={ s.wrapper }>
+		<div className={ `${s.wrapper} ${className}` }>
 			{ images }
 		</div>
 	);
