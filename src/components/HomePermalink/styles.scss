@@ -14,7 +14,7 @@
 	animation: fade-in-and-move 1s 0.5s forwards;
 
 	&:hover {
-		filter: invert(10%);
+		filter: brightness(1.5);
 	}
 }
 
