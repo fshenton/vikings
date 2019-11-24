@@ -21,13 +21,13 @@ export default function HistoryChannel(){
 				destination="https://www.history.co.uk/"
 				aria-label="The History Channel"
 			>
-				<svg viewBox="0 0 100 100" preserveAspectRatio="xMidYMin">
+				<svg className={ s.outline } viewBox="0 0 100 100" preserveAspectRatio="xMidYMin">
 					<path className={ s.circle } fill="none" stroke="#FFF" strokeWidth="1"
 						d="
 					        M 50, 50
-					        m -49, 0
-					        a 49,49 0 1,0 98,0
-					        a 49,49 0 1,0 -98,0
+					        m 0, -49
+					        a 49,49 0 1,0 0,98
+					        a -49,-49 0 1,0 0,-98
 					    "
 					/>
 				</svg>

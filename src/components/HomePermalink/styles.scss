@@ -10,12 +10,11 @@
 	opacity: 0;
 	--home-spacing: 3em;
 	background: center/contain no-repeat url("/assets/2d/static-elements/viking-home.png");
-	background-size: 100%;
-	transition: all 0.3s;
+	transition: all 0.15s;
 	animation: fade-in-and-move 1s 0.5s forwards;
 
 	&:hover {
-		background-size: 105%;
+		filter: invert(10%);
 	}
 }
 

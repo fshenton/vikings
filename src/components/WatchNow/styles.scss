@@ -24,12 +24,7 @@ $border__color: #4e4e4e;
 	&:hover {
 		background-color: var(--font_color);
 		color: var(--background_color);
-		border-color: transparent;
-		border-width: 5px;
-	}
-
-	&:active {
-		border-width: 3px;
+		border: none;    
 	}
 } 
 

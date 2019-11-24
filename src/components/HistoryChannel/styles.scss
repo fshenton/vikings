@@ -14,21 +14,21 @@
 		animation: encircle 1s linear forwards;
 	}
 
-	&:active svg {
+	&:active .outline {
 		opacity: 1;
 		transform: scale(1.95);
 	}
 }
+	.outline {
+		opacity: 0.5;
+		transform: scale(2);
+	}
 
 	.circle {
 		stroke-dasharray: 1000;
 		stroke-dashoffset: 1000;
 	}
 
-	svg {
-		opacity: 0.5;
-		transform: scale(2);
-	}
 
 @keyframes fade-in-and-move {
 	0% {
