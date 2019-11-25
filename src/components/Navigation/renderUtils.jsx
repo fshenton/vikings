@@ -18,21 +18,23 @@ function renderItem(data){
 			className={ s.item }
 		>
 			<svg className={ `${s.line} ${s.left}` } viewBox="0, 0, 100, 64">
-				<filter id="rope">
+				<filter id={`${safeLabel}-left-rope`}>
 					<feTurbulence baseFrequency="0.2" numOctaves="3"/>
 					<feDisplacementMap in="SourceGraphic" scale="5" />
 				</filter>				
-				<path strokeWidth="8px" fill="none" stroke="white" filter="url(#rope)" d="
+				<path strokeWidth="8px" fill="none" stroke="white" filter={ `url(#${safeLabel}-left-rope)` } 
+				d="
 					M 0,28 h 100
 				"
 				/>
 			</svg>
 			<svg className={ `${s.line} ${s.right}` } viewBox="0, 0, 100, 64">
-				<filter id="rope">
+				<filter id={`${safeLabel}-right-rope`}>
 					<feTurbulence baseFrequency="0.2" numOctaves="3"/>
 					<feDisplacementMap in="SourceGraphic" scale="5" />
 				</filter>				
-				<path strokeWidth="8px" fill="none" stroke="white" filter="url(#rope)" d="
+				<path strokeWidth="8px" fill="none" stroke="white" filter={ `url(#${safeLabel}-right-rope)` }
+				d="
 					M 100,28 h -100
 				"
 				/>
