@@ -1,15 +1,7 @@
-import React, { useContext } from "react";
+import React from "react";
 import { RENDER, data, s } from "./";
-import { NavContext as Nav } from "COMPONENTS/Navigation/";
 
 export default function LogoArtwork(props){
-
-	//CONTEXT
-	//--------------------------
-
-	const { 
-		open: navIsOpen
-	} = useContext(Nav).state;
 
 	//PROPS
 	//--------------------------
@@ -21,12 +13,8 @@ export default function LogoArtwork(props){
 
 	const images = data.map(RENDER.images);
 
-	const isHidden = navIsOpen;
-
 	return (
-		<div className={ `${s.wrapper} ${className}` }
-			aria-hidden={ isHidden }
-		>
+		<div className={ `${s.wrapper} ${className}` }>
 			{ images }
 		</div>
 	);
