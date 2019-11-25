@@ -3,13 +3,19 @@ import { s } from "./";
 
 export default function Play(props) {
 	
-	const { colour } = props;
+	const { 
+		colour,
+		hidden
+	} = props;
+
+	console.log(hidden);
 
 	return (
 		<svg className={ s.icon } 
 			 viewBox="0 0 100 100" 
 			 alt="Play video"
 			 preserveAspectRatio="xMaxYMax"
+			 aria-hidden={ hidden }
 		>
 			<circle 
 				cx="50" 

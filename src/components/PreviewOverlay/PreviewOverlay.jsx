@@ -4,6 +4,7 @@ import {
 	EpisodesContext as Episodes 
 } from "COMPONENTS/Episodes/";
 import { TrailerContext as Trailer } from "COMPONENTS/Episode/";
+import { NavContext as Nav } from "COMPONENTS/Navigation";
 import { s } from "./";
 
 export default function PreviewOverlay(props){
@@ -37,20 +38,9 @@ export default function PreviewOverlay(props){
 		dispatch
 	} = useContext(Episodes);
 
-
-	// RENDER LOGIC
-	// ----------------------------
-	// handle visibility of active episode and episode preview overlay
-	const isActiveEpisode   = activeIndex === index;
-	const isOverlayActive   = isActiveEpisode && overlayActive;
-	const hidden            = !isOverlayActive;
-	
-	const isFirst           = index === 0;
-	const isLast            = index === episodeCount - 1;
-
-	const { src: prevTrailerSrc } = prevTrailer;
-	const { src: nextTrailerSrc } = nextTrailer;
-
+	const {
+		open: isNavOpen
+	} = useContext(Nav).state;
 
 	// CLICK HANDLERS
 	// -----------------------------
@@ -77,13 +67,30 @@ export default function PreviewOverlay(props){
 	const prevEpisode  = setActiveIndex.bind(this, index - 1);
 	const nextEpisode  = setActiveIndex.bind(this, index + 1);
 
+	// RENDER
+	// ----------------------------
+	// handle visibility of active episode and episode preview overlay
+	const isActiveEpisode   = activeIndex === index;
+	const isOverlayActive   = isActiveEpisode && overlayActive;
+	const hidden            = !isOverlayActive;
+	
+	const isFirst           = index === 0;
+	const isLast            = index === episodeCount - 1;
+
+	const { src: prevTrailerSrc } = prevTrailer;
+	const { src: nextTrailerSrc } = nextTrailer;
+
+	const hiddenByNav = isNavOpen;
+
 	return (
 		<div
 			id={ id }
 			className= { s.wrapper }
 			aria-hidden={ hidden }
 		>
-			<header className={ s.container }>
+			<header className={ s.container }
+					aria-hidden={ hiddenByNav }
+			>
 				<h2 className={ s.episode }>
 					{ `Episode ${episodeNo}` } 
 				</h2>
