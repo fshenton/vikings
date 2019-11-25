@@ -1,11 +1,22 @@
-import React from "react";
+import React, { useContext } from "react";
 import RENDER from "SHARED/renderUtils.jsx";
 import { s, data } from "./";
 import LogoArtwork from "COMPONENTS/LogoArtwork/";
 import WatchNow from "COMPONENTS/WatchNow/";
 import VideoLayer from "COMPONENTS/VideoLayer/";
+import { NavContext as Nav } from "COMPONENTS/Navigation/";
 
 export default function Landing(){
+
+	//CONTEXT
+	//--------------------------
+
+	const { 
+		open: navIsOpen
+	} = useContext(Nav).state;
+
+	//DATA
+	//----------------------------
 
 	const {
 		heading,
@@ -23,10 +34,15 @@ export default function Landing(){
 		}
 	} = data;
 
+	//RENDER
+	//--------------------------
+
 	const body = RENDER.body(bodyData, {
 		scope: "landing", //for key names
 		className: s.paragraph 
 	}); 
+
+	const isHidden = navIsOpen;
 
 	return(
 		<div className={ s.landing }>
@@ -43,7 +59,9 @@ export default function Landing(){
 				sources={ foregroundSources } 
 				poster={ foregroundPoster }
 			/>
-			<header className={ s.wrapper }>
+			<header className={ s.wrapper }
+					aria-hidden={ isHidden }
+			>
 				<h1 className={ s.heading }>
 					{ heading }
 				</h1>
@@ -54,7 +72,9 @@ export default function Landing(){
 					{ body }
 				</div>
 			</header>
-			<div className={ s.glowWrapper }>
+			<div className={ s.glowWrapper }
+				 aria-hidden={ isHidden }
+			>
 				<div className={ `${s.glow} ${s.gold}` }/>
 				<div className={ `${s.glow} ${s.blue}`}/>
 			</div>
