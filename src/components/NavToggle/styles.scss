@@ -46,7 +46,7 @@
 				top: 50%;
 				left: 0;
 				background-color: var(--font_color);
-				transition: transform 0.15s ease-in;
+				transition: transform 0.15s cubic-bezier(0.95, 0.05, 0.795, 0.035);
 			}
 
 			.bar:nth-child(1) {
