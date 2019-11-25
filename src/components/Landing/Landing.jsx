@@ -3,7 +3,7 @@ import RENDER from "SHARED/renderUtils.jsx";
 import { s, data } from "./";
 import LogoArtwork from "COMPONENTS/LogoArtwork/";
 import WatchNow from "COMPONENTS/WatchNow/";
-import BackgroundVideo from "COMPONENTS/BackgroundVideo/";
+import VideoLayer from "COMPONENTS/VideoLayer/";
 
 export default function Landing(){
 
@@ -12,8 +12,14 @@ export default function Landing(){
 		subheading,
 		body: bodyData,
 		video: {
-			sources,
-			poster
+			foreground: { 
+				sources: foregroundSources,
+				poster: foregroundPoster
+			},
+			background: { 
+				sources: backgroundSources,
+				poster: backgroundPoster
+			}
 		}
 	} = data;
 
@@ -23,11 +29,19 @@ export default function Landing(){
 	}); 
 
 	return(
-		<>
-			<LogoArtwork />
-			<BackgroundVideo 
-				sources={ sources } 
-				poster={ poster }
+		<div className={ s.landing }>
+			<LogoArtwork 
+				className={ s.logo }
+			/>
+			<VideoLayer 
+				className={ s.background }
+				sources={ backgroundSources } 
+				poster={ backgroundPoster }
+			/>
+			<VideoLayer 
+				className={ s.foreground }
+				sources={ foregroundSources } 
+				poster={ foregroundPoster }
 			/>
 			<header className={ s.wrapper }>
 				<h1 className={ s.heading }>
@@ -40,6 +54,10 @@ export default function Landing(){
 					{ body }
 				</div>
 			</header>
-		</>
+			<div className={ s.glowWrapper }>
+				<div className={ `${s.glow} ${s.gold}` }/>
+				<div className={ `${s.glow} ${s.blue}`}/>
+			</div>
+		</div>
 	);
 }// Landing
