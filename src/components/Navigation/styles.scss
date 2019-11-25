@@ -44,14 +44,38 @@
 	}
 
 		.item {
+			position: relative;
 			line-height: 0.7em;
+
+			&:hover .line {
+				animation: mess-up 1.5s forwards;
+			} 
 
 			&+.item {
 				margin-top: 0.7em
 			}
 
+			.line {
+				width: 50%;
+				height: 100%;
+				position: absolute;
+				top: 0;
+				pointer-events: none;
+				stroke-dasharray: 1000;
+				stroke-dashoffset: 1000;
+			}
+
+				.left {
+					left: 0;
+				}
+
+				.right {
+					right: 0;
+				}
+
 			.link {
 				text-decoration: none;
+			
 			}
 		}
 
@@ -83,5 +107,8 @@
 	}
 }
 
-
-
+@keyframes mess-up {
+	to {
+		stroke-dashoffset: 0;
+	}
+}
