@@ -27,6 +27,7 @@
 		font-size: 4rem;
 		font-family: var(--font_family__heading);
 		list-style: none;
+		transition: opacity 0.15s;
 
 		&[aria-expanded="false"], 
 		&[aria-expanded="false"] ~ .socials {
