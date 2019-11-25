@@ -1,32 +1,18 @@
 import React, { useContext } from "react";
 import { s } from "./";
-import { 
-	NavContext as Nav, 
-	ACTIONS 
-} from "COMPONENTS/Navigation/";
+import { NavContext as Nav } from "COMPONENTS/Navigation/";
 
 export default function NavToggle(props){
+
+	const { callback: toggleOpen } = props;
 
 	//CONTEXT
 	//--------------------------
 	const {
 		state: {
 			open: isOpen
-		},
-		dispatch
+		}
 	} = useContext(Nav);
-
-
-	//EVENT HANDLING
-	//---------------------------
-	function toggleOpen(e){
-		if(e) e.preventDefault();
-
-		dispatch({
-			type: ACTIONS.OPEN_NAVIGATION,
-			value: !isOpen
-		});
-	}// toggleOpen
 
 	return (
 		<button 
