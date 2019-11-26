@@ -13,6 +13,8 @@
 		height: 38%;
 		object-fit: cover;
 		object-position: top;
+		opacity: 0;
+		animation: fade-in 2.5s forwards;
 	}
 
 	.textContainer {
@@ -39,7 +41,7 @@
 		.heading {
 			margin-bottom: 0.5rem;
 			font-size: var(--font_size__heading);
-			animation-delay: 1s
+			animation-delay: 0.25s
 		}
 
 		.subheading {
@@ -47,7 +49,7 @@
 			margin-bottom: 1rem;
 			font-size: var(--font_size__subheading);
 			line-height: 1.5em;
-			animation-delay: 2s;
+			animation-delay: 0.5s;
 		}
 		
 		.body {
@@ -60,17 +62,17 @@
 			}
 
 			p:nth-child(1) {
-				animation-delay: 3s;
+				animation-delay: 0.75s;
 			}
 
 
 			p:nth-child(2) {
-				animation-delay: 4s;
+				animation-delay: 1s;
 			}
 
 
 			p:nth-child(3) {
-				animation-delay: 5s;
+				animation-delay: 1.25s;
 			}
 		}
 
