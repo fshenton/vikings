@@ -24,6 +24,13 @@
 		--padding__body: 10vw;
 	}
 
+		.heading, .subheading, .body>p {
+			opacity: 0;
+			animation-name: fade-in;
+			animation-duration: 1s;
+			animation-fill-mode: forwards;
+		}
+
 		.heading, .subheading {
 			font-family: var(--font_family__heading);
 			text-shadow: 0 1px 1px 0;
@@ -32,6 +39,7 @@
 		.heading {
 			margin-bottom: 0.5rem;
 			font-size: var(--font_size__heading);
+			animation-delay: 1s
 		}
 
 		.subheading {
@@ -39,6 +47,7 @@
 			margin-bottom: 1rem;
 			font-size: var(--font_size__subheading);
 			line-height: 1.5em;
+			animation-delay: 2s;
 		}
 		
 		.body {
@@ -48,6 +57,20 @@
 
 			p + p {
 				margin-top: 1em;
+			}
+
+			p:nth-child(1) {
+				animation-delay: 3s;
+			}
+
+
+			p:nth-child(2) {
+				animation-delay: 4s;
+			}
+
+
+			p:nth-child(3) {
+				animation-delay: 5s;
 			}
 		}
 
