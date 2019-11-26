@@ -4,6 +4,7 @@ import {
 	data as characterData,
 	CharactersProvider
 } from "./";
+import { s } from "./";
 
 export default function Characters(){
 
@@ -11,6 +12,7 @@ export default function Characters(){
 
 	return(
 		<article 
+			className={ s.characters }
 			role="region"
 			aria-roledescription="carousel"
 			aria-label="Characters"
