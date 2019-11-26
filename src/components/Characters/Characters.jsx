@@ -4,12 +4,22 @@ import {
 	data as characterData,
 	CharactersProvider
 } from "./";
+import VideoLayer from "COMPONENTS/VideoLayer/";
 import { s } from "./";
 
 export default function Characters(){
 
 	const characters = characterData.map(RENDER.character);
 
+	const sources = {
+		mp4:  [
+			"assets/video/particles-floating-720p.mp4"
+		],
+		webm: "path/to/video.webm"
+	};
+
+	const poster = "path/to/poster.jpg";
+	
 	return(
 		<article 
 			className={ s.characters }
@@ -25,6 +35,11 @@ export default function Characters(){
 					{ characters }
 				</ul>
 			</CharactersProvider>
+			<VideoLayer 
+				className={ s.dust }
+				sources={ sources } 
+				poster={ poster }
+			/>
 		</article>
 	);
 }// Characters
