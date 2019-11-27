@@ -18,7 +18,7 @@ export default function Play(props) {
 			<defs>
 				<mask id="triangle">
 					<rect 
-						width="100%" h
+						width="100%"
 						eight="100%" 
 						fill="white"
 					/>

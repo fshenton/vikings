@@ -6,7 +6,6 @@ $fade-color: var(--background_color);
 	height: auto;
 	min-height: 100%;
 	padding-top: 20vh;
-	background-color: $fade-color;
 	
 	&[aria-hidden="true"]{
 		position: absolute;

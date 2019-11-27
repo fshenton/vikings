@@ -1,5 +1,3 @@
-$ghost_fade__color: rgba(255, 255, 255, 1);
-
 //Mobile portrait
 .wrapper {
 	position: relative;
@@ -14,7 +12,6 @@ $ghost_fade__color: rgba(255, 255, 255, 1);
 		position: relative;
 		width: var(--thumbnail_width);
 		height: var(--thumbnail_height);
-		background-color: var(--font_color);
 
 		.button { 
 			display: flex;
@@ -45,13 +42,12 @@ $ghost_fade__color: rgba(255, 255, 255, 1);
 		left: 0;
 		width: 100%;
 		height: 100%;
-		opacity: 0.1;
+		opacity: 0.05;
 		filter: grayscale(1);
 		pointer-events: none;
 		background-size: cover;
 		background-position: center;
 		background-repeat: no-repeat;
-		background-color: $ghost_fade__color;
 		--ghost_translate__distance: 100%;
 
 		&.left {
