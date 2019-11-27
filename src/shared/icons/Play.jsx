@@ -8,8 +8,6 @@ export default function Play(props) {
 		hidden
 	} = props;
 
-	console.log(hidden);
-
 	return (
 		<svg className={ s.icon } 
 			 viewBox="0 0 100 100" 

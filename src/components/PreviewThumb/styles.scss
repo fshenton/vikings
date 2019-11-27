@@ -1,4 +1,4 @@
-$ghost_fade__color: rgba(255, 255, 255, 0.1);
+$ghost_fade__color: rgba(255, 255, 255, 1);
 
 //Mobile portrait
 .wrapper {
@@ -46,8 +46,11 @@ $ghost_fade__color: rgba(255, 255, 255, 0.1);
 		width: 100%;
 		height: 100%;
 		opacity: 0.1;
-		filter: grayscale(1.0);
+		filter: grayscale(1);
 		pointer-events: none;
+		background-size: cover;
+		background-position: center;
+		background-repeat: no-repeat;
 		background-color: $ghost_fade__color;
 		--ghost_translate__distance: 100%;
 
