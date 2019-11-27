@@ -3,6 +3,8 @@
 	position: relative;
 	width: 100%;
 	z-index: 3;
+	opacity: 0;
+	animation: fade-in 2s ease-in-out forwards;
 	--thumbnail_width: 100%;
 	--thumbnail_height: 38vh;
 }
@@ -104,4 +106,10 @@
 		.ghost {
 			--ghost_translate__distance: 115%;
 		}
+}
+
+@keyframes fade-in {
+	to {
+		opacity: 1;
+	}
 }
