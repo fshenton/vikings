@@ -130,13 +130,25 @@
 			height: 100%;
 		}
 
-			.prev {
-				transform: rotateZ(90deg)
+			.button {
+				transition: all 0.15s;
 			}
 
-			.next {
-				transform: rotateZ(-90deg);
-			}
+				.prev {
+					transform: rotateZ(90deg) translateY(0);
+
+					&:hover {
+						transform: rotateZ(90deg) translateX(10%)
+					}
+				}
+
+				.next {
+					transform: rotateZ(-90deg) translateY(0);
+
+					&:hover {
+						transform: rotateZ(-90deg) translateX(10%)
+					}
+				}
 
 		.pagination {
 			flex-direction: column;
