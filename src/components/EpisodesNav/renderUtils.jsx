@@ -63,7 +63,7 @@ function renderPaginationLink(data, index){
 
 	const isActive 	= index === activeIndex;
 
-	let opacity;
+	let opacity = 0;
 	if(isActive) opacity = 1;
 	else {
 		const decayDistance = 4;
@@ -86,7 +86,7 @@ function renderPaginationLink(data, index){
 
 	const translation = `${factor * offset}em`;
 
-	const isHidden = isNavOpen;
+	const isHidden = (isNavOpen || opacity <= 0);
 
 	let style = undefined;
 	if(!isHidden){

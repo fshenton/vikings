@@ -25,15 +25,24 @@
 			background: url("/assets/2d/arrows/arrow.png") no-repeat;
 			background-size: contain;
 			cursor: pointer;
+			transition: all 0.15s;
 		}
 
 		.prev {
 			order: 1;
+
+			&:hover {
+				transform: translateX(25%);
+			}
 		}
 
 		.next {
 			order: 3;
 			transform: scaleX(-1);
+		
+			&:hover {
+				transform: scaleX(-1) translateX(25%);
+			}
 		}
 
 		.pagination {
