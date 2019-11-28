@@ -5,6 +5,7 @@ import {
 	ACTIONS,
 	EpisodesContext as Episodes
 } from "COMPONENTS/Episodes/";
+import { NavContext as Nav } from "COMPONENTS/Navigation/";
 import { ClientContext as Client } from "COMPONENTS/Client/";
 import UTILS from "SHARED/utils.js";
 
@@ -32,6 +33,10 @@ function renderPaginationLink(data, index){
 		},
 		dispatch
 	} = useContext(Episodes);
+
+	const {
+		open: isNavOpen
+	} = useContext(Nav).state;
 
 	const {
 		isLarge
@@ -81,10 +86,15 @@ function renderPaginationLink(data, index){
 
 	const translation = `${factor * offset}em`;
 
-	const style = {
-		transform: `${translate}(${translation})`,
-		opacity
-	};
+	const isHidden = isNavOpen;
+
+	let style = undefined;
+	if(!isHidden){
+		style = {
+			transform: `${translate}(${translation})`,
+			opacity
+		};
+	}
 
 	return (
 		<li 
@@ -92,6 +102,7 @@ function renderPaginationLink(data, index){
 			style={ style }
 			key={ `episode__pagination__${episodeNo}` }
 			aria-current={ isActive }
+			aria-hidden={ isHidden }
 		>
 			<Link 
 				destination={ `#${episodeId}` }

@@ -35,18 +35,18 @@ export default function App(){
 					/> }
 				{ !isSmall && <HistoryChannel /> }
  				<WatchNow />
-			</NavProvider>
 
 			{/* PAGES */}
 			
-			<Router>
-				<main className={ s.container }>
-					<Route path="/" exact component={ Landing }/> 
-					<Route path="/about" exact component={ About }/> 
-					<Route path="/characters" exact component={ Characters }/> 
-					<Route path="/episodes" exact component={ Episodes }/> 
-				</main>
-			</Router>
+				<Router>
+					<main className={ s.container }>
+						<Route path="/" exact component={ Landing }/> 
+						<Route path="/about" exact component={ About }/> 
+						<Route path="/characters" exact component={ Characters }/> 
+						<Route path="/episodes" exact component={ Episodes }/> 
+					</main>
+				</Router>
+			</NavProvider>
 		</div>
 	);
 } //App

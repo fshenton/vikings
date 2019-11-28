@@ -1,5 +1,6 @@
 import React, { useContext } from "react";
 import { EpisodesContext as Episodes } from "COMPONENTS/Episodes/";
+import { NavContext as Nav } from "COMPONENTS/Navigation/";
 import PreviewThumb from "COMPONENTS/PreviewThumb/";
 import { s } from "./";
 import RENDER from "SHARED/renderUtils.jsx";
@@ -12,6 +13,10 @@ export default function Episode(props){
 		activeIndex,
 		episodeCount
 	} = useContext(Episodes).state;
+
+	const { 
+		open: isNavOpen
+	} = useContext(Nav).state;
 
 	//RENDER
 	//---------------------------
@@ -32,7 +37,8 @@ export default function Episode(props){
 		scope: "episode", //for key 
 		className: s.paragraph
 	});
-	
+
+	const textHidden = isNavOpen;	
 
 	return (
 		<li
@@ -53,7 +59,9 @@ export default function Episode(props){
 					trailer={ trailer }
 					poster={ poster }
 				/>
-				<div className={ s.content }>
+				<div className={ s.content }
+					 aria-hidden={ textHidden }
+				>
 					<h1 className={ s.title }>
 						{ title }
 					</h1>

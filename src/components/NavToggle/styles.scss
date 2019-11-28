@@ -2,7 +2,7 @@
 .wrapper {
 	display: flex;
 	position: fixed;
-	top: 1.15em;
+	top: 4em; //PLACEHOLDER
 	right: 1em;
 	align-items: center;
 	pointer-events: auto;
@@ -46,6 +46,7 @@
 				top: 50%;
 				left: 0;
 				background-color: var(--font_color);
+				transition: transform 0.15s cubic-bezier(0.95, 0.05, 0.795, 0.035);
 			}
 
 			.bar:nth-child(1) {
@@ -60,6 +61,7 @@
 		.label {
 			cursor: pointer;
 			font-size: 0;
+			transition: opacity 0.15s linear;
 
 			&.open, &.close {
 				font-size: 1.5rem;
