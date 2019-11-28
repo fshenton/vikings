@@ -28,5 +28,28 @@
 			&.instagram {
 				background-image: url("assets/2d/socials/instagram.svg");
 			}
+
+			&:hover .circle {
+				animation: encircle 1s linear forwards;
+			}
 		}
+	
+	.circle {
+		stroke-dasharray: 1000;
+		stroke-dashoffset: 1000;
+	}
+
+	svg {
+		transform: scale(2);
+		opacity: 0.5;
+	}
 }
+
+@keyframes encircle {
+	to {
+		stroke-dashoffset: 0;
+	}
+}
+	
+	
+

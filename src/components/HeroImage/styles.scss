@@ -15,18 +15,33 @@
 		top: 0;
 		left: 50%;
 		font-size: 100vw;
-		z-index: -1;
 
 		&::before {
 			content: "";
 			display: block;
 			width: 100%;
 			height: 100%;
-			background-color: #d2beaf;
 			opacity: 40%;
-			border-radius: 100%;
 			transform: translate(-50%, -50%);
+			border-radius: 100%;
+		}
+
+		&.pale {
+			z-index: 3;
+		}
+
+		&.dull {
+			z-index: 1;
+		}
+
+		&.pale::before {
+			background-color: #a29573;
 			filter: blur(0.2em);
+		}
+
+		&.dull::before {
+			background-color: #79776d;
+			filter: blur(0.5em);
 		}
 	}
 
@@ -34,6 +49,8 @@
 		display: block;
 		width: 100%;
 		height: 100%;
+		position: relative;
+		z-index: 2;
 		object-fit: contain;
 		object-position: right;
 		-webkit-mask-size: contain;
@@ -42,6 +59,10 @@
 		-webkit-mask-position: right;
 		-moz-mask-positon: right;
 		mask-position: right;
+		filter: blur(0.5em);
+		opacity: 0;
+		transform: scale(1.5);
+		animation:  blur-fade-scale-in 1.5s ease-in-out forwards;
 	}
 
 // Mobile landscape
@@ -65,5 +86,13 @@
 	.hero {
 		left: auto;
 		right: 0;
+	}
+}
+
+@keyframes blur-fade-scale-in {
+	to {
+		filter: blur(0);
+		opacity: 1;
+		transform: scale(1);
 	}
 }
