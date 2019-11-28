@@ -28,7 +28,8 @@ export default function HeroImage(props){
 				alt={ description }
 				style={ mask }
 			/>
-			<div className={ s.glow } id="character__hero__glow"></div>
+			<div className={ `${s.glow} ${s.pale}` }></div>
+			<div className={ `${s.glow} ${s.dull}` }></div>
 		</div>
 	);
 }// HeroImage
