@@ -1,3 +1,5 @@
+$border__color: #4e4e4e;
+
 // Mobile portrait
 .watch {
 	display: flex;
@@ -13,8 +15,18 @@
 	font-size: 1.125em;
 	font-family: var(--font_family__body);
 	background-color: transparent;
-	border: solid var(--watchnow_border__color);
-}
+	opacity: 0;
+	border: solid transparent;
+	animation:  fade-in-and-move 1s 0.5s forwards,
+				border-color 1s 0.5s forwards linear;
+	transition: all 0.3s;
+
+	&:hover {
+		background-color: var(--font_color);
+		color: var(--background_color);
+		border: none;    
+	}
+} 
 
 // Tablet up
 @media (min-width: 768px) {
@@ -22,5 +34,50 @@
 		bottom: 2.88em;
 		left: 2.88em;
 		transform: translateX(0);
+	}
+}
+
+@keyframes fade-in-and-move {
+	0% {
+		opacity: 0;
+		transform: translateY(-20%);
+	}
+	100% {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
+
+@keyframes border-color {
+	0% {
+		border-top-color: transparent;
+		border-right-color: transparent;
+		border-bottom-color: transparent;
+		border-left-color: transparent;
+	}
+	25% {
+		border-top-color: transparent;
+		border-right-color: transparent;
+		border-bottom-color: transparent;
+		border-left-color: $border__color;
+	}
+	50% {
+		
+		border-top-color: transparent;
+		border-right-color: transparent;
+		border-bottom-color: $border__color;
+		border-left-color: $border__color;
+	}
+	75% {
+		border-top-color: transparent;
+		border-right-color: $border__color;
+		border-bottom-color: $border__color;
+		border-left-color: $border__color;
+	}
+	100% {
+		border-top-color: $border__color;
+		border-right-color: $border__color;
+		border-bottom-color: $border__color;
+		border-left-color: $border__color;
 	}
 }
