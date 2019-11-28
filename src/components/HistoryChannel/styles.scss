@@ -4,7 +4,45 @@
 	height: 4em;	
 	bottom: 3.25em;
 	right: 3.25em;
-	z-index: 3;
+	z-index: 5;
 	font-size: 1rem;
+	opacity: 0;
 	background: center/contain no-repeat url("/assets/2d/static-elements/history-logo.png");
-} 
+	animation: fade-in-and-move 1s 0.5s forwards;
+
+	&:hover .circle {
+		animation: encircle 1s linear forwards;
+	}
+
+	&:active .outline {
+		opacity: 1;
+		transform: scale(1.95);
+	}
+}
+	.outline {
+		opacity: 0.5;
+		transform: scale(2);
+	}
+
+	.circle {
+		stroke-dasharray: 1000;
+		stroke-dashoffset: 1000;
+	}
+
+
+@keyframes fade-in-and-move {
+	0% {
+		opacity: 0;
+		transform: translateY(-20%);
+	}
+	100% {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
+
+@keyframes encircle {
+	to {
+		stroke-dashoffset: 0;
+	}
+}

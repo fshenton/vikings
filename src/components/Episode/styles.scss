@@ -6,7 +6,6 @@ $fade-color: var(--background_color);
 	height: auto;
 	min-height: 100%;
 	padding-top: 20vh;
-	background-color: $fade-color;
 	
 	&[aria-hidden="true"]{
 		position: absolute;
@@ -20,17 +19,29 @@ $fade-color: var(--background_color);
 			font-size: 1.3rem;
 		}
 
+			.episode, 
+			.title, 
+			.body>.paragraph {
+				animation-name: fade-in-slide-up;
+				animation-duration: 0.75s;
+				animation-fill-mode: forwards;
+				opacity: 0;
+				transform: translateY(10%);
+			}
+
 			.episode {
 				order: 1;
 				margin-bottom: 1.62em;
 				font-size: 1em;
 				font-family: var(--font_family__heading);
+				animation-delay: 0.5s;
 			}
 
 			.title {
 				order: 2;
 				font-size: 1.62em;
 				font-family: var(--font_family__heading);
+				animation-delay: 0.75s;
 			}
 
 			.body {
@@ -44,7 +55,7 @@ $fade-color: var(--background_color);
 			}
 
 				.paragraph {
-					opacity: 1; //placeholder to get it showing
+					animation-delay: 1s;
 				}
 
 			.fade {
@@ -145,5 +156,12 @@ $fade-color: var(--background_color);
 		padding-right: 17.25em;
 		align-self: flex-end;
 		font-size: 1rem;
+	}
+}
+
+@keyframes fade-in-slide-up {
+	to {
+		opacity: 1;
+		transform: translateY(0);
 	}
 }

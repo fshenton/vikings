@@ -5,7 +5,8 @@ import {
 	RENDER, 
 	NavContext as Nav,
 	s,
-	data
+	data,
+	ACTIONS
 } from "./";
 
 export default function Navigation(){
@@ -13,8 +14,11 @@ export default function Navigation(){
 	//CONTEXT
 	//---------------------------
 	const {
-		open
-	} = useContext(Nav).state;
+		state: {
+			open
+		},
+		dispatch
+	} = useContext(Nav);
 
 
 	//RENDER
@@ -23,11 +27,22 @@ export default function Navigation(){
 
 	const isOpen = open ? s.open : "";
 
+	//EVENT HANDLING
+	//---------------------------
+	function toggleOpen(e){
+
+		dispatch({
+			type: ACTIONS.OPEN_NAVIGATION,
+			value: !isOpen
+		});
+	}// toggleOpen
+
 	return (
 		<nav 
 			className={ `${s.wrapper} ${isOpen}` }
+			onClick={ open ? toggleOpen : undefined }
 		>
-			<NavToggle />
+			<NavToggle callback={ toggleOpen }/>
 			<ul 
 				id="navigation__links"
 				className={ s.container }

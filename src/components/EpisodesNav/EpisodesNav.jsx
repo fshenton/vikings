@@ -4,6 +4,7 @@ import {
 	ACTIONS,
 	EpisodesContext as Episodes
 } from "COMPONENTS/Episodes/";
+import { NavContext as Nav } from "COMPONENTS/Navigation/";
 import { ClientContext as Client } from "COMPONENTS/Client/";
 import { s, RENDER } from "./";
 
@@ -18,6 +19,10 @@ export default function EpisodesNav(){
 		},
 		dispatch
 	} = useContext(Episodes);
+
+	const {
+		open: isNavOpen
+	} = useContext(Nav).state;
 
 	const { 
 		isSmall,
@@ -49,9 +54,13 @@ export default function EpisodesNav(){
 	const bottomPagination = isSmall || isMedium;
 	const sidePagination = isLarge;
 
+	const isHidden = isNavOpen;
+
 	return (
 		<nav className={ s.wrapper }>
-			<div className={ s.container }>
+			<div className={ s.container }
+				aria-hidden={ isHidden }
+			>
 				<button 
 					className={ `${s.button} ${s.prev}` }
 					aria-label="Previous episode."

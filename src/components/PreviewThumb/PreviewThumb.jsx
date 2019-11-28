@@ -5,6 +5,7 @@ import {
 	ACTIONS, 
 	EpisodesContext as Episodes 
 } from "COMPONENTS/Episodes/";
+import { NavContext as Nav } from "COMPONENTS/Navigation";
 import UTILS from "SHARED/utils.js";
 import { s } from "./";
 
@@ -36,6 +37,13 @@ export default function PreviewThumb(props){
 	} = useContext(Episodes);
 
 
+	const {
+		open: isNavOpen
+	} = useContext(Nav).state;
+
+	// CLICK HANDLER
+	// -----------------------------
+
 	function openOverlay(e){
 		if(e) e.preventDefault();
 
@@ -47,9 +55,12 @@ export default function PreviewThumb(props){
 
 	// RENDER
 	// ---------------------------
+	
 	const formattedTitle    = UTILS.convertToSafeString(title, "-");
 	const id                = `${formattedTitle}-preview`;
   
+	const isHidden = isNavOpen;
+
 	return (
 		<aside className={ s.wrapper }>
 			<div className={ s.thumbnail }>
@@ -67,7 +78,8 @@ export default function PreviewThumb(props){
 					/>
 					<div className={ s.icon }>
 						<PlayIcon 
-							colour="#FFF" 
+							colour="#FFF"
+							hidden={ isHidden } 
 						/>
 					</div>
 				</a>

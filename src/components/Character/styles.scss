@@ -17,7 +17,7 @@
 
 	.container {
 		position: relative;
-		z-index: 1;
+		z-index: 4;
 	}
 
 		.content {
@@ -27,19 +27,35 @@
 		}
 
 			.headings {
-				opacity: 1; //placeholder
+				opacity: 1;
 			}
+
+				.name, .nickname {
+					clip-path: inset(0 0 100% 0);
+				    transform: translateY(100%);
+					font-family: var(--font_family__heading);
+					text-shadow: 0 1px 1px 0;
+					animation:  clip-up 1s 0.5s forwards,
+								slide-up 1s 0.5s forwards,
+								fade-in 1s 0.5s forwards;
+				}
 	
 				.name {
 					margin-bottom: 0.1em; // GUESS
 					font-size: 5em;
-					font-family: var(--font_family__heading);
 				}
 
 				.nickname {
 					margin-bottom: 0.5em; // GUESS
 					font-size: 2.6em;
 					font-family: var(--font_family__heading);
+				}
+
+				.actor, .body {
+					opacity: 0;
+					transform: translateY(50%);
+					animation:  slide-up 0.75s 0.75s forwards,
+								fade-in 0.75s 0.75s forwards;
 				}
 
 				.actor {
@@ -70,9 +86,9 @@
 			bottom: 0;
 			left: 0;
 			background-image: linear-gradient(
-			    rgba(237, 20, 61, 0) 0%,
-			    rgba(237, 20, 61, 1) 50%,
-			    rgba(237, 20, 61, 1) 100%	
+			    rgba(0, 0, 0, 0) 0%,
+			    rgba(0, 0, 0, 1) 50%,
+			    rgba(0, 0, 0, 1) 100%	
 			);
 		}
 
@@ -99,7 +115,7 @@
 					width: 1em;
 					height: 1.5em;
 					font-size: 1.36em;
-					background-image: url("/assets/2d/arrows/arrow.png");
+					background-image: url("/assets/2d/arrows/arrow.svg");
 					background-size: contain;
 					background-repeat: no-repeat;
 					cursor: pointer;
@@ -160,9 +176,9 @@
 				bottom: 0; //GUESS
 				pointer-events: none;
 				background-image: linear-gradient(
-				    rgba(237, 20, 61, 0) 0%,
-				    rgba(237, 20, 61, 1) 50%,
-				    rgba(237, 20, 61, 1) 100%	
+				    rgba(0, 0, 0, 0) 0%,
+				    rgba(0, 0, 0, 1) 50%,
+				    rgba(0, 0, 0, 1) 100%	
 				);
 			}
 
@@ -229,3 +245,33 @@
 	}
 }
 	
+
+/* ANIMATIONS */
+
+@keyframes clip-up {
+	0% {
+		-webkit-clip-path: inset(0 0 100% 0);
+    	clip-path: inset(0 0 100% 0);
+	}
+
+	100% {
+		-webkit-clip-path: inset(0);
+      	clip-path: inset(0);
+	}
+}
+
+@keyframes slide-up {
+	to {
+		transform: translateY(0);
+	}
+}
+
+@keyframes fade-in {
+	0% {
+		opacity: 0;
+	}
+
+	100% {
+		opacity: 1;
+	}
+}

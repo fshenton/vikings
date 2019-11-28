@@ -1,20 +1,37 @@
 // Mobile portrait
 .home {
-	position: absolute;
 	width: 4em;
 	height: 5.4em;
+	position: absolute;
 	top: var(--home-spacing);
 	left: var(--home-spacing);
-	z-index: 3;
+	z-index: 5;
 	font-size: 1rem;
-	background-color: red;
+	opacity: 0;
 	--home-spacing: 3em;
 	background: center/contain no-repeat url("/assets/2d/static-elements/viking-home.png");
+	transition: all 0.15s;
+	animation: fade-in-and-move 1s 0.5s forwards;
+
+	&:hover {
+		filter: brightness(1.5);
+	}
 }
 
 // Desktop 
 @media (min-width: 1200px) {
 	.home {
 		--home-spacing: 3.75em;
+	}
+}
+
+@keyframes fade-in-and-move {
+	0% {
+		opacity: 0;
+		transform: translateY(20%);
+	}
+	100% {
+		opacity: 1;
+		transform: translateY(0);
 	}
 }

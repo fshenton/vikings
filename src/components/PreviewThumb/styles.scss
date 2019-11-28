@@ -1,10 +1,10 @@
-$ghost_fade__color: rgba(255, 255, 255, 0.1);
-
 //Mobile portrait
 .wrapper {
 	position: relative;
 	width: 100%;
 	z-index: 3;
+	opacity: 0;
+	animation: fade-in 2s ease-in-out forwards;
 	--thumbnail_width: 100%;
 	--thumbnail_height: 38vh;
 }
@@ -14,7 +14,6 @@ $ghost_fade__color: rgba(255, 255, 255, 0.1);
 		position: relative;
 		width: var(--thumbnail_width);
 		height: var(--thumbnail_height);
-		background-color: var(--font_color);
 
 		.button { 
 			display: flex;
@@ -45,10 +44,12 @@ $ghost_fade__color: rgba(255, 255, 255, 0.1);
 		left: 0;
 		width: 100%;
 		height: 100%;
-		opacity: 0.1;
-		filter: grayscale(1.0);
+		opacity: 0.05;
+		filter: grayscale(1);
 		pointer-events: none;
-		background-color: $ghost_fade__color;
+		background-size: cover;
+		background-position: center;
+		background-repeat: no-repeat;
 		--ghost_translate__distance: 100%;
 
 		&.left {
@@ -105,4 +106,10 @@ $ghost_fade__color: rgba(255, 255, 255, 0.1);
 		.ghost {
 			--ghost_translate__distance: 115%;
 		}
+}
+
+@keyframes fade-in {
+	to {
+		opacity: 1;
+	}
 }

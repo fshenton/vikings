@@ -1,4 +1,12 @@
 .icon { //need classname
 	width: 1em;
 	height: 1em;
+	transition: all 0.15s;
+	
+	&:hover {
+		transform: scale(1.05);
+	}
 }
+
+
+	

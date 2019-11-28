@@ -22,18 +22,27 @@
 			height: 1.42em;
 			z-index: 2;
 			background-color: transparent;
-			background: url("/assets/2d/arrows/arrow.png") no-repeat;
+			background: url("/assets/2d/arrows/arrow.svg") no-repeat;
 			background-size: contain;
 			cursor: pointer;
+			transition: all 0.15s;
 		}
 
 		.prev {
 			order: 1;
+
+			&:hover {
+				transform: translateX(25%);
+			}
 		}
 
 		.next {
 			order: 3;
 			transform: scaleX(-1);
+		
+			&:hover {
+				transform: scaleX(-1) translateX(25%);
+			}
 		}
 
 		.pagination {
@@ -121,13 +130,25 @@
 			height: 100%;
 		}
 
-			.prev {
-				transform: rotateZ(90deg)
+			.button {
+				transition: all 0.15s;
 			}
 
-			.next {
-				transform: rotateZ(-90deg);
-			}
+				.prev {
+					transform: rotateZ(90deg) translateY(0);
+
+					&:hover {
+						transform: rotateZ(90deg) translateX(10%)
+					}
+				}
+
+				.next {
+					transform: rotateZ(-90deg) translateY(0);
+
+					&:hover {
+						transform: rotateZ(-90deg) translateX(10%)
+					}
+				}
 
 		.pagination {
 			flex-direction: column;

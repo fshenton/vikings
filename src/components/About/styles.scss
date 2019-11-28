@@ -4,7 +4,7 @@
 	width: 100%;
 	height: 100%;
 	flex-direction: column;
-	background-color: var(--background_color); //could use background-image from designs but this is more performant
+	background: url("/assets/2d/about/about-bg-large.jpg");
 }
 
 	.hero {
@@ -13,6 +13,8 @@
 		height: 38%;
 		object-fit: cover;
 		object-position: top;
+		opacity: 0;
+		animation: fade-in 2.5s forwards;
 	}
 
 	.textContainer {
@@ -24,13 +26,22 @@
 		--padding__body: 10vw;
 	}
 
+		.heading, .subheading, .body>p {
+			opacity: 0;
+			animation-name: fade-in;
+			animation-duration: 1s;
+			animation-fill-mode: forwards;
+		}
+
 		.heading, .subheading {
 			font-family: var(--font_family__heading);
+			text-shadow: 0 1px 1px 0;
 		}
 
 		.heading {
 			margin-bottom: 0.5rem;
 			font-size: var(--font_size__heading);
+			animation-delay: 0.25s
 		}
 
 		.subheading {
@@ -38,9 +49,11 @@
 			margin-bottom: 1rem;
 			font-size: var(--font_size__subheading);
 			line-height: 1.5em;
+			animation-delay: 0.5s;
 		}
 		
 		.body {
+			position: relative;
 			margin-bottom: var(--padding__body);
 			font-family: var(--font_family__body);
 			line-height: 1.5em;
@@ -48,7 +61,37 @@
 			p + p {
 				margin-top: 1em;
 			}
+
+			p:nth-child(1) {
+				animation-delay: 0.75s;
+			}
+
+
+			p:nth-child(2) {
+				animation-delay: 1s;
+			}
+
+
+			p:nth-child(3) {
+				animation-delay: 1.25s;
+			}
+
+			&::after {
+				content: "";
+				display: block;
+				width: 100%;
+				height: 12em;
+				position: sticky;
+				bottom: 0;
+				right: 0;
+				background-image: linear-gradient(
+				    rgba(14, 17, 22, 0) 0%,
+				    rgba(14, 17, 22, 1) 50%,
+				    rgba(14, 17, 22, 1) 100%	
+				);
+			}
 		}
+
 
 // Mobile landscape
 @media (orientation: landscape) {
@@ -149,5 +192,8 @@
 		}
 }
 
-
-
+@keyframes fade-in {
+	to {
+		opacity: 1;
+	}
+}

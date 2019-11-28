@@ -4,6 +4,7 @@ import {
 	CharactersContext as Characters,
 	ACTIONS
 } from "COMPONENTS/Characters/";
+import { NavContext as Nav } from "COMPONENTS/Navigation/";
 import HeroImage from "COMPONENTS/HeroImage/";
 import { RENDER as CHARACTER_RENDER, s } from "./";
 import SHARED_RENDER from "SHARED/renderUtils.jsx";
@@ -15,6 +16,9 @@ export default function Character(props){
 	//---------------------------
 	const { activeIndex } = useContext(Characters).state;
 
+	const { 
+		open: isNavOpen 
+	} = useContext(Nav).state;
 
 	//RENDER
 	//----------------------------
@@ -59,6 +63,8 @@ export default function Character(props){
 
 	const heroId = UTILS.convertToSafeString(`${name} ${nickname}`);
 
+	const isHidden = isNavOpen;
+
 	return (
 		<li
 			id={ id }
@@ -67,7 +73,9 @@ export default function Character(props){
 			aria-roledescription="slide"
 			aria-label={`Character ${index + 1} of ${characterData.length}.`}
 			aria-hidden={ hidden }>
-			<article className={ s.container }>
+			<article className={ s.container }
+				aria-hidden={ isHidden }
+			>
 				<div className={ s.content }>
 					<div className={ s.headings }>
 						<h1 
