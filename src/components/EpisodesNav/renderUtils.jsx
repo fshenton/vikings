@@ -79,7 +79,7 @@ function renderPaginationLink(data, index){
 	let translate, factor;
 	if(isLarge){
 		translate   = "translateY";
-		factor      = 1.5;
+		factor      = 2;
 	} else { 
 		translate   = "translateX";
 		factor      = 1.25;
