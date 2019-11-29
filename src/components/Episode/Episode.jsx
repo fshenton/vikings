@@ -78,12 +78,12 @@ export default function Episode(props){
 						{ synopsis }
 					</div>
 					<div className={ s.fade } />
+					{ isSmall && 
+						<WatchNow
+							className={ s.watchNow }
+						/>
+					}
 				</div>
-				{ isSmall && 
-					<WatchNow
-						className={ s.watchNow }
-					/>
-				}
 			</article>
 		</li>
 	);
