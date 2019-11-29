@@ -66,11 +66,12 @@ function renderPaginationLink(data, index){
 	let opacity = 0;
 	if(isActive) opacity = 1;
 	else {
-		const decayDistance = 4;
-		const decayRate     = 1/decayDistance;
-		const fadeOffset    = Math.abs(index - activeIndex);
+		const startingOpacity = 0.8;
+		const decayDistance   = 5;
+		const decayRate       = 1/decayDistance;
+		const fadeOffset      = Math.abs(index - activeIndex);
 		
-		opacity = 1 - (fadeOffset * decayRate);
+		opacity = startingOpacity - (fadeOffset * decayRate);
 	}
 	
 	const offset = index - activeIndex;
@@ -81,7 +82,7 @@ function renderPaginationLink(data, index){
 		factor      = 1.5;
 	} else { 
 		translate   = "translateX";
-		factor      = 1;
+		factor      = 1.25;
 	}
 
 	const translation = `${factor * offset}em`;
