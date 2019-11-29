@@ -66,8 +66,8 @@ function renderPaginationLink(data, index){
 	let opacity = 0;
 	if(isActive) opacity = 1;
 	else {
-		const startingOpacity = 0.8;
-		const decayDistance   = 5;
+		const startingOpacity = isLarge ? 0.45 : 0.8;
+		const decayDistance   = isLarge ? 15 : 5;
 		const decayRate       = 1/decayDistance;
 		const fadeOffset      = Math.abs(index - activeIndex);
 		
