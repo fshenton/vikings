@@ -33,7 +33,7 @@
 
 			&:hover {
 				transform: translateX(25%);
-			}
+			}							
 		}
 
 		.next {
@@ -61,10 +61,16 @@
 				height: 100%;
 				left: 50%;
 				align-items: center; 
+				transition: transform 0.15s;
 
 				&.inactive {
 					font-size: 1.15em;
 					font-weight: normal;
+
+					&[aria-hidden="false"]:hover {
+						//using important here to override inline styling in renderUtils
+						opacity: 1 !important;
+					}
 				}
 
 				&.active {
@@ -75,6 +81,11 @@
 
 				.paginationLink {
 					text-decoration: none;
+
+					&:focus {
+						outline: none;
+						text-decoration: underline;
+					}
 				}
 			} 
 
