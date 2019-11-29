@@ -61,7 +61,7 @@
 				height: 100%;
 				left: 50%;
 				align-items: center; 
-				transition: transform 0.15s;
+				transition: transform 0.15s, opacity 0.5s;
 
 				&.inactive {
 					font-size: 1.15em;
@@ -178,4 +178,8 @@
 	.wrapper {
 		right: 10%;
 	}
+
+		.item {
+			left: auto;
+		}
 }
