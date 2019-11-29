@@ -3,7 +3,12 @@ import { NavContext as Nav } from "COMPONENTS/Navigation/";
 import Link from "COMPONENTS/Link/";
 import { s } from "./";
 
-export default function WatchNow(){
+export default function WatchNow(props){
+
+	// PROPS
+	// --------------------------
+
+	const { className } = props;
 
 	// CONTEXT
 	// --------------------------
@@ -16,7 +21,7 @@ export default function WatchNow(){
 	else {
 		return (
 			<Link 
-				className={ s.watch }
+				className={ `${s.watch} ${className}` }
 				destination="https://www.history.co.uk/shows/vikings">
 				Watch Now
 			</Link>

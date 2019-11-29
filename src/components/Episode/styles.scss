@@ -46,7 +46,6 @@ $fade-color: var(--background_color);
 
 			.body {
 				order: 3;
-				padding-bottom: 3em;
 				margin-top: 1.5em;
 				line-height: 1.5;
 				overflow-y: hidden;
@@ -73,6 +72,15 @@ $fade-color: var(--background_color);
 				    rgba($fade-color, 1) 100%	
 				);
 			}
+
+	.watchNow {
+		position: relative;
+		margin-top: -1em;
+		margin-bottom: 5em;
+    	border-color: #4e4e4e;
+    	opacity: 1;
+		animation: none;
+	}
 
 //Mobile Landscape
 @media (orientation: landscape){

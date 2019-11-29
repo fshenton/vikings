@@ -1,7 +1,9 @@
 import React, { useContext } from "react";
+import { ClientContext as Client } from "COMPONENTS/Client/";
 import { EpisodesContext as Episodes } from "COMPONENTS/Episodes/";
 import { NavContext as Nav } from "COMPONENTS/Navigation/";
 import PreviewThumb from "COMPONENTS/PreviewThumb/";
+import WatchNow from "COMPONENTS/WatchNow/";
 import { s } from "./";
 import RENDER from "SHARED/renderUtils.jsx";
 
@@ -9,6 +11,10 @@ export default function Episode(props){
 
 	//CONTEXT
 	//---------------------------
+	const { 
+		isSmall 
+	} = useContext(Client).state;
+
 	const {
 		activeIndex,
 		episodeCount
@@ -73,6 +79,11 @@ export default function Episode(props){
 					</div>
 					<div className={ s.fade } />
 				</div>
+				{ isSmall && 
+					<WatchNow
+						className={ s.watchNow }
+					/>
+				}
 			</article>
 		</li>
 	);

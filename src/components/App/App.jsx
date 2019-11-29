@@ -34,7 +34,7 @@ export default function App(){
 						className={ s.socials }
 					/> }
 				{ !isSmall && <HistoryChannel /> }
- 				<WatchNow />
+ 				{ !isSmall && <WatchNow /> }
 
 			{/* PAGES */}
 			
