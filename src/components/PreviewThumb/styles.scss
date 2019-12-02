@@ -62,36 +62,37 @@
 		left: 0;
 		width: 100%;
 		height: 100%;
-		opacity: 0.05;
+		opacity: 0.2;
 		pointer-events: none;
-		background-color: #293354;
 		background-size: cover;
 		background-position: center;
 		background-repeat: no-repeat;
+		background-blend-mode: luminosity;
+		filter: brightness(45%);
 		--ghost_translate__distance: 100%;
 
 		&.left {
 			transform: translateX(calc(-1*var(--ghost_translate__distance)));			
-			background-image: url("/assets/2d/episodes/1-large-bw.jpg");
+			background-image: url("/assets/2d/episodes/1-large.jpg");
 		}
 
 		&.top {
 			transform: translateY(calc(-1*var(--ghost_translate__distance)));
-			background-image: url("/assets/2d/episodes/10-large-bw.jpg");
+			background-image: url("/assets/2d/episodes/10-large.jpg");
 
 			&.left {
 				transform: translate(calc(-1*var(--ghost_translate__distance)), calc(-1*var(--ghost_translate__distance)));
-				background-image: url("/assets/2d/episodes/18-large-bw.jpg");
+				background-image: url("/assets/2d/episodes/18-large.jpg");
 			}
 		}
 
 		&.bottom {
 			transform: translateY(var(--ghost_translate__distance));	
-			background-image: url("/assets/2d/episodes/25-large-bw.jpg");
+			background-image: url("/assets/2d/episodes/25-large.jpg");
 
 			&.left {
 				transform: translate(calc(-1*var(--ghost_translate__distance)), var(--ghost_translate__distance));
-				background-image: url("/assets/2d/episodes/7-large-bw.jpg");
+				background-image: url("/assets/2d/episodes/7-large.jpg");
 			}
 		}
 	}
@@ -122,7 +123,30 @@
 	}
 
 		.ghost {
-			--ghost_translate__distance: 115%;
+			background-color: #293354;
+			background-blend-mode: luminosity;
+			filter: saturate(41%) brightness(45%);
+			--ghost_translate__distance: calc(100% + 100px);
+
+			&.left {		
+				background-image: url("/assets/2d/episodes/1-large-bw.jpg");
+			}
+
+			&.top {
+				background-image: url("/assets/2d/episodes/10-large-bw.jpg");
+
+				&.left {
+					background-image: url("/assets/2d/episodes/18-large-bw.jpg");
+				}
+			}
+
+			&.bottom {
+				background-image: url("/assets/2d/episodes/25-large-bw.jpg");
+
+				&.left {
+					background-image: url("/assets/2d/episodes/7-large-bw.jpg");
+				}
+			}
 		}
 }
 
