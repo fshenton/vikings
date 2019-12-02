@@ -23,17 +23,33 @@
 			z-index: 2;
 			background-color: transparent;
 			background: url("/assets/2d/arrows/arrow.svg") no-repeat;
-			background-size: contain;
+			background-size: cover;
 			cursor: pointer;
 			transition: all 0.15s;
+		}
+
+		.prev, .next {			
+			&:focus {
+				outline: none;
+			}
+
+			&:active,
+			&:focus {
+				filter: brightness(150%);
+			}
 		}
 
 		.prev {
 			order: 1;
 
-			&:hover {
-				transform: translateX(25%);
-			}							
+			&:hover,
+			&:focus {
+				transform: scale(1.1, 1.1) translateX(10%);
+			}
+
+			&:active {
+				transform: scale(1.2, 1.2) translateX(15%);
+			}					
 		}
 
 		.next {
@@ -41,8 +57,12 @@
 			transform: scaleX(-1);
 		
 			&:hover {
-				transform: scaleX(-1) translateX(25%);
+				transform: scale(-1.1, 1.1) translateX(10%);
 			}
+
+			&:active {
+				transform: scale(-1.2, 1.2) translateX(15%);
+			}		
 		}
 
 		.pagination {
@@ -96,18 +116,19 @@
 //Mobile landscape
 @media (orientation: landscape) {
 	.wrapper {
-		width: 33%;
+		width: 40%;
 	}
 }
 
 //Tablet portrait
 @media (min-width: 768px) {
 	.wrapper {
-		width: 50%;
+		width: 33%;
+		bottom: 3.25em;
 	}
 
 		.button {
-			font-size: 1.5em;
+			font-size: 1.25em;
 		}
 
 		.inactive {
@@ -125,6 +146,10 @@
 	.wrapper {
 		width: 33%;
 	}
+
+		.button {
+			font-size: 1.15em;
+		}
 }
 
 //Desktop half screen
