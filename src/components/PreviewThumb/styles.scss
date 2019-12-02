@@ -20,9 +20,23 @@
 			justify-content: center;
 			align-items: center;
 			width: 100%;
-			height: 100%;  
+			height: 100%;
 
-			&:hover .icon {
+			&:focus {
+				outline-color: var(--font_color);
+			}
+
+			&:focus, 
+			&:hover {
+				filter: saturate(0.75);
+			}
+
+			.icon {
+				transform: scale(1.00);
+			}  
+
+			&:hover .icon,
+			&:focus .icon {
 				transform: scale(1.05);
 			}
 		}
@@ -37,9 +51,8 @@
 				object-fit: cover;
 			}
 
-			.icon {	
-				font-size: 128px;
-				transform: scale(1.00);
+			.icon {
+				font-size: 68px;
 			}
 	}
 
@@ -50,8 +63,8 @@
 		width: 100%;
 		height: 100%;
 		opacity: 0.05;
-		filter: grayscale(1);
 		pointer-events: none;
+		background-color: #293354;
 		background-size: cover;
 		background-position: center;
 		background-repeat: no-repeat;
@@ -59,26 +72,26 @@
 
 		&.left {
 			transform: translateX(calc(-1*var(--ghost_translate__distance)));			
-			background-image: url("/assets/2d/episodes/ep1-large.jpg");
+			background-image: url("/assets/2d/episodes/1-large-bw.jpg");
 		}
 
 		&.top {
 			transform: translateY(calc(-1*var(--ghost_translate__distance)));
-			background-image: url("/assets/2d/episodes/ep1-large.jpg");
+			background-image: url("/assets/2d/episodes/10-large-bw.jpg");
 
 			&.left {
 				transform: translate(calc(-1*var(--ghost_translate__distance)), calc(-1*var(--ghost_translate__distance)));
-				background-image: url("/assets/2d/episodes/ep3-large.jpg");
+				background-image: url("/assets/2d/episodes/18-large-bw.jpg");
 			}
 		}
 
 		&.bottom {
 			transform: translateY(var(--ghost_translate__distance));	
-			background-image: url("/assets/2d/episodes/ep1-large.jpg");
+			background-image: url("/assets/2d/episodes/25-large-bw.jpg");
 
 			&.left {
 				transform: translate(calc(-1*var(--ghost_translate__distance)), var(--ghost_translate__distance));
-				background-image: url("/assets/2d/episodes/ep3-large.jpg");
+				background-image: url("/assets/2d/episodes/7-large-bw.jpg");
 			}
 		}
 	}

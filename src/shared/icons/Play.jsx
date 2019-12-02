@@ -24,7 +24,7 @@ export default function Play(props) {
 						fill="white"
 					/>
 					<polygon 
-						points="35,30 35,70 70,50" 
+						points="40,30 40,70 65,50" 
 						fill="black"
 					/>
 				</mask>
@@ -32,7 +32,7 @@ export default function Play(props) {
 			<circle 
 				cx="50" 
 				cy="50" 
-				r="42" 
+				r="49" 
 				fill={ colour } 
 				strokeWidth="0" 
 				stroke="none"

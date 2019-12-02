@@ -78,7 +78,7 @@ export default function PreviewThumb(props){
 					/>
 					<PlayIcon 
 						className={ s.icon }
-						colour="#FFF"
+						colour="#cacbca"
 						hidden={ isHidden } 
 					/>
 				</a>
