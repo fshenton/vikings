@@ -17,24 +17,29 @@
 
 		.button { 
 			display: flex;
+			justify-content: center;
+			align-items: center;
 			width: 100%;
-			height: 100%;  //width/height 100% for everything!???
+			height: 100%;  
+
+			&:hover .icon {
+				transform: scale(1.05);
+			}
 		}
 	
 			.image { 
 				display: block;
 				width: 100%;
 				height: 100%;
+				position: absolute;
+				top: 0;
+				left: 0;
 				object-fit: cover;
 			}
 
-			.icon {
-				position: absolute;
-				height: 128px;
-				top: 50%;
-				left: 50%;
+			.icon {	
 				font-size: 128px;
-				transform: translate(-50%, -50%);
+				transform: scale(1.00);
 			}
 	}
 

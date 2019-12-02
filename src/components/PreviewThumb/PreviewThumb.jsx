@@ -76,12 +76,11 @@ export default function PreviewThumb(props){
 						src={ thumbSrc }
 						alt={ thumbDesc }
 					/>
-					<div className={ s.icon }>
-						<PlayIcon 
-							colour="#FFF"
-							hidden={ isHidden } 
-						/>
-					</div>
+					<PlayIcon 
+						className={ s.icon }
+						colour="#FFF"
+						hidden={ isHidden } 
+					/>
 				</a>
 				<div className={ `${s.ghost} ${s.top}` } />
 				<div className={ `${s.ghost} ${s.top} ${s.left}` } />
