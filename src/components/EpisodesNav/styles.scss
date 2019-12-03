@@ -56,7 +56,8 @@
 			order: 3;
 			transform: scaleX(-1);
 		
-			&:hover {
+			&:hover,
+			&:focus {
 				transform: scale(-1.1, 1.1) translateX(10%);
 			}
 
@@ -175,7 +176,8 @@
 				.prev {
 					transform: rotateZ(90deg) translateY(0);
 
-					&:hover {
+					&:hover,
+					&:focus {
 						transform: rotateZ(90deg) translateX(10%)
 					}
 				}
@@ -183,7 +185,8 @@
 				.next {
 					transform: rotateZ(-90deg) translateY(0);
 
-					&:hover {
+					&:hover,
+					&:focus  {
 						transform: rotateZ(-90deg) translateX(10%)
 					}
 				}
