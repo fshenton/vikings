@@ -76,12 +76,14 @@
 		left: 0;
 		width: 100%;
 		height: 100%;
-		opacity: 0.2;
+		opacity: 0.1;
 		pointer-events: none;
-		background-size: cover;
+		background-blend-mode: luminosity;
+		background-color: #293354;
 		background-position: center;
 		background-repeat: no-repeat;
-		background-blend-mode: luminosity;
+		background-size: cover;
+		filter: saturate(41%) brightness(45%);
 		filter: brightness(45%);
 		--ghost_translate__distance: 100%;
 
@@ -162,9 +164,6 @@
 	}
 
 		.ghost {
-			background-color: #293354;
-			background-blend-mode: luminosity;
-			filter: saturate(41%) brightness(45%);
 			--ghost_translate__distance: calc(100% + 100px);
 
 			&.left {		
