@@ -46,14 +46,16 @@
 				position: absolute;
 				top: 0;
 				left: 0;
-				transition: all 5s;
+				transition: all 1.5s;
 
 				&.inactive {
 					opacity: 0;
+					filter: blur(2px);
 				}
 
 				&.active {
 					opacity: 1;
+					filter: blur(0);
 				}
 
 				img {
