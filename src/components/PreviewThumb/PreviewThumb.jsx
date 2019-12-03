@@ -19,7 +19,11 @@ export default function PreviewThumb(props){
 		number: episodeNo,
 		title,
 		thumbnail: {
-			src: thumbSrc,
+			src: {
+				small: smallSrc = "",
+				medium: mediumSrc = "",
+				large: largeSrc =""
+			},
 			description: thumbDesc
 		},
 		trailer: {
@@ -71,11 +75,27 @@ export default function PreviewThumb(props){
 					aria-label={ `Watch preview for episode ${episodeNo}: ${title}.` }
 					onClick={ openOverlay }
 				>
-					<img
-						className={ s.image }
-						src={ thumbSrc }
-						alt={ thumbDesc }
-					/>
+					<picture className={ s.image }>
+						<source 
+							srcSet={smallSrc} 
+							media="(max-width: 767px)"
+							alt={thumbDesc}
+						/>
+						<source 
+							srcSet={mediumSrc} 
+							media="(min-width: 768px) and (max-width: 1199px)"
+							alt={thumbDesc}
+						/>
+						<source 
+							srcSet={largeSrc} 
+							media="(min-width: 1200px)"
+							alt={thumbDesc}
+						/>
+						<img 
+							src={smallSrc} 
+							alt={thumbDesc}
+						/>
+					</picture>
 					<PlayIcon 
 						className={ s.icon }
 						colour="#cacbca"

@@ -2,7 +2,11 @@ export default [
 	{
 		number: 1,
 		thumbnail: {
-			src: "/assets/2d/episodes/thumbnail-large.jpg",
+			src: {
+				small: "/assets/2d/episodes/thumbnail-small.jpg",
+				medium: "/assets/2d/episodes/thumbnail-medium.jpg",
+				large: "/assets/2d/episodes/thumbnail-large.jpg"
+			},
 			description: "Man looks on, concerned."
 		},
 		trailer: {
@@ -16,7 +20,11 @@ export default [
 	}, {
 		number: 2,
 		thumbnail: {
-			src: "/assets/2d/episodes/thumbnail-large.jpg",
+			src: {
+				small: "/assets/2d/episodes/thumbnail-small.jpg",
+				medium: "/assets/2d/episodes/thumbnail-medium.jpg",
+				large: "/assets/2d/episodes/thumbnail-large.jpg"
+			},
 			description: "Man dramatically looks out at the sea."
 		},
 		trailer: {
@@ -30,7 +38,11 @@ export default [
 	}, {
 		number: 3,
 		thumbnail: {
-			src: "/assets/2d/episodes/thumbnail-large.jpg",
+			src: {
+				small: "/assets/2d/episodes/thumbnail-small.jpg",
+				medium: "/assets/2d/episodes/thumbnail-medium.jpg",
+				large: "/assets/2d/episodes/thumbnail-large.jpg"
+			},
 			description: "Man yells angrily."
 		},
 		trailer: {
@@ -45,7 +57,11 @@ export default [
 	, {
 		number: 4,
 		thumbnail: {
-			src: "/assets/2d/episodes/thumbnail-large.jpg",
+			src: {
+				small: "/assets/2d/episodes/thumbnail-small.jpg",
+				medium: "/assets/2d/episodes/thumbnail-medium.jpg",
+				large: "/assets/2d/episodes/thumbnail-large.jpg"
+			},
 			description: "Description of episode 4 thumbnail."
 		},
 		trailer: {
@@ -60,7 +76,11 @@ export default [
 	, {
 		number: 5,
 		thumbnail: {
-			src: "/assets/2d/episodes/thumbnail-large.jpg",
+			src: {
+				small: "/assets/2d/episodes/thumbnail-small.jpg",
+				medium: "/assets/2d/episodes/thumbnail-medium.jpg",
+				large: "/assets/2d/episodes/thumbnail-large.jpg"
+			},
 			description: "Description of episode 5 thumbnail."
 		},
 		trailer: {
@@ -74,7 +94,11 @@ export default [
 	}, {
 		number: 6,
 		thumbnail: {
-			src: "/assets/2d/episodes/thumbnail-large.jpg",
+			src: {
+				small: "/assets/2d/episodes/thumbnail-small.jpg",
+				medium: "/assets/2d/episodes/thumbnail-medium.jpg",
+				large: "/assets/2d/episodes/thumbnail-large.jpg"
+			},
 			description: "Description of episode 6 thumbnail."
 		},
 		trailer: {
@@ -89,7 +113,11 @@ export default [
 	, {
 		number: 7,
 		thumbnail: {
-			src: "/assets/2d/episodes/thumbnail-large.jpg",
+			src: {
+				small: "/assets/2d/episodes/thumbnail-small.jpg",
+				medium: "/assets/2d/episodes/thumbnail-medium.jpg",
+				large: "/assets/2d/episodes/thumbnail-large.jpg"
+			},
 			description: "Description of episode 7 thumbnail."
 		},
 		trailer: {
@@ -104,7 +132,11 @@ export default [
 	, {
 		number: 8,
 		thumbnail: {
-			src: "/assets/2d/episodes/thumbnail-large.jpg",
+			src: {
+				small: "/assets/2d/episodes/thumbnail-small.jpg",
+				medium: "/assets/2d/episodes/thumbnail-medium.jpg",
+				large: "/assets/2d/episodes/thumbnail-large.jpg"
+			},
 			description: "Description of episode 8 thumbnail."
 		},
 		trailer: {
@@ -119,7 +151,11 @@ export default [
 	, {
 		number: 9,
 		thumbnail: {
-			src: "/assets/2d/episodes/thumbnail-large.jpg",
+			src: {
+				small: "/assets/2d/episodes/thumbnail-small.jpg",
+				medium: "/assets/2d/episodes/thumbnail-medium.jpg",
+				large: "/assets/2d/episodes/thumbnail-large.jpg"
+			},
 			description: "Description of episode 9 thumbnail."
 		},
 		trailer: {
@@ -134,7 +170,11 @@ export default [
 	, {
 		number: 10,
 		thumbnail: {
-			src: "/assets/2d/episodes/thumbnail-large.jpg",
+			src: {
+				small: "/assets/2d/episodes/thumbnail-small.jpg",
+				medium: "/assets/2d/episodes/thumbnail-medium.jpg",
+				large: "/assets/2d/episodes/thumbnail-large.jpg"
+			},
 			description: "Description of episode 10 thumbnail."
 		},
 		trailer: {
