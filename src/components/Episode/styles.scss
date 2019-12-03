@@ -93,54 +93,56 @@
 	.wrapper {
 		max-height: 100%;
 		padding: 0;
+		display: flex;
+		align-items: center;
 	}
 
 		.content {
 			order: 1;
 			width: 50%;
-			padding-top: 10%;
+			padding-top: 14%;
 			padding-right: 5%;
 			padding-left: 5%;
+			position: relative;
 			justify-content: center;
 		}
 
 			.fade {
-				height: 5em;
+				height: 9em;
 			}
-
-	.watchNow {
-	}
 }
 
 //Tablet portrait
 @media (min-width: 768px) {
-	.wrapper {
-		padding-top: 10vh;
+
+	.content {
+		padding: 10%;
 	}
 
-		.content {
-			padding: 10%;
+		.episode {
+			margin-bottom: 0;
 		}
 
-			.episode {
-				margin-bottom: 0;
-			}
-
-			.title, .body {
-				margin-top: 0.62em;
-			}
+		.title, .body {
+			margin-top: 0.62em;
+		}
 }
 
 //Tablet landscape
 @media (min-width: 768px) and (orientation: landscape) {
 	.wrapper {
-		padding-top: 5%;
+		padding-top: 0;
 	}
 
 		.content {
-			padding-left: 5%;
+			padding-top: 8%;
 			padding-right: 5%;
+			padding-left: 5%;
 		}
+
+			.fade {
+				height: 0;
+			}
 }
 
 //Desktop half screen

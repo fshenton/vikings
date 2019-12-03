@@ -125,7 +125,7 @@
 		position: fixed;
 		left: 50%;
 		width: 50%;
-		padding-top: 10%;
+		padding-top: 14%;
 		--thumbnail_height: 50vh;
 	}
 }
@@ -155,11 +155,17 @@
 	}
 }
 
+//Tablet landscape
+@media (min-width: 768px) and (orientation: landscape) {
+	.wrapper {
+		padding-top: 0;
+	}
+}
+
 //Desktop fullscreen
 @media (min-width: 1200px) {
 	.wrapper {
 		position: initial;
-		padding-top: 0;
 		width: 50%;
 	}
 
