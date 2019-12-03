@@ -48,7 +48,7 @@
 				position: absolute;
 				top: 0;
 				left: 0;
-				object-fit: cover;
+				object-fit: cover; 
 			}
 
 			.icon {
@@ -78,21 +78,21 @@
 
 		&.top {
 			transform: translateY(calc(-1*var(--ghost_translate__distance)));
-			background-image: url("/assets/2d/episodes/10-large.jpg");
+			background-image: url("/assets/2d/episodes/3-large.jpg");
 
 			&.left {
 				transform: translate(calc(-1*var(--ghost_translate__distance)), calc(-1*var(--ghost_translate__distance)));
-				background-image: url("/assets/2d/episodes/18-large.jpg");
+				background-image: url("/assets/2d/episodes/4-large.jpg");
 			}
 		}
 
 		&.bottom {
 			transform: translateY(var(--ghost_translate__distance));	
-			background-image: url("/assets/2d/episodes/25-large.jpg");
+			background-image: url("/assets/2d/episodes/5-large.jpg");
 
 			&.left {
 				transform: translate(calc(-1*var(--ghost_translate__distance)), var(--ghost_translate__distance));
-				background-image: url("/assets/2d/episodes/7-large.jpg");
+				background-image: url("/assets/2d/episodes/2-large.jpg");
 			}
 		}
 	}
@@ -129,22 +129,22 @@
 			--ghost_translate__distance: calc(100% + 100px);
 
 			&.left {		
-				background-image: url("/assets/2d/episodes/1-large-bw.jpg");
+				background-image: url("/assets/2d/episodes/1-large.jpg");
 			}
 
 			&.top {
-				background-image: url("/assets/2d/episodes/10-large-bw.jpg");
+				background-image: url("/assets/2d/episodes/3-large.jpg");
 
 				&.left {
-					background-image: url("/assets/2d/episodes/18-large-bw.jpg");
+					background-image: url("/assets/2d/episodes/4-large.jpg");
 				}
 			}
 
 			&.bottom {
-				background-image: url("/assets/2d/episodes/25-large-bw.jpg");
+				background-image: url("/assets/2d/episodes/5-large.jpg");
 
 				&.left {
-					background-image: url("/assets/2d/episodes/7-large-bw.jpg");
+					background-image: url("/assets/2d/episodes/2-large.jpg");
 				}
 			}
 		}
