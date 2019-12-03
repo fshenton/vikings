@@ -73,26 +73,26 @@
 
 		&.left {
 			transform: translateX(calc(-1*var(--ghost_translate__distance)));			
-			background-image: url("/assets/2d/episodes/1-large.jpg");
+			background-image: url("/assets/2d/episodes/1-small.jpg");
 		}
 
 		&.top {
 			transform: translateY(calc(-1*var(--ghost_translate__distance)));
-			background-image: url("/assets/2d/episodes/3-large.jpg");
+			background-image: url("/assets/2d/episodes/3-small.jpg");
 
 			&.left {
 				transform: translate(calc(-1*var(--ghost_translate__distance)), calc(-1*var(--ghost_translate__distance)));
-				background-image: url("/assets/2d/episodes/4-large.jpg");
+				background-image: url("/assets/2d/episodes/4-small.jpg");
 			}
 		}
 
 		&.bottom {
 			transform: translateY(var(--ghost_translate__distance));	
-			background-image: url("/assets/2d/episodes/5-large.jpg");
+			background-image: url("/assets/2d/episodes/5-small.jpg");
 
 			&.left {
 				transform: translate(calc(-1*var(--ghost_translate__distance)), var(--ghost_translate__distance));
-				background-image: url("/assets/2d/episodes/2-large.jpg");
+				background-image: url("/assets/2d/episodes/2-small.jpg");
 			}
 		}
 	}
@@ -111,6 +111,31 @@
 		width: 50%;
 		padding-top: 10%;
 		--thumbnail_height: 50vh;
+	}
+}
+
+//Tablet
+@media (min-width: 768px) {
+	.ghost {
+		&.left {		
+				background-image: url("/assets/2d/episodes/1-medium.jpg");
+			}
+
+		&.top {
+			background-image: url("/assets/2d/episodes/3-medium.jpg");
+
+			&.left {
+				background-image: url("/assets/2d/episodes/4-medium.jpg");
+			}
+		}
+
+		&.bottom {	
+			background-image: url("/assets/2d/episodes/5-medium.jpg");
+
+			&.left {
+				background-image: url("/assets/2d/episodes/2-medium.jpg");
+			}
+		}
 	}
 }
 
