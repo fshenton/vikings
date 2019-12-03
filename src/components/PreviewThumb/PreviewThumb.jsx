@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useState, useEffect } from "react";
 import { Play as PlayIcon } from "SHARED/icons/";
 import PreviewOverlay from "COMPONENTS/PreviewOverlay/";
 import { 
@@ -37,13 +37,34 @@ export default function PreviewThumb(props){
 	// CONTEXT
 	// ----------------------------
 	const {
+		state: {
+			activeIndex
+		},
 		dispatch
 	} = useContext(Episodes);
-
 
 	const {
 		open: isNavOpen
 	} = useContext(Nav).state;
+
+	// STATE & EFFECT
+	// -----------------------------
+
+	const [visible, setVisible] = useState(false);
+
+	const active = index === activeIndex;
+
+	useEffect(fireTransition, [active]);
+
+	function fireTransition(){
+		let ms = 0;
+		const delay = setTimeout(()=> {
+				setVisible(active);
+				ms = active ? 200 : 0;
+			}, ms);
+		
+		return ()=> { clearTimeout(delay) };
+	}
 
 	// CLICK HANDLER
 	// -----------------------------
@@ -65,6 +86,8 @@ export default function PreviewThumb(props){
   
 	const isHidden = isNavOpen;
 
+	const isActive = active && visible;
+
 	return (
 		<aside className={ s.wrapper }>
 			<div className={ s.thumbnail }>
@@ -75,7 +98,7 @@ export default function PreviewThumb(props){
 					aria-label={ `Watch preview for episode ${episodeNo}: ${title}.` }
 					onClick={ openOverlay }
 				>
-					<picture className={ s.image }>
+					<picture className={ `${s.image} ${isActive ? s.active : s.inactive}` }>
 						<source 
 							srcSet={smallSrc} 
 							media="(max-width: 767px)"

@@ -3,8 +3,6 @@
 	position: relative;
 	width: 100%;
 	z-index: 3;
-	opacity: 0;
-	animation: fade-in 2s ease-in-out forwards;
 	--thumbnail_width: 100%;
 	--thumbnail_height: 38vh;
 }
@@ -48,6 +46,15 @@
 				position: absolute;
 				top: 0;
 				left: 0;
+				transition: all 5s;
+
+				&.inactive {
+					opacity: 0;
+				}
+
+				&.active {
+					opacity: 1;
+				}
 
 				img {
 					width: 100%;
@@ -174,14 +181,8 @@
 				background-image: url("/assets/2d/episodes/ep6-large.jpg");
 
 				&.left {
-					background-image: url("/assets/2d/episodes/ep3-large.jpg");
+					background-image: url("/assets/2d/episodes/ep6-large.jpg");
 				}
 			}
 		}
-}
-
-@keyframes fade-in {
-	to {
-		opacity: 1;
-	}
 }
