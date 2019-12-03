@@ -43,7 +43,7 @@
 			.episode,
 			.title,
 			.body>.paragraph {
-				transition: all 1.5s;
+				transition: all 1s;
 			}
 
 			.episode, 
@@ -56,12 +56,14 @@
 				margin-bottom: 0.62em;
 				font-size: 1em;
 				font-family: var(--font_family__heading);
+				transition-delay: 0s;
 			}
 
 			.title {
 				order: 2;
 				font-size: 1.62em;
 				font-family: var(--font_family__heading);
+				transition-delay: 0.25s;
 			}
 
 			.body {
@@ -72,6 +74,10 @@
 				overflow-y: hidden;
 				font-size: 1rem;
 				font-family: var(--font_family__body);
+
+				.paragraph {
+					transition-delay: 0.35s;
+				}
 			}
 
 			.fade {
