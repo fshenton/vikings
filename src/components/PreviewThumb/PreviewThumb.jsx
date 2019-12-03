@@ -85,7 +85,6 @@ export default function PreviewThumb(props){
 	const id                = `${formattedTitle}-preview`;
   
 	const isHidden = isNavOpen;
-
 	const isActive = active && visible;
 
 	return (

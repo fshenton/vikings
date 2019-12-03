@@ -16,21 +16,39 @@
 			padding: 10vw; 
 			flex-direction: column;
 			font-size: 1.3rem;
+
+
+			&.inactive {
+
+				.episode, 
+				.title, 
+				.body>.paragraph {
+					opacity: 0;
+					transform: translateY(50%);
+				}
+			}
+
+			&.active {
+
+				.episode, 
+				.title, 
+				.body>.paragraph {
+					opacity: 1;
+					transform: translateY(0);
+				}
+
+			}
 		}
+
+			.episode,
+			.title,
+			.body>.paragraph {
+				transition: all 1.5s;
+			}
 
 			.episode, 
 			.title {
 				text-shadow: 1px 1px var(--background_color);
-			}
-	
-			.episode, 
-			.title, 
-			.body>.paragraph {
-				animation-name: fade-in-slide-up;
-				animation-duration: 0.75s;
-				animation-fill-mode: forwards;
-				opacity: 0;
-				transform: translateY(10%);
 			}
 
 			.episode {
@@ -38,14 +56,12 @@
 				margin-bottom: 0.62em;
 				font-size: 1em;
 				font-family: var(--font_family__heading);
-				animation-delay: 0.5s;
 			}
 
 			.title {
 				order: 2;
 				font-size: 1.62em;
 				font-family: var(--font_family__heading);
-				animation-delay: 0.75s;
 			}
 
 			.body {
@@ -57,10 +73,6 @@
 				font-size: 1rem;
 				font-family: var(--font_family__body);
 			}
-
-				.paragraph {
-					animation-delay: 1s;
-				}
 
 			.fade {
 				content: "";
