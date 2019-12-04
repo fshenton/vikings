@@ -117,6 +117,8 @@
 //Mobile landscape
 @media (orientation: landscape) {
 	.wrapper {
+		right: 25%;
+    	bottom: 8%;
 		width: 40%;
 	}
 }
@@ -126,6 +128,7 @@
 	.wrapper {
 		width: 33%;
 		bottom: 3.25em;
+		right: 50%;
 	}
 
 		.button {
