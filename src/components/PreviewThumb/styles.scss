@@ -125,8 +125,9 @@
 		order: 2;
 		position: fixed;
 		left: 50%;
+		top: 50%;
 		width: 50%;
-		padding-top: 14%;
+		transform: translateY(-50%);
 		--thumbnail_height: 50vh;
 	}
 }
@@ -168,6 +169,7 @@
 	.wrapper {
 		position: initial;
 		width: 50%;
+		transform: none;
 	}
 
 		.ghost {
