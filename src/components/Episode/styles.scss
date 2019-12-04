@@ -43,7 +43,7 @@
 			.episode,
 			.title,
 			.body>.paragraph {
-				transition: all 1s;
+				transition: opacity 1s, transform 1s;
 			}
 
 			.episode, 
