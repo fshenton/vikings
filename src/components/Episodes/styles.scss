@@ -2,7 +2,7 @@
 .wrapper {
 	width: 100%;
 	min-height: 100%;
-	background-image: url("assets/2d/episodes/episode-bg-large.jpg");
+	background-image: url("assets/2d/shared/bg-small.jpg");
 	background-attachment: fixed;
 
 	.list {
@@ -13,8 +13,15 @@
 // TABLET UP
 @media (min-width: 768px) {
 	.wrapper {
-		width: 100%;
 		height: 100%;
+		background-image: url("assets/2d/shared/bg-medium.jpg");
 		background-attachment: none;
+	}
+}
+
+// DESKTOP
+@media (min-width: 1200px) {
+	.wrapper {
+		background-image: url("assets/2d/shared/bg-large.jpg");
 	}
 }
