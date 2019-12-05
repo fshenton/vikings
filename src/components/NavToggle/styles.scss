@@ -2,11 +2,12 @@
 .wrapper {
 	display: flex;
 	position: fixed;
-	top: 4em; //PLACEHOLDER
-	right: 1em;
+	top: 2.5em;
+	right: 2em;
 	align-items: center;
 	pointer-events: auto;
 	background-color: transparent;
+	letter-spacing: 0.25em;
 	
 	&[aria-checked="true"] {
 
@@ -26,6 +27,14 @@
 		font-family: var(--font_family__body);
 		text-transform: uppercase;
 		color: var(--font_color);
+
+		&:hover .icon {
+			transform: scale(1.05) translateX(-10%);
+		}
+
+		&:hover .label {
+			transform: scale(1.05);
+		}
 	}
 
 		.icon {
@@ -35,7 +44,8 @@
 			position: relative;
 			margin-right: 0.5em;
 			cursor: pointer;
-			font-size: 1.5em
+			font-size: 1.5em;
+			transition: transform 0.15s;
 		}
 
 			.bar {
@@ -61,7 +71,7 @@
 		.label {
 			cursor: pointer;
 			font-size: 0;
-			transition: opacity 0.15s linear;
+			transition: all 0.15s linear;
 
 			&.open, &.close {
 				font-size: 1.5rem;
@@ -96,6 +106,8 @@
 // Tablet portrait
 @media (min-width: 768px) {
 	.wrapper {
+		top: 3.5em;
+		right: auto;
 		left: 50%;
 		transform: translateX(-50%);
 	}
@@ -109,5 +121,12 @@
 @media (min-width: 768px) and (orientation: landscape) {
 	&.open, &.close {
 		font-size: 1.5rem;
+	}
+}
+
+// Desktop
+@media (min-width: 1200px) {
+	.wrapper {
+		top: 3em;
 	}
 }
