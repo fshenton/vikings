@@ -45,17 +45,9 @@ $border__color: #4e4e4e;
 @media (min-width: 768px) {
 	.watch {
 		height: 2.5em;
-		bottom: 3em;
-		left: 3em;
-		--watch_now__x_offset: 0;
-	}
-}
-
-// Desktop up
-@media (min-width: 1025px) {
-	.watch {
 		bottom: 2.5em;
 		left: 2.5em;
+		--watch_now__x_offset: 0;
 	}
 }
 

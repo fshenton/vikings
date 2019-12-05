@@ -91,17 +91,6 @@
 				);
 			}
 
-	.watchNow {
-		order: 5;
-		position: relative;
-		margin-bottom: 5em;
-    	border-color: #4e4e4e;
-    	opacity: 1;
-    	z-index: 1;
-		animation: none;
-		transform: translateX(-50%);
-	}
-
 //Mobile Landscape
 @media (orientation: landscape){
 	.wrapper {

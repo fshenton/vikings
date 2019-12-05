@@ -1,27 +1,32 @@
 .history {
 	position: fixed;
-	width: 3.75em;
+	width: 3em;
 	height: 4em;	
-	bottom: 3.25em;
-	right: 3.25em;
+	bottom: 3em;
+	right: 3em;
 	z-index: 5;
 	font-size: 1rem;
 	opacity: 0;
 	background: center/contain no-repeat url("/assets/2d/static-elements/history-logo.png");
 	animation: fade-in-and-move 1s 0.5s forwards;
 
-	&:hover .circle {
-		animation: encircle 1s linear forwards;
+	&:hover, 
+	&:focus {
+		.circle {
+			outline: none;
+			animation: encircle 2.5s ease-in forwards;
+		}
 	}
 
 	&:active .outline {
 		opacity: 1;
-		transform: scale(1.95);
 	}
 }
 	.outline {
 		opacity: 0.5;
-		transform: scale(2);
+		width: 200%;
+		height: 200%;
+		transform: translate(-25%, -10%);
 	}
 
 	.circle {

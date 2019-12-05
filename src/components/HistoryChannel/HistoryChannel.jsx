@@ -30,8 +30,8 @@ export default function HistoryChannel(){
 						d="
 					        M 50, 50
 					        m 0, -49
-					        a 49,49 0 0,1 0,98
-					        a -49,-49 0 0,1 0,-98
+					        a 45,45 0 0,1 0,90
+					        a -45,-45 0 0,1 0,-90
 					    "
 					/>
 				</svg>
