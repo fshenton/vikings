@@ -1,6 +1,10 @@
 export default {
 	image: {
-		src: "/assets/2d/about/about-large.jpg",
+		src: {
+			small: "/assets/2d/about/about-small.jpg",
+			medium: "/assets/2d/about/about-medium.jpg",
+			large: "/assets/2d/about/about-large.jpg"
+		}, 
 		description: "A bunch of vikings screaming up (improve this later)."
 	},
 	title: "About",

@@ -4,17 +4,22 @@
 	width: 100%;
 	height: 100%;
 	flex-direction: column;
-	background: url("/assets/2d/about/about-bg-large.jpg");
+	background: url("/assets/2d/shared/bg-small.jpg");
 }
 
 	.hero {
 		display: block;
 		width: 100%;
 		height: 38%;
-		object-fit: cover;
 		object-position: top;
 		opacity: 0;
 		animation: fade-in 2.5s forwards;
+
+		img {
+			width: 100%;
+			height: 100%;
+			object-fit: cover; 
+		}
 	}
 
 	.textContainer {
@@ -115,37 +120,43 @@
 
 			.fade {
 				width: 50%;
+				height: 8em;
 			}
 }
 
 // Tablet portrait
 @media (min-width: 768px) {
-	.hero {
-		height: 50%;
+
+	.wrapper {
+		background: url("/assets/2d/shared/bg-medium.jpg");
 	}
 
-	.textContainer {
-		height: 50%;
-		font-size: 1.62rem;
-	}
-
-		.heading {
-			font-size: 1.15em;
+		.hero {
+			height: 40%;
 		}
 
-		.subheading {
-			font-size: 1.62em;
+		.textContainer {
+			height: 60%;
+			font-size: 1.62rem;
 		}
 
-		.body {
-			p {
-				width: 80%;
+			.heading {
+				font-size: 1.15em;
 			}
 
-			p:nth-child(even) {
-				margin-left: 4em;
+			.subheading {
+				font-size: 1.62em;
 			}
-		}
+
+			.body {
+				p {
+					width: 80%;
+				}
+
+				p:nth-child(even) {
+					margin-left: 4em;
+				}
+			}
 }
 
 // Tablet landscape
@@ -168,35 +179,38 @@
 				margin-left: 0;
 			}
 		}
-}
-
-// Desktop portrait
-@media (min-width: 1200px) and (max-aspect-ratio: 8/9) {
-
+		
+		.fade {
+			height: 12em;
+		}
 }
 
 // Desktop landscape
 @media (min-width: 1200px) {
+	
+	.wrapper {
+		background: url("/assets/2d/shared/bg-large.jpg");
+	}
 
-	.textContainer {
-		padding-top: 20vh;
-		font-size: 1.1rem;
-		--padding__body: 10vw;
-	}	
+		.textContainer {
+			padding-top: 20vh;
+			font-size: 1.1rem;
+			--padding__body: 10vw;
+		}	
 
-		.heading {
-			font-size: 1.05em;
-		}
+			.heading {
+				font-size: 1.05em;
+			}
 
-		.subheading {
-			width: 100%;
-			font-size: 2.2em;
-		}
+			.subheading {
+				width: 100%;
+				font-size: 2.2em;
+			}
 
-		.body {
-			height: 100%;
-			max-height: 53vh; //overflow will be hidden by gradient
-		}
+			.body {
+				height: 100%;
+				max-height: 53vh; //overflow will be hidden by gradient
+			}
 }
 
 @keyframes fade-in {

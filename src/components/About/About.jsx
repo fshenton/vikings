@@ -24,7 +24,11 @@ export default function About(){
 	} = data;
 
 	const { 
-		src, 
+		src: {
+			small: smallSrc = "",
+			medium: mediumSrc = "",
+			large: largeSrc = ""
+		},
 		description 
 	} = heroImg;
 
@@ -38,11 +42,27 @@ export default function About(){
 
 	return (
 		<article className={ s.wrapper }>
-			<img 
-				className={ s.hero }
-				src={ src } 
-				alt={ description }
-			/>
+			<picture className={ s.hero }>
+				<source 
+					srcSet={mediumSrc} 
+					media="(max-width: 767px)"
+					alt={description}
+				/>
+				<source 
+					srcSet={mediumSrc} 
+					media="(min-width: 768px) and (max-width: 1199px)"
+					alt={description}
+				/>
+				<source 
+					srcSet={largeSrc} 
+					media="(min-width: 1200px)"
+					alt={description}
+				/>
+				<img 
+					src={mediumSrc} 
+					alt={description}
+				/>
+			</picture>
 			<div className={ s.textContainer }
 				 aria-hidden={ isHidden }	
 			>	
@@ -57,7 +77,7 @@ export default function About(){
 				<div className={ s.body }>
 					{ body }
 				</div>
-				<div className={ s.fade } />
+				<div className={ s.fade }/>
 			</div>	
 		</article>
 	);
