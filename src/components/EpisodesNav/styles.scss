@@ -162,7 +162,7 @@
 		position: fixed;
 		width: 2em;
 		height: 8em;
-		right: 10%;
+		right: 12em;
 		bottom: 25%;
 	}
 
@@ -208,16 +208,8 @@
 
 //Desktop fullscreen
 @media (min-width: 1200px) and (min-aspect-ratio: 16/9) {
-	.wrapper {
-		right: 10%;
+
+	.item {
+		left: auto;
 	}
-
-		.pagination {
-			width: auto;
-			height: auto;			
-		}
-
-			.item {
-				left: auto;
-			}
 }
