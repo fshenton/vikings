@@ -12,6 +12,7 @@
 	background: center/contain no-repeat url("/assets/2d/static-elements/viking-home.png");
 	transition: all 0.15s;
 	animation: fade-in-and-move 1s 0.5s forwards;
+	filter: drop-shadow(2px 2px 4px var(--background_color));
 
 	&:hover,
 	&:focus {
