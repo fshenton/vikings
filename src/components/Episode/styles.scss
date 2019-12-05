@@ -2,7 +2,7 @@
 .wrapper {
 	position: absolute;
 	min-height: 100%;
-	top: 25vh;
+	top: 15vh;
 	left: 0;
 	transition: opacity 0.5s;
 }
@@ -97,13 +97,12 @@
 		max-height: 100%;
 		padding: 0;
 		display: flex;
-		// align-items: center;
 	}
 
 		.content {
 			order: 1;
 			width: 50%;
-			padding-top: 0;
+			padding-top: 15%;
 			padding-right: 5%;
 			padding-left: 5%;
 			position: relative;
@@ -184,6 +183,7 @@
 	.content {
 		padding-left: 0;
 		padding-right: 17.25em;
+		top: auto;
 		align-self: flex-end;
 	}
 }

@@ -2,7 +2,7 @@
 .home {
 	width: 2em;
 	height: 3em;
-	position: absolute;
+	position: fixed;
 	top: var(--home-spacing);
 	left: var(--home-spacing);
 	z-index: 5;
