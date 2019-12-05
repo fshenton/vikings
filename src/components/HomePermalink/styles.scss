@@ -21,13 +21,17 @@
 	&:active {
 		filter: brightness(0.5);
 	}
+
+	&:focus {
+		outline: none;
+	}
 }
 
 // Tablet portrait 
 @media (min-width: 768px) {
 	.home {
-		width: 4em;
-		height: 5em;
+		width: 3em;
+		height: 4em;
 		--home-spacing: 3em;
 	}
 }
@@ -35,6 +39,8 @@
 // Desktop 
 @media (min-width: 1200px) {
 	.home {
+		width: 4em;
+		height: 5em;
 		--home-spacing: 2.5em;
 	}
 }

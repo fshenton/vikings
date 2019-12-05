@@ -6,10 +6,11 @@
 		position: absolute;
 		width: 5.75em;
 		height: 1.125em;
-		top: 3.75em;
-		right: 3.25em;
+		top: var(--socials_spacing);
+		right: var(--socials_spacing);
 		z-index: 5;
 		font-size: 1rem;
+		--socials_spacing: 3em;
 		
 		& li {
 			animation-name: fade-in-and-move;
@@ -30,6 +31,13 @@
 			animation-delay: 1s;
 		}
 	}
+
+// Laptop/Desktop 
+@media (min-width: 1025px) {
+	.socials {
+		--socials_spacing: 2.5em;
+	}
+}
 
 @keyframes fade-in-and-move {
 	0% {

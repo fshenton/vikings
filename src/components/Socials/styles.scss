@@ -16,6 +16,7 @@
 			background-size: contain;
 			background-position: center;
 			background-repeat: no-repeat;
+			transition: filter 0.5s forwards;
 
 			&.facebook {
 				background-image: url("assets/2d/socials/facebook.svg");
@@ -29,8 +30,20 @@
 				background-image: url("assets/2d/socials/instagram.svg");
 			}
 
-			&:hover .circle {
-				animation: encircle 1s linear forwards;
+			&:hover,
+			&:focus {
+				filter: brightness(1.5);
+			}
+
+			&:hover,
+			&:focus {
+				.circle {
+					animation: encircle 1s ease-in forwards;
+				}
+			}
+
+			&:focus {
+				outline: none;
 			}
 		}
 	
@@ -40,8 +53,8 @@
 	}
 
 	svg {
-		transform: scale(2);
-		opacity: 0.5;
+		transform: scale(2.5);
+		opacity: 0.8;
 	}
 }
 
