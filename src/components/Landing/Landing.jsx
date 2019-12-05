@@ -5,6 +5,7 @@ import LogoArtwork from "COMPONENTS/LogoArtwork/";
 import WatchNow from "COMPONENTS/WatchNow/";
 import VideoLayer from "COMPONENTS/VideoLayer/";
 import { NavContext as Nav } from "COMPONENTS/Navigation/";
+import { ClientContext as Client } from "COMPONENTS/Client/";
 
 export default function Landing(){
 
@@ -14,6 +15,10 @@ export default function Landing(){
 	const { 
 		open: navIsOpen
 	} = useContext(Nav).state;
+
+	const {
+		isSmall
+	} = useContext(Client).state;
 
 	//DATA
 	//----------------------------
@@ -78,6 +83,11 @@ export default function Landing(){
 				<div className={ `${s.glow} ${s.gold}` }/>
 				<div className={ `${s.glow} ${s.blue}`}/>
 			</div>
+			{ isSmall && 
+				<WatchNow
+					className={s.watchNow}
+				/>
+			}
 		</div>
 	);
 }// Landing
