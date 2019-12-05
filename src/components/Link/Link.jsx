@@ -15,7 +15,7 @@ export default function Link(props){
 		...remainingProps
 	} = props;
 
-	const isInternal         = !!destination.match(/(\/|#)/);
+	const isInternal         = !destination.match(/http/g);
 	const externalAttributes = isInternal ? {} : {
 		target: "_blank",
 		rel: "noopener"
