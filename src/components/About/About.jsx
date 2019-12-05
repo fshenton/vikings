@@ -57,6 +57,7 @@ export default function About(){
 				<div className={ s.body }>
 					{ body }
 				</div>
+				<div className={ s.fade } />
 			</div>	
 		</article>
 	);
