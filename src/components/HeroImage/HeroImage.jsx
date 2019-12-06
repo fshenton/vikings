@@ -1,14 +1,46 @@
-import React from "react";
+import React, { useContext } from "react";
+import { ClientContext as Client } from "COMPONENTS/Client/";
 import { s } from "./";
 
 export default function HeroImage(props){
 
+	//PROPS
+	//----------------------------
+
 	const {
 		id,
-		src,
-		mask: maskPath,
+		src: {
+			small: smallSrc = "",
+			medium: mediumSrc = "",
+			large: largeSrc = ""
+		},
+		mask: {
+			small: smallMask = "",
+			medium: mediumMask = "",
+			large: largeMask = ""
+		}, 
 		description
 	} = props;
+
+	//CONTEXT
+	//----------------------------
+
+	const {
+		isSmall,
+		isMedium
+	} = useContext(Client).state;
+
+	let maskPath;
+
+	if(isSmall) {
+		maskPath = smallMask;
+	}
+	else if (isMedium) {
+		maskPath = mediumMask;
+	}
+	else {
+		maskPath = largeMask;
+	}
 
 	// using mask to prevent the need for a huge png asset
 	const mask = { 
@@ -22,14 +54,30 @@ export default function HeroImage(props){
 			className={ s.hero } 
 			id={ `character__hero__${id}` }
 			> 	
-			<img 
-				className={ s.image }
-				src={ src } 
-				alt={ description }
-				style={ mask }
-			/>
-			<div className={ `${s.glow} ${s.pale}` }></div>
-			<div className={ `${s.glow} ${s.dull}` }></div>
+			<picture className={ s.image }>
+				<source 
+					srcSet={smallSrc} 
+					media="(max-width: 767px)"
+					alt={description}
+				/>
+				<source 
+					srcSet={mediumSrc} 
+					media="(min-width: 768px) and (max-width: 1024px)"
+					alt={description}
+				/>
+				<source 
+					srcSet={largeSrc} 
+					media="(min-width: 1025px)"
+					alt={description}
+				/>		
+				<img 
+					src={ largeSrc } 
+					alt={ description }
+					style={ mask }
+				/>
+			</picture>
+			<div className={ `${s.glow} ${s.gold}` }></div>
+			<div className={ `${s.glow} ${s.blue}` }></div>
 		</div>
 	);
 }// HeroImage

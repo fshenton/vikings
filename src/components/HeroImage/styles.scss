@@ -8,6 +8,16 @@
 	z-index: 0;
 }
 
+	.gold {
+		font-size: 75vw;
+		z-index: 4;
+	}
+
+	.blue {
+		font-size: 100vw;
+		z-index: 3;
+	}
+
 	.glow {
 		position: absolute;
 		width: 1em;
@@ -26,22 +36,16 @@
 			border-radius: 100%;
 		}
 
-		&.pale {
-			z-index: 3;
-		}
-
-		&.dull {
-			z-index: 1;
-		}
-
-		&.pale::before {
-			background-color: #a29573;
+		&.gold::before {
+			background-color: #d2beaf;
+			opacity: 1;
 			filter: blur(0.2em);
 		}
 
-		&.dull::before {
-			background-color: #79776d;
-			filter: blur(0.5em);
+		&.blue::before {
+			background-color: #091d28;
+			opacity: 1;
+			filter: blur(1em);
 		}
 	}
 
@@ -53,16 +57,19 @@
 		z-index: 2;
 		object-fit: contain;
 		object-position: right;
-		-webkit-mask-size: contain;
-		-moz-mask-size: contain;
-		mask-size: contain;
-		-webkit-mask-position: right;
-		-moz-mask-positon: right;
-		mask-position: right;
 		filter: blur(0.5em);
 		opacity: 0;
 		transform: scale(1.5);
 		animation:  blur-fade-scale-in 1.5s ease-in-out forwards;
+
+		img {
+			-webkit-mask-size: contain;
+			-moz-mask-size: contain;
+			mask-size: contain;
+			-webkit-mask-position: right;
+			-moz-mask-positon: right;
+			mask-position: right;
+		}
 	}
 
 // Mobile landscape
