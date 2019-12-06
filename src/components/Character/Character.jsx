@@ -128,6 +128,7 @@ export default function Character(props){
 				src={ src } 
 				mask={ mask }
 				description={ description }
+				active={ isActive }
 			/>
 		</li>
 	);
