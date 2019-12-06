@@ -17,6 +17,12 @@
 			opacity: 1;
 			transform: translateY(0);
 		}
+
+		.name, 
+		.nickname {
+			-webkit-clip-path: inset(0);
+      		clip-path: inset(0);
+		}
 	}
 
 	&.inactive {
@@ -29,6 +35,8 @@
 
 		.name, 
 		.nickname {
+			-webkit-clip-path: inset(0 0 100% 0);
+    		clip-path: inset(0 0 100% 0);
 			transform: translateY(100%);
 		}
 
@@ -273,33 +281,3 @@
 	}
 }
 	
-
-/* ANIMATIONS */
-
-@keyframes clip-up {
-	0% {
-		-webkit-clip-path: inset(0 0 100% 0);
-    	clip-path: inset(0 0 100% 0);
-	}
-
-	100% {
-		-webkit-clip-path: inset(0);
-      	clip-path: inset(0);
-	}
-}
-
-@keyframes slide-up {
-	to {
-		transform: translateY(0);
-	}
-}
-
-@keyframes fade-in {
-	0% {
-		opacity: 0;
-	}
-
-	100% {
-		opacity: 1;
-	}
-}
