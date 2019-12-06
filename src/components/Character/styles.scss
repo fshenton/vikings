@@ -9,6 +9,40 @@
 	left: 0;
 	flex-direction: column;
 
+	&.active {
+		.name, 
+		.nickname, 
+		.actor, 
+		.body {
+			opacity: 1;
+			transform: translateY(0);
+		}
+	}
+
+	&.inactive {
+		.name, 
+		.nickname, 
+		.actor, 
+		.body {
+			opacity: 0;
+		}
+
+		.name, 
+		.nickname {
+			transform: translateY(100%);
+		}
+
+		.actor,
+		.body {
+			transform: translateY(50%);
+		}
+	}
+
+	&[aria-hidden="false"]{
+		opacity: 1;
+		pointer-events: all;
+	}
+
 	&[aria-hidden="true"]{
 		opacity: 0;
 		pointer-events: none
@@ -31,13 +65,9 @@
 			}
 
 				.name, .nickname {
-					clip-path: inset(0 0 100% 0);
-				    transform: translateY(100%);
 					font-family: var(--font_family__heading);
 					text-shadow: 0 1px 1px 0;
-					animation:  clip-up 1s 0.5s forwards,
-								slide-up 1s 0.5s forwards,
-								fade-in 1s 0.5s forwards;
+					transition: all 1s 0.5s;
 				}
 	
 				.name {
@@ -53,9 +83,7 @@
 
 				.actor, .body {
 					opacity: 0;
-					transform: translateY(50%);
-					animation:  slide-up 0.75s 0.75s forwards,
-								fade-in 0.75s 0.75s forwards;
+					transition: all 0.75s 0.75s;
 				}
 
 				.actor {

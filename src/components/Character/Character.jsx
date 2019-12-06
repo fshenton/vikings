@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useState, useEffect } from "react";
 import { 
 	data as characterData,
 	CharactersContext as Characters,
@@ -12,18 +12,8 @@ import UTILS from "SHARED/utils.js";
 
 export default function Character(props){
 
-	//CONTEXT
+	//PROPS
 	//---------------------------
-	const { activeIndex } = useContext(Characters).state;
-
-	const { 
-		open: isNavOpen 
-	} = useContext(Nav).state;
-
-	//RENDER
-	//----------------------------
-	const RENDER = { ...CHARACTER_RENDER, ...SHARED_RENDER };
-
 	const {
 		name,
 		nickname,
@@ -37,6 +27,37 @@ export default function Character(props){
 		index,
 		id
 	} = props;
+
+	//CONTEXT
+	//---------------------------
+	const { activeIndex } = useContext(Characters).state;
+
+	const { 
+		open: isNavOpen 
+	} = useContext(Nav).state;
+
+	//STATE AND EFFECT
+	//---------------------------
+
+	const [visible, setVisible] = useState(false);
+
+	const active = index === activeIndex;
+
+	useEffect(fireTransition, [active]);
+
+	function fireTransition(){
+		let ms = 0;
+		const delay = setTimeout(()=> {
+				setVisible(active);
+				ms = active ? 200 : 0;
+			}, ms);
+		
+		return ()=> { clearTimeout(delay) };
+	}
+
+	//RENDER
+	//----------------------------
+	const RENDER = { ...CHARACTER_RENDER, ...SHARED_RENDER };
 
 	// wrap indexes if less than 0 or greater than number of characters
 	let nextIndex = index + 1;
@@ -65,10 +86,12 @@ export default function Character(props){
 
 	const isHidden = isNavOpen;
 
+	const isActive = active && visible;
+
 	return (
 		<li
 			id={ id }
-			className={ s.wrapper } 
+			className={ `${s.wrapper} ${isActive ? s.active : s.inactive}`} 
 			role="group"
 			aria-roledescription="slide"
 			aria-label={`Character ${index + 1} of ${characterData.length}.`}
