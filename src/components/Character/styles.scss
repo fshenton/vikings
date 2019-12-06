@@ -149,6 +149,7 @@
 				align-items: center;
 				text-decoration: none;
 				--button_margin: 1em;
+				transition: all 0.15s;
 
 				&::before, 
 				&::after {
@@ -172,9 +173,42 @@
 				}
 
 				&.next::after {
+					transform: scale(-1);
 					margin-left: var(--button_margin);
-					transform: scaleX(-1);
 				}
+			}
+
+			.prev, .next {			
+				&:focus {
+					outline: none;
+				}
+
+				&:active,
+				&:focus {
+					filter: brightness(150%);
+				}
+			}
+
+			.prev {
+				&:hover,
+				&:focus {
+					transform: scale(1.1, 1.1) translateX(5%);
+				}
+
+				&:active {
+					transform: scale(1.2, 1.2) translateX(5%);
+				}					
+			}
+
+			.next {
+				&:hover,
+				&:focus {
+					transform: scale(1.1) translateX(-5%);
+				}
+
+				&:active {
+					transform: scale(1.2) translateX(-5%);
+				}		
 			}
 
 // Mobile landscape
