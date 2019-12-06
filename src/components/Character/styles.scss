@@ -129,6 +129,10 @@
 			);
 		}
 
+		.headings, .controls {
+			text-shadow: 1px 1px black;
+		}
+
 		.controls {
 			display: flex;
 			width: 100%;

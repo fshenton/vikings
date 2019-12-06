@@ -75,7 +75,9 @@
 			z-index: 2;
 			object-fit: contain;
 			object-position: right;
-			transition: all 1.5s ease-in-out;
+			transition: opacity 1.5s ease-in-out, 
+					transform 1.5s ease-in-out, 
+					filter 1.5s  ease-in-out;
 			-webkit-mask-size: contain;
 			-moz-mask-size: contain;
 			mask-size: contain;
@@ -109,4 +111,15 @@
 		left: auto;
 		right: 0;
 	}
+
+		.image img {
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+			object-position: center;
+			-webkit-mask-size: cover;
+			mask-size: cover;
+			-webkit-mask-position: center;
+			mask-position: center;
+		}
 }
