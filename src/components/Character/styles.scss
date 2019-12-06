@@ -155,7 +155,7 @@
 					display: inline-block;
 					width: 1em;
 					height: 1.5em;
-					font-size: 1.36em;
+					font-size: 1em;
 					background-image: url("/assets/2d/arrows/arrow.svg");
 					background-size: contain;
 					background-repeat: no-repeat;
@@ -199,6 +199,7 @@
 
 				.headings {
 					width: 50%;
+					padding-top: 12.5vh;
 				}
 
 				.body {
@@ -225,7 +226,7 @@
 
 			.controls {
 				max-width: 15rem; // EYE BALLED
-				bottom: 5vw;
+				bottom: 0;
 			}
 }
 
@@ -234,6 +235,10 @@
 	.wrapper {
 		padding: 10%;
 	}
+
+		.content {
+			max-width: 66%;
+		}
 }
 
 // Tablet landscape
