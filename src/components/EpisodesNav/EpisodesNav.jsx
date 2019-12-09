@@ -15,7 +15,8 @@ export default function EpisodesNav(){
 	const {
 		state: {
 			activeIndex,
-			episodeCount
+			episodeCount,
+			overlayActive
 		},
 		dispatch
 	} = useContext(Episodes);
@@ -54,7 +55,7 @@ export default function EpisodesNav(){
 	const bottomPagination = isSmall || isMedium;
 	const sidePagination = isLarge;
 
-	const isHidden = isNavOpen;
+	const isHidden = isNavOpen || overlayActive;
 
 	return (
 		<nav className={ s.wrapper }>
