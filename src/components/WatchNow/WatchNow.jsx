@@ -8,7 +8,7 @@ export default function WatchNow(props){
 	// PROPS
 	// --------------------------
 
-	const { className } = props;
+	const { className = "" } = props;
 
 	// CONTEXT
 	// --------------------------
