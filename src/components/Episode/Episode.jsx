@@ -3,7 +3,9 @@ import { ClientContext as Client } from "COMPONENTS/Client/";
 import { EpisodesContext as Episodes } from "COMPONENTS/Episodes/";
 import { NavContext as Nav } from "COMPONENTS/Navigation/";
 import PreviewThumb from "COMPONENTS/PreviewThumb/";
+import PreviewOverlay from "COMPONENTS/PreviewOverlay/";
 import WatchNow from "COMPONENTS/WatchNow/";
+import UTILS from "SHARED/utils.js";
 import { s } from "./";
 import RENDER from "SHARED/renderUtils.jsx";
 
@@ -19,8 +21,12 @@ export default function Episode(props){
 		title,
 		synopsis: synopsisData,
 		thumbnail = {},
-		trailer = {},
-		poster = {}
+		trailer: {
+			src: trailerSrc
+		},
+		poster: {
+			src: posterSrc
+		}
 	} = props;
 
 	//CONTEXT
@@ -68,6 +74,9 @@ export default function Episode(props){
 		className: s.paragraph
 	});
 
+	const formattedTitle    = UTILS.convertToSafeString(title, "-");
+	const formattedId       = `${formattedTitle}-preview`;
+
 	const isHidden = isNavOpen;	
 	const isActive = active && visible;
 
@@ -87,8 +96,17 @@ export default function Episode(props){
 					number={ number }
 					title={ title }
 					thumbnail={ thumbnail }
-					trailer={ trailer }
-					poster={ poster }
+					trailerSrc={ trailerSrc }
+					controls={ formattedId }
+				/>
+				<PreviewOverlay 
+					episodeId={ id }
+					index={ index }
+					number={ number }
+					title={ title }
+					id={ formattedId }
+					trailerSrc={ trailerSrc }
+					posterSrc={ posterSrc }
 				/>
 				<div className={ `${s.content} ${isActive ? s.active : s.inactive}` }
 					 aria-hidden={ isHidden }

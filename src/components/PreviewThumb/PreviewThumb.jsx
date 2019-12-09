@@ -6,7 +6,6 @@ import {
 	EpisodesContext as Episodes 
 } from "COMPONENTS/Episodes/";
 import { NavContext as Nav } from "COMPONENTS/Navigation";
-import UTILS from "SHARED/utils.js";
 import { s } from "./";
 
 export default function PreviewThumb(props){
@@ -26,12 +25,8 @@ export default function PreviewThumb(props){
 			},
 			description: thumbDesc
 		},
-		trailer: {
-			src: trailerSrc
-		},
-		poster: {
-			src: posterSrc
-		}
+		trailerSrc,
+		controls
 	} = props;
 
 	// CONTEXT
@@ -80,10 +75,6 @@ export default function PreviewThumb(props){
 
 	// RENDER
 	// ---------------------------
-	
-	const formattedTitle    = UTILS.convertToSafeString(title, "-");
-	const id                = `${formattedTitle}-preview`;
-  
 	const isHidden = isNavOpen;
 	const isActive = active && visible;
 
@@ -93,7 +84,7 @@ export default function PreviewThumb(props){
 				<a
 					className= { s.button }
 					href={ trailerSrc }
-					aria-controls={ id }
+					aria-controls={ controls }
 					aria-label={ `Watch preview for episode ${episodeNo}: ${title}.` }
 					onClick={ openOverlay }
 				>
@@ -130,15 +121,6 @@ export default function PreviewThumb(props){
 				<div className={ `${s.ghost} ${s.bottom} ${s.left}`} />
 				<div className={ `${s.ghost} ${s.bottom}` } />
 			</div>
-			<PreviewOverlay 
-				episodeId={ episodeId }
-				index={ index }
-				episodeNo={ episodeNo }
-				title={ title }
-				id={ id }
-				trailerSrc={ trailerSrc }
-				posterSrc={ posterSrc }
-			/>
 		</aside>
 	);
 }// PreviewThumb

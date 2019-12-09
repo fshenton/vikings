@@ -14,7 +14,7 @@ export default function PreviewOverlay(props){
 	const {
 		episodeId,
 		index,
-		episodeNo,
+		number,
 		title,
 		id,
 		trailerSrc,
@@ -92,7 +92,7 @@ export default function PreviewOverlay(props){
 					aria-hidden={ hiddenByNav }
 			>
 				<h2 className={ s.episode }>
-					{ `Episode ${episodeNo}` } 
+					{ `Episode ${number}` } 
 				</h2>
 				<h1 className={ s.title }>
 					{ title }
