@@ -1,4 +1,4 @@
-import React, { useContext, useRef, useEffect } from "react";
+import React, { useContext, useState, useRef, useEffect } from "react";
 import { 
 	ACTIONS, 
 	EpisodesContext as Episodes 
@@ -82,6 +82,23 @@ export default function PreviewOverlay(props){
 		}
 	}// toggleVideo
 
+
+	// MOUSE ACTIVITY STATE
+	// --------------------------------
+
+	const [mouseMoving, setMouseMoving] = useState(true);
+
+	let timer;
+
+	function setInactivityTimer(){
+		setMouseMoving(true);
+
+		clearTimeout(timer);
+		timer = setTimeout(() => 
+			(setMouseMoving(false))
+			, 3000);
+	}// setTimeout
+
 	// BINDING
 	// ------------------------------
 	const prevEpisode  = setActiveIndex.bind(this, index - 1);
@@ -102,17 +119,29 @@ export default function PreviewOverlay(props){
 			id={ id }
 			className= { s.wrapper }
 			aria-hidden={ hidden }
+			onMouseMove={ setInactivityTimer } 
 		>
-			<header className={ s.container }>
-				<h2 className={ s.episode }>
+			<header 
+				className={ s.container }
+			>
+				<h2 
+					className={ s.episode }
+					aria-hidden={ !mouseMoving }
+				>
 					{ `Episode ${number}` } 
 				</h2>
-				<h1 className={ s.title }>
+				<h1 
+					className={ s.title }
+					aria-hidden={ !mouseMoving }
+				>
 					{ title }
 				</h1>
 				<nav>
 					{/*NEXT AND PREVIOUS BUTTONS*/}
-					<div className={ s.controls }>
+					<div 
+						className={ s.controls }
+						aria-hidden={ !mouseMoving }
+					>
 						{ !isFirst && (
 							<a 
 								className={ `${s.prev} ${s.button}` }
@@ -138,6 +167,7 @@ export default function PreviewOverlay(props){
 						className={ s.close }
 						href={ `#${episodeId}` }
 						onClick={ closeOverlay }
+						aria-hidden={ !mouseMoving }
 					> 
 						<span className={ s.label }> 
 							Close

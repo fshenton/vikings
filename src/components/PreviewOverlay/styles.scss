@@ -20,6 +20,12 @@
 		bottom: 5%;
 		z-index: 2;
 	}
+		.episode,
+		.title,
+		.controls,
+		.close {
+			transition: opacity 0.3s;
+		}
 
 		.episode {
 			font-size: 1em;
@@ -41,6 +47,7 @@
 			.button {
 				display: flex;
 				align-items: center;
+				transition: all 0.15s;
 
 				&::before, 
 				&::after {
@@ -57,9 +64,29 @@
 					content: "";
 				}
 
+				.prev, .next {			
+					&:focus {
+						outline: none;
+					}
+
+					&:active,
+					&:focus {
+						filter: brightness(150%);
+					}
+				}
+
 				&.prev {
 					margin-left: 0;
 					margin-right: auto;
+
+					&:hover,
+					&:focus {
+						transform: scale(1.05, 1.05) translateX(5%);
+					}
+
+					&:active {
+						transform: scale(1.2, 1.2) translateX(5%);
+					}					
 
 					&::before {
 						margin-right: 1em;
@@ -70,13 +97,21 @@
 					margin-left: auto;
 					margin-right: 0;
 
+					&:hover,
+					&:focus {
+						transform: scale(1.05, 1.05) translateX(-5%);
+					}
+
+					&:active {
+						transform: scale(1.2, 1.2) translateX(-5%);
+					}	
+
 					&::after {
 						margin-left: 1em;
 						transform: scaleX(-1);
 					}
 				}
 			}
-			
 
 		.close {
 			position: fixed;
