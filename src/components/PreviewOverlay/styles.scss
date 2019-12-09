@@ -21,12 +21,6 @@
 		z-index: 2;
 	}
 
-		.episode, 
-		.title, 
-		.button {
-			font-weight: bold;
-		}
-
 		.episode {
 			font-size: 1em;
 		}
@@ -132,5 +126,11 @@
 @media (min-width: 768px) {
 	.close {
 		top: 1.62em;
+	}
+}
+
+@media (min-width: 1025px) {
+	.title {
+		font-size: 2em;
 	}
 }
