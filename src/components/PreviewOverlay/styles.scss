@@ -81,7 +81,7 @@
 			position: fixed;
 			width: 1.62em;
 			height: 1.62em;
-			top: 2.62em;
+			top: 1em;
 			left: 50%;
 			font-size: 1em;
 			transform: translateX(-50%);
@@ -103,7 +103,7 @@
 					position: absolute;
 					top: 50%;
 					left: 50%;
-					background-color: black;	
+					background-color: var(--font_color);	
 
 					&.bar1 {
 	  					transform: translate(-50%, -50%) rotate(-45deg);
@@ -122,18 +122,8 @@
 		object-fit: cover;
 	}
 
-//Mobile Landscape
-@media (orientation: landscape) {
-
+@media (min-width: 768px) {
 	.close {
 		top: 1.62em;
-	}
-}
-
-//Tablet landscape
-@media (min-width: 768px) and (orientation: landscape) {
-	
-	.close {
-		top: 2.62em;
 	}
 }

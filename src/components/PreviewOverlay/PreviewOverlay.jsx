@@ -139,10 +139,9 @@ export default function PreviewOverlay(props){
 			<video 
 				className={ s.video }
 				autoPlay={ true }
-				muted={true } //to reduce annoyance during dev
-				loop={ true }
+				muted={ true } //to reduce annoyance during dev
+				loop={ false }
 				poster={ posterSrc }
-				controls
 			>
 				{ isOverlayActive && (
 					<source 
