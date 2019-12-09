@@ -38,14 +38,12 @@ export default function PreviewOverlay(props){
 		dispatch
 	} = useContext(Episodes);
 
-	const {
-		open: isNavOpen
-	} = useContext(Nav).state;
-
 	// CLICK HANDLERS
 	// -----------------------------
 	function setActiveIndex(newIndex, e){
 		if(e) e.preventDefault();
+
+		stopPlayer();
 
 		dispatch({
 			type: ACTIONS.GET_EPISODE,
@@ -56,11 +54,23 @@ export default function PreviewOverlay(props){
 	function closeOverlay(e){
 		if(e) e.preventDefault();
 
+		stopPlayer();
+
 		dispatch({
 			type: ACTIONS.SHOW_TRAILER,
 			value: false
 		});
 	}// closeOverlay
+
+	const player = document.getElementById(`${id}-player`);
+
+	function stopPlayer(){
+		player.pause();
+
+		if(player.currentTime) {
+			player.currentTime = 0;
+		}
+	}// stopVideo
 
 	// BINDING
 	// ------------------------------
@@ -80,17 +90,13 @@ export default function PreviewOverlay(props){
 	const { src: prevTrailerSrc } = prevTrailer;
 	const { src: nextTrailerSrc } = nextTrailer;
 
-	const hiddenByNav = isNavOpen;
-
 	return (
 		<div
 			id={ id }
 			className= { s.wrapper }
 			aria-hidden={ hidden }
 		>
-			<header className={ s.container }
-					aria-hidden={ hiddenByNav }
-			>
+			<header className={ s.container }>
 				<h2 className={ s.episode }>
 					{ `Episode ${number}` } 
 				</h2>
@@ -137,10 +143,11 @@ export default function PreviewOverlay(props){
 				</nav>
 			</header>
 			<video 
+				id={ `${id}-player` }
 				className={ s.video }
 				autoPlay={ true }
 				muted={ true } //to reduce annoyance during dev
-				loop={ false }
+				loop={ true }
 				poster={ posterSrc }
 			>
 				{ isOverlayActive && (
