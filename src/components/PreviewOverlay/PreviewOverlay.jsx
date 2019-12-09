@@ -145,21 +145,19 @@ export default function PreviewOverlay(props){
 				className={ s.container }
 			>
 				<h2 
-					className={ s.episode }
-					aria-hidden={ !mouseMoving }
+					className={ `${s.episode}  ${!mouseMoving ? s.fade : s.visible }` }
 				>
 					{ `Episode ${number}` } 
 				</h2>
 				<h1 
-					className={ s.title }
-					aria-hidden={ !mouseMoving }
+					className={ `${s.title}  ${!mouseMoving ? s.fade : s.visible }` }
 				>
 					{ title }
 				</h1>
 				<nav>
 					{/*NEXT AND PREVIOUS BUTTONS*/}
 					<div 
-						className={ s.controls }
+						className={ s.controls }  
 						aria-hidden={ !mouseMoving }
 					>
 						{ !isFirst && (
@@ -202,7 +200,7 @@ export default function PreviewOverlay(props){
 			<div 
 				className={ s.pause }
 				onClick={ togglePlaying }
-				aria-hidden={ !playing || !mouseMoving  }
+				aria-hidden={ !playing || !mouseMoving }
 			/>  
 			<div 
 				className={ s.play }
