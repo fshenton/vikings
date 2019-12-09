@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useRef, useEffect } from "react";
 import { 
 	ACTIONS, 
 	EpisodesContext as Episodes 
@@ -43,7 +43,7 @@ export default function PreviewOverlay(props){
 	function setActiveIndex(newIndex, e){
 		if(e) e.preventDefault();
 
-		stopPlayer();
+		toggleVideo();
 
 		dispatch({
 			type: ACTIONS.GET_EPISODE,
@@ -54,7 +54,7 @@ export default function PreviewOverlay(props){
 	function closeOverlay(e){
 		if(e) e.preventDefault();
 
-		stopPlayer();
+		toggleVideo();
 
 		dispatch({
 			type: ACTIONS.SHOW_TRAILER,
@@ -62,15 +62,25 @@ export default function PreviewOverlay(props){
 		});
 	}// closeOverlay
 
-	const player = document.getElementById(`${id}-player`);
+	// EFFECTS
+	// ------------------------------
 
-	function stopPlayer(){
-		player.pause();
+	const isActiveEpisode   = activeIndex === index;
+	const isOverlayActive  	= isActiveEpisode && overlayActive;
 
-		if(player.currentTime) {
-			player.currentTime = 0;
+	useEffect(toggleVideo, [isOverlayActive]);
+
+	const player = useRef();
+
+	function toggleVideo(){
+		if(isOverlayActive) {
+			player.current.play();
 		}
-	}// stopVideo
+		else {
+			player.current.pause();
+			player.current.currentTime = 0;
+		}
+	}// toggleVideo
 
 	// BINDING
 	// ------------------------------
@@ -79,9 +89,6 @@ export default function PreviewOverlay(props){
 
 	// RENDER
 	// ----------------------------
-	// handle visibility of active episode and episode preview overlay
-	const isActiveEpisode   = activeIndex === index;
-	const isOverlayActive   = isActiveEpisode && overlayActive;
 	const hidden            = !isOverlayActive;
 	
 	const isFirst           = index === 0;
@@ -143,7 +150,7 @@ export default function PreviewOverlay(props){
 				</nav>
 			</header>
 			<video 
-				id={ `${id}-player` }
+				ref={ player }
 				className={ s.video }
 				autoPlay={ true }
 				muted={ true } //to reduce annoyance during dev
