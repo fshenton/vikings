@@ -62,6 +62,22 @@ export default function PreviewOverlay(props){
 		});
 	}// closeOverlay
 
+	// VIDEO STATE
+	// ---------------------------------
+
+	const [playing, setPlaying] = useState(false);
+
+	function togglePlaying() {
+		if(!playing){
+			player.current.play();
+			setPlaying(true);
+		}
+		else {
+			player.current.pause();
+			setPlaying(false);
+		}
+	}
+	
 	// EFFECTS
 	// ------------------------------
 
@@ -75,10 +91,12 @@ export default function PreviewOverlay(props){
 	function toggleVideo(){
 		if(isOverlayActive) {
 			player.current.play();
+			setPlaying(true);
 		}
 		else {
 			player.current.pause();
 			player.current.currentTime = 0;
+			setPlaying(false);
 		}
 	}// toggleVideo
 
@@ -110,6 +128,8 @@ export default function PreviewOverlay(props){
 	
 	const isFirst           = index === 0;
 	const isLast            = index === episodeCount - 1;
+
+	const isPaused 			= true;
 
 	const { src: prevTrailerSrc } = prevTrailer;
 	const { src: nextTrailerSrc } = nextTrailer;
@@ -178,7 +198,17 @@ export default function PreviewOverlay(props){
 						</div>
 					</a>
 				</nav>
-			</header>
+			</header> 
+			<div 
+				className={ s.pause }
+				onClick={ togglePlaying }
+				aria-hidden={ !playing || !mouseMoving  }
+			/>  
+			<div 
+				className={ s.play }
+				onClick={ togglePlaying }
+				aria-hidden={ playing || !mouseMoving }
+			/> 
 			<video 
 				ref={ player }
 				className={ s.video }
