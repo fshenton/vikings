@@ -40,6 +40,7 @@
 	}
 
 	.heading {
+		margin-bottom: 0.2em;
 		font-size: 3em;
 		letter-spacing: 0.2em;
 		text-transform: uppercase;
@@ -48,7 +49,7 @@
 	}
 
 	.subheading {
-		margin-bottom: 1em;
+		margin-bottom: 0.5em;
 		font-size: 2em;
 		animation:  slide-up 1.5s 2.5s forwards cubic-bezier(0.175, 0.885, 0.32, 1.275),
 					fade-in 1.92s 1.83s forwards;
@@ -57,7 +58,7 @@
 	.body {
 		opacity: 0;
 		text-align: center;
-		font-size: 1em;
+		font-size: 0.8em;
 		font-family: var(--font_family__body);
 		animation: fade-in 0.52s 2.13s forwards;
 
