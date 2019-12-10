@@ -10,6 +10,7 @@ import Landing from "COMPONENTS/Landing/";
 import About from "COMPONENTS/About/";
 import Characters from "COMPONENTS/Characters/";
 import Episodes from "COMPONENTS/Episodes/";
+import SvgFilters from "COMPONENTS/SvgFilters/";
 import Fonts from "SHARED/fonts.scss";
 import { s } from "./";
 
@@ -47,6 +48,7 @@ export default function App(){
 					</main>
 				</Router>
 			</NavProvider>
+			<SvgFilters />
 		</div>
 	);
 } //App

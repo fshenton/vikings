@@ -25,10 +25,6 @@ function renderItem(data){
 				{ ...remainingProps }
 			>
 				<svg viewBox="0 0 100 100" preserveAspectRatio="xMidYMin">
-					<filter id="powder">
-						<feTurbulence baseFrequency="0.2" numOctaves="3"/>
-						<feDisplacementMap in="SourceGraphic" scale="5" />
-					</filter>
 					<path className={ s.circle } fill="none" stroke="#FFF" strokeWidth="1" filter="url(#powder)"
 						d="
 					        M 50, 50
