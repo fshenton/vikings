@@ -50,7 +50,7 @@
 			letter-spacing: 0.05em;
 
 			&:hover .line {
-				animation: mess-up 1.5s forwards;
+				animation: ropify 2s forwards linear;
 			} 
 
 			&+.item {
@@ -150,7 +150,7 @@
 	}
 }
 
-@keyframes mess-up {
+@keyframes ropify {
 	to {
 		stroke-dashoffset: 0;
 	}

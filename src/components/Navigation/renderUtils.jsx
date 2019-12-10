@@ -17,26 +17,38 @@ function renderItem(data){
 			key={ `navigation__${safeLabel}` }
 			className={ s.item }
 		>
-			<svg className={ `${s.line} ${s.left}` } viewBox="0, 0, 100, 64">
-				<filter id="rope">
-					<feTurbulence baseFrequency="1" numOctaves="1"/>
-					<feDisplacementMap in="SourceGraphic" scale="5" />
-				</filter>				
-				<path strokeWidth="8px" fill="none" stroke="white" filter="url(#rope)"
-				d="
-					M 0,28 h 100
-				"
-				/>
-			</svg>
-			<svg className={ `${s.line} ${s.right}` } viewBox="0, 0, 100, 64">
-				<filter id="rope">
+			<svg className={ `${s.line} ${s.left}` } viewBox="0, 0, 180, 10">
+				<filter 
+					id="rope"
+					filterUnits="userSpaceOnUse"
+          			width="100%"
+          			height="100%" 
+				>
 					<feTurbulence baseFrequency="0.2" numOctaves="3"/>
 					<feDisplacementMap in="SourceGraphic" scale="5" />
 				</filter>			
-				<path strokeWidth="8px" fill="none" stroke="white" filter="url(#rope)"
-				d="
-					M 100,28 h -100
-				"
+				<path  
+				    strokeWidth="10"
+				    stroke="#cacbca" 
+					d="M 0,0 h 180"
+				    filter="url(#rope)"
+				/>
+			</svg>
+			<svg className={ `${s.line} ${s.right}` } viewBox="0, 0, 180, 10">
+				<filter 
+					id="rope"
+					filterUnits="userSpaceOnUse"
+          			width="100%"
+          			height="100%" 
+				>
+					<feTurbulence baseFrequency="0.2" numOctaves="3"/>
+					<feDisplacementMap in="SourceGraphic" scale="5" />
+				</filter>			
+				<path  
+				    strokeWidth="10"
+				    stroke="#cacbca" 
+					d="M 180,0 h -180"
+				    filter="url(#rope)"
 				/>
 			</svg>
 			<Link 
