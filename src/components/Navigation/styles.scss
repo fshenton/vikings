@@ -29,7 +29,7 @@
 		font-family: var(--font_family__heading);
 		text-shadow: 1px 1px black;
 		list-style: none;
-		transition: opacity 0.15s;
+		transition: opacity 0.5s;
 
 		&[aria-expanded="false"], 
 		&[aria-expanded="false"] ~ .socials {
