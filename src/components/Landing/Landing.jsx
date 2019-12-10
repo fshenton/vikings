@@ -81,7 +81,7 @@ export default function Landing(){
 				 aria-hidden={ isHidden }
 			>
 				<div className={ `${s.glow} ${s.gold}` }/>
-				<div className={ `${s.glow} ${s.blue}`}/>
+				<div className={ `${s.glow} ${s.blue}` }/>
 			</div>
 			{ isSmall && 
 				<WatchNow

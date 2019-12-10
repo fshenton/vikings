@@ -15,6 +15,7 @@
 
 	.open {
 		background-color: var(--background_color__semi-trans);
+		backdrop-filter: blur(3.5px);
 	}
 
 	.container {
