@@ -46,6 +46,7 @@
 		.item {
 			position: relative;
 			line-height: 0.9em;
+			letter-spacing: 0.05em;
 
 			&:hover .line {
 				animation: mess-up 1.5s forwards;
