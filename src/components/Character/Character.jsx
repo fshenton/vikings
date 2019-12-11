@@ -114,9 +114,11 @@ export default function Character(props){
 							{ actor }
 						</h3>
 					</div>
-					<div className={ s.body } > 
-						{ body }
-					</div>	
+					<div className={ s.scrollHider }>
+						<div className={ s.body } > 
+							{ body }
+						</div>	
+					</div>
 				</div>
 				<nav className={ s.controls }>
 					{ prevButton }
