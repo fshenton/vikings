@@ -345,9 +345,11 @@
 
 		.scrollHider {
 			width: 62.5%;
+			overflow: hidden;
 
 			.body {
 				height: 100%;
+				overflow: hidden;
 			}
 		}
 
@@ -367,6 +369,10 @@
 	.scrollHider {
 		width: 47.5%;
 	}
+
+		.headings {
+			padding-top: 0;
+		}
 
 		.body {
 			width: calc(100% + 18px);
