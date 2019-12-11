@@ -243,6 +243,7 @@
 
 				.headings {
 					padding-top: 12.5vh;
+					width: 50%;
 				}
 
 				.scrollHider {
@@ -288,6 +289,10 @@
 		.content {
 			max-width: 66%;
 		}
+
+			.headings {
+				width: auto;
+			}
 }
 
 // Tablet landscape
