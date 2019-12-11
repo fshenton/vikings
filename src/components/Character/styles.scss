@@ -93,7 +93,7 @@
 
 				.actor, .body {
 					opacity: 0;
-					transition: all 0.75s 0.75s;
+					transition: opacity 0.75s 0.75s, transform 0.75s 0.75s;
 				}
 
 				.actor {
@@ -242,7 +242,6 @@
 			}
 
 				.headings {
-					max-width: 50%;
 					padding-top: 12.5vh;
 				}
 
@@ -358,4 +357,8 @@
 	.scrollHider {
 		width: 47.5%;
 	}
+
+		.body {
+			width: calc(100% + 18px);
+		}
 }
