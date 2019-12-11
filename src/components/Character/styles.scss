@@ -293,6 +293,10 @@
 			.headings {
 				width: auto;
 			}
+
+			.scrollHider {
+				height: 17.5vh;
+			}
 }
 
 // Tablet landscape
@@ -306,9 +310,10 @@
 		}
 
 			.scrollHider {
+				width: 72.5%;
+				height: 20vh;
 				padding-top: 0;
 				margin-left: 0;
-				width: 72.5%;
 			}
 
 				.body {
