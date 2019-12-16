@@ -197,17 +197,23 @@ export default function PreviewOverlay(props){
 					</a>
 				</nav>
 			</header> 
-			<div 
-				className={ s.pause }
-				onClick={ togglePlaying }
-				aria-hidden={ !playing || !mouseMoving }
-			/>  
+		{/*PLAY & PAUSE BUTTONS*/}
 			<div 
 				className={ s.play }
 				onClick={ togglePlaying }
 				aria-hidden={ playing || !mouseMoving }
+				aria-controls="episode__preview__video"
+				aria-label="play"
 			/> 
+			<div 
+				className={ s.pause }
+				onClick={ togglePlaying }
+				aria-hidden={ !playing || !mouseMoving }
+				aria-controls="episode__preview__video"
+				aria-label="pause"
+			/>  
 			<video 
+				id="episode__preview__video"
 				ref={ player }
 				className={ s.video }
 				autoPlay={ true }
