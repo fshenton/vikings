@@ -87,7 +87,10 @@
 				.name, .nickname {
 					font-family: var(--font_family__heading);
 					text-shadow: 0 1px 1px 0;
-					transition: all 1s 0.5s;
+					transition: opacity 1s 0.5s, 
+								-webkit-clip-path 1s 0.5s, 
+								clip-path 1s 0.5s, 
+								transform 1s 0.5s;
 				}
 	
 				.name {
@@ -104,7 +107,8 @@
 
 				.actor, .body {
 					opacity: 0;
-					transition: opacity 0.75s 0.75s, transform 0.75s 0.75s;
+					transition: opacity 0.75s 0.75s, 
+								transform 0.75s 0.75s;
 				}
 
 				.actor {
@@ -167,7 +171,9 @@
 				align-items: center;
 				text-decoration: none;
 				--button_margin: 1em;
-				transition: all 0.15s;
+				transition: transform 0.15s,
+							filter 0.15s, 
+							outline 0.15s;
 
 				&::before, 
 				&::after {
