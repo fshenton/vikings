@@ -1,15 +1,7 @@
 import React, { useContext } from "react";
 import { s } from "./";
-import { NavContext as Nav } from "COMPONENTS/Navigation/";
 
 export default function VideoLayer(props){
-
-	//CONTEXT
-	//--------------------------
-
-	const { 
-		open: isNavOpen
-	} = useContext(Nav).state;
 
 	//PROPS
 	//--------------------------
@@ -23,8 +15,6 @@ export default function VideoLayer(props){
 	//RENDER
 	//--------------------------
 
-	const isHidden = isNavOpen;
-
 	return (
 		<div className={ `${s.wrapper } ${className}` }>	
 			<video 
@@ -32,7 +22,6 @@ export default function VideoLayer(props){
 				autoPlay 
 				loop
 				muted
-				aria-hidden={ isHidden }
 			>
 				<source 
 					src={ sources["mp4"] }
