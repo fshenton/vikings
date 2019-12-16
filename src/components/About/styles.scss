@@ -138,24 +138,20 @@
 
 		.textContainer {
 			height: 60%;
-			font-size: 1.62rem;
+			font-size: 1.35rem;
 		}
 
 			.heading {
-				font-size: 1.15em;
+				font-size: 1.5em;
 			}
 
 			.subheading {
-				font-size: 1.62em;
+				font-size: 2em;
 			}
 
 			.body {
 				p {
-					width: 80%;
-				}
-
-				p:nth-child(even) {
-					margin-left: 4em;
+					width: 90%;
 				}
 			}
 }
