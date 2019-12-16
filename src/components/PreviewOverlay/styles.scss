@@ -37,6 +37,11 @@
 			transition: opacity 0.3s;
 		}
 
+		.episode,
+		.title {
+			font-family: var(--font_family__heading);
+		}
+
 		.episode {
 			font-size: 1em;
 		}
