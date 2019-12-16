@@ -77,12 +77,9 @@ export default function Landing(){
 					{ body }
 				</div>
 			</header>
-			<div className={ s.glowWrapper }
-				 aria-hidden={ isHidden }
-			>
-				<div className={ `${s.glow} ${s.gold}` }/>
-				<div className={ `${s.glow} ${s.blue}` }/>
-			</div>
+			<div 
+				className={ s.glow }
+			/>
 			{ isSmall && 
 				<WatchNow
 					className={s.watchNow}

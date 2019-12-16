@@ -72,54 +72,22 @@
 		font-weight: bold;
 	}
 
-.glowWrapper {
-	position: fixed;
-	height: 100%;
-	width: 100%;
-	top: 0;
-	left: 0;
-	z-index: 3;
-	pointer-events: none;
-}
-
-	.gold {
-		font-size: 75vw;
-		z-index: 4;
-	}
-
-	.blue {
-		font-size: 100vw;
-		z-index: 3;
-	}
-
 	.glow {
-		position: absolute;
-		width: 1em;
-		height: 1em;
+		position: fixed;
+		height: 25%;
+		width: 100%;
 		top: 0;
-		left: 50%;
-		
-
-		&::before {
-			content: "";
-			display: block;
-			width: 100%;
-			height: 100%;
-			border-radius: 100%;
-			transform: translate(-50%, -80%);
-		}
-
-		&.gold::before {
-			background-color: #d2beaf;
-			animation: fade-in 4s forwards;
-			filter: blur(0.2em);
-		}
-
-		&.blue::before {
-			background-color: #091d28;
-			opacity: 100%;
-			filter: blur(1em);
-		}
+		left: 0;
+		z-index: 3;
+		opacity: 0;
+		pointer-events: none;
+		background-size: cover;
+		background-repeat: no-repeat;
+		background-image: url("/assets/2d/glow/glow-small.png");
+		animation: fade-in 3s 0.5s ease-in-out forwards;
+		//TWEAK TIMING AND EASING
+		//BLUR
+		//SCALE
 	}
 	
 	.watchNow {
