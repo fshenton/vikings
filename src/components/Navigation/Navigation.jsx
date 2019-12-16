@@ -25,7 +25,9 @@ export default function Navigation(){
 	//----------------------------
 	const links = data.map(RENDER.item);
 
-	const isOpen = open ? s.open : "";
+	const isOpen = open ? s.open : s.closed;
+
+	console.log({isOpen, open});
 
 	//EVENT HANDLING
 	//---------------------------
@@ -33,7 +35,7 @@ export default function Navigation(){
 
 		dispatch({
 			type: ACTIONS.OPEN_NAVIGATION,
-			value: !isOpen
+			value: !open
 		});
 	}// toggleOpen
 

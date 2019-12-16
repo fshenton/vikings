@@ -15,7 +15,15 @@
 	align-items: center;
 	font-size: 1.15rem;
 	z-index: 2;
-	transition: opacity 0.6s 0.5s;
+	transition: opacity 0.6s;
+
+	&[aria-hidden="true"]{
+		transition-delay: 0s;
+	}
+
+	&[aria-hidden="false"]{
+		transition-delay: 0.75s;	
+	}
 }
 
 	.background {
