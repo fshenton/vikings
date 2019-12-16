@@ -17,6 +17,11 @@
 	height: 100%;
 }
 
+::selection {
+	color: var(--background_color);
+	background-color: var(--font_color);
+}
+
 html, body {
 	height: 100%;
 	color: var(--font_color);
