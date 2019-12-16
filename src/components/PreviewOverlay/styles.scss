@@ -67,15 +67,17 @@
 		}
 
 		.play {
-			width: 200px;
-			height: 200px;
-			background-image: url("assets/2d/controls/play.svg");
+			font-size: 10rem;
+			width: 1em;
+			height: 1em;
+			background: no-repeat url("assets/2d/controls/play.svg");
 		}
 
 		.pause {
-			width: 100px;
-			height: 100px;
-			background-image: url("assets/2d/controls/pause.svg");
+			font-size: 5rem;
+			width: 1em;
+			height: 1em;
+			background: no-repeat url("assets/2d/controls/pause.svg");
 		}
 
 		.controls {
@@ -205,12 +207,33 @@
 		object-fit: cover;
 	}
 
+// Mobile landscape
+@media (orientation: landscape) {
+	.play {
+		font-size: 6.5rem;
+	}
+
+	.pause {
+		font-size: 3.5rem;
+	}
+}
+
+// Tablet 
 @media (min-width: 768px) {
 	.close {
 		top: 1.62em;
 	}
+
+	.play {
+		font-size: 12.5rem;
+	}
+
+	.pause {
+		font-size: 7.5rem;
+	}
 }
 
+// Desktop
 @media (min-width: 1025px) {
 	.controls {
 		width: 11em;
