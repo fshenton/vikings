@@ -16,8 +16,8 @@ $border__color: #4e4e4e;
 	background-color: transparent;
 	opacity: 0;
 	border: solid 1px transparent;
-	animation:  fade-in-and-move 1s 0.5s forwards,
-				border-color 1s 0.5s forwards linear;
+	animation:  fade-in-and-move 1s 0.7s forwards,
+				border-color 1s 0.7s forwards linear;
 	transition: all 0.3s;
 	--watch_now__x_offset: -50%;
 
