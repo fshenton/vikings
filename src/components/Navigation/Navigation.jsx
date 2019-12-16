@@ -27,8 +27,6 @@ export default function Navigation(){
 
 	const isOpen = open ? s.open : s.closed;
 
-	console.log({isOpen, open});
-
 	//EVENT HANDLING
 	//---------------------------
 	function toggleOpen(e){

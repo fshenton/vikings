@@ -84,20 +84,15 @@
 
 	.glow {
 		position: fixed;
-		height: 25%;
+		height: 100%;
 		width: 100%;
-		top: 0;
+		top: -15%;
 		left: 0;
 		z-index: 3;
 		opacity: 0;
 		pointer-events: none;
-		background-size: cover;
-		background-repeat: no-repeat;
-		background-image: url("/assets/2d/glow/glow-small.png");
+		background: no-repeat center/cover url("/assets/2d/glow/glow-small.png");
 		animation: fade-in 3s 0.5s ease-in-out forwards;
-		//TWEAK TIMING AND EASING
-		//BLUR
-		//SCALE
 	}
 	
 	.watchNow {
@@ -114,9 +109,13 @@
 			margin-bottom: 0.25em;
 			font-size: 2.5em;
 		}
+
+			.glow {
+				top: -10%;
+			}
 }
 
-// Tablet
+// Tablet portrait
 @media (min-width: 768px) {
 	.landing {
 		background-image: url(assets/2d/landing/bg-medium.jpg);
@@ -127,11 +126,22 @@
 		}
 }
 
+// Tablet landscape
+@media (min-width: 768px) and (orientation: landscape) {
+	.glow {
+		top: -15%;
+	}
+}
+
 // Desktop
 @media (min-width: 1025px) {
 	.landing {
 		background-image: url(assets/2d/landing/bg-large.jpg);
 	}
+
+		.glow {
+			top: 0;
+		}
 }
 
 /* ANIMATIONS */
