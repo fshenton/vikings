@@ -2,14 +2,25 @@
 
 h1, h2 { 
 	font-weight: normal;
-	// letter-spacing: 0.1em;
 }
 
 html {
-	font-size: 16px;
+	font-size: 3.5vw;
 }
 
 a {
 	color: var(--font_color);
 	text-decoration: none;
+}
+
+@media (orientation: landscape) {
+	html {
+		font-size: 2vw;
+	}
+}
+
+@media (min-width: 768px) {
+	html {
+		font-size: 16px;
+	}
 }
