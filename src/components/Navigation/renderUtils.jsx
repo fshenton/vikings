@@ -12,10 +12,17 @@ function renderItem(data){
 	
 	const safeLabel = UTILS.convertToSafeString(label);
 
+	const randomDelay = Math.floor(Math.random() * 500);
+
+	const style = {
+		transitionDelay: `${randomDelay}ms`
+	};
+
 	return (
 		<li 
 			key={ `navigation__${safeLabel}` }
 			className={ s.item }
+			style={ style }
 		>
 			<svg className={ `${s.line} ${s.left}` } viewBox="0, 0, 180, 10">
 				<path  

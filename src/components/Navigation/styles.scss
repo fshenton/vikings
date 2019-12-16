@@ -60,26 +60,6 @@
 			letter-spacing: 0.05em;
 			transition: opacity 0.75s ease-in, filter 0.75s;
 
-			&:nth-child(1) {
-				transition-delay: random(500) + ms;
-			}
-
-			&:nth-child(2) {
-				transition-delay: random(500) + ms;
-			}
-
-			&:nth-child(3) {
-				transition-delay: random(500) + ms;
-			}
-
-			&:nth-child(4) {
-				transition-delay: random(500) + ms;
-			}
-
-			&:nth-child(5) {
-				transition-delay: random(500) + ms;
-			}
-
 			&:hover .line {
 				animation: ropify 2s forwards linear;
 			} 
