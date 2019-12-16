@@ -89,10 +89,11 @@
 			}
 
 			.line {
-				width: 50%;
+				width: 3em;
 				height: 100%;
 				position: absolute;
 				top: 0;
+				overflow-x: hidden;
 				pointer-events: none;
 				stroke-dasharray: 1000;
 				stroke-dashoffset: 1000;
