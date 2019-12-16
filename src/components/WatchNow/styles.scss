@@ -18,7 +18,11 @@ $border__color: #4e4e4e;
 	border: solid 1px transparent;
 	animation:  fade-in-and-move 1s 0.7s forwards,
 				border-color 1s 0.7s forwards linear;
-	transition: all 0.3s;
+	transition: background-color 0.3s,
+				color 0.3s,
+				border 0.3s,
+				outline 0.3s,
+				filter 0.3s;
 	--watch_now__x_offset: -50%;
 
 	&:hover,

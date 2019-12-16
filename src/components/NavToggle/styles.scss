@@ -82,7 +82,7 @@
 		.label {
 			cursor: pointer;
 			font-size: 0;
-			transition: all 0.15s linear;
+			transition: opacity 0.15s linear;
 
 			&.open, &.close {
 				font-size: 1.5rem;

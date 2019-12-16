@@ -89,7 +89,8 @@
 			.button {
 				display: flex;
 				align-items: center;
-				transition: all 0.15s;
+				transition: transform 0.15s,
+							outline 0.15s;
 
 				&::before, 
 				&::after {
