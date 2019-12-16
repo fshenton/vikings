@@ -115,11 +115,11 @@ export default function PreviewThumb(props){
 						hidden={ isHidden } 
 					/>
 				</a>
-				<div className={ `${s.ghost} ${s.top}` } />
-				<div className={ `${s.ghost} ${s.top} ${s.left}` } />
-				<div className={ `${s.ghost} ${s.left}` } />
-				<div className={ `${s.ghost} ${s.bottom} ${s.left}`} />
-				<div className={ `${s.ghost} ${s.bottom}` } />
+				<div className={ `${s.ghost} ${s.top} ${isActive ? s.active : s.inactive}` } />
+				<div className={ `${s.ghost} ${s.top} ${s.left} ${isActive ? s.active : s.inactive}` } />
+				<div className={ `${s.ghost} ${s.left} ${isActive ? s.active : s.inactive}` } />
+				<div className={ `${s.ghost} ${s.bottom} ${s.left} ${isActive ? s.active : s.inactive}`} />
+				<div className={ `${s.ghost} ${s.bottom} ${isActive ? s.active : s.inactive}` } />
 			</div>
 		</aside>
 	);
