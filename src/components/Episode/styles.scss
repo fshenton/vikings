@@ -11,6 +11,17 @@
 			padding: 10vw;
 			flex-direction: column;
 			font-size: 1.3rem;
+			transition-property: opacity;
+
+			&[aria-hidden="false"]{
+				transition-duration: 1s;
+				transition-delay: 0.3s;
+			}
+
+			&[aria-hidden="true"]{
+				transition-duration: 0.5s;
+				transition-delay: 0s;
+			}
 
 			&.inactive {
 
