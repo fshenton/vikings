@@ -44,7 +44,7 @@
 
 		.actor,
 		.body {
-			transform: translateY(50%);
+			transform: translateY(1rem);
 		}
 	}
 
@@ -88,10 +88,10 @@
 				.name, .nickname {
 					font-family: var(--font_family__heading);
 					text-shadow: 0 1px 1px 0;
-					transition: opacity 1s 0.5s, 
-								-webkit-clip-path 1s 0.5s, 
-								clip-path 1s 0.5s, 
-								transform 1s 0.5s;
+					transition: opacity 0.75s 1.35s, 
+								-webkit-clip-path 0.75s 1.35s, 
+								clip-path 0.75s 1.35s, 
+								transform 0.75s 1.35s;
 				}
 	
 				.name {
@@ -106,10 +106,16 @@
 					font-family: var(--font_family__heading);
 				}
 
-				.actor, .body {
+				.actor {
 					opacity: 0;
-					transition: opacity 0.75s 0.75s, 
-								transform 0.75s 0.75s;
+					transition: opacity 0.75s 1.65s, 
+								transform 0.75s 1.65s;
+				} 
+
+				.body {
+					opacity: 0;
+					transition: opacity 0.75s 1.8s, 
+								transform 0.75s 1.8s;
 				}
 
 				.actor {
