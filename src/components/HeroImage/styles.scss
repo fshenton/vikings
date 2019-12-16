@@ -94,6 +94,12 @@
 	.hero {
 		width: 75%; // GUESS
 		left: 0;
+
+		&.active {
+			.image img {
+				opacity: 0.5;
+			}
+		}
 	}
 
 		.glow {
@@ -110,6 +116,12 @@
 	.hero {
 		left: auto;
 		right: 0;
+
+		&.active {
+			.image img {
+				opacity: 1;
+			}
+		}
 	}
 
 		.image img {

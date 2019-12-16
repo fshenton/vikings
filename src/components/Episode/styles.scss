@@ -104,9 +104,10 @@
 //Mobile Landscape
 @media (orientation: landscape){
 	.wrapper {
+		display: flex;
 		max-height: 100%;
 		padding: 0;
-		display: flex;
+		top: 0;
 	}
 
 		.content {
