@@ -77,8 +77,6 @@ export default function HeroImage(props){
 					style={ mask }
 				/>
 			</picture>
-			<div className={ `${s.glow} ${s.gold}` }></div>
-			<div className={ `${s.glow} ${s.blue}` }></div>
 		</div>
 	);
 }// HeroImage

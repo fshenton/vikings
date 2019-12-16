@@ -9,6 +9,9 @@ import { s } from "./";
 
 export default function Characters(){
 
+	// Render
+	// --------------------------------------
+
 	const characters = characterData.map(RENDER.character);
 
 	const sources = {
@@ -35,6 +38,9 @@ export default function Characters(){
 					{ characters }
 				</ul>
 			</CharactersProvider>
+			<div 
+				className={ s.glow }
+			/>
 			<VideoLayer 
 				className={ s.dust }
 				sources={ sources } 
