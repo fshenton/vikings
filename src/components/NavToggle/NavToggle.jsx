@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { s } from "./";
 import { NavContext as Nav } from "COMPONENTS/Navigation/";
 
@@ -14,11 +14,51 @@ export default function NavToggle(props){
 		}
 	} = useContext(Nav);
 
+
+	//STATE AND EFFECT
+
+	const [visible, setVisible] = useState(false);
+	const [landed, setLanded] = useState(false);
+
+	useEffect(fireOpeningTransitions, [visible]);
+
+	function fireOpeningTransitions(){
+		if(visible){
+			const delay = setTimeout(()=> {
+				setLanded(true);
+				}, 500);
+
+			return ()=> { 
+				clearTimeout(delay); 
+			};
+		}
+		else {
+			const delay = setTimeout(()=> {
+				setVisible(true);
+				}, 1000);
+			
+			return ()=> { 
+				clearTimeout(delay); 
+			};
+		}
+	}// fireTransition
+
+	let buttonClass = "";
+	if(visible){
+		if(landed) {
+			buttonClass = s.resting;
+		}
+		else {
+			buttonClass = s.initial;
+		}
+	}
+
 	return (
 		<button 
-			className={ s.wrapper }
+			className={ `${s.wrapper} ${buttonClass}` }
 			role="switch"
 			aria-checked={ isOpen }
+			aria-hidden={ !visible }
 			aria-controls="navigation__links"
 			onClick={ toggleOpen }
 		>
