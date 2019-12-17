@@ -174,7 +174,9 @@ export default function PreviewOverlay(props){
 								aria-label="Previous."
 								onClick={ prevEpisode }
 							>
-								Prev
+								<span className={ s.prevLabel }>
+									Prev
+								</span>
 							</a>
 						)}
 						{ !isLast && (
@@ -183,7 +185,9 @@ export default function PreviewOverlay(props){
 								href={ nextTrailerSrc } 
 								onClick={ nextEpisode }
 							>
-								Next
+								<span className={ s.nextLabel }>
+									Next
+								</span>
 							</a>
 						)}
 					</div>
