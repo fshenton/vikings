@@ -11,11 +11,6 @@ html {
 a {
 	color: var(--font_color);
 	text-decoration: none;
-
-	&:hover, 
-	&:focus {
-		text-decoration: underline;
-	}
 }
 
 @media (orientation: landscape) {

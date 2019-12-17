@@ -214,33 +214,40 @@
 					outline: none;
 				}
 
-				&:active,
-				&:focus {
-					filter: brightness(150%);
+				&:active {
+					transform: scale(0.95);
 				}
 			}
 
 			.prev {
 				&:hover,
 				&:focus {
-					transform: scale(1.1, 1.1) translateX(5%);
+					.label {
+						transform: translateX(-0.5em);
+					}
 				}
 
 				&:active {
-					transform: scale(1.2, 1.2) translateX(5%);
+					
 				}					
 			}
 
 			.next {
 				&:hover,
 				&:focus {
-					transform: scale(1.1) translateX(-5%);
+					.label {
+						transform: translateX(0.5em);
+					}
 				}
 
 				&:active {
-					transform: scale(1.2) translateX(-5%);
+					
 				}		
 			}
+
+				.label {
+					transition: transform 0.15s;
+				}
 
 // Mobile landscape
 @media (orientation: landscape) {

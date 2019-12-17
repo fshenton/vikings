@@ -46,7 +46,9 @@ function renderButton(name, label, newIndex){
 			aria-label={ `${label} character: ${name}.` }
 			onClick={ updateCharacterIndex }
 		>
-			{ name }
+			<span className={ s.label }>
+				{ name }
+			</span>
 		</Link>
 	);
 }//renderButton
