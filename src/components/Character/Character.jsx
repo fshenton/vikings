@@ -88,6 +88,11 @@ export default function Character(props){
 
 	const isActive = active && visible;
 
+	let nicknameClass = "";
+	if(nickname === " "){
+		nicknameClass = s.none;
+	}
+
 	return (
 		<li
 			id={ id }
@@ -107,7 +112,7 @@ export default function Character(props){
 						>
 							{ name }
 						</h1>
-						<h2 className={ s.nickname } >
+						<h2 className={ `${s.nickname} ${nicknameClass}` }>
 							{ nickname }
 						</h2>
 						<h3 className={ s.actor } >

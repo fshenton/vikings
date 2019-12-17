@@ -95,15 +95,21 @@
 				}
 	
 				.name {
-					margin-bottom: 0.1em; // GUESS
+					margin-bottom: -0.1em; 
 					font-size: 5em;
 					overflow: hidden;
+					height: 1.1em;
 				}
 
 				.nickname {
 					margin-bottom: 0.5em; // GUESS
 					font-size: 2.6em;
 					font-family: var(--font_family__heading);
+					height: 1.1em;
+
+					&.none {
+						height: 0;
+					}
 				}
 
 				.actor {
