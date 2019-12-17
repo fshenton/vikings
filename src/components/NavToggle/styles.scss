@@ -35,8 +35,7 @@
 		}
 	}
 
-	&[aria-checked="true"],
-	&:active {
+	&[aria-checked="true"]{
 		& .bar {
 			transform: translateY(0);
 		}
