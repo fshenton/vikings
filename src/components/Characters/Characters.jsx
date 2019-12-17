@@ -9,6 +9,8 @@ import { s } from "./";
 
 export default function Characters(){
 
+	document.title = 'Vikings | Characters';
+
 	// Render
 	// --------------------------------------
 

@@ -10,6 +10,8 @@ import {
 
 export default function Episodes(){
 
+	document.title = 'Vikings | Episodes';
+
 	const episodes = data.map(RENDER.episode);
 
 	return (

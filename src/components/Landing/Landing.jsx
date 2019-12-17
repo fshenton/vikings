@@ -9,6 +9,8 @@ import { ClientContext as Client } from "COMPONENTS/Client/";
 
 export default function Landing(){
 
+	document.title = 'Vikings';
+
 	//CONTEXT
 	//--------------------------
 

@@ -6,6 +6,8 @@ import { NavContext as Nav } from "COMPONENTS/Navigation/";
 
 export default function About(){
 
+	document.title = 'Vikings | About';
+
 	//CONTEXT
 	//------------------------
 
