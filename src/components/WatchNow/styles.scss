@@ -27,10 +27,11 @@ $border__color: #4e4e4e;
 
 	&:hover,
 	&:focus {
+		border: none;  
+		outline: none; 
 		background-color: var(--font_color);
 		color: var(--background_color);
-		border: none;   
-		outline: none; 
+		text-decoration: none; 
 	}
 
 	&:active {
