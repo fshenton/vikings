@@ -164,9 +164,9 @@
 
 		.controls {
 			display: flex;
-			width: 100%;
+			width: 80%;
 			max-width: 25rem; // GUESS
-			position: sticky;
+			position: fixed;
 			bottom: 10vw; // GUESS!
 			justify-content: space-between;
 			font-size: 1.1em;
@@ -288,6 +288,8 @@
 			}
 
 			.controls {
+				position: sticky;
+				width: 100%;
 				max-width: 15rem; // EYE BALLED
 				bottom: 0;
 			}
@@ -308,9 +310,20 @@
 		}
 
 			.scrollHider {
+				overflow: hidden;
 				width: var(--body_width);
 				height: 17.5vh;
+
+				.body {
+					overflow-x: scroll;
+					width: calc(100% + 18px);
+				}
 			}
+
+		.controls {
+			position: sticky;
+			width: 100%;
+		}
 }
 
 // Tablet landscape
@@ -351,16 +364,6 @@
 				font-size: 3.25em;
 			}
 
-
-		.scrollHider {
-			overflow: hidden;
-
-			.body {
-				height: 100%;
-				overflow: hidden;
-			}
-		}
-
 	.content::after {
 		display: none;
 	}
@@ -380,9 +383,5 @@
 
 		.headings {
 			padding-top: 0;
-		}
-
-		.body {
-			width: calc(100% + 18px);
 		}
 }
