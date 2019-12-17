@@ -25,33 +25,27 @@
 			background: url("/assets/2d/arrows/arrow.svg") no-repeat;
 			background-size: cover;
 			cursor: pointer;
-			transition: transform 0.15s,
-						filter 0.15s,
-						outline 0.15s;
+			transform: translateX(0);
+			transition: transform 0.15s;
 		}
 
 		.prev, .next {			
 			&:focus {
 				outline: none;
 			}
-
-			&:active,
-			&:focus {
-				filter: brightness(150%);
-			}
 		}
 
 		.prev {
 			order: 1;
-
+			
 			&:hover,
 			&:focus {
-				transform: scale(1.1, 1.1) translateX(10%);
-			}
+				transform: translateX(-0.25em);
+			}			
 
 			&:active {
-				transform: scale(1.2, 1.2) translateX(15%);
-			}					
+				transform: scale(0.9) translateX(-0.25em);
+			}
 		}
 
 		.next {
@@ -60,12 +54,12 @@
 		
 			&:hover,
 			&:focus {
-				transform: scale(-1.1, 1.1) translateX(10%);
+				transform: scaleX(-1) translateX(-0.25em);
 			}
 
 			&:active {
-				transform: scale(-1.2, 1.2) translateX(15%);
-			}		
+				transform: scaleX(-0.9) translateX(-0.25em);
+			}
 		}
 
 		.pagination {
@@ -174,27 +168,31 @@
 			height: 100%;
 		}
 
-			.button {
-				transition: transform 0.15s;
+			.prev {
+				transform: rotateZ(90deg) translateY(0);
+
+				&:hover,
+				&:focus {
+					transform: rotateZ(90deg) translateX(-0.25em); 	
+				}
+
+				&:active {
+					transform: scale(0.9) rotateZ(90deg) translateX(-0.25em); 	
+				}
 			}
 
-				.prev {
-					transform: rotateZ(90deg) translateY(0);
+			.next {
+				transform: rotateZ(-90deg) translateY(0);
 
-					&:hover,
-					&:focus {
-						transform: rotateZ(90deg) translateX(10%)
-					}
+				&:hover,
+				&:focus  {
+					transform: rotateZ(-90deg) translateX(-0.25em);
 				}
 
-				.next {
-					transform: rotateZ(-90deg) translateY(0);
-
-					&:hover,
-					&:focus  {
-						transform: rotateZ(-90deg) translateX(10%)
-					}
+				&:active {
+					transform: scale(0.9) rotateZ(-90deg) translateX(-0.25em);
 				}
+			}
 
 		.pagination {
 			flex-direction: column;
