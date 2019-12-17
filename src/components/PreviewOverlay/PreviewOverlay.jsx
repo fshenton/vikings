@@ -88,10 +88,17 @@ export default function PreviewOverlay(props){
 
 	const player = useRef();
 
+	let focusTimer;
+
 	function toggleVideo(){
+		clearInterval(focusTimer);
+
 		if(isOverlayActive) {
 			player.current.play();
 			setPlaying(true);
+			focusTimer = setTimeout(() => {
+				setMouseMoving(false)
+			}, 3000);
 		}
 		else {
 			player.current.pause();
