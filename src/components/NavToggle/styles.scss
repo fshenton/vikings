@@ -11,9 +11,7 @@
 	transition: opacity 2s,
 				transform 1s;
 
-	&.initial,
-	&:hover,
-	&:focus {
+	&.initial {
 		opacity: 1;
 
 		& .bar {
@@ -29,7 +27,8 @@
 			transform: translateY(0.25em);
 		}
 
-		&:hover {
+		&:hover,
+		&:focus {
 			& .bar {
 				transform: translateY(0);
 			}
