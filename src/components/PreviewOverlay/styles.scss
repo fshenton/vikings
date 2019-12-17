@@ -164,43 +164,6 @@
 						transform: scaleX(-1);
 					}
 				}
-
-				/*	transform: translateX(0);
-			transition: transform 0.15s;
-		}
-
-		.prev, .next {			
-			&:focus {
-				outline: none;
-			}
-		}
-
-		.prev {
-			order: 1;
-			
-			&:hover,
-			&:focus {
-				transform: translateX(-0.25em);
-			}			
-
-			&:active {
-				transform: scale(0.9) translateX(-0.25em);
-			}
-		}
-
-		.next {
-			order: 3;
-			transform: scaleX(-1);
-		
-			&:hover,
-			&:focus {
-				transform: scaleX(-1) translateX(-0.25em);
-			}
-
-			&:active {
-				transform: scaleX(-0.9) translateX(-0.25em);
-			}
-		}*/
 			}
 
 		.close {
