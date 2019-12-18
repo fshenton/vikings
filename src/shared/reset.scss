@@ -5,9 +5,15 @@
 	box-sizing: border-box;
 }
 
-[aria-hidden="true"]{
+[aria-hidden="true"],
+[aria-expanded="false"] {
+	visibility: hidden;
 	opacity: 0;
 	pointer-events: none;
+}
+
+[aria-hidden="false"]{
+	visibility: visible;
 }
   
 h1, h2, h3 {

@@ -135,6 +135,7 @@
 
 				.scrollHider {
 					width: 100%;
+					max-width: 64ch;
 					overflow-x: hidden;
 				}
 
@@ -355,7 +356,7 @@
 				}
 }
 
-// Desktop landscape
+// Desktop half
 @media (min-width: 1025px) {
 
 	.content {
@@ -380,7 +381,7 @@
 	}
 }
 
-// Desktop landscape 
+// Desktop full 
 @media (min-width: 1025px) and (min-aspect-ratio: 16/9) {
 
 	.content {
