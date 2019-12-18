@@ -9,6 +9,8 @@
 	left: 0;
 	z-index: 2;
 	flex-direction: column;
+	background: url("/assets/2d/shared/bg-small.jpg") center / cover no-repeat;
+	background-attachment: fixed;
 	transition: opacity 1s;
 
 	&.active {
@@ -28,6 +30,8 @@
 	}
 
 	&.inactive {
+		max-height: 100%;
+
 		.name, 
 		.nickname, 
 		.actor, 
@@ -137,12 +141,12 @@
 					width: 100%;
 					max-width: 64ch;
 					overflow-x: hidden;
+					margin-bottom: 7em;
 				}
 
 					.body {
 						width: 100%;
-						margin-bottom: 4em; // GUESS
-						line-height: 1.75;
+						line-height: 1.75; // GUESS
 						font-family: var(--font_family__body);
 
 						.paragraph+.paragraph {
@@ -254,6 +258,7 @@
 	.wrapper {
 		max-height: 100%;
 		padding: 5%; //GUESS
+		background-image: url("/assets/2d/shared/bg-small.jpg");
 	}
 
 		.container {
@@ -308,6 +313,7 @@
 		padding: 10%;
 		padding-bottom: 6.3em;
 		justify-content: flex-end;
+		background-image: url("/assets/2d/shared/bg-medium.jpg");
 	}
 
 		.content {
@@ -365,26 +371,30 @@
 // Desktop half
 @media (min-width: 1025px) {
 
-	.content {
-		margin-top: 0;
-		--body_width: 62.5%;
-	}
-			.name {
-				font-size: 8em;
-			}
-
-			.nickname {
-				font-size: 3.25em;
-			}
-
-	.content::after {
-		display: none;
+	.wrapper {
+		background-image: url("/assets/2d/shared/bg-large.jpg");
 	}
 
-	.controls {
-		max-width: 20rem;
-		bottom: 0;
-	}
+		.content {
+			margin-top: 0;
+			--body_width: 62.5%;
+		}
+				.name {
+					font-size: 8em;
+				}
+
+				.nickname {
+					font-size: 3.25em;
+				}
+
+		.content::after {
+			display: none;
+		}
+
+		.controls {
+			max-width: 20rem;
+			bottom: 0;
+		}
 }
 
 // Desktop full 

@@ -44,6 +44,18 @@ export default function Character(props){
 	//STATE AND EFFECT
 	//---------------------------
 
+	useEffect(resetScroll, [activeIndex]);
+
+	function resetScroll() {
+		const scrollTimer = setTimeout( () => {
+			window.scrollTo({
+				top: 0
+			});
+		}, 500);
+
+		return () => clearTimeout(scrollTimer);
+	}// resetScroll
+
 	//ENTER TRANSITIONS
 	const [visible, setVisible] = useState(false);
 
