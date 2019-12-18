@@ -6,6 +6,7 @@ import {
 } from "COMPONENTS/Characters/";
 import { NavContext as Nav } from "COMPONENTS/Navigation/";
 import HeroImage from "COMPONENTS/HeroImage/";
+import { ClientContext as Client } from "COMPONENTS/Client/";
 import { RENDER as CHARACTER_RENDER, s } from "./";
 import SHARED_RENDER from "SHARED/renderUtils.jsx";
 import UTILS from "SHARED/utils.js";
@@ -36,9 +37,14 @@ export default function Character(props){
 		open: isNavOpen 
 	} = useContext(Nav).state;
 
+	const {
+		isSmall
+	} = useContext(Client).state;
+
 	//STATE AND EFFECT
 	//---------------------------
 
+	//ENTER TRANSITIONS
 	const [visible, setVisible] = useState(false);
 
 	const active = index === activeIndex;
@@ -54,6 +60,29 @@ export default function Character(props){
 		
 		return ()=> { clearTimeout(delay) };
 	}
+
+
+	//SCROLL FADE FOR MOBILE
+	const [atTop, setAtTop] = useState(true);
+
+	useEffect(addScrollListeners, []);
+
+	function addScrollListeners() {
+		window.addEventListener("scroll", checkIfAtTop);
+
+		return () => window.removeEventListener("scroll", checkIfAtTop);
+	}// addScrollListeners
+
+	function checkIfAtTop(event) {
+		const { scrollY } = window;
+
+		const topBuffer = 5;
+
+		const scrollAtTop = scrollY < topBuffer;
+
+		setAtTop(scrollAtTop);
+	}// checkIfAtTop
+
 
 	//RENDER
 	//----------------------------
@@ -139,6 +168,7 @@ export default function Character(props){
 				mask={ mask }
 				description={ description }
 				active={ isActive }
+				faded={ isSmall && !atTop }
 			/>
 		</li>
 	);

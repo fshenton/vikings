@@ -6,6 +6,7 @@
 	top: 0;
 	right: 0;
 	z-index: 0;
+	transition: opacity 1s;
 	
 	&.inactive {
 		.image img {
@@ -21,6 +22,14 @@
 			transform: scale(1);
 			filter: blur(0);
 		}
+	}
+
+	&.faded {
+		opacity: 0.5;
+	}
+
+	&.visible {
+		opacity: 1;
 	}
 }
 

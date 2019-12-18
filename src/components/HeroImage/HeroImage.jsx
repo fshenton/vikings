@@ -20,7 +20,8 @@ export default function HeroImage(props){
 			large: largeMask = ""
 		}, 
 		description,
-		active
+		active,
+		faded
 	} = props;
 
 	//CONTEXT
@@ -52,7 +53,11 @@ export default function HeroImage(props){
 
 	return (
 		<div 
-			className={ `${s.hero} ${active ? s.active : s.inactive}` } 
+			className={ `
+				${s.hero} 
+				${faded ? s.faded : s.visible} 
+				${active ? s.active : s.inactive}
+			`} 
 			id={ `character__hero__${id}` }
 			> 	
 			<picture className={ s.image }>
