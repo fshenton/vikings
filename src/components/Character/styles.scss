@@ -306,11 +306,18 @@
 @media (min-width: 768px) {
 	.wrapper {
 		padding: 10%;
+		padding-bottom: 6.3em;
+		justify-content: flex-end;
 	}
 
 		.content {
+			margin-top: initial;
 			--body_width: 66%;
 		}
+
+			.headings {
+				padding-top: initial;
+			}
 
 		.content::after {
 			display: none;
@@ -330,30 +337,29 @@
 		.controls {
 			position: sticky;
 			width: 100%;
+			margin-top: 1.62em;
+			margin-bottom: 1.62em
 		}
 }
 
 // Tablet landscape
 @media (min-width: 768px) and (orientation: landscape) {
-	.wrapper {
-		justify-content: center;
+
+	.content {
+		--body_width: 50%;
+		flex-direction: column;
 	}
 
-		.content {
-			--body_width: 50%;
-			flex-direction: column;
+		.scrollHider {
+			height: 20vh;
+			padding-top: 0;
+			margin-left: 0;
 		}
 
-			.scrollHider {
-				height: 20vh;
-				padding-top: 0;
-				margin-left: 0;
+			.body {
+				height: 25vh;
+				padding-bottom: 3.5em;
 			}
-
-				.body {
-					height: 25vh;
-					padding-bottom: 3.5em;
-				}
 }
 
 // Desktop half
@@ -391,4 +397,10 @@
 		.headings {
 			padding-top: 0;
 		}
+}
+
+@media (pointer: coarse) {
+	.scrollHider .body {
+		width: 100%;
+	}
 }
