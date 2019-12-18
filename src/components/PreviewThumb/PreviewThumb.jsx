@@ -33,9 +33,10 @@ export default function PreviewThumb(props){
 	// ----------------------------
 	const {
 		state: {
-			activeIndex
+			activeIndex,
+			overlayActive
 		},
-		dispatch
+		dispatch,
 	} = useContext(Episodes);
 
 	const {
@@ -76,10 +77,10 @@ export default function PreviewThumb(props){
 	// RENDER
 	// ---------------------------
 	const isHidden = isNavOpen;
-	const isActive = active && visible;
+	const isActive = active && visible && !overlayActive;
 
 	return (
-		<aside className={ s.wrapper }>
+		<aside className={ `${s.wrapper} ${isActive ? s.active : s.inactive}` }>
 			<div className={ s.thumbnail }>
 				<a
 					className= { s.button }
@@ -88,7 +89,7 @@ export default function PreviewThumb(props){
 					aria-label={ `Watch preview for episode ${episodeNo}: ${title}.` }
 					onClick={ openOverlay }
 				>
-					<picture className={ `${s.image} ${isActive ? s.active : s.inactive}` }>
+					<picture className={ `${s.image}` }>
 						<source 
 							srcSet={smallSrc} 
 							media="(max-width: 767px)"
@@ -115,11 +116,11 @@ export default function PreviewThumb(props){
 						hidden={ isHidden } 
 					/>
 				</a>
-				<div className={ `${s.ghost} ${s.top} ${isActive ? s.active : s.inactive}` } />
-				<div className={ `${s.ghost} ${s.top} ${s.left} ${isActive ? s.active : s.inactive}` } />
-				<div className={ `${s.ghost} ${s.left} ${isActive ? s.active : s.inactive}` } />
-				<div className={ `${s.ghost} ${s.bottom} ${s.left} ${isActive ? s.active : s.inactive}`} />
-				<div className={ `${s.ghost} ${s.bottom} ${isActive ? s.active : s.inactive}` } />
+				<div className={ `${s.ghost} ${s.top}` } />
+				<div className={ `${s.ghost} ${s.top} ${s.left}` } />
+				<div className={ `${s.ghost} ${s.left}` } />
+				<div className={ `${s.ghost} ${s.bottom} ${s.left}`} />
+				<div className={ `${s.ghost} ${s.bottom}` } />
 			</div>
 		</aside>
 	);

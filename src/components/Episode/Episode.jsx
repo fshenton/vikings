@@ -38,7 +38,8 @@ export default function Episode(props){
 
 	const {
 		activeIndex,
-		episodeCount
+		episodeCount,
+		overlayActive
 	} = useContext(Episodes).state;
 
 	const { 
@@ -78,7 +79,7 @@ export default function Episode(props){
 	const formattedId       = `${formattedTitle}-preview`;
 
 	const isHidden = isNavOpen;	
-	const isActive = active && visible;
+	const isActive = active && visible && !overlayActive;
 
 	return (
 		<li

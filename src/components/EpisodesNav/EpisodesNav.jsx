@@ -58,10 +58,8 @@ export default function EpisodesNav(){
 	const isHidden = isNavOpen || overlayActive;
 
 	return (
-		<nav className={ s.wrapper }>
-			<div className={ s.container }
-				aria-hidden={ isHidden }
-			>
+		<nav className={ s.wrapper } aria-hidden={ isHidden }>
+			<div className={ s.container }>
 				<button 
 					className={ `${s.button} ${s.prev}` }
 					aria-label="Previous episode."

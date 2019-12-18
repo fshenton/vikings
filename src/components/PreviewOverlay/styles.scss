@@ -13,7 +13,13 @@
 	text-align: center;
 	font-size: 1.62rem;
 	background-color: green;
-	transition: opacity 0.3s;
+	&[aria-hidden="true"]{
+		// transition: opacity .3s, visibility 0s .4s;
+	}
+	&[aria-hidden="false"]{
+		transition: opacity .3s;
+	}
+
 }
 
 	.container {
