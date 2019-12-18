@@ -2,7 +2,8 @@
 .wrapper {
 	position: absolute;
 	min-height: 100%;
-	top: 15vh;
+	padding-top: 15vh;
+	top: 0;
 	left: 0;
 
 	&[aria-hidden="true"] {
