@@ -103,6 +103,9 @@
 
 					&:focus {
 						outline: none;
+					}
+
+					&:focus:not(:active) {
 						text-decoration: underline;
 					}
 				}
