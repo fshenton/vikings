@@ -209,6 +209,7 @@ export default function PreviewOverlay(props){
 				</nav>
 			</header> 
 		{/*PLAY & PAUSE BUTTONS*/}
+			{ mouseMoving && <div className={ s.contrastOverlay }/> }
 			<div 
 				className={ s.play }
 				onClick={ togglePlaying }

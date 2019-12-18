@@ -19,7 +19,7 @@
 	.container {
 		position: absolute;
 		bottom: 5%;
-		z-index: 2;
+		z-index: 3;
 	}
 
 		.fade {
@@ -206,6 +206,16 @@
 	  					transform: translate(-50%, -50%) rotate(45deg);
 				 	}				
 				}
+
+	.contrastOverlay {
+		height: 100%;
+		width: 100%;
+		position: fixed;
+		top: 0;
+		left: 0;
+		background-color: rgba(2,2,2,0.25);
+		z-index: 2;
+	}
 
 	.video {
 		position: absolute;
