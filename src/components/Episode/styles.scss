@@ -7,15 +7,14 @@
 	left: 0;
 
 	&[aria-hidden="true"] {
-		// z-index: 0;
 		transition: opacity .6s, visibility 0s 0.6s;
 	}
 
 	&[aria-hidden="false"] {
-		// transition: opacity 0.5s;
-		// z-index: 1;
+		// placeholder
 	}
 }
+
 	.content {
 		display: flex;
 		padding: 10vw;
