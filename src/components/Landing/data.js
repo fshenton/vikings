@@ -8,19 +8,15 @@ const data = {
 			sources: {
 				mp4:  [
 					"assets/video/particles-floating-720p.mp4"
-				],
-				webm: "path/to/video.webm"
-			},
-			poster: "path/to/poster.jpg"
+				]
+			}
 		},
 		background: {
 			sources: {
 				mp4:  [
 					"assets/video/storms1-720p.mp4"
-				],
-				webm: "path/to/video.webm"
-			},
-			poster: "path/to/poster.jpg"
+				]
+			}
 		}
 	}
 };

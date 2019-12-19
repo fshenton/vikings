@@ -19,11 +19,8 @@ export default function Characters(){
 	const sources = {
 		mp4:  [
 			"assets/video/particles-floating-720p.mp4"
-		],
-		webm: "path/to/video.webm"
+		]
 	};
-
-	const poster = "path/to/poster.jpg";
 	
 	return(
 		<article 
@@ -43,7 +40,6 @@ export default function Characters(){
 			<VideoLayer 
 				className={ s.dust }
 				sources={ sources } 
-				poster={ poster }
 			/>
 		</article>
 	);
