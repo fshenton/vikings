@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import RENDER from "SHARED/renderUtils.jsx";
 import { s, data } from "./";
 import LogoArtwork from "COMPONENTS/LogoArtwork/";
@@ -41,6 +41,21 @@ export default function Landing(){
 		}
 	} = data;
 
+	// STATE AND EFFECTS
+
+	const [active, setActive] = useState(false);
+
+	useEffect(fireTransition, []);
+
+	function fireTransition() {
+		const delay = setTimeout(() => {
+			setActive(true);
+		}
+		, 200);
+
+		return () => clearTimeout(delay);
+	}// fireTransition
+
 	//RENDER
 	//--------------------------
 
@@ -52,7 +67,7 @@ export default function Landing(){
 	const isHidden = navIsOpen;
 
 	return(
-		<div className={ s.landing }>
+		<div className={ `${s.landing} ${active ? s.active : s.inactive}` }>
 			<LogoArtwork 
 				className={ s.logo }
 			/>
