@@ -10,8 +10,19 @@
 	opacity: 0;
 	--home-spacing: 2em;
 	background: center/contain no-repeat url("/assets/2d/static-elements/viking-home.png");
-	transition: filter 0.3s;
-	animation: fade-in-and-move 1s 0.6s forwards;
+	transition: filter 0.3s, 
+				opacity 1s .6s, 
+				transform 1s .6s;
+
+	&.active {
+		opacity: 1;
+		transform: translateY(0);
+	}
+
+	&.inactive {
+		opacity: 0;
+		transform: translateY(20%);
+	}
 
 	&:hover,
 	&:focus {
@@ -19,7 +30,7 @@
 	}
 
 	&:active {
-		filter: brightness(0.5);
+		filter: brightness(0.8);
 	}
 
 	&:focus {
@@ -42,16 +53,5 @@
 		width: 4em;
 		height: 5em;
 		--home-spacing: 2.5em;
-	}
-}
-
-@keyframes fade-in-and-move {
-	0% {
-		opacity: 0;
-		transform: translateY(20%);
-	}
-	100% {
-		opacity: 1;
-		transform: translateY(0);
 	}
 }
