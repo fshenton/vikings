@@ -16,14 +16,25 @@ $border__color: #4e4e4e;
 	background-color: transparent;
 	opacity: 0;
 	border: solid 1px transparent;
-	animation:  fade-in-and-move 1s 0.7s forwards,
-				border-color 1s 0.7s forwards linear;
+	animation:  border-color 1s 0.7s forwards linear;
 	transition: background-color 0.3s,
 				color 0.3s,
 				border 0.3s,
 				outline 0.3s,
-				filter 0.3s;
+				filter 0.3s,
+				opacity 1s 0.7s,
+				transform 1s 0.7s;
 	--watch_now__x_offset: -50%;
+
+	&.active {
+		opacity: 1;
+		transform: translate(var(--watch_now__x_offset), 0);
+	}
+
+	&.inactive {
+		opacity: 0;
+		transform: translate(var(--watch_now__x_offset), -20%);
+	}
 
 	&:hover,
 	&:focus {
@@ -53,17 +64,6 @@ $border__color: #4e4e4e;
 		bottom: 2.5em;
 		left: 2.5em;
 		--watch_now__x_offset: 0;
-	}
-}
-
-@keyframes fade-in-and-move {
-	0% {
-		opacity: 0;
-		transform: translate(var(--watch_now__x_offset), -20%);
-	}
-	100% {
-		opacity: 1;
-		transform: translate(var(--watch_now__x_offset), 0);
 	}
 }
 
