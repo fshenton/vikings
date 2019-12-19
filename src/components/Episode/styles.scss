@@ -208,10 +208,3 @@
 		align-self: flex-end;
 	}
 }
-
-@keyframes fade-in-slide-up {
-	to {
-		opacity: 1;
-		transform: translateY(0);
-	}
-}
