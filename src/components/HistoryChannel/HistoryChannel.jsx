@@ -28,29 +28,27 @@ export default function HistoryChannel(){
 	// RENDER 
 	// ------------------------------
 
-	if(open) return null;
-	else {
-		return (
-			<Link
-				className={ `${s.history} ${active ? s.active : s.inactive}` }
-				destination="https://www.history.co.uk/"
-				aria-label="The History Channel"
-			>
-				<svg className={ s.outline } viewBox="0 0 100 100" preserveAspectRatio="xMidYMin">
-					<filter id="powder">
-						<feTurbulence baseFrequency="0.2" numOctaves="3"/>
-						<feDisplacementMap in="SourceGraphic" scale="5" />
-					</filter>
-					<path className={ s.circle } fill="none" stroke="#FFF" strokeWidth="1" filter="url(#powder)"
-						d="
-					        M 50, 50
-					        m 0, -49
-					        a 45,45 0 0,1 0,90
-					        a -45,-45 0 0,1 0,-90
-					    "
-					/>
-				</svg>
-			</Link>
-		);
-	}
+	return (
+		<Link
+			className={ `${s.history} ${active ? s.active : s.inactive}` }
+			destination="https://www.history.co.uk/"
+			aria-label="The History Channel"
+			aria-hidden={ open }
+		>
+			<svg className={ s.outline } viewBox="0 0 100 100" preserveAspectRatio="xMidYMin">
+				<filter id="powder">
+					<feTurbulence baseFrequency="0.2" numOctaves="3"/>
+					<feDisplacementMap in="SourceGraphic" scale="5" />
+				</filter>
+				<path className={ s.circle } fill="none" stroke="#FFF" strokeWidth="1" filter="url(#powder)"
+					d="
+				        M 50, 50
+				        m 0, -49
+				        a 45,45 0 0,1 0,90
+				        a -45,-45 0 0,1 0,-90
+				    "
+				/>
+			</svg>
+		</Link>
+	);
 }// HistoryChannel
