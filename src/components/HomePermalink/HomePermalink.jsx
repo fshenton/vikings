@@ -20,6 +20,8 @@ export default function HomePermalink(){
 			setActive(true);
 		}
 		, 200);
+
+		return () => clearTimeout(delay);
 	}// fireTransition
 
 	// RENDER 

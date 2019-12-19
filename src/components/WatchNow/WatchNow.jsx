@@ -25,6 +25,8 @@ export default function WatchNow(props){
 			setActive(true);
 		}
 		, 200);
+
+		return () => clearTimeout(delay);
 	}// fireTransition
 
 	// RENDER

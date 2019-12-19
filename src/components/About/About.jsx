@@ -45,6 +45,8 @@ export default function About(){
 			setActive(true);
 		}
 		, 200);
+
+		return () => clearTimeout(delay);
 	}// fireTransition
 
 

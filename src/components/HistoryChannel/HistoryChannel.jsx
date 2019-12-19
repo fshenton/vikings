@@ -21,6 +21,8 @@ export default function HistoryChannel(){
 			setActive(true);
 		}
 		, 200);
+
+		return () => clearTimeout(delay);
 	}// fireTransition
 
 	// RENDER 

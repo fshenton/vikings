@@ -59,7 +59,7 @@ export default function PreviewThumb(props){
 				ms = active ? 200 : 0;
 			}, ms);
 		
-		return ()=> { clearTimeout(delay) };
+		return () => { clearTimeout(delay) };
 	}
 
 	// CLICK HANDLER
