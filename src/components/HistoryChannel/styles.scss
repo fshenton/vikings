@@ -8,7 +8,9 @@
 	font-size: 1rem;
 	opacity: 0;
 	background: center/contain no-repeat url("/assets/2d/static-elements/history-logo.png");
-	transition: opacity 1s 0.8s, transform 1s 0.8s;
+	transition: opacity 1s 0.8s, 
+				transform 1s 0.8s, 
+				filter 0.15s;
 
 	&.active {
 		opacity: 1;
