@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { NavContext as Nav } from "COMPONENTS/Navigation/";
 import Link from "COMPONENTS/Link/";
 import { s } from "./";
@@ -10,6 +10,19 @@ export default function HistoryChannel(){
 
 	const { open } = useContext(Nav).state;
 
+	// STATE AND EFFECTS
+
+	const [active, setActive] = useState(false);
+
+	useEffect(fireTransition, []);
+
+	function fireTransition() {
+		const delay = setTimeout(() => {
+			setActive(true);
+		}
+		, 200);
+	}// fireTransition
+
 	// RENDER 
 	// ------------------------------
 
@@ -17,7 +30,7 @@ export default function HistoryChannel(){
 	else {
 		return (
 			<Link
-				className={ s.history }
+				className={ `${s.history} ${active ? s.active : s.inactive}` }
 				destination="https://www.history.co.uk/"
 				aria-label="The History Channel"
 			>

@@ -8,7 +8,17 @@
 	font-size: 1rem;
 	opacity: 0;
 	background: center/contain no-repeat url("/assets/2d/static-elements/history-logo.png");
-	animation: fade-in-and-move 1s 0.8s forwards;
+	transition: opacity 1s 0.8s, transform 1s 0.8s;
+
+	&.active {
+		opacity: 1;
+		transform: translateY(0);
+	}
+
+	&.inactive {
+		opacity: 0;
+		transform: translateY(-20%);
+	}
 
 	&:hover, 
 	&:focus {
@@ -35,18 +45,6 @@
 		stroke-dasharray: 1000;
 		stroke-dashoffset: 1000;
 	}
-
-
-@keyframes fade-in-and-move {
-	0% {
-		opacity: 0;
-		transform: translateY(-20%);
-	}
-	100% {
-		opacity: 1;
-		transform: translateY(0);
-	}
-}
 
 @keyframes encircle {
 	to {
