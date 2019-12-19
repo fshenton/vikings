@@ -174,6 +174,9 @@ export default function Character(props){
 					{ nextButton }
 				</nav>	
 			</article>
+			<div 
+				className={ `${s.glow} ${isActive ? s.active : s.inactive }` }
+			/>
 			<HeroImage 
 				id={ heroId }
 				src={ src } 

@@ -40,9 +40,6 @@ export default function Characters(){
 					{ characters }
 				</ul>
 			</CharactersProvider>
-			<div 
-				className={ s.glow }
-			/>
 			<VideoLayer 
 				className={ s.dust }
 				sources={ sources } 

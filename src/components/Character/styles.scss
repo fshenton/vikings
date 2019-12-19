@@ -259,6 +259,25 @@
 					transition: transform 0.15s;
 				}
 
+	.glow {
+		position: fixed;
+		height: 100%;
+		width: 100%;
+		top: 0;
+		left: 0;
+		pointer-events: none;
+		background: no-repeat center top/200% auto url("/assets/2d/glow/glow-small.png");
+		transition: opacity 1s 0.5s ease-in-out;
+
+		&.inactive {
+			opacity: 0;
+		}
+
+		&.active {
+			opacity: 1;
+		}
+	}
+
 // Mobile landscape
 @media (orientation: landscape) {
 	.wrapper {
@@ -310,6 +329,15 @@
 				max-width: 15rem; // EYE BALLED
 				bottom: 0;
 			}
+
+		.glow {
+			background-size: 100% auto;
+			left: -22.5%;
+
+			&.active {
+				opacity: 0.75;
+			}
+		}
 }
 
 // Tablet portrait
@@ -355,6 +383,17 @@
 			width: 100%;
 			margin-top: 1.62em;
 			margin-bottom: 1.62em
+		}
+
+		.glow {
+			width: 150%;
+			top: -10%;
+			left: 0;
+			background-size: contain;
+
+			&.active {
+				opacity: 1;
+			}
 		}
 }
 
@@ -404,6 +443,12 @@
 		.controls {
 			max-width: 20rem;
 			bottom: 0;
+		}
+
+		.glow {
+			top: -20%;
+			left: -5vw;
+			background-image: url("/assets/2d/glow/glow-large.png");
 		}
 }
 
