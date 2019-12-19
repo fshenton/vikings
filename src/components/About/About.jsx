@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import RENDER from "SHARED/renderUtils.jsx";
 import { data } from "./";
 import { s } from "./";
@@ -34,6 +34,19 @@ export default function About(){
 		description 
 	} = heroImg;
 
+	// STATE AND EFFECTS
+
+	const [active, setActive] = useState(false);
+
+	useEffect(fireTransition, []);
+
+	function fireTransition() {
+		const delay = setTimeout(() => {
+			setActive(true);
+		}
+		, 200);
+	}// fireTransition
+
 
 	//RENDER
 	//------------------------
@@ -43,7 +56,7 @@ export default function About(){
 	const isHidden = isNavOpen;
 
 	return (
-		<article className={ s.wrapper }>
+		<article className={ `${s.wrapper} ${active ? s.active : s.inactive}` }>
 			<picture className={ s.hero }>
 				<source 
 					srcSet={mediumSrc} 
