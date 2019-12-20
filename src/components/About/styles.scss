@@ -56,6 +56,14 @@
 		overflow-y: auto;
 		font-size: var(--font_size__body);
 		--padding__body: 10vw;
+
+		&[aria-hidden="true"] {
+			transition: opacity 0.6s, visibility 0s 0.7s;
+		}
+
+		&[aria-hidden="false"] {
+			transition: opacity 2s 1s;
+		}
 	}
 
 		.heading, .subheading, .body>p {

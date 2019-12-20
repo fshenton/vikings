@@ -24,12 +24,11 @@
 
 		&[aria-hidden="false"]{
 			transition-duration: 1s;
-			transition-delay: 0.3s;
+			transition-delay: 1s;
 		}
 
 		&[aria-hidden="true"]{
-			transition-duration: 0.5s;
-			transition-delay: 0s;
+			transition: opacity 0.6s, visibility 0s 0.7s;
 		}
 
 		&.inactive {
@@ -70,14 +69,14 @@
 			margin-bottom: 0.62em;
 			font-size: 1em;
 			font-family: var(--font_family__heading);
-			transition-delay: 0s;
+			transition-delay: 1s;
 		}
 
 		.title {
 			order: 2;
 			font-size: 1.62em;
 			font-family: var(--font_family__heading);
-			transition-delay: 0.25s;
+			transition-delay: 1.25s;
 		}
 
 		.body {
@@ -90,7 +89,7 @@
 			font-family: var(--font_family__body);
 
 			.paragraph {
-				transition-delay: 0.35s;
+				transition-delay: 1.35s;
 			}
 		}
 

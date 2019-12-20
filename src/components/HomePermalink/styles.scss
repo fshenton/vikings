@@ -25,6 +25,10 @@
 		transition: opacity 1s, visibility 0s 1.1s;
 	}
 
+	&[aria-hidden="false"] {
+		
+	}
+
 	&:hover,
 	&:focus {
 		filter: brightness(1.2);

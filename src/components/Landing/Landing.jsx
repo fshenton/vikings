@@ -82,7 +82,7 @@ export default function Landing(){
 				poster={ foregroundPoster }
 			/>
 			<header className={ s.wrapper }
-					aria-hidden={ isHidden }
+					aria-hidden={ isHidden || !active }
 			>
 				<h1 className={ s.heading }>
 					{ heading }

@@ -51,10 +51,11 @@
 
 		&[aria-hidden="true"]{
 			transition-delay: 0s;
+			transition: opacity 0.6s, visibility 0s 0.7s;
 		}
 
 		&[aria-hidden="false"]{
-			transition-delay: 0.75s;	
+			transition-delay: 0.6s;	
 		}
 	}
 
