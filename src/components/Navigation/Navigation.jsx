@@ -50,7 +50,10 @@ export default function Navigation(){
 			>
 				{ links }
 			</ul>
-			<Socials className={ s.socials }/>
+			<Socials 
+				className={ s.socials }
+				hidden={ !isOpen }
+			/>
 		</nav>
 	);
 }// Navigation

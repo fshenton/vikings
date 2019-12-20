@@ -38,7 +38,6 @@
 		font-family: var(--font_family__heading);
 		text-shadow: 1px 1px black;
 		list-style: none;
-		transition: opacity 1s;
 
 		&[aria-expanded="false"], 
 		&[aria-expanded="false"] ~ .socials {
@@ -48,6 +47,7 @@
 			.item {
 				opacity: 0;
 				filter: blur(5px);
+				-webkit-filter: blur(5px);
 			}
 		}
 
@@ -59,7 +59,16 @@
 			.item {
 				opacity: 1;
 				filter: blur(0);
+				-webkit-filter: blur(0);
 			}
+		}
+
+		&[aria-expanded="true"] ~ .socials {
+			transition: opacity 1s 1s;
+		}
+
+		&[aria-expanded="false"] ~ .socials {
+			transition: opacity 0.6s 0s;
 		}
 	}
 

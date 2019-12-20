@@ -1,11 +1,8 @@
 import React, { useContext } from "react";
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 import { ClientContext as Client } from "COMPONENTS/Client/"; 
-import HomePermalink from "COMPONENTS/HomePermalink/";
-import HistoryChannel from "COMPONENTS/HistoryChannel/";
-import WatchNow from "COMPONENTS/WatchNow/";
-import Navigation, { NavProvider } from "COMPONENTS/Navigation/";
-import Socials from "COMPONENTS/Socials/"
+import Navigation, { NavProvider, NavContext as Nav} from "COMPONENTS/Navigation/";
+import FixedElements from "COMPONENTS/FixedElements/";
 import Landing from "COMPONENTS/Landing/";
 import About from "COMPONENTS/About/";
 import Characters from "COMPONENTS/Characters/";
@@ -16,11 +13,6 @@ import { s } from "./";
 
 export default function App(){
 
-	// CONTEXT
-	// -------------------------
-
-	const { isSmall } = useContext(Client).state;
-
 	// RENDER
 	// -------------------------
 
@@ -29,16 +21,8 @@ export default function App(){
 			{ /* STICKIES */}
 			<NavProvider>
 				<Navigation /> 
-				<HomePermalink /> 
-				{ !isSmall && 
-					<Socials 
-						className={ s.socials }
-					/> }
-				{ !isSmall && <HistoryChannel /> }
- 				{ !isSmall && <WatchNow /> }
-
+				<FixedElements />
 			{/* PAGES */}
-			
 				<Router>
 					<main className={ s.container }>
 						<Route path="/" exact component={ Landing }/> 
