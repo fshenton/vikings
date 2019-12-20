@@ -8,7 +8,7 @@ function renderImages(data, index) {
 	const mask = { 
 		"WebkitMaskImage": `url(/assets/2d/landing/${name}-mask.png)`,
 		"MozMaskImage": `url(/assets/2d/landing/${name}-mask.png)`,
-		"maskImage": `url(/assets/2d/landing/${name}-mask.png}`
+		"maskImage": `url(/assets/2d/landing/${name}-mask.png)`
 	};
 
 	return (
