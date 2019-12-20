@@ -33,7 +33,7 @@ export default function HistoryChannel(){
 			className={ `${s.history} ${active ? s.active : s.inactive}` }
 			destination="https://www.history.co.uk/"
 			aria-label="The History Channel"
-			aria-hidden={ open }
+			aria-hidden={ open || !active }
 		>
 			<svg className={ s.outline } viewBox="0 0 100 100" preserveAspectRatio="xMidYMin">
 				<filter id="powder">

@@ -7,7 +7,6 @@
 	left: var(--home-spacing);
 	z-index: 5;
 	font-size: 1rem;
-	opacity: 0;
 	--home-spacing: 2em;
 	background: center/contain no-repeat url("/assets/2d/static-elements/viking-home.png");
 	transition: filter 0.3s, 
@@ -15,13 +14,15 @@
 				transform 1s .6s;
 
 	&.active {
-		opacity: 1;
 		transform: translateY(0);
 	}
 
 	&.inactive {
-		opacity: 0;
 		transform: translateY(20%);
+	}
+
+	&[aria-hidden="true"] {
+		transition: opacity 1s, visibility 0s 1.1s;
 	}
 
 	&:hover,

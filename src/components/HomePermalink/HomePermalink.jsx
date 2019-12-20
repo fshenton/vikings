@@ -32,7 +32,7 @@ export default function HomePermalink(){
 			className={ `${s.home} ${active ? s.active : s.inactive}` } 
 			destination="/"
 			aria-label="Home."
-			aria-hidden={ open }
+			aria-hidden={ open || !active }
 		/>
 	);
 }// HomePermalink
