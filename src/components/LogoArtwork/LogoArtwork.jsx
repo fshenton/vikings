@@ -1,4 +1,5 @@
-import React, {useEffect, useState} from "react";
+import React, {useContext, useEffect, useState} from "react";
+import { ClientContext as Client } from "COMPONENTS/Client/";
 import { RENDER, data, s } from "./";
 
 export default function LogoArtwork(props){
@@ -8,7 +9,15 @@ export default function LogoArtwork(props){
 
 	const { className } = props;
 
-	// STATE AND EFFECTS
+	//CONTEXT 
+	//--------------------------
+
+	const {
+		isFirefox
+	} = useContext(Client).state;
+
+	//STATE AND EFFECTS
+	//---------------------------
 
 	const [active, setActive] = useState(false);
 
@@ -28,8 +37,10 @@ export default function LogoArtwork(props){
 
 	const images = data.map(RENDER.images);
 
+	const blurClass = isFirefox ? s.noBlur : s.blur; 
+
 	return (
-		<div className={ `${s.wrapper} ${className} ${active ? s.active : s.inactive}` }>
+		<div className={ `${s.wrapper} ${blurClass} ${className} ${active ? s.active : s.inactive}` }>
 			{ images }
 		</div>
 	);

@@ -11,7 +11,14 @@ $animation_delay: 0s; //originally 1s but was very slow start
 	justify-content: center;
 	align-items: center;
 	transform: translate(-50%, -50%);
-	animation: blur-in-out 2.85s;
+	
+	&.noBlur {
+		animation: none;
+	}
+
+	&.blur {
+		animation: blur-in-out 2.85s;
+	}
 
 	&.active {
 		img {
