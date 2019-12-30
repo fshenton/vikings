@@ -63,7 +63,7 @@
 		}
 
 		&[aria-expanded="true"] ~ .socials {
-			transition: opacity 1s 1s;
+			transition: opacity 1s 1.5s;
 		}
 
 		&[aria-expanded="false"] ~ .socials {
