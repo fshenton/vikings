@@ -55,7 +55,7 @@ export default function Navigation(){
 			</ul>
 			<Socials 
 				className={ s.socials }
-				hidden={ !isOpen }
+				hidden={ !open }
 			/>
 		</nav>
 	);
