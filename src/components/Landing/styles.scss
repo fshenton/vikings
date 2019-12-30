@@ -115,11 +115,16 @@
 
 		}
 
-		.paragraph>a{
+		.paragraph > a{
 			font-weight: bold;
 
 			&:hover, &:focus {
 				text-decoration: underline;
+			}
+
+			&:focus {
+				outline: solid white 1px;
+				outline-offset: 1px;
 			}
 		}
 

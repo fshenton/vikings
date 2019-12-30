@@ -143,7 +143,7 @@ export default function Character(props){
 			aria-label={`Character ${index + 1} of ${characterData.length}.`}
 			aria-hidden={ hidden }>
 			<article className={ s.container }
-				aria-hidden={ isHidden }
+				aria-hidden={ isHidden || !isActive }
 			>
 				<div className={ s.content }>
 					<div className={ s.headings }>

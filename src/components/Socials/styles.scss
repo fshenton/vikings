@@ -30,20 +30,17 @@
 				background-image: url("assets/2d/socials/instagram.svg");
 			}
 
-			&:hover,
-			&:focus {
+			&:hover {
 				filter: brightness(1.5);
-			}
 
-			&:hover,
-			&:focus {
 				.circle {
 					animation: encircle 1s cubic-bezier(0.645, 0.045, 0.355, 1) forwards;
 				}
 			}
 
 			&:focus {
-				outline: none;
+				outline: solid white 1px;
+				outline-offset: 2px;
 			}
 		}
 	

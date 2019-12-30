@@ -43,7 +43,8 @@
 			transition: filter 0.3s;
 
 			&:focus {
-				outline-color: var(--font_color);
+				outline: solid white 1px;
+				outline-offset: 4px;
 			}
 
 			&:focus, 

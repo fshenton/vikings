@@ -28,14 +28,18 @@
 		opacity: 1;
 	}
 
-	&:hover, 
-	&:focus {
+	&:hover {
 		filter: brightness(1.25);
 
 		.circle {
 			outline: none;
 			animation: encircle 1s cubic-bezier(0.645, 0.045, 0.355, 1) forwards;
 		}
+	}
+
+	&:focus {
+		outline: solid white 1px;
+		outline-offset: 5px;
 	}
 
 	&:active .outline {

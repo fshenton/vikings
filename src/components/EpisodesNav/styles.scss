@@ -41,17 +41,17 @@
 
 		.prev, .next {			
 			&:focus {
-				outline: none;
-			}
+				outline: solid white 1px;
+				outline-offset: 2px;
+			}			
 		}
 
 		.prev {
 			order: 1;
 			
-			&:hover,
-			&:focus {
+			&:hover {
 				transform: translateX(-0.25em);
-			}			
+			}
 
 			&:active {
 				transform: scale(0.9) translateX(-0.25em);
@@ -62,8 +62,7 @@
 			order: 3;
 			transform: scaleX(-1);
 		
-			&:hover,
-			&:focus {
+			&:hover {
 				transform: scaleX(-1) translateX(-0.25em);
 			}
 
@@ -112,7 +111,8 @@
 					font-style: normal;
 
 					&:focus {
-						outline: none;
+						outline: solid white 1px;
+						outline-offset: 2px;
 					}
 
 					&:focus:not(:active) {

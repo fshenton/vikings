@@ -191,8 +191,7 @@
 				text-decoration: none;
 				--button_margin: 1em;
 				transition: transform 0.15s,
-							filter 0.15s, 
-							outline 0.15s;
+							filter 0.15s;
 
 				&::before, 
 				&::after {
@@ -223,7 +222,8 @@
 
 			.prev, .next {			
 				&:focus {
-					outline: none;
+					outline: solid white 1px;
+					outline-offset: 1px;
 				}
 
 				&:active {
@@ -232,20 +232,14 @@
 			}
 
 			.prev {
-				&:hover,
-				&:focus {
-					.label {
-						transform: translateX(-0.5em);
-					}
-				}			
+				&:hover .label {
+					transform: translateX(-0.5em);
+				}		
 			}
 
 			.next {
-				&:hover,
-				&:focus {
-					.label {
-						transform: translateX(0.5em);
-					}
+				&:hover .label {
+					transform: translateX(0.5em);
 				}
 			}
 
