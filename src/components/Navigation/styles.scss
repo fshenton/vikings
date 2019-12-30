@@ -10,7 +10,6 @@
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
-	pointer-events: none;
 	transition: background-color 0.5s,
 				backdrop-filter 0.5s;
 	transition-delay: 0s; 
@@ -18,11 +17,18 @@
 	&.closed {
 		background-color: transparent;
 		backdrop-filter: blur(0);
+		pointer-events: none;
 	}
 
 	&.open {
 		background-color: var(--background_color__semi-trans);
 		backdrop-filter: blur(3.5px);
+	}
+
+	.overlay {
+		width: 100%;
+		height: 100%;
+		position: absolute;
 	}
 }
 
