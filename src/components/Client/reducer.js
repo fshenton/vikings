@@ -25,6 +25,19 @@ export default function reducer(state, action){
 				isMedium,
 				isLarge
 			};
+		case ACTIONS.SET_BROWSER:
+			const isChrome = !!window.chrome && (!!window.chrome.webstore || !!window.chrome.runtime);
+			const isEdge = isChrome && (navigator.userAgent.indexOf("Edg") != -1);
+			const isSafari = /constructor/i.test(window.HTMLElement) || (function (p) { return p.toString() === "[object SafariRemoteNotification]"; })(!window['safari'] || (typeof safari !== 'undefined' && safari.pushNotification));
+			const isFirefox = typeof InstallTrigger !== 'undefined';
+
+			return {
+				...state,
+				isChrome,
+				isEdge,
+				isSafari,
+				isFirefox
+			};
 		default:
 			throw new Error("Invalid action used.")
 			break;
