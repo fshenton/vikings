@@ -11,7 +11,6 @@
 	flex-direction: column;
 	background: url("/assets/2d/shared/bg-portrait.jpg") center / cover no-repeat;
 	background-attachment: fixed;
-	transition: opacity 1s;
 
 	&.active {
 		.name, 
@@ -52,14 +51,18 @@
 		}
 	}
 
-	&[aria-hidden="false"]{
+	&[aria-hidden="false"],
+	&[aria-hidden="false"] .container {
 		opacity: 1;
 		pointer-events: all;
+		transition: opacity 0.6s;
 	}
 
-	&[aria-hidden="true"]{
+	&[aria-hidden="true"],
+	&[aria-hidden="true"] .container {
 		opacity: 0;
-		pointer-events: none
+		pointer-events: none;
+		transition: opacity 0.6s, visibility 0s 0.7s;
 	}
 }
 
@@ -67,15 +70,6 @@
 		position: relative;
 		z-index: 4;
 		transition-property: opacity;
-
-		&[aria-hidden="false"]{
-			transition-duration: 0.5s;
-			transition-delay: 0.5s;
-		}
-
-		&[aria-hidden="true"]{
-			transition: opacity 0.6s, visibility 0s 0.7s;
-		}
 	}
 
 		.content {
@@ -140,7 +134,6 @@
 					width: 100%;
 					max-width: 64ch;
 					overflow-x: hidden;
-					// margin-bottom: 7em;
 				}
 
 					.body {
@@ -367,7 +360,7 @@
 				overflow: hidden;
 
 				.body {
-					width: calc(100% + 18px);
+					width: calc(100% + 17px);
 					height: 100%;
 					overflow-y: scroll;
 
@@ -405,7 +398,8 @@
 	}
 
 		.scrollHider {
-			height: 20vh;
+			height: 8rem;
+			max-height: 15vh;
 			padding-top: 0;
 			margin-left: 0;
 		}
