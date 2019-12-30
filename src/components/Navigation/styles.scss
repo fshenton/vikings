@@ -85,6 +85,11 @@
 				margin-top: 0.7em
 			}
 
+			a:focus {
+				outline: solid white 1px;
+				outline-offset: 4px;
+			}
+
 			.line {
 				width: 3em;
 				height: 100%;

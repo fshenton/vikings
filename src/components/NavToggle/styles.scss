@@ -10,6 +10,7 @@
 	letter-spacing: 0.25em;
 	transition: opacity 2s,
 				transform 0.3s;
+	cursor: pointer;
 
 	&.initial {
 		opacity: 1;
@@ -44,10 +45,11 @@
 	}
 
 	&:focus {
-		outline: none;
+		outline: white solid 1px;
+    	outline-offset: 4px;
 	}
 
-	&:hover{
+	&:hover {
 		.bar {
 			&:first-child,
 			&:last-child {
@@ -64,6 +66,7 @@
 		text-transform: uppercase;
 		color: var(--font_color);
 		transform: translateY(20%);
+		pointer-events: none;
 	}
 
 		.icon {
