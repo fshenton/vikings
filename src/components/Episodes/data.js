@@ -10,7 +10,7 @@ export default [
 			description: "Man looks on, concerned."
 		},
 		trailer: {
-			src: "/assets/video/vikings-large.mp4"
+			src: "/assets/video/video1-1080.mp4"
 		},
 		poster: {
 			src: "/assets/2d/episodes/trailer-poster-large.jpg",
@@ -28,7 +28,7 @@ export default [
 			description: "Man dramatically looks out at the sea."
 		},
 		trailer: {
-			src: "/assets/video/vikings-large.mp4"
+			src: "/assets/video/video2-1080.mp4"
 		},
 		poster: {
 			src: "/assets/2d/episodes/trailer-poster-large.jpg",
@@ -46,7 +46,7 @@ export default [
 			description: "Man yells angrily."
 		},
 		trailer: {
-			src: "/assets/video/vikings-large.mp4"
+			src: "/assets/video/video3-1080.mp4"
 		},
 		poster: {
 			src: "/assets/2d/episodes/trailer-poster-large.jpg",
@@ -65,7 +65,7 @@ export default [
 			description: "Description of episode 4 thumbnail."
 		},
 		trailer: {
-			src: "/assets/video/vikings-large.mp4"
+			src: "/assets/video/video1-1080.mp4"
 		},
 		poster: {
 			src: "/assets/2d/episodes/trailer-poster-large.jpg",
@@ -84,7 +84,7 @@ export default [
 			description: "Description of episode 5 thumbnail."
 		},
 		trailer: {
-			src: "/assets/video/vikings-large.mp4"
+			src: "/assets/video/video2-1080.mp4"
 		},
 		poster: {
 			src: "/assets/2d/episodes/trailer-poster-large.jpg",
@@ -102,7 +102,7 @@ export default [
 			description: "Description of episode 6 thumbnail."
 		},
 		trailer: {
-			src: "/assets/video/vikings-large.mp4"
+			src: "/assets/video/video3-1080.mp4"
 		},
 		poster: {
 			src: "/assets/2d/episodes/trailer-poster-large.jpg",
