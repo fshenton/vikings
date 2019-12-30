@@ -76,7 +76,20 @@ export default function PreviewOverlay(props){
 			player.current.pause();
 			setPlaying(false);
 		}
-	}
+	}// togglePlaying
+
+	const [muted, setMuted] = useState(true);
+
+	function toggleMuted() {
+		if(!muted){
+			// player.current.mute();
+			setMuted(true);
+		}
+		else {
+			// player.current.unmute();
+			setMuted(false);
+		}
+	}// toggleMuted
 	
 	// EFFECTS
 	// ------------------------------
@@ -224,12 +237,19 @@ export default function PreviewOverlay(props){
 				aria-controls="episode__preview__video"
 				aria-label="pause"
 			/>  
+			<div 
+				className={ `${s.volume} ${muted ? s.unmute : s.mute}` }
+				onClick={ toggleMuted }
+				aria-hidden={ !mouseMoving }
+				aria-controls="episode__preview__video"
+				aria-label="mute"
+			/>  
 			<video 
 				id="episode__preview__video"
 				ref={ player }
 				className={ s.video }
 				autoPlay={ true }
-				muted={ true } //to reduce annoyance during dev
+				muted={ muted } 
 				loop={ true }
 				poster={ posterSrc }
 			>
