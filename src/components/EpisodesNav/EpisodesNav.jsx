@@ -60,20 +60,24 @@ export default function EpisodesNav(){
 	return (
 		<nav className={ s.wrapper } aria-hidden={ isHidden }>
 			<div className={ s.container }>
-				<button 
+				<button
 					className={ `${s.button} ${s.prev}` }
 					aria-label="Previous episode."
 					aria-controls="episodes__items episodes__pagination"
 					aria-hidden={ isFirstEpisodeActive }
 					onClick={ prevEpisode }
-				/>
+				>
+					<span className={ s.icon }/>
+				</button>
 				<button 
 					className={ `${s.button} ${s.next}` }
 					aria-label="Next episode." 
 					aria-controls="episodes__items episodes__pagination"
 					aria-hidden={ isLastEpisodeActive }
 					onClick={ nextEpisode }
-				/>
+				>
+					<span className={ s.icon }/>
+				</button>
 				{ bottomPagination && pagination }				
 			</div> 
 			{ sidePagination && pagination }
