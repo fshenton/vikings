@@ -13,17 +13,16 @@
 	pointer-events: none;
 	transition: background-color 0.5s,
 				backdrop-filter 0.5s;
+	transition-delay: 0s; 
 	
 	&.closed {
 		background-color: transparent;
 		backdrop-filter: blur(0);
-		transition-delay: 0s; 
 	}
 
 	&.open {
 		background-color: var(--background_color__semi-trans);
 		backdrop-filter: blur(3.5px);
-		transition-delay: 0.6s; 
 	}
 }
 
