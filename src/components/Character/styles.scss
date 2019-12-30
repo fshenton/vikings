@@ -52,14 +52,16 @@
 	}
 
 	&[aria-hidden="false"],
-	&[aria-hidden="false"] .container {
+	&[aria-hidden="false"] .container,
+	&[aria-hidden="false"] .controls {
 		opacity: 1;
 		pointer-events: all;
 		transition: opacity 0.6s;
 	}
 
 	&[aria-hidden="true"],
-	&[aria-hidden="true"] .container {
+	&[aria-hidden="true"] .container,
+	&[aria-hidden="true"] .controls {
 		opacity: 0;
 		pointer-events: none;
 		transition: opacity 0.6s, visibility 0s 0.7s;

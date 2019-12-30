@@ -168,7 +168,6 @@ export default function Character(props){
 				</div>
 				<nav 
 					className={ s.controls }
-					aria-hidden={ !isActive }
 				>
 					{ prevButton }
 					{ nextButton }
