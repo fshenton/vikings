@@ -90,6 +90,7 @@
 				background-color: var(--font_color);
 				transform: translateY(0);
 				transition: transform 0.3s;
+				filter: drop-shadow(0.5px 0.5px 0.5px black);
 			}
 
 
@@ -97,6 +98,7 @@
 			cursor: pointer;
 			font-size: 0;
 			transition: opacity 0.15s linear;
+			text-shadow: black 0.5px 0.5px 0.5px;
 
 			&.open, &.close {
 				font-size: 1.5rem;
