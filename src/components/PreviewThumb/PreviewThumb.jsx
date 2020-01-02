@@ -5,7 +5,8 @@ import {
 	ACTIONS, 
 	EpisodesContext as Episodes 
 } from "COMPONENTS/Episodes/";
-import { NavContext as Nav } from "COMPONENTS/Navigation";
+import { NavContext as Nav } from "COMPONENTS/Navigation/";
+import { ClientContext as Client } from "COMPONENTS/Client/";
 import { s } from "./";
 
 export default function PreviewThumb(props){
@@ -43,6 +44,8 @@ export default function PreviewThumb(props){
 		open: isNavOpen
 	} = useContext(Nav).state;
 
+	const { isFirefox } = useContext(Client).state;
+
 	// STATE & EFFECT
 	// -----------------------------
 
@@ -79,6 +82,8 @@ export default function PreviewThumb(props){
 	const isHidden = isNavOpen;
 	const isActive = active && visible && !overlayActive;
 
+	const faded    = isHidden && isFirefox ? s.faded : s.visible;
+
 	return (
 		<aside className={ `${s.wrapper} ${isActive ? s.active : s.inactive}` }>
 			<div className={ s.thumbnail }>
@@ -89,7 +94,7 @@ export default function PreviewThumb(props){
 					aria-label={ `Watch preview for episode ${episodeNo}: ${title}.` }
 					onClick={ openOverlay }
 				>
-					<picture className={ `${s.image}` }>
+					<picture className={ `${s.image} ${faded}` }>
 						<source 
 							srcSet={smallSrc} 
 							media="(max-width: 767px)"
