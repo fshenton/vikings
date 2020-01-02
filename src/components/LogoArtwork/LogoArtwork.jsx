@@ -13,7 +13,8 @@ export default function LogoArtwork(props){
 	//--------------------------
 
 	const {
-		isFirefox
+		isFirefox,
+		isEdge
 	} = useContext(Client).state;
 
 	//STATE AND EFFECTS
@@ -41,7 +42,13 @@ export default function LogoArtwork(props){
 
 	return (
 		<div className={ `${s.wrapper} ${blurClass} ${className} ${active ? s.active : s.inactive}` }>
-			{ images }
+			{ !isEdge && images }
+			{ isEdge && 
+				<img 
+					className={ s.staticLogo }
+					src="assets/2d/landing/V-bone.png" 
+				/>
+			}
 		</div>
 	);
 }// LogoArtwork

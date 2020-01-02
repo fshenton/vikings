@@ -14,7 +14,6 @@
 
 		.heading,
 		.subheading {
-
     		transform: translateY(0);
 		}
 	}
@@ -29,7 +28,6 @@
 
 		.heading,
 		.subheading {
-			
     		transform: translateY(100%);
 		}
 	}
@@ -58,12 +56,12 @@
 	}
 
 		.background {
-			opacity: 5%;	
+			opacity: 0.05;	
 			z-index: 0;
 		}
 
 		.foreground {
-			opacity: 11%;
+			opacity: 0.11;
 			z-index: 4;
 			pointer-events: none;
 		}

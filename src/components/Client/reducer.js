@@ -27,7 +27,7 @@ export default function reducer(state, action){
 			};
 		case ACTIONS.SET_BROWSER:
 			const isChrome = !!window.chrome && (!!window.chrome.webstore || !!window.chrome.runtime);
-			const isEdge = isChrome && (navigator.userAgent.indexOf("Edg") != -1);
+			const isEdge = /Edge/.test(navigator.userAgent);
 			const isSafari = /constructor/i.test(window.HTMLElement) || (function (p) { return p.toString() === "[object SafariRemoteNotification]"; })(!window['safari'] || (typeof safari !== 'undefined' && safari.pushNotification));
 			const isFirefox = typeof InstallTrigger !== 'undefined';
 

@@ -46,6 +46,13 @@ $animation_delay: 0s; //originally 1s but was very slow start
 		mask-size: contain;
 	}
 
+	.staticLogo { //for edge
+		width: 400px;
+		height: 500px;		
+		position: absolute;
+		opacity: 0;
+	}
+
 		/* V LOGO BONES */
 
 		.big-bone {
