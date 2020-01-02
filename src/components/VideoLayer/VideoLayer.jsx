@@ -18,6 +18,7 @@ export default function VideoLayer(props){
 	return (
 		<div className={ `${s.wrapper } ${className}` }>	
 			<video 
+				className={ s.video }
 				poster={ poster } 
 				autoPlay 
 				loop

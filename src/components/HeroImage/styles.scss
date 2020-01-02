@@ -8,7 +8,7 @@
 	z-index: 0;
 	
 	&.inactive {
-		transition: opacity 1s, visibility 0s 1.1s;
+		transition: opacity 1s, visibility 0.1s 1.1s;
 
 		.image img {
 			opacity: 0;
@@ -47,9 +47,9 @@
 			z-index: 2;
 			object-fit: contain;
 			object-position: right;
-			transition: opacity 1.5s ease-in-out, 
-					transform 1.5s ease-in-out, 
-					filter 1.5s  ease-in-out;
+			transition: opacity 1.5s ease-in-out,
+						transform 1.5s ease-in-out,
+						filter 1.5s  ease-in-out;
 			-webkit-mask-size: contain;
 			-moz-mask-size: contain;
 			mask-size: contain;
