@@ -8,7 +8,8 @@ export default [
 			src: { 
 				small: "./assets/2d/characters/ivar-portrait.jpg", 
 				medium: "./assets/2d/characters/ivar-medium.jpg", 
-				large: "./assets/2d/characters/ivar-large.jpg" 
+				large: "./assets/2d/characters/ivar-large.jpg",
+				nomask: "./assets/2d/characters/ivar-nomask.png"
 			},
 			mask: {
 				small: "./assets/2d/characters/ivar-portrait-mask.png", 
@@ -27,7 +28,8 @@ export default [
 			src: { 
 				small: "./assets/2d/characters/ubbe-portrait.jpg", 
 				medium: "./assets/2d/characters/ubbe-medium.jpg", 
-				large: "./assets/2d/characters/ubbe-large.jpg" 
+				large: "./assets/2d/characters/ubbe-large.jpg",
+				nomask: "./assets/2d/characters/ubbe-nomask.png"
 			},
 			mask: {
 				small: "./assets/2d/characters/ubbe-portrait-mask.png", 
@@ -45,7 +47,8 @@ export default [
 			src: { 
 				small: "./assets/2d/characters/lagertha-portrait.jpg", 
 				medium: "./assets/2d/characters/lagertha-medium.jpg", 
-				large: "./assets/2d/characters/lagertha-large.jpg" 
+				large: "./assets/2d/characters/lagertha-large.jpg",
+				nomask: "./assets/2d/characters/lagertha-nomask.png"
 			},
 			mask: {
 				small: "./assets/2d/characters/lagertha-portrait-mask.png", 

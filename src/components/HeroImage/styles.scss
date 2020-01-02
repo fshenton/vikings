@@ -10,7 +10,8 @@
 	&.inactive {
 		transition: opacity 1s, visibility 0.1s 1.1s;
 
-		.image img {
+		.image img,
+		.noMaskImage {
 			opacity: 0;
 			transform: scale(0.95);
 			filter: blur(0.5em);
@@ -20,7 +21,8 @@
 	&.active {
 		transition: opacity 1s;
 
-		.image img {
+		.image img,
+		.noMaskImage {
 			opacity: 1;
 			transform: scale(1);
 			filter: blur(0);
@@ -59,6 +61,25 @@
 		}
 	}
 
+	.noMaskImage {
+		display: block;
+		width: 100%;
+		height: 100%;
+		position: relative;
+		z-index: 2;
+		object-fit: contain;
+		object-position: right;
+		transition: opacity 1.5s ease-in-out,
+					transform 1.5s ease-in-out,
+					filter 1.5s  ease-in-out;
+		-webkit-mask-size: contain;
+		-moz-mask-size: contain;
+		mask-size: contain;
+		-webkit-mask-position: right;
+		-moz-mask-positon: right;
+		mask-position: right;
+	}
+
 // Mobile landscape
 @media (orientation: landscape) {
 	.hero {
@@ -86,7 +107,8 @@
 		}
 	}
 
-		.image img {
+		.image img,
+		.noMaskImage {
 			width: 100%;
 			height: 100%;
 			object-fit: cover;

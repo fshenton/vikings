@@ -12,7 +12,8 @@ export default function HeroImage(props){
 		src: {
 			small: smallSrc = "",
 			medium: mediumSrc = "",
-			large: largeSrc = ""
+			large: largeSrc = "",
+			nomask: noMask = ""
 		},
 		mask: {
 			small: smallMask = "",
@@ -29,7 +30,8 @@ export default function HeroImage(props){
 
 	const {
 		isSmall,
-		isMedium
+		isMedium,
+		isEdge
 	} = useContext(Client).state;
 
 	let maskPath;
@@ -51,6 +53,8 @@ export default function HeroImage(props){
 		"maskImage": `url(${maskPath})`,
 	};
 
+	if(isEdge) console.log("is edge");
+
 	return (
 		<div 
 			className={ `
@@ -60,28 +64,37 @@ export default function HeroImage(props){
 			`} 
 			id={ `character__hero__${id}` }
 			> 	
-			<picture className={ s.image }>
-				<source 
-					srcSet={smallSrc} 
-					media="(max-width: 767px)"
-					alt={description}
-				/>
-				<source 
-					srcSet={mediumSrc} 
-					media="(min-width: 768px) and (max-width: 1024px)"
-					alt={description}
-				/>
-				<source 
-					srcSet={largeSrc} 
-					media="(min-width: 1025px)"
-					alt={description}
-				/>		
+			{ !isEdge && 
+				<picture className={ s.image }>
+					<source 
+						srcSet={smallSrc} 
+						media="(max-width: 767px)"
+						alt={description}
+					/>
+					<source 
+						srcSet={mediumSrc} 
+						media="(min-width: 768px) and (max-width: 1024px)"
+						alt={description}
+					/>
+					<source 
+						srcSet={largeSrc} 
+						media="(min-width: 1025px)"
+						alt={description}
+					/>		
+					<img 
+						src={ largeSrc } 
+						alt={ description }
+						style={ mask }
+					/>
+				</picture>
+			}
+			{ isEdge && 
 				<img 
-					src={ largeSrc } 
+					className={ s.noMaskImage }
 					alt={ description }
-					style={ mask }
+					src={ noMask }
 				/>
-			</picture>
+			}
 		</div>
 	);
 }// HeroImage
