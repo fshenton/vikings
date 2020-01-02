@@ -16,7 +16,7 @@ Any changes to files inside the src/ directory will trigger a hot reload
 
 ...Browser support
 - Chrome 👌
-- Firefox 🙂
+- Firefox 😒
 - Edge 😩
 - Safari 🤷‍♀️
 
