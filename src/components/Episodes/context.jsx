@@ -1,7 +1,7 @@
 import React, { createContext, useReducer } from "react";
 import { 
-	reducer, 
-	data
+	data,
+	reducer 
 } from "./";
 
 const EpisodesContext = createContext();

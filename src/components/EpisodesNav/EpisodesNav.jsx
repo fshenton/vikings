@@ -1,15 +1,14 @@
 import React, { useContext, useEffect, useState } from "react";
+import { s, RENDER } from "./";
+import { ClientContext as Client } from "COMPONENTS/Client/";
 import { 
 	data,
 	ACTIONS,
 	EpisodesContext as Episodes
 } from "COMPONENTS/Episodes/";
 import { NavContext as Nav } from "COMPONENTS/Navigation/";
-import { ClientContext as Client } from "COMPONENTS/Client/";
-import { s, RENDER } from "./";
 
 export default function EpisodesNav(){
-	
 	// CONTEXT
 	// -------------------------------
 	const {
@@ -32,7 +31,7 @@ export default function EpisodesNav(){
 	} = useContext(Client).state;
 
 	// STATE AND EFFECTS
-
+	// -------------------------------
 	const [active, setActive] = useState(false);
 
 	useEffect(fireTransition, []);
@@ -80,9 +79,9 @@ export default function EpisodesNav(){
 			<div className={ s.container }>
 				<button
 					className={ `${s.button} ${s.prev}` }
-					aria-label="Previous episode."
 					aria-controls="episodes__items episodes__pagination"
 					aria-hidden={ isFirstEpisodeActive || isHidden }
+					aria-label="Previous episode."
 					onClick={ prevEpisode }
 					tabIndex={ tabIndex }
 				>
@@ -90,9 +89,9 @@ export default function EpisodesNav(){
 				</button>
 				<button 
 					className={ `${s.button} ${s.next}` }
-					aria-label="Next episode." 
 					aria-controls="episodes__items episodes__pagination"
 					aria-hidden={ isLastEpisodeActive || isHidden }
+					aria-label="Next episode." 
 					onClick={ nextEpisode }
 					tabIndex={ tabIndex }
 				>

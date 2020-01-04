@@ -1,13 +1,13 @@
 import React, { useContext } from "react";
+import UTILS from "SHARED/utils.js";
 import { s } from "./";
-import Link from "COMPONENTS/Link/";
+import { ClientContext as Client } from "COMPONENTS/Client/";
 import { 
 	ACTIONS,
 	EpisodesContext as Episodes
 } from "COMPONENTS/Episodes/";
+import Link from "COMPONENTS/Link/";
 import { NavContext as Nav } from "COMPONENTS/Navigation/";
-import { ClientContext as Client } from "COMPONENTS/Client/";
-import UTILS from "SHARED/utils.js";
 
 function renderPagination(data){
 	const pagination = data.map(renderPaginationLink);	
@@ -20,11 +20,9 @@ function renderPagination(data){
 			{ pagination }
 		</ol> 
 	);
-}//renderPagination
-
+}// renderPagination
 
 function renderPaginationLink(data, index){
-
 	// CONTEXT
 	// --------------------------
 	const { 
@@ -52,7 +50,6 @@ function renderPaginationLink(data, index){
 		});
 	}// changeEpisode
 
-
 	// RENDER
 	// --------------------------
 	const { 
@@ -64,6 +61,7 @@ function renderPaginationLink(data, index){
 
 	const isActive 	= index === activeIndex;
 
+	//calculate the distance from activeIndex for formatting
 	let opacity = 0;
 	if(isActive) opacity = 1;
 	else {
@@ -78,7 +76,7 @@ function renderPaginationLink(data, index){
 	const offset = index - activeIndex;
 	
 	let translate, factor;
-	if(isLarge){
+	if(isLarge){ //vertically aligned on desktop only
 		translate   = "translateY";
 		factor      = 2;
 	} else { 
@@ -103,14 +101,14 @@ function renderPaginationLink(data, index){
 	return (
 		<li 
 			className={ `${s.item} ${isActive ? s.active : s.inactive}` }
-			style={ style }
-			key={ `episode__pagination__${episodeNo}` }
 			aria-current={ isActive }
 			aria-hidden={ isHidden }
+			key={ `episode__pagination__${episodeNo}` }
+			style={ style }
 		>
 			<Link 
-				destination={ `#${episodeId}` }
 				className={ s.paginationLink }
+				destination={ `#${episodeId}` }
 				onClick={ setActiveIndex }
 				tabIndex={ tabIndex }
 			>

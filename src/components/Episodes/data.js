@@ -111,5 +111,3 @@ export default [
 		synopsis: "Lagertha is betrayed, and Bjorn must find a way to support the distraught queen; Floki and his settlers arrive in a new land, but it is far from what they expected."
 	}
 ];
-
-

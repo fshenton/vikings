@@ -1,17 +1,16 @@
 import React from "react";
-import Episode, { TrailerProvider } from "COMPONENTS/Episode/";
-import { data as episodesData } from "./";
 import UTILS from "SHARED/utils.js";
+import { data as episodesData } from "./";
+import Episode, { TrailerProvider } from "COMPONENTS/Episode/";
 
 function renderEpisode(data, index){
-
 	const { 
 		number,
-		title,
+		poster,
 		synopsis,
+		title,
 		thumbnail,
-		trailer,
-		poster
+		trailer
 	} = data;
 
 	const id = UTILS.convertToSafeString(title, "-");
@@ -27,14 +26,14 @@ function renderEpisode(data, index){
 		>
 			<Episode
 				id={ id }
-				key={ id }
 				index={ index }
+				key={ id }
 				number={ number }
-				title={ title }
+				poster={ poster }
 				synopsis={ synopsis }
 				thumbnail={ thumbnail }
+				title={ title }
 				trailer={ trailer }
-				poster={ poster }
 			/>
 		</TrailerProvider>
 	);

@@ -31,4 +31,4 @@ export default function reducer(state, action){
 			throw new Error("Invalid action requested.");
 			break;
 	}
-}
+}// reducer
