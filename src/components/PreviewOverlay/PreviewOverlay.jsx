@@ -145,6 +145,7 @@ export default function PreviewOverlay(props){
 	// RENDER
 	// ----------------------------
 	const hidden            = !isOverlayActive;
+	const tabIndex			= hidden ? -1 : 0;
 	
 	const isFirst           = index === 0;
 	const isLast            = index === episodeCount - 1;
@@ -186,6 +187,7 @@ export default function PreviewOverlay(props){
 								href={ prevTrailerSrc }
 								aria-label="Previous."
 								onClick={ prevEpisode }
+								tabIndex={ tabIndex }
 							>
 								<span className={ s.prevLabel }>
 									Prev
@@ -197,6 +199,7 @@ export default function PreviewOverlay(props){
 								className={ `${s.next} ${s.button}` }
 								href={ nextTrailerSrc } 
 								onClick={ nextEpisode }
+								tabIndex={ tabIndex }
 							>
 								<span className={ s.nextLabel }>
 									Next
@@ -210,6 +213,7 @@ export default function PreviewOverlay(props){
 						href={ `#${episodeId}` }
 						onClick={ closeOverlay }
 						aria-hidden={ !mouseMoving }
+						tabIndex={ tabIndex }
 					> 
 						<span className={ s.label }> 
 							Close
