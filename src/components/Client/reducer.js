@@ -2,7 +2,6 @@ import { ACTIONS }  from "./";
 import UTILS from "SHARED/utils.js";
 
 export default function reducer(state, action){
-
 	const {
 		type,
 		value
@@ -13,7 +12,7 @@ export default function reducer(state, action){
 			const { width } = UTILS.getDeviceDimensions(); // currently just using width
 			
 			const tabletStart = 768;
-			const desktopStart = 1200;
+			const desktopStart = 1025;
 
 			const isSmall = width < tabletStart;
 			const isMedium = width >= tabletStart && width < desktopStart;
@@ -42,4 +41,4 @@ export default function reducer(state, action){
 			throw new Error("Invalid action used.")
 			break;
 	}	
-}
+}// reducer

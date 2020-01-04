@@ -1,10 +1,10 @@
 import React, { createContext, useReducer, useEffect } from "react";
+import UTILS from "SHARED/utils.js";
 import { 
-	ClientContext as Client,
 	ACTIONS, 
+	ClientContext as Client,
 	reducer 
 } from "./";
-import UTILS from "SHARED/utils.js";
 
 const initialState = {
 	isSmall:  true, //default 
@@ -35,7 +35,6 @@ function ClientProvider(props){
 		};
 	}// updateResizeListeners
 
-
 	function syncViewSize(){
 		dispatch({
 			type: ACTIONS.UPDATE_VIEW_SIZE
@@ -47,9 +46,6 @@ function ClientProvider(props){
 			type: ACTIONS.SET_BROWSER
 		});
 	}// setBrowser
-
-	// EFFECTS
-	// ------------------------
 
 	//set device dimensions on mount
 	useEffect(syncViewSize, []); 
@@ -65,7 +61,7 @@ function ClientProvider(props){
 			{ children }
 		</ClientContext.Provider>
 	);
-}
+}// ClientProvider
 
 export {
 	ClientContext,
