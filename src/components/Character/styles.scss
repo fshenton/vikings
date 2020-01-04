@@ -1,6 +1,7 @@
 // Mobile portrait
 .wrapper {
 	display: flex;
+	flex-direction: column;
 	width: 100%;
 	min-height: 100%;
 	padding: 10%; 		//GUESS
@@ -8,15 +9,14 @@
 	top: 0;
 	left: 0;
 	z-index: 2;
-	flex-direction: column;
 	background: url("/assets/2d/shared/bg-portrait.jpg") center / cover no-repeat;
 	background-attachment: fixed;
 
 	&.active {
-		.name, 
-		.nickname, 
 		.actor, 
-		.body {
+		.body, 
+		.name, 
+		.nickname { 
 			opacity: 1;
 			transform: translateY(0);
 		}
@@ -31,10 +31,10 @@
 	&.inactive {
 		max-height: 100%;
 
-		.name, 
-		.nickname, 
 		.actor, 
-		.body {
+		.body,
+		.name, 
+		.nickname {
 			opacity: 0;
 		}
 
@@ -81,9 +81,9 @@
 	}
 
 		.content {
-			margin-top: 40vh;
 			max-width: 80vw;
 			position: relative;	
+			margin-top: 40vh;
 		}
 
 			.headings {
@@ -100,17 +100,17 @@
 				}
 	
 				.name {
-					margin-bottom: -0.1em; 
-					font-size: 5em;
-					overflow: hidden;
 					height: 1.1em;
+					margin-bottom: -0.1em; 
+					overflow: hidden;
+					font-size: 5em;
 				}
 
 				.nickname {
+					height: 1.1em;
 					margin-bottom: 0.5em; // GUESS
 					font-size: 2.6em;
 					font-family: var(--font_family__heading);
-					height: 1.1em;
 
 					&.none {
 						height: 0;
@@ -146,8 +146,8 @@
 
 					.body {
 						width: 100%;
-						line-height: 1.75; // GUESS
 						font-family: var(--font_family__body);
+						line-height: 1.75; // GUESS
 
 						.paragraph {
 							& + .paragraph {
@@ -181,11 +181,11 @@
 
 		.controls {
 			display: flex;
+			justify-content: space-between;
 			width: 80%;
 			max-width: 25rem; // GUESS
 			position: fixed;
 			bottom: 10vw; // GUESS!
-			justify-content: space-between;
 			font-size: 1.1em;
 			font-family: var(--font_family__heading);
 			transition: opacity 1s 2.15s;
@@ -195,8 +195,8 @@
 				display: flex;
 				align-items: center;
 				text-decoration: none;
-				--button_margin: 1em;
 				transition: transform 0.15s;
+				--button_margin: 1em;
 
 				&::before, 
 				&::after {
@@ -205,8 +205,8 @@
 					height: 1.5em;
 					font-size: 1em;
 					background-image: url("/assets/2d/arrows/arrow.svg");
-					background-size: contain;
 					background-repeat: no-repeat;
+					background-size: contain;
 					cursor: pointer;
 				}
 
@@ -220,12 +220,17 @@
 				}
 
 				&.next::after {
-					transform: scale(-1);
 					margin-left: var(--button_margin);
+					transform: scale(-1);
+				}
+				
+				.label {
+					transition: transform 0.15s;
 				}
 			}
 
-			.prev, .next {			
+			.prev, 
+			.next {			
 				&:focus {
 					outline: solid white 1px;
 					outline-offset: 1px;
@@ -248,14 +253,11 @@
 				}
 			}
 
-				.label {
-					transition: transform 0.15s;
-				}
 
 	.glow {
-		position: fixed;
 		height: 100%;
 		width: 100%;
+		position: fixed;
 		top: 0;
 		left: 0;
 		pointer-events: none;
@@ -288,16 +290,16 @@
 
 			.content {
 				display: flex;
+				flex-direction: row;
 				width: 100%;
 				max-width: none;
 				margin-top: 10vh;
-				flex-direction: row;
 				--body_width: 50%;
 			}
 
 				.headings {
-					padding-top: 12.5vh;
 					width: 50%;
+					padding-top: 12.5vh;
 				}
 
 				.scrollHider {
@@ -317,15 +319,15 @@
 			}
 
 			.controls {
-				position: sticky;
 				width: 100%;
 				max-width: 15rem; // EYE BALLED
+				position: sticky;
 				bottom: 0;
 			}
 
 		.glow {
-			background-size: 100% auto;
 			left: -22.5%;
+			background-size: 100% auto;
 
 			&.active {
 				opacity: 0.75;
@@ -336,9 +338,9 @@
 // Tablet portrait
 @media (min-width: 768px) {
 	.wrapper {
+		justify-content: flex-end;
 		padding: 10%;
 		padding-bottom: 6.3em;
-		justify-content: flex-end;
 		background-image: url("/assets/2d/shared/bg-medium.jpg");
 	}
 
@@ -392,10 +394,9 @@
 
 // Tablet landscape
 @media (min-width: 768px) and (orientation: landscape) {
-
 	.content {
-		--body_width: 50%;
 		flex-direction: column;
+		--body_width: 50%;
 	}
 
 		.scrollHider {
@@ -413,7 +414,6 @@
 
 // Desktop half
 @media (min-width: 1025px) {
-
 	.wrapper {
 		background-image: url("/assets/2d/shared/bg-large.jpg");
 	}
@@ -421,18 +421,18 @@
 		.content {
 			margin-top: 0;
 			--body_width: 62.5%;
-		}
-				.name {
-					font-size: 8em;
-				}
 
-				.nickname {
-					font-size: 3.25em;
-				}
-
-		.content::after {
-			display: none;
+			&::after {
+				display: none;
+			}
 		}
+			.name {
+				font-size: 8em;
+			}
+
+			.nickname {
+				font-size: 3.25em;
+			}
 
 		.controls {
 			max-width: 20rem;
@@ -448,7 +448,6 @@
 
 // Desktop full 
 @media (min-width: 1025px) and (min-aspect-ratio: 16/9) {
-
 	.content {
 		--body_width: 47.5%;
 	}

@@ -1,20 +1,19 @@
 import React, { useContext, useState, useEffect } from "react";
-import { 
-	data as characterData,
-	CharactersContext as Characters,
-	ACTIONS
-} from "COMPONENTS/Characters/";
-import { NavContext as Nav } from "COMPONENTS/Navigation/";
-import HeroImage from "COMPONENTS/HeroImage/";
-import { ClientContext as Client } from "COMPONENTS/Client/";
-import { RENDER as CHARACTER_RENDER, s } from "./";
 import SHARED_RENDER from "SHARED/renderUtils.jsx";
 import UTILS from "SHARED/utils.js";
+import { RENDER as CHARACTER_RENDER, s } from "./";
+import { 
+	ACTIONS,
+	CharactersContext as Characters,
+	data as characterData
+} from "COMPONENTS/Characters/";
+import { ClientContext as Client } from "COMPONENTS/Client/";
+import HeroImage from "COMPONENTS/HeroImage/";
+import { NavContext as Nav } from "COMPONENTS/Navigation/";
 
 export default function Character(props){
-
-	//PROPS
-	//---------------------------
+	// PROPS
+	// ---------------------------
 	const {
 		name,
 		nickname,
@@ -29,8 +28,8 @@ export default function Character(props){
 		id
 	} = props;
 
-	//CONTEXT
-	//---------------------------
+	// CONTEXT
+	// ---------------------------
 	const { activeIndex } = useContext(Characters).state;
 
 	const { 
@@ -41,9 +40,8 @@ export default function Character(props){
 		isSmall
 	} = useContext(Client).state;
 
-	//STATE AND EFFECT
-	//---------------------------
-
+	// STATE AND EFFECT
+	// --------------------------
 	useEffect(resetScroll, [activeIndex]);
 
 	function resetScroll() {
@@ -56,7 +54,6 @@ export default function Character(props){
 		return () => clearTimeout(scrollTimer);
 	}// resetScroll
 
-	//ENTER TRANSITIONS
 	const [visible, setVisible] = useState(false);
 
 	const active = index === activeIndex;
@@ -71,10 +68,8 @@ export default function Character(props){
 			}, ms);
 		
 		return ()=> { clearTimeout(delay) };
-	}
+	}// fireTransition
 
-
-	//SCROLL FADE FOR MOBILE
 	const [atTop, setAtTop] = useState(true);
 
 	useEffect(addScrollListeners, []);
@@ -87,17 +82,15 @@ export default function Character(props){
 
 	function checkIfAtTop(event) {
 		const { scrollY } = window;
-
-		const topBuffer = 5;
+		const topBuffer   = 5;
 
 		const scrollAtTop = scrollY < topBuffer;
 
 		setAtTop(scrollAtTop);
 	}// checkIfAtTop
 
-
-	//RENDER
-	//----------------------------
+	// RENDER
+	// ----------------------------
 	const RENDER = { ...CHARACTER_RENDER, ...SHARED_RENDER };
 
 	// wrap indexes if less than 0 or greater than number of characters
@@ -141,8 +134,10 @@ export default function Character(props){
 			role="group"
 			aria-roledescription="slide"
 			aria-label={`Character ${index + 1} of ${characterData.length}.`}
-			aria-hidden={ hidden }>
-			<article className={ s.container }
+			aria-hidden={ hidden }
+		>
+			<article 
+				className={ s.container }
 				aria-hidden={ isHidden  }
 			>
 				<div className={ s.content }>
@@ -166,16 +161,12 @@ export default function Character(props){
 						</div>	
 					</div>
 				</div>
-				<nav 
-					className={ s.controls }
-				>
+				<nav className={ s.controls }>
 					{ prevButton }
 					{ nextButton }
 				</nav>	
 			</article>
-			<div 
-				className={ `${s.glow} ${isActive ? s.active : s.inactive }` }
-			/>
+			<div className={ `${s.glow} ${isActive ? s.active : s.inactive }` }/>
 			<HeroImage 
 				id={ heroId }
 				src={ src } 

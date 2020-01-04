@@ -1,15 +1,13 @@
 import React, { useContext } from "react";
 import UTILS from "SHARED/utils.js";
-import Link from "COMPONENTS/Link/";
+import { s } from "./";
 import { 
 	CharactersContext as Characters,
 	ACTIONS
 } from "COMPONENTS/Characters/"; 
-import { s } from "./";
-
+import Link from "COMPONENTS/Link/";
 
 function renderButton(name, label, newIndex){
-
 	// CONTEXT
 	// ---------------------------------
 	const {
@@ -18,7 +16,6 @@ function renderButton(name, label, newIndex){
 		},
 		dispatch
 	} = useContext(Characters);
-
 
 	// CLICK HANDLER
 	// ---------------------------------
@@ -29,10 +26,9 @@ function renderButton(name, label, newIndex){
 			type: ACTIONS.GET_CHARACTER,
 			value: newIndex
 		});
-	}
+	} //updateCharacterIndex
 
-
-	//RENDER
+	// RENDER
 	// ---------------------------------
 	const safeName        = UTILS.convertToSafeString(name);
 	const safeLabel       = UTILS.convertToSafeString(label);
@@ -51,7 +47,7 @@ function renderButton(name, label, newIndex){
 			</span>
 		</Link>
 	);
-}//renderButton
+}// renderButton
 
 export default {
 	button: renderButton
