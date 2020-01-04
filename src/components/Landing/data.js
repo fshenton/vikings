@@ -1,4 +1,4 @@
-const data = {
+export default {
 	heading: "Vikings",
 	subheading: "Descend into Darkness",
 	body: `When a king falls, another will rise. But who will it be? 
@@ -20,5 +20,3 @@ const data = {
 		}
 	}
 };
-
-export default data;

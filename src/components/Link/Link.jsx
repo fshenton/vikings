@@ -2,12 +2,10 @@ import React from "react";
 import { UTILS } from "./";
 
 export default function Link(props){
-
-	//shout at the dev who implemented this incorrectly
 	UTILS.checkProps(props);
 
-	//RENDER
-	//------------------------
+	// PROPS
+	// ------------------------
 	const {
 		destination = "",
 		className   = "",
@@ -22,13 +20,15 @@ export default function Link(props){
 		rel: "noopener"
 	};
 
+	// RENDER
+	// -------------------------
 	return (
 		<a 
 			className={ className }
-			tabIndex={ tabIndex }
-			{ ...remainingProps }
 			href={ destination }
+			tabIndex={ tabIndex }
 			{ ...externalAttributes }
+			{ ...remainingProps }
 		>
 			{ children }
 		</a>	

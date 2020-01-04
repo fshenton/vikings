@@ -1,19 +1,17 @@
 import React, { useContext, useEffect, useState } from "react";
 import RENDER from "SHARED/renderUtils.jsx";
 import { s, data } from "./";
-import LogoArtwork from "COMPONENTS/LogoArtwork/";
-import WatchNow from "COMPONENTS/WatchNow/";
-import VideoLayer from "COMPONENTS/VideoLayer/";
-import { NavContext as Nav } from "COMPONENTS/Navigation/";
 import { ClientContext as Client } from "COMPONENTS/Client/";
+import LogoArtwork from "COMPONENTS/LogoArtwork/";
+import { NavContext as Nav } from "COMPONENTS/Navigation/";
+import VideoLayer from "COMPONENTS/VideoLayer/";
+import WatchNow from "COMPONENTS/WatchNow/";
 
 export default function Landing(){
-
 	document.title = 'Vikings';
 
-	//CONTEXT
-	//--------------------------
-
+	// CONTEXT
+	// --------------------------
 	const { 
 		open: navIsOpen
 	} = useContext(Nav).state;
@@ -22,9 +20,8 @@ export default function Landing(){
 		isSmall
 	} = useContext(Client).state;
 
-	//DATA
-	//----------------------------
-
+	// DATA
+	// ----------------------------
 	const {
 		heading,
 		subheading,
@@ -42,7 +39,7 @@ export default function Landing(){
 	} = data;
 
 	// STATE AND EFFECTS
-
+	// ----------------------------
 	const [active, setActive] = useState(false);
 
 	useEffect(fireTransition, []);
@@ -50,15 +47,13 @@ export default function Landing(){
 	function fireTransition() {
 		const delay = setTimeout(() => {
 			setActive(true);
-		}
-		, 200);
+		}, 200);
 
 		return () => clearTimeout(delay);
 	}// fireTransition
 
-	//RENDER
-	//--------------------------
-
+	// RENDER
+	// --------------------------
 	const body = RENDER.body(bodyData, {
 		scope: "landing", //for key names
 		className: s.paragraph 
@@ -73,16 +68,17 @@ export default function Landing(){
 			/>
 			<VideoLayer 
 				className={ s.background }
-				sources={ backgroundSources } 
 				poster={ backgroundPoster }
+				sources={ backgroundSources } 
 			/>
 			<VideoLayer 
 				className={ s.foreground }
-				sources={ foregroundSources } 
 				poster={ foregroundPoster }
+				sources={ foregroundSources } 
 			/>
-			<header className={ s.wrapper }
-					aria-hidden={ isHidden || !active }
+			<header 
+				className={ s.wrapper }
+				aria-hidden={ isHidden || !active }
 			>
 				<span className={ s.textHider }>
 					<h1 className={ s.heading }>
