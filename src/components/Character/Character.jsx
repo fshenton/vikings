@@ -15,17 +15,17 @@ export default function Character(props){
 	// PROPS
 	// ---------------------------
 	const {
-		name,
-		nickname,
 		actor,
 		body: bodyData,
+		id,
 		image:{
 			src,
 			mask,
 			description
 		} = {},
 		index,
-		id
+		name,
+		nickname
 	} = props;
 
 	// CONTEXT

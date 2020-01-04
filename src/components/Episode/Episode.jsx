@@ -1,37 +1,34 @@
 import React, { useContext, useState, useEffect } from "react";
+import RENDER from "SHARED/renderUtils.jsx";
+import UTILS from "SHARED/utils.js";
+import { s } from "./";
 import { ClientContext as Client } from "COMPONENTS/Client/";
 import { EpisodesContext as Episodes } from "COMPONENTS/Episodes/";
 import { NavContext as Nav } from "COMPONENTS/Navigation/";
-import PreviewThumb from "COMPONENTS/PreviewThumb/";
 import PreviewOverlay from "COMPONENTS/PreviewOverlay/";
+import PreviewThumb from "COMPONENTS/PreviewThumb/";
 import WatchNow from "COMPONENTS/WatchNow/";
-import UTILS from "SHARED/utils.js";
-import { s } from "./";
-import RENDER from "SHARED/renderUtils.jsx";
 
 export default function Episode(props){
-
-	//PROPS
-	//-------------------------------
-
+	// PROPS
+	// -------------------------------
 	const {
 		id,
 		index,
 		number,
-		title,
-		synopsis: synopsisData,
-		thumbnail = {},
-		trailer: {
-			src: trailerSrc
-		},
 		poster: {
 			src: posterSrc
+		},
+		synopsis: synopsisData,
+		thumbnail = {},
+		title,
+		trailer: {
+			src: trailerSrc
 		}
 	} = props;
 
-	//CONTEXT
-	//---------------------------
-	
+	// CONTEXT
+	// ---------------------------
 	const { 
 		isSmall 
 	} = useContext(Client).state;
@@ -65,9 +62,8 @@ export default function Episode(props){
 		return ()=> { clearTimeout(delay) };
 	}
 
-	//RENDER
-	//---------------------------
-
+	// RENDER
+	// ---------------------------
 	const hidden = index !== activeIndex;
 
 	const synopsis = RENDER.body(synopsisData, {
@@ -85,32 +81,33 @@ export default function Episode(props){
 		<li
 			id={ id }
 			className={ s.wrapper }
-			role="group"
-			aria-roledescription="slide"
-			aria-label={ `Episode ${number} of ${episodeCount}.` }
 			aria-hidden={ hidden }
+			aria-label={ `Episode ${number} of ${episodeCount}.` }
+			aria-roledescription="slide"
+			role="group"
 		>
 			<article className={ s.container }>
 				<PreviewThumb 
 					episodeId={ id }
+					controls={ formattedId }
 					index={ index }
 					number={ number }
-					title={ title }
 					thumbnail={ thumbnail }
+					title={ title }
 					trailerSrc={ trailerSrc }
-					controls={ formattedId }
 				/>
 				<PreviewOverlay 
 					episodeId={ id }
+					id={ formattedId }
 					index={ index }
 					number={ number }
-					title={ title }
-					id={ formattedId }
-					trailerSrc={ trailerSrc }
 					posterSrc={ posterSrc }
+					title={ title }
+					trailerSrc={ trailerSrc }
 				/>
-				<div className={ `${s.content} ${isActive ? s.active : s.inactive}` }
-					 aria-hidden={ isHidden }
+				<div 
+					aria-hidden={ isHidden }
+					className={ `${s.content} ${isActive ? s.active : s.inactive}` }
 				>
 					<h1 className={ s.title }>
 						{ title }
@@ -126,4 +123,4 @@ export default function Episode(props){
 			</article>
 		</li>
 	);
-}
+}// Episodes
