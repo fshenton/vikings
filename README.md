@@ -1,30 +1,34 @@
-# Vikings 🌊⛵
+# 🌊 VIKINGS WEBSITE 
 
 ![](landing.gif)
+
 
 **Contributors:**
 [fshenton](https://github.com/fshenton) and [pookage](https://github.com/pookage)
 
-##Tech used:
+
+## Tech used:
 React.js
 SCSS
 Webpack
 Babel
 Chrome
 
-##Building the App...
+
+## Building the App...
 Requires npm or yarn (instructions below use npm)
 
 Download, fork, or clone the repo locally
 In your CLI, navigate to the project directory
 Run npm install to install local dependencies
 
-##...for Development
+## ...for Development
 Run 'npm run build-dev' to build the project for local development
 
 Any changes to files inside the src/ directory will trigger a hot reload
 
-##Browser Support
+
+## Browser Support
 - Chrome 👌 
 - Firefox 
 	- performance issue with filter blur effects on some devices, works fine on others 🤷‍♀️
@@ -34,12 +38,14 @@ Any changes to files inside the src/ directory will trigger a hot reload
 - Safari
 	- some screwy functionality (character navigation), otherwise not bad!
 
-###Missing Functionality (for future dev)
+
+### Missing Functionality (for future dev)
 - Page-to-page transitions
 - Per character/episode anchoring
 - Gesture controls
 
-###Areas of Improvement
+
+### Areas of Improvement
 - Episode preview controls 
 - Generally fancier animations
 - Responsivess for windowed desktop
