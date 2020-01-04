@@ -5,7 +5,7 @@ export default {
 			medium: "/assets/2d/about/about-medium.jpg",
 			large: "/assets/2d/about/about-large.jpg"
 		}, 
-		description: "A bunch of vikings screaming up (improve this later)."
+		description: "A bunch of vikings screaming."
 	},
 	title: "About",
 	subtitle: "The world is coming to an end.",

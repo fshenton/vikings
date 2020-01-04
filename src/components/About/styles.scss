@@ -1,16 +1,16 @@
 // Mobile portrait
 .wrapper {
 	display: flex;
+	flex-direction: column;
 	width: 100%;
 	height: 100%;
-	flex-direction: column;
-	background: url("/assets/2d/shared/bg-small.jpg");
+	background-image: url("/assets/2d/shared/bg-small.jpg");
 
 	&.active {
 		.hero, 
 		.heading,
 		.subheading,
-		.body p {
+		.body .paragraph {
 			opacity: 1;
 		}
 
@@ -23,7 +23,7 @@
 		.hero, 
 		.heading,
 		.subheading,
-		.body p {
+		.body .paragraph {
 			opacity: 0;
 		}
 
