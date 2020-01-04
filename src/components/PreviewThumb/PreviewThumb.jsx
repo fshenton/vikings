@@ -107,7 +107,7 @@ export default function PreviewThumb(props){
 						/>
 						<source 
 							srcSet={largeSrc} 
-							media="(min-width: 1200px)"
+							media="(min-width: 1025px)"
 							alt={thumbDesc}
 						/>
 						<img 

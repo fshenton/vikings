@@ -175,7 +175,7 @@
 }
 
 //Desktop half screen
-@media (min-width: 1200px) {
+@media (min-width: 1025px) {
 	.wrapper {
 		position: fixed;
 		width: 2em;
@@ -229,7 +229,7 @@
 }
 
 //Desktop fullscreen
-@media (min-width: 1200px) and (min-aspect-ratio: 16/9) {
+@media (min-width: 1025px) and (min-aspect-ratio: 16/9) {
 
 	.item {
 		left: auto;

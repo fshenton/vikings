@@ -169,7 +169,7 @@
 }
 
 //Desktop half screen
-@media (min-width: 1200px) {
+@media (min-width: 1025px) {
 	.wrapper {
 		width: 95%;
 		height: 100%;
@@ -197,7 +197,7 @@
 }
 
 //Desktop fullscreen
-@media (min-width: 1200px) and (min-aspect-ratio: 16/9) {
+@media (min-width: 1025px) and (min-aspect-ratio: 16/9) {
 	.content {
 		padding-left: 0;
 		padding-right: 17.25em;

@@ -147,14 +147,14 @@ $animation_delay: 0s; //originally 1s but was very slow start
 }
 
 // Desktop portrait
-@media (min-width: 1200px) and (max-aspect-ratio: 8/9){
+@media (min-width: 1025px) and (max-aspect-ratio: 8/9){
 	.logo {
 		font-size: 25vw;
 	}
 }
 
 // Desktop landscape
-@media (min-width: 1200px){
+@media (min-width: 1025px){
 	.logo {
 		font-size: 25vw;
 	}
