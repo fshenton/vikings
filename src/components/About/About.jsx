@@ -3,6 +3,7 @@ import RENDER from "SHARED/renderUtils.jsx";
 import { data } from "./";
 import { s } from "./";
 import { NavContext as Nav } from "COMPONENTS/Navigation/";
+import { ClientContext as Client } from "COMPONENTS/Client/";
 
 export default function About(){
 
@@ -14,6 +15,10 @@ export default function About(){
 	const {
 		open: isNavOpen
 	} = useContext(Nav).state;
+
+	const {
+		isSafari
+	} = useContext(Client).state;
 
 	//DATA
 	//------------------------
@@ -94,7 +99,9 @@ export default function About(){
 				<div className={ s.body }>
 					{ body }
 				</div>
-				<div className={ s.fade }/>
+				{ !isSafari &&
+					<div className={ s.fade }/>
+				}
 			</div>	
 		</article>
 	);
