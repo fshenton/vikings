@@ -1,9 +1,9 @@
 .history {
-	position: fixed;
 	width: 3em;
 	height: 4em;	
-	bottom: 3em;
+	position: fixed;
 	right: 3em;
+	bottom: 3em;
 	z-index: 5;
 	font-size: 1rem;
 	opacity: 0;
@@ -48,9 +48,9 @@
 }
 
 	.outline {
-		opacity: 0.5;
 		width: 200%;
 		height: 200%;
+		opacity: 0.5;
 		transform: translate(-25%, -10%);
 	}
 

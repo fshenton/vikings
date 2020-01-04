@@ -1,16 +1,15 @@
 import React, { useContext, useEffect, useState } from "react";
-import { NavContext as Nav } from "COMPONENTS/Navigation/";
-import Link from "COMPONENTS/Link/";
 import { s } from "./";
+import Link from "COMPONENTS/Link/";
+import { NavContext as Nav } from "COMPONENTS/Navigation/";
 
 export default function HomePermalink(){
-	
 	// CONTEXT
-	// -----------------------
+	// -------------------------
 	const { open } = useContext(Nav).state;
 
 	// STATE AND EFFECTS
-
+	// -------------------------
 	const [active, setActive] = useState(false);
 
 	useEffect(fireTransition, []);
@@ -18,15 +17,13 @@ export default function HomePermalink(){
 	function fireTransition() {
 		const delay = setTimeout(() => {
 			setActive(true);
-		}
-		, 200);
+		}, 200);
 
 		return () => clearTimeout(delay);
 	}// fireTransition
 
 	// RENDER 
-	// -----------------------
-
+	// --------------------------
 	return (
 		<Link
 			className={ `${s.home} ${active ? s.active : s.inactive}` } 

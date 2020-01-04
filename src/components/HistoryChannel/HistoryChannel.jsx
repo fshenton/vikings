@@ -1,17 +1,15 @@
 import React, { useContext, useEffect, useState } from "react";
-import { NavContext as Nav } from "COMPONENTS/Navigation/";
-import Link from "COMPONENTS/Link/";
 import { s } from "./";
+import Link from "COMPONENTS/Link/";
+import { NavContext as Nav } from "COMPONENTS/Navigation/";
 
 export default function HistoryChannel(){
-
 	// CONTEXT
 	// -----------------------------
-
 	const { open } = useContext(Nav).state;
 
 	// STATE AND EFFECTS
-
+	// -----------------------------
 	const [active, setActive] = useState(false);
 
 	useEffect(fireTransition, []);
@@ -27,22 +25,36 @@ export default function HistoryChannel(){
 
 	// RENDER 
 	// ------------------------------
-
 	const hidden = open || !active;
 
 	return (
 		<Link
 			className={ `${s.history} ${active ? s.active : s.inactive}` }
-			destination="https://www.history.co.uk/"
-			aria-label="The History Channel"
 			aria-hidden={ hidden }
+			aria-label="The History Channel"
+			destination="https://www.history.co.uk/"
 		>
-			<svg className={ s.outline } viewBox="0 0 100 100" preserveAspectRatio="xMidYMin">
+			<svg 
+				className={ s.outline } 
+				preserveAspectRatio="xMidYMin"
+				viewBox="0 0 100 100"
+			>
 				<filter id="powder">
-					<feTurbulence baseFrequency="0.2" numOctaves="3"/>
-					<feDisplacementMap in="SourceGraphic" scale="5" />
+					<feTurbulence
+						baseFrequency="0.2" 
+						numOctaves="3"
+					/>
+					<feDisplacementMap 
+						in="SourceGraphic" 
+						scale="5" 
+					/>
 				</filter>
-				<path className={ s.circle } fill="none" stroke="#FFF" strokeWidth="1" filter="url(#powder)"
+				<path 
+					className={ s.circle } 
+					fill="none" 
+					filter="url(#powder)"
+					stroke="#FFF" 
+					strokeWidth="1" 
 					d="
 				        M 50, 50
 				        m 0, -49
