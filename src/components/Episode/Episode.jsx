@@ -106,8 +106,8 @@ export default function Episode(props){
 					trailerSrc={ trailerSrc }
 				/>
 				<div 
-					aria-hidden={ isHidden }
 					className={ `${s.content} ${isActive ? s.active : s.inactive}` }
+					aria-hidden={ isHidden }
 				>
 					<h1 className={ s.title }>
 						{ title }

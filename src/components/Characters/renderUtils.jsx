@@ -20,7 +20,7 @@ function renderCharacter(data, index){
 			body={ body } 
 			image={ image }
 			index={ index }
-			key={`${safeName}`}
+			key={ `${safeName}` }
 			name={ name }
 			nickname={ nickname }
 		/>

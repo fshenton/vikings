@@ -65,23 +65,24 @@ export default function About(){
 		<article className={ `${s.wrapper} ${active ? s.active : s.inactive}` }>
 			<picture className={ s.hero }>
 				<source 
-					alt={description}
+					alt={ description }
 					media="(max-width: 767px)"
-					srcSet={mediumSrc} //using medium for quality
+					srcSet={ mediumSrc } //using medium for quality
 				/>
 				<source 
-					alt={description}
+					alt={ description }
 					media="(min-width: 768px) and (max-width: 1199px)"
-					srcSet={mediumSrc} 
+					srcSet={ mediumSrc } 
 				/>
 				<source 
-					alt={description}
-					media="(min-width: 1200px)"
-					srcSet={largeSrc} 
+					alt={ description }
+					media="(min-width: 1025px)"
+					srcSet={ largeSrc } 
 				/>
 				<img 
-					alt={description}
-					src={mediumSrc} 
+					className={ s.image }
+					alt={ description }
+					src={ mediumSrc } 
 				/>
 			</picture>
 			<div 
