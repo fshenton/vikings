@@ -3,19 +3,18 @@ $border__color: #4e4e4e;
 // Mobile portrait
 .watch {
 	display: flex;
-	position: fixed;
+	align-items: center;
+	justify-content: center;
 	width: 8em;
 	height: 2.5em;
+	border: solid 1px transparent;
+	position: fixed;
 	bottom: 5%;
 	left: 50%;
 	z-index: 5;
-	align-items: center;
-	justify-content: center;
 	font-size: 1.25em;
 	font-family: var(--font_family__body);
 	background-color: transparent;
-	border: solid 1px transparent;
-	animation:  border-color 1s 0.7s forwards linear;
 	transition: background-color 0.3s,
 				color 0.3s,
 				border 0.3s,
@@ -23,6 +22,7 @@ $border__color: #4e4e4e;
 				filter 0.3s,
 				opacity 1s 0.7s,
 				transform 1s 0.7s;
+	animation:  border-color 1s 0.7s forwards linear;
 	--watch_now__x_offset: -50%;
 
 	&.active {
@@ -44,9 +44,9 @@ $border__color: #4e4e4e;
 	&:hover {
 		border: none;  
 		outline: none; 
-		background-color: var(--font_color);
 		color: var(--background_color);
 		text-decoration: none; 
+		background-color: var(--font_color);
 	}
 
 	&:focus {

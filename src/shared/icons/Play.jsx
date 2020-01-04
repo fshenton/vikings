@@ -10,11 +10,12 @@ export default function Play(props) {
 	} = props;
 
 	return (
-		<svg className={ `${s.icon} ${className}` } 
-			 viewBox="0 0 100 100" 
-			 alt="Play video"
-			 preserveAspectRatio="xMaxYMax"
-			 aria-hidden={ hidden }
+		<svg 
+			className={ `${s.icon} ${className}` } 
+			alt="Play video"
+			aria-hidden={ hidden }
+			preserveAspectRatio="xMaxYMax"
+			viewBox="0 0 100 100" 
 		>
 			<mask id="triangle">
 				<rect 
@@ -38,5 +39,5 @@ export default function Play(props) {
 			/>
 		</svg>
 	);
-}
+}// Play
  

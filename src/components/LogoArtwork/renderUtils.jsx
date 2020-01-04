@@ -2,7 +2,6 @@ import React from "react";
 import { s } from "./";
 
 function renderImages(data, index) {
-
 	const { name } = data;
 
 	const mask = { 
@@ -13,10 +12,10 @@ function renderImages(data, index) {
 
 	return (
 		<img 
-			key={ `bone-${index}` }
 			className={ `${s.logo} ${s[name]}` }
-			src={ `/assets/2d/landing/${name}-large.jpg` }
 			alt="A bone making up part of a big V, for Vikings."
+			key={ `bone-${index}` }
+			src={ `/assets/2d/landing/${name}-large.jpg` }
 			style={ mask }
 		/>
 	);

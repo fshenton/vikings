@@ -8,7 +8,6 @@ const initialState = {
 };
 
 function NavProvider(props){
-
 	const { children } = props;
 
 	const [state, dispatch] = useReducer(reducer, initialState);

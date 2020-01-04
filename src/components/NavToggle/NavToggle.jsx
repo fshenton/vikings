@@ -3,20 +3,18 @@ import { s } from "./";
 import { NavContext as Nav } from "COMPONENTS/Navigation/";
 
 export default function NavToggle(props){
-
 	const { callback: toggleOpen } = props;
 
-	//CONTEXT
-	//--------------------------
+	// CONTEXT
+	// --------------------------
 	const {
 		state: {
 			open: isOpen
 		}
 	} = useContext(Nav);
 
-
-	//STATE AND EFFECT
-
+	// STATE AND EFFECT
+	// ---------------------------
 	const [visible, setVisible] = useState(false);
 	const [landed, setLanded] = useState(false);
 
@@ -41,7 +39,7 @@ export default function NavToggle(props){
 				clearTimeout(delay); 
 			};
 		}
-	}// fireTransition
+	}// fireOpeningTransitions
 
 	let buttonClass = "";
 	if(visible){
@@ -53,14 +51,16 @@ export default function NavToggle(props){
 		}
 	}
 
+	// RENDER
+	// ------------------------------
 	return (
 		<button 
 			className={ `${s.wrapper} ${buttonClass}` }
-			role="switch"
 			aria-checked={ isOpen }
-			aria-hidden={ !visible }
 			aria-controls="navigation__links"
+			aria-hidden={ !visible }
 			onClick={ toggleOpen }
+			role="switch"
 		>
 			<span className={ s.container }>
 				<div className={ s.icon }>
@@ -82,4 +82,4 @@ export default function NavToggle(props){
 			</span>
 		</button>
 	)
-}
+}// NavToggle

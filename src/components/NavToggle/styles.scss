@@ -1,16 +1,16 @@
 // Mobile first
 .wrapper {
 	display: flex;
+	align-items: center;
 	position: fixed;
 	top: 2.5em;
 	right: 2em;
-	align-items: center;
 	pointer-events: auto;
-	background-color: transparent;
 	letter-spacing: 0.25em;
+	background-color: transparent;
+	cursor: pointer;
 	transition: opacity 2s,
 				transform 0.3s;
-	cursor: pointer;
 
 	&.initial {
 		opacity: 1;
@@ -62,19 +62,19 @@
 	.container {
 		display: inline-block;
 		position: relative;
-		font-family: var(--font_family__body);
-		text-transform: uppercase;
-		color: var(--font_color);
-		transform: translateY(20%);
 		pointer-events: none;
+		font-family: var(--font_family__body);
+		color: var(--font_color);
+		text-transform: uppercase;
+		transform: translateY(20%);
 	}
 
 		.icon {
 			display: inline-block;
 			width: 1em;
 			height: 1em;
-			position: relative;
 			margin-right: 0.5em;
+			position: relative;
 			cursor: pointer;
 			font-size: 1.5em;
 			transition: transform 0.15s;
@@ -89,16 +89,16 @@
 				left: 0;
 				background-color: var(--font_color);
 				transform: translateY(0);
-				transition: transform 0.3s;
 				filter: drop-shadow(0.5px 0.5px 0.5px black);
+				transition: transform 0.3s;
 			}
 
 
 		.label {
 			cursor: pointer;
 			font-size: 0;
-			transition: opacity 0.15s linear;
 			text-shadow: black 0.5px 0.5px 0.5px;
+			transition: opacity 0.15s linear;
 
 			&.open, &.close {
 				font-size: 1.5rem;

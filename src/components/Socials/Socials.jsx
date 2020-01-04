@@ -3,7 +3,6 @@ import { RENDER, s, data } from "./";
 import { NavContext as Nav } from "COMPONENTS/Navigation/";
 
 export default function Socials(props){
-
 	const { 
 		className = "",
 		hidden
@@ -19,4 +18,4 @@ export default function Socials(props){
 			{ links }
 		</ul>
 	);
-} //Socials
+}// Socials

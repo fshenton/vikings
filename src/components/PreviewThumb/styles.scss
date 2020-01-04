@@ -1,7 +1,7 @@
 //Mobile portrait
 .wrapper {
-	position: relative;
 	width: 100%;
+	position: relative;
 	z-index: 0;
 	--thumbnail_width: 100%;
 	--thumbnail_height: 38vh;
@@ -18,6 +18,7 @@
 	&.inactive {
 		opacity: 0;
 		transition: .3s;
+		
 		.image {
 			opacity: 0;
 			filter: blur(2px);
@@ -30,14 +31,14 @@
 
 	.thumbnail {
 		display: flex;
-		position: relative;
 		width: var(--thumbnail_width);
 		height: var(--thumbnail_height);
+		position: relative;
 
 		.button { 
 			display: flex;
-			justify-content: center;
 			align-items: center;
+			justify-content: center;
 			width: 100%;
 			height: 100%;
 			transition: filter 0.3s;
@@ -97,9 +98,9 @@
 	}
 
 	.ghost {
-		position: absolute;
 		top: 0;
 		left: 0;
+		position: absolute;
 		width: 100%;
 		height: 100%;
 		pointer-events: none;
@@ -114,27 +115,27 @@
 		--ghost_translate__distance: 100%;
 
 		&.left {
-			transform: translateX(calc(-1*var(--ghost_translate__distance)));			
 			background-image: url("/assets/2d/episodes/ep2-small.jpg");
+			transform: translateX(calc(-1*var(--ghost_translate__distance)));			
 		}
 
 		&.top {
-			transform: translateY(calc(-1*var(--ghost_translate__distance)));
 			background-image: url("/assets/2d/episodes/ep4-small.jpg");
+			transform: translateY(calc(-1*var(--ghost_translate__distance)));
 
 			&.left {
-				transform: translate(calc(-1*var(--ghost_translate__distance)), calc(-1*var(--ghost_translate__distance)));
 				background-image: url("/assets/2d/episodes/ep5-small.jpg");
+				transform: translate(calc(-1*var(--ghost_translate__distance)), calc(-1*var(--ghost_translate__distance)));
 			}
 		}
 
 		&.bottom {
-			transform: translateY(var(--ghost_translate__distance));	
 			background-image: url("/assets/2d/episodes/ep6-small.jpg");
+			transform: translateY(var(--ghost_translate__distance));	
 
 			&.left {
-				transform: translate(calc(-1*var(--ghost_translate__distance)), var(--ghost_translate__distance));
 				background-image: url("/assets/2d/episodes/ep3-small.jpg");
+				transform: translate(calc(-1*var(--ghost_translate__distance)), var(--ghost_translate__distance));
 			}
 		}
 	}
@@ -148,10 +149,10 @@
 @media (orientation: landscape) {
 	.wrapper {
 		order: 2;
+		width: 50%;
 		position: fixed;
 		left: 50%;
 		top: 50%;
-		width: 50%;
 		transform: translateY(-50%);
 		--thumbnail_height: 50vh;
 	}
@@ -192,8 +193,8 @@
 //Desktop fullscreen
 @media (min-width: 1025px) {
 	.wrapper {
-		position: initial;
 		width: 50%;
+		position: initial;
 		transform: none;
 	}
 

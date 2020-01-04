@@ -6,8 +6,14 @@ export default function SvgFilters() {
 		<svg className={ s.filters }> 
 			{/*CIRCLE*/}
 			<filter id="powder">
-				<feTurbulence baseFrequency="0.2" numOctaves="3"/>
-				<feDisplacementMap in="SourceGraphic" scale="5" />
+				<feTurbulence
+					baseFrequency="0.2" 
+					numOctaves="3"
+				/>
+				<feDisplacementMap 
+					in="SourceGraphic" 
+					scale="5" 
+				/>
 			</filter>
 			{/*LINE*/}
 			<filter 
@@ -16,9 +22,15 @@ export default function SvgFilters() {
 	  			width="100%"
 	  			height="100%" 
 			>
-				<feTurbulence baseFrequency="0.2" numOctaves="3"/>
-				<feDisplacementMap in="SourceGraphic" scale="7" />
+				<feTurbulence 
+					baseFrequency="0.2" 
+					numOctaves="3"
+				/>
+				<feDisplacementMap 
+					in="SourceGraphic" 
+					scale="7"
+				 />
 			</filter>	
 		</svg>
 	);
-}
+}// SvgFilters

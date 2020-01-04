@@ -1,14 +1,13 @@
 import React, { useContext, useState, useRef, useEffect } from "react";
+import { s } from "./";
+import { TrailerContext as Trailer } from "COMPONENTS/Episode/";
 import { 
 	ACTIONS, 
 	EpisodesContext as Episodes 
 } from "COMPONENTS/Episodes/";
-import { TrailerContext as Trailer } from "COMPONENTS/Episode/";
 import { NavContext as Nav } from "COMPONENTS/Navigation";
-import { s } from "./";
 
 export default function PreviewOverlay(props){
-	
 	// PROPS
 	// ---------------------------
 	const {
@@ -22,8 +21,7 @@ export default function PreviewOverlay(props){
 	} = props;
 
 	// CONTEXT
-	// ----------------------------
-
+	// ---------------------------
 	const {
 		prev: prevTrailer = {},
 		next: nextTrailer = {}
@@ -64,7 +62,6 @@ export default function PreviewOverlay(props){
 
 	// VIDEO STATE
 	// ---------------------------------
-
 	const [playing, setPlaying] = useState(false);
 
 	function togglePlaying() {
@@ -93,7 +90,6 @@ export default function PreviewOverlay(props){
 	
 	// EFFECTS
 	// ------------------------------
-
 	const isActiveEpisode   = activeIndex === index;
 	const isOverlayActive  	= isActiveEpisode && overlayActive;
 
@@ -123,7 +119,6 @@ export default function PreviewOverlay(props){
 
 	// MOUSE ACTIVITY STATE
 	// --------------------------------
-
 	const [mouseMoving, setMouseMoving] = useState(true);
 
 	let timer;
@@ -162,17 +157,11 @@ export default function PreviewOverlay(props){
 			aria-hidden={ hidden }
 			onMouseMove={ setInactivityTimer } 
 		>
-			<header 
-				className={ s.container }
-			>
-				<h2 
-					className={ `${s.episode}  ${!mouseMoving ? s.fade : s.visible }` }
-				>
+			<header className={ s.container }>
+				<h2 className={ `${s.episode}  ${!mouseMoving ? s.fade : s.visible }` }>
 					{ `Episode ${number}` } 
 				</h2>
-				<h1 
-					className={ `${s.title}  ${!mouseMoving ? s.fade : s.visible }` }
-				>
+				<h1 className={ `${s.title}  ${!mouseMoving ? s.fade : s.visible }` }>
 					{ title }
 				</h1>
 				<nav>
@@ -184,8 +173,8 @@ export default function PreviewOverlay(props){
 						{ !isFirst && (
 							<a 
 								className={ `${s.prev} ${s.button}` }
-								href={ prevTrailerSrc }
 								aria-label="Previous."
+								href={ prevTrailerSrc }
 								onClick={ prevEpisode }
 								tabIndex={ tabIndex }
 							>
@@ -210,9 +199,9 @@ export default function PreviewOverlay(props){
 					{/*CLOSE BUTTON*/}
 					<a 
 						className={ s.close }
+						aria-hidden={ !mouseMoving }
 						href={ `#${episodeId}` }
 						onClick={ closeOverlay }
-						aria-hidden={ !mouseMoving }
 						tabIndex={ tabIndex }
 					> 
 						<span className={ s.label }> 
@@ -229,32 +218,32 @@ export default function PreviewOverlay(props){
 			{ mouseMoving && <div className={ s.contrastOverlay }/> }
 			<div 
 				className={ s.play }
-				onClick={ togglePlaying }
-				aria-hidden={ playing || !mouseMoving }
 				aria-controls="episode__preview__video"
+				aria-hidden={ playing || !mouseMoving }
 				aria-label="play"
+				onClick={ togglePlaying }
 			/> 
 			<div 
 				className={ s.pause }
-				onClick={ togglePlaying }
-				aria-hidden={ !playing || !mouseMoving }
 				aria-controls="episode__preview__video"
+				aria-hidden={ !playing || !mouseMoving }
 				aria-label="pause"
+				onClick={ togglePlaying }
 			/>  
 			<div 
 				className={ `${s.volume} ${muted ? s.unmute : s.mute}` }
-				onClick={ toggleMuted }
-				aria-hidden={ !mouseMoving }
 				aria-controls="episode__preview__video"
+				aria-hidden={ !mouseMoving }
 				aria-label="mute"
+				onClick={ toggleMuted }
 			/>  
 			<video 
 				id="episode__preview__video"
-				ref={ player }
 				className={ s.video }
+				ref={ player }
 				autoPlay={ true }
-				muted={ muted } 
 				loop={ true }
+				muted={ muted } 
 				poster={ posterSrc }
 			>
 				{ isOverlayActive && (
@@ -266,4 +255,4 @@ export default function PreviewOverlay(props){
 			</video>
 		</div>	
 	);
-}
+}// PreviewOverlay

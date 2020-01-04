@@ -1,23 +1,22 @@
 import React, { useContext, useState, useEffect } from "react";
 import { Play as PlayIcon } from "SHARED/icons/";
-import PreviewOverlay from "COMPONENTS/PreviewOverlay/";
+import { s } from "./";
+import { ClientContext as Client } from "COMPONENTS/Client/";
 import { 
 	ACTIONS, 
 	EpisodesContext as Episodes 
 } from "COMPONENTS/Episodes/";
 import { NavContext as Nav } from "COMPONENTS/Navigation/";
-import { ClientContext as Client } from "COMPONENTS/Client/";
-import { s } from "./";
+import PreviewOverlay from "COMPONENTS/PreviewOverlay/";
 
 export default function PreviewThumb(props){
-
 	// PROPS
 	// --------------------------
 	const { 
+		controls,
 		episodeId,
 		index,
 		number: episodeNo,
-		title,
 		thumbnail: {
 			src: {
 				small: smallSrc = "",
@@ -26,8 +25,8 @@ export default function PreviewThumb(props){
 			},
 			description: thumbDesc
 		},
-		trailerSrc,
-		controls
+		title,
+		trailerSrc
 	} = props;
 
 	// CONTEXT
@@ -48,7 +47,6 @@ export default function PreviewThumb(props){
 
 	// STATE & EFFECT
 	// -----------------------------
-
 	const [visible, setVisible] = useState(false);
 
 	const active = index === activeIndex;
@@ -67,7 +65,6 @@ export default function PreviewThumb(props){
 
 	// CLICK HANDLER
 	// -----------------------------
-
 	function openOverlay(e){
 		if(e) e.preventDefault();
 
@@ -89,30 +86,30 @@ export default function PreviewThumb(props){
 			<div className={ s.thumbnail }>
 				<a
 					className= { s.button }
-					href={ trailerSrc }
 					aria-controls={ controls }
 					aria-label={ `Watch preview for episode ${episodeNo}: ${title}.` }
+					href={ trailerSrc }
 					onClick={ openOverlay }
 				>
 					<picture className={ `${s.image} ${faded}` }>
 						<source 
-							srcSet={smallSrc} 
+							alt={thumbDesc}
 							media="(max-width: 767px)"
-							alt={thumbDesc}
+							srcSet={smallSrc} 
 						/>
 						<source 
-							srcSet={mediumSrc} 
+							alt={thumbDesc}
 							media="(min-width: 768px) and (max-width: 1199px)"
-							alt={thumbDesc}
+							srcSet={mediumSrc} 
 						/>
 						<source 
-							srcSet={largeSrc} 
-							media="(min-width: 1025px)"
 							alt={thumbDesc}
+							media="(min-width: 1025px)"
+							srcSet={largeSrc} 
 						/>
 						<img 
-							src={smallSrc} 
 							alt={thumbDesc}
+							src={smallSrc} 
 						/>
 					</picture>
 					<PlayIcon 

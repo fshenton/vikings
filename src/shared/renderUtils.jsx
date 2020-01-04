@@ -7,7 +7,6 @@ function renderBody(data, options = {}){
 	return paragraphs.map(customisedRenderParagraph);
 }// renderBody
 
-
 function renderParagraph(options, text, index){
 	const {
 		className = "",
@@ -36,7 +35,6 @@ function renderParagraph(options, text, index){
 		</p>
 	);
 }// renderParagraph
-
 
 function findLink(markdown){
 	const labelStart = markdown.indexOf("[");

@@ -5,11 +5,11 @@ $animation_delay: 0s; //originally 1s but was very slow start
 // Mobile Portrait
 .wrapper {
 	display: flex;
-	position: absolute;
+	align-items: center;
+	justify-content: center;
 	left: 50%;
 	top: 50%;
-	justify-content: center;
-	align-items: center;
+	position: absolute;
 	transform: translate(-50%, -50%);
 	
 	&.noBlur {
@@ -21,14 +21,14 @@ $animation_delay: 0s; //originally 1s but was very slow start
 	}
 
 	&.active {
-		img {
+		.logo {
 			opacity: 1;
 			transform: scale(1);
 		}
 	}
 
 	&.inactive {
-		img {
+		.logo {
 			opacity: 0;
 			transform: scale(0.79);
 		}
@@ -54,7 +54,6 @@ $animation_delay: 0s; //originally 1s but was very slow start
 	}
 
 		/* V LOGO BONES */
-
 		.big-bone {
 			transition: transform $scale_duration $animation_delay+1.15s,
 						opacity $fade_duration $animation_delay+1.6s;
@@ -161,7 +160,6 @@ $animation_delay: 0s; //originally 1s but was very slow start
 }
 
 /* ANIMATIONS */
-
 @keyframes blur-in-out {
 	0% {
 		filter: blur(0px)

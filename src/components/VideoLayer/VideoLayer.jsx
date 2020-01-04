@@ -2,27 +2,20 @@ import React, { useContext } from "react";
 import { s } from "./";
 
 export default function VideoLayer(props){
-
-	//PROPS
-	//--------------------------
-
 	const {
 		className,
 		sources,
 		poster
 	} = props;
 
-	//RENDER
-	//--------------------------
-
 	return (
 		<div className={ `${s.wrapper } ${className}` }>	
 			<video 
 				className={ s.video }
-				poster={ poster } 
 				autoPlay 
 				loop
 				muted
+				poster={ poster } 
 			>
 				<source 
 					src={ sources["mp4"] }

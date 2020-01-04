@@ -1,20 +1,20 @@
 //Mobile portrait
 .wrapper {
-	position: fixed; 
 	display: flex;
-	height: 100%;
-	width: 100%;
-	top: 0;
-	left: 0;
-	z-index: 10;
 	flex-direction: column;
 	align-items: center;
 	justify-content: flex-end;
-	text-align: center;
+	height: 100%;
+	width: 100%;
+	position: fixed; 
+	top: 0;
+	left: 0;
+	z-index: 10;
 	font-size: 1.62rem;
+	text-align: center;
 
 	&[aria-hidden="true"]{
-		// transition: opacity .3s, visibility 0s .4s;
+		// placeholder
 	}
 	&[aria-hidden="false"]{
 		transition: opacity .3s;
@@ -83,16 +83,16 @@
 		}
 
 		.play {
-			font-size: 10rem;
 			width: 1em;
 			height: 1em;
+			font-size: 10rem;
 			background: no-repeat url("assets/2d/controls/play.svg");
 		}
 
 		.pause {
-			font-size: 5rem;
 			width: 1em;
 			height: 1em;
+			font-size: 5rem;
 			background: no-repeat url("assets/2d/controls/pause.svg");
 		}
 
@@ -114,12 +114,12 @@
 
 		.controls {
 			display: flex;
-			width: 9em;
-			margin-top: 1em;
-			margin-left: auto;
-			margin-right: auto;
 			flex-direction: row;
 			justify-content: space-between;
+			width: 9em;
+			margin-top: 1em;
+			margin-right: auto;
+			margin-left: auto;
 		}
 
 			.button {
@@ -195,9 +195,9 @@
 			}
 
 		.close {
-			position: fixed;
 			width: 1.62em;
 			height: 1.62em;
+			position: fixed;
 			top: 1em;
 			left: 50%;
 			font-size: 1em;

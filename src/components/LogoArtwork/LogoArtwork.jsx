@@ -1,25 +1,22 @@
 import React, {useContext, useEffect, useState} from "react";
-import { ClientContext as Client } from "COMPONENTS/Client/";
 import { RENDER, data, s } from "./";
+import { ClientContext as Client } from "COMPONENTS/Client/";
 
 export default function LogoArtwork(props){
-
-	//PROPS
-	//--------------------------
+	// PROPS
+	// --------------------------
 
 	const { className } = props;
 
-	//CONTEXT 
-	//--------------------------
-
+	// CONTEXT 
+	// --------------------------
 	const {
 		isFirefox,
 		isEdge
 	} = useContext(Client).state;
 
-	//STATE AND EFFECTS
-	//---------------------------
-
+	// STATE AND EFFECTS
+	// ---------------------------
 	const [active, setActive] = useState(false);
 
 	useEffect(fireTransition, []);
@@ -27,21 +24,24 @@ export default function LogoArtwork(props){
 	function fireTransition() {
 		const delay = setTimeout(() => {
 			setActive(true);
-		}
-		, 200);
+		}, 200);
 
 		return () => clearTimeout(delay);
 	}// fireTransition
 
-	//RENDER
-	//--------------------------
+	// RENDER
+	// --------------------------
 
 	const images = data.map(RENDER.images);
 
 	const blurClass = isFirefox ? s.noBlur : s.blur; 
 
 	return (
-		<div className={ `${s.wrapper} ${blurClass} ${className} ${active ? s.active : s.inactive}` }>
+		<div className={ `
+			${s.wrapper} ${blurClass} 
+			${className} 
+			${active ? s.active : s.inactive}
+		` }>
 			{ !isEdge && images }
 			{ isEdge && 
 				<img 

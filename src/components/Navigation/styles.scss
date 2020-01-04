@@ -1,23 +1,23 @@
 // Mobile portrait
 .wrapper {
 	display: flex; 
-	position: fixed;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
 	width: 100%;
 	height: 100%;
+	position: fixed;
 	top: 0; 
 	left: 0;
 	z-index: 5;
-	flex-direction: column;
-	justify-content: center;
-	align-items: center;
 	transition: background-color 0.5s,
 				backdrop-filter 0.5s;
 	transition-delay: 0s; 
 	
 	&.closed {
+		pointer-events: none;
 		background-color: transparent;
 		backdrop-filter: blur(0);
-		pointer-events: none;
 	}
 
 	&.open {
@@ -34,11 +34,11 @@
 
 	.container {
 		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
 		width: 100%;
 		height: 75%;
-		flex-direction: column;
-		justify-content: center;
-		align-items: center;
 		font-size: 3.62em;
 		font-family: var(--font_family__heading);
 		text-shadow: 1px 1px black;

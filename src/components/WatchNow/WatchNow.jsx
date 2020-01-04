@@ -1,14 +1,12 @@
 import React, { useContext, useEffect, useState } from "react";
-import { NavContext as Nav } from "COMPONENTS/Navigation/";
+import { s } from "./";
 import { ClientContext as Client } from "COMPONENTS/Client/";
 import Link from "COMPONENTS/Link/";
-import { s } from "./";
+import { NavContext as Nav } from "COMPONENTS/Navigation/";
 
 export default function WatchNow(props){
-
 	// PROPS
 	// --------------------------
-
 	const { className = "" } = props;
 
 	// CONTEXT
@@ -18,7 +16,7 @@ export default function WatchNow(props){
 	const { isSmall } = useContext(Client).state;
 
 	// STATE AND EFFECTS
-
+	// --------------------------
 	const [active, setActive] = useState(false);
 
 	useEffect(fireTransition, []);
@@ -36,14 +34,13 @@ export default function WatchNow(props){
 
 	// RENDER
 	// --------------------------
-
 	const hidden = open || !active;
 
 	return (
 		<Link 
 			className={ `${s.watch} ${className} ${active ? s.active : s.inactive}` }
-			destination="https://www.history.co.uk/shows/vikings"
 			aria-hidden={ hidden }
+			destination="https://www.history.co.uk/shows/vikings"
 		>
 			Watch Now
 		</Link>
