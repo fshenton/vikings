@@ -45,7 +45,6 @@ export default function Episode(props){
 
 	// STATE & EFFECT
 	// -----------------------------
-
 	const [visible, setVisible] = useState(false);
 
 	const active = index === activeIndex;
