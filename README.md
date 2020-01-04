@@ -1,4 +1,4 @@
-# 🌊 VIKINGS WEBSITE 
+# 🌊 VIKINGS WEBSITE 🌊
 
 ![](landing.gif)
 
@@ -6,16 +6,18 @@
 **Contributors:**
 [fshenton](https://github.com/fshenton) and [pookage](https://github.com/pookage)
 
-
-## Tech used:
-React.js
-SCSS
-Webpack
-Babel
-Chrome
+**Based on designs by:** ...
 
 
-## Building the App...
+## 🔨 Built using:
+- React.js
+- SCSS
+- Webpack
+- Babel
+- Chrome
+
+
+## 🏢 Building the App...
 Requires npm or yarn (instructions below use npm)
 
 Download, fork, or clone the repo locally
