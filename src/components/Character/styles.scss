@@ -11,7 +11,6 @@
 	flex-direction: column;
 	background: url("/assets/2d/shared/bg-portrait.jpg") center / cover no-repeat;
 	background-attachment: fixed;
-	transition: opacity 1s;
 
 	&.active {
 		.name, 
@@ -52,14 +51,18 @@
 		}
 	}
 
-	&[aria-hidden="false"]{
+	&[aria-hidden="false"],
+	&[aria-hidden="false"] .container {
 		opacity: 1;
 		pointer-events: all;
+		transition: opacity 0.6s;
 	}
 
-	&[aria-hidden="true"]{
+	&[aria-hidden="true"],
+	&[aria-hidden="true"] .container {
 		opacity: 0;
-		pointer-events: none
+		pointer-events: none;
+		transition: opacity 0.6s, visibility 0s 0.7s;
 	}
 }
 
@@ -68,13 +71,12 @@
 		z-index: 4;
 		transition-property: opacity;
 
-		&[aria-hidden="false"]{
-			transition-duration: 0.5s;
-			transition-delay: 0.5s;
+		&[aria-hidden="false"] .controls {
+			opacity: 1;
 		}
 
-		&[aria-hidden="true"]{
-			transition: opacity 0.6s, visibility 0s 0.7s;
+		&[aria-hidden="true"] .controls {
+			opacity: 0;
 		}
 	}
 
@@ -140,7 +142,6 @@
 					width: 100%;
 					max-width: 64ch;
 					overflow-x: hidden;
-					// margin-bottom: 7em;
 				}
 
 					.body {
@@ -187,7 +188,7 @@
 			justify-content: space-between;
 			font-size: 1.1em;
 			font-family: var(--font_family__heading);
-			transition: opacity 0.75s 2s;
+			transition: opacity 1s 2.15s;
 		}
 
 			.button {
@@ -195,9 +196,7 @@
 				align-items: center;
 				text-decoration: none;
 				--button_margin: 1em;
-				transition: transform 0.15s,
-							filter 0.15s, 
-							outline 0.15s;
+				transition: transform 0.15s;
 
 				&::before, 
 				&::after {
@@ -228,7 +227,8 @@
 
 			.prev, .next {			
 				&:focus {
-					outline: none;
+					outline: solid white 1px;
+					outline-offset: 1px;
 				}
 
 				&:active {
@@ -237,20 +237,14 @@
 			}
 
 			.prev {
-				&:hover,
-				&:focus {
-					.label {
-						transform: translateX(-0.5em);
-					}
-				}			
+				&:hover .label {
+					transform: translateX(-0.5em);
+				}		
 			}
 
 			.next {
-				&:hover,
-				&:focus {
-					.label {
-						transform: translateX(0.5em);
-					}
+				&:hover .label {
+					transform: translateX(0.5em);
 				}
 			}
 
@@ -367,7 +361,7 @@
 				overflow: hidden;
 
 				.body {
-					width: calc(100% + 18px);
+					width: calc(100% + 17px);
 					height: 100%;
 					overflow-y: scroll;
 
@@ -405,7 +399,8 @@
 	}
 
 		.scrollHider {
-			height: 20vh;
+			height: 8rem;
+			max-height: 15vh;
 			padding-top: 0;
 			margin-left: 0;
 		}

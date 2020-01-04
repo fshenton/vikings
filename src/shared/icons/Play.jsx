@@ -16,19 +16,17 @@ export default function Play(props) {
 			 preserveAspectRatio="xMaxYMax"
 			 aria-hidden={ hidden }
 		>
-			<defs>
-				<mask id="triangle">
-					<rect 
-						width="100%"
-						eight="100%" 
-						fill="white"
-					/>
-					<polygon 
-						points="40,30 40,70 65,50" 
-						fill="black"
-					/>
-				</mask>
-			</defs>
+			<mask id="triangle">
+				<rect 
+					width="100%"
+					height="100%" 
+					fill="white"
+				/>
+				<polygon 
+					points="40,30 40,70 65,50" 
+					fill="black"
+				/>
+			</mask>
 			<circle 
 				cx="50" 
 				cy="50" 
@@ -38,7 +36,6 @@ export default function Play(props) {
 				stroke="none"
 				mask="url(#triangle)"
 			/>
-			
 		</svg>
 	);
 }

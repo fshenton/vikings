@@ -1,13 +1,13 @@
 const data = [
 	{
 		label: "Facebook",
-		destination: "https://www.facebook.com/"
+		destination: "https://github.com/fshenton"
 	}, {
 		label: "Twitter",
-		destination: "https://www.twitter.com/"
+		destination: "https://github.com/fshenton"
 	}, {
 		label: "Instagram",
-		destination: "https://www.instagram.com/"
+		destination: "https://github.com/fshenton"
 	}
 ];
 

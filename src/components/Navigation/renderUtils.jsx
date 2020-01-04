@@ -12,7 +12,7 @@ function renderItem(data){
 	
 	const safeLabel = UTILS.convertToSafeString(label);
 
-	const randomDelay = Math.floor(Math.random() * 500);
+	const randomDelay = Math.floor(Math.random() * 500) + 500;
 
 	const style = {
 		transitionDelay: `${randomDelay}ms`

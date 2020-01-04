@@ -11,7 +11,14 @@ $animation_delay: 0s; //originally 1s but was very slow start
 	justify-content: center;
 	align-items: center;
 	transform: translate(-50%, -50%);
-	animation: blur-in-out 2.85s;
+	
+	&.noBlur {
+		animation: none;
+	}
+
+	&.blur {
+		animation: blur-in-out 2.85s;
+	}
 
 	&.active {
 		img {
@@ -37,6 +44,13 @@ $animation_delay: 0s; //originally 1s but was very slow start
 		-webkit-mask-size: contain;
 		-moz-mask-size: contain;
 		mask-size: contain;
+	}
+
+	.staticLogo { //for edge
+		width: 400px;
+		height: 500px;		
+		position: absolute;
+		opacity: 0;
 	}
 
 		/* V LOGO BONES */

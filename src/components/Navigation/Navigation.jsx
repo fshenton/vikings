@@ -40,8 +40,11 @@ export default function Navigation(){
 	return (
 		<nav 
 			className={ `${s.wrapper} ${isOpen}` }
-			onClick={ open ? toggleOpen : undefined }
 		>
+			<div 
+				className={ s.overlay } 
+				onClick={ toggleOpen }
+			/>
 			<NavToggle callback={ toggleOpen }/>
 			<ul 
 				id="navigation__links"
@@ -52,7 +55,7 @@ export default function Navigation(){
 			</ul>
 			<Socials 
 				className={ s.socials }
-				hidden={ !isOpen }
+				hidden={ !open }
 			/>
 		</nav>
 	);

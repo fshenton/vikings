@@ -125,9 +125,9 @@ export default function Character(props){
 
 	const heroId = UTILS.convertToSafeString(`${name} ${nickname}`);
 
-	const isHidden = isNavOpen;
-
 	const isActive = active && visible;
+	
+	const isHidden = isNavOpen || !isActive;
 
 	let nicknameClass = "";
 	if(nickname === " "){
@@ -143,7 +143,7 @@ export default function Character(props){
 			aria-label={`Character ${index + 1} of ${characterData.length}.`}
 			aria-hidden={ hidden }>
 			<article className={ s.container }
-				aria-hidden={ isHidden }
+				aria-hidden={ isHidden  }
 			>
 				<div className={ s.content }>
 					<div className={ s.headings }>
@@ -168,7 +168,6 @@ export default function Character(props){
 				</div>
 				<nav 
 					className={ s.controls }
-					aria-hidden={ !isActive }
 				>
 					{ prevButton }
 					{ nextButton }

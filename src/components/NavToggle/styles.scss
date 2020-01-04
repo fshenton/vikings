@@ -10,6 +10,7 @@
 	letter-spacing: 0.25em;
 	transition: opacity 2s,
 				transform 0.3s;
+	cursor: pointer;
 
 	&.initial {
 		opacity: 1;
@@ -44,10 +45,11 @@
 	}
 
 	&:focus {
-		outline: none;
+		outline: white solid 1px;
+    	outline-offset: 4px;
 	}
 
-	&:hover{
+	&:hover {
 		.bar {
 			&:first-child,
 			&:last-child {
@@ -64,6 +66,7 @@
 		text-transform: uppercase;
 		color: var(--font_color);
 		transform: translateY(20%);
+		pointer-events: none;
 	}
 
 		.icon {
@@ -87,6 +90,7 @@
 				background-color: var(--font_color);
 				transform: translateY(0);
 				transition: transform 0.3s;
+				filter: drop-shadow(0.5px 0.5px 0.5px black);
 			}
 
 
@@ -94,6 +98,7 @@
 			cursor: pointer;
 			font-size: 0;
 			transition: opacity 0.15s linear;
+			text-shadow: black 0.5px 0.5px 0.5px;
 
 			&.open, &.close {
 				font-size: 1.5rem;

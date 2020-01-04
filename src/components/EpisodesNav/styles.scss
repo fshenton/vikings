@@ -2,14 +2,25 @@
 .wrapper {
 	position: fixed; //with absolute it will scroll with page
 	width: 80%;
+	height: 2rem;
 	right: 50%;
 	bottom: 5%;
 	z-index: 3;
 	transform: translateX(50%);
+	transition: opacity 1s 2s;
+
+	&.invisible {
+		opacity: 0;
+	}
+
+	&.visible {
+		opacity: 1;
+	}
 }
 
 	.container {
 		display: flex;
+		height: 100%;
 		position: relative;
 		z-index: 1;
 		justify-content: space-between;
@@ -18,30 +29,38 @@
 
 		.button {
 			font-size: 1em;
-			width: 1em;	
-			height: 1.62em;
+			width: 2em;
+			height: 100%;
 			z-index: 2;
-			background-color: transparent;
-			background: url("/assets/2d/arrows/arrow.svg") no-repeat;
-			background-size: cover;
 			cursor: pointer;
+			background-color: transparent;
 			transform: translateX(0);
 			transition: transform 0.15s;
+
+			.icon {
+				width: 1em;	
+				height: 100%;
+				position: absolute;
+				top: 0;
+				left: 0;
+				background: url("/assets/2d/arrows/arrow.svg") no-repeat;
+				background-size: 125% 100%;
+			}
 		}
 
 		.prev, .next {			
 			&:focus {
-				outline: none;
-			}
+				outline: solid white 1px;
+				outline-offset: 2px;
+			}			
 		}
 
 		.prev {
 			order: 1;
 			
-			&:hover,
-			&:focus {
+			&:hover {
 				transform: translateX(-0.25em);
-			}			
+			}
 
 			&:active {
 				transform: scale(0.9) translateX(-0.25em);
@@ -52,8 +71,7 @@
 			order: 3;
 			transform: scaleX(-1);
 		
-			&:hover,
-			&:focus {
+			&:hover {
 				transform: scaleX(-1) translateX(-0.25em);
 			}
 
@@ -102,7 +120,8 @@
 					font-style: normal;
 
 					&:focus {
-						outline: none;
+						outline: solid white 1px;
+						outline-offset: 2px;
 					}
 
 					&:focus:not(:active) {

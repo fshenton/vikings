@@ -84,12 +84,16 @@ export default function Landing(){
 			<header className={ s.wrapper }
 					aria-hidden={ isHidden || !active }
 			>
-				<h1 className={ s.heading }>
-					{ heading }
-				</h1>
-				<h2 className={ s.subheading }>
-					{ subheading }
-				</h2>
+				<span className={ s.textHider }>
+					<h1 className={ s.heading }>
+						{ heading }
+					</h1>
+				</span>
+				<span className={ s.textHider }>
+					<h2 className={ s.subheading }>
+						{ subheading }
+					</h2>
+				</span>
 				<div className={ s.body }>
 					{ body }
 				</div>

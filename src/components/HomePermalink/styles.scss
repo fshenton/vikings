@@ -20,7 +20,7 @@
 	&.inactive {
 		transform: translateY(20%);
 	}
-
+	
 	&[aria-hidden="true"] {
 		transition: opacity 1s, visibility 0s 1.1s;
 	}
@@ -39,7 +39,8 @@
 	}
 
 	&:focus {
-		outline: none;
+		outline: white solid 1px;
+    	outline-offset: 4px;
 	}
 }
 

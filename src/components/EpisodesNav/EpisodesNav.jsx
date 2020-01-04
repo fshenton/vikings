@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { 
 	data,
 	ACTIONS,
@@ -31,6 +31,21 @@ export default function EpisodesNav(){
 		isLarge
 	} = useContext(Client).state;
 
+	// STATE AND EFFECTS
+
+	const [active, setActive] = useState(false);
+
+	useEffect(fireTransition, []);
+
+	function fireTransition() {
+		const delay = setTimeout(() => {
+			setActive(true);
+		}
+		, 200);
+
+		return () => clearTimeout(delay);
+	}// fireTransition
+
 	// CLICK HANDLER
 	// -------------------------------
 	function setActiveIndex(newIndex, e){
@@ -58,22 +73,28 @@ export default function EpisodesNav(){
 	const isHidden = isNavOpen || overlayActive;
 
 	return (
-		<nav className={ s.wrapper } aria-hidden={ isHidden }>
+		<nav 
+			className={ `${s.wrapper} ${active ? s.visible : s.invisible}` } 
+			aria-hidden={ isHidden }>
 			<div className={ s.container }>
-				<button 
+				<button
 					className={ `${s.button} ${s.prev}` }
 					aria-label="Previous episode."
 					aria-controls="episodes__items episodes__pagination"
-					aria-hidden={ isFirstEpisodeActive }
+					aria-hidden={ isFirstEpisodeActive || isHidden }
 					onClick={ prevEpisode }
-				/>
+				>
+					<span className={ s.icon }/>
+				</button>
 				<button 
 					className={ `${s.button} ${s.next}` }
 					aria-label="Next episode." 
 					aria-controls="episodes__items episodes__pagination"
-					aria-hidden={ isLastEpisodeActive }
+					aria-hidden={ isLastEpisodeActive || isHidden }
 					onClick={ nextEpisode }
-				/>
+				>
+					<span className={ s.icon }/>
+				</button>
 				{ bottomPagination && pagination }				
 			</div> 
 			{ sidePagination && pagination }

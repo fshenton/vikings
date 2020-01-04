@@ -41,13 +41,17 @@ $border__color: #4e4e4e;
 		opacity: 1;
 	}
 
-	&:hover,
-	&:focus {
+	&:hover {
 		border: none;  
 		outline: none; 
 		background-color: var(--font_color);
 		color: var(--background_color);
 		text-decoration: none; 
+	}
+
+	&:focus {
+		outline: solid white 1px;
+		outline-offset: 5px;
 	}
 
 	&:active {
