@@ -1,3 +1,4 @@
+// Mobile portrait
 .wrapper {
 	height: 100%;
 	position: fixed;
@@ -5,9 +6,9 @@
 }
 
 	.socials {
-		position: fixed;
 		width: 5.75em;
 		height: 1.125em;
+		position: fixed;
 		top: var(--socials_spacing);
 		right: var(--socials_spacing);
 		z-index: 5;
@@ -23,10 +24,10 @@
 		}
 		
 		& li {
-			animation-name: fade-in-and-move;
+			opacity: 0;
 			animation-duration: 0.5s;
 			animation-fill-mode: forwards;
-			opacity: 0;
+			animation-name: fade-in-and-move;
 		}
 
 		& li:nth-child(1) {
@@ -42,7 +43,7 @@
 		}
 	}
 
-// Laptop/Desktop 
+// Desktop 
 @media (min-width: 1025px) {
 	.socials {
 		--socials_spacing: 2.5em;

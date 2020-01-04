@@ -1,12 +1,10 @@
 import React, { useContext } from "react";
-import { ClientContext as Client } from "COMPONENTS/Client/";
 import { s } from "./";
+import { ClientContext as Client } from "COMPONENTS/Client/";
 
 export default function HeroImage(props){
-
-	//PROPS
-	//----------------------------
-
+	// PROPS
+	// ----------------------------
 	const {
 		id,
 		src: {
@@ -25,9 +23,8 @@ export default function HeroImage(props){
 		faded
 	} = props;
 
-	//CONTEXT
-	//----------------------------
-
+	// CONTEXT
+	// ----------------------------
 	const {
 		isSmall,
 		isMedium,
@@ -35,7 +32,6 @@ export default function HeroImage(props){
 	} = useContext(Client).state;
 
 	let maskPath;
-
 	if(isSmall) {
 		maskPath = smallMask;
 	}
@@ -53,19 +49,19 @@ export default function HeroImage(props){
 		"maskImage": `url(${maskPath})`,
 	};
 
-	if(isEdge) console.log("is edge");
-
+	// RENDER 
+	// --------------------------
 	return (
 		<div 
 			className={ `
 				${s.hero} 
 				${faded ? s.faded : s.visible} 
 				${active ? s.active : s.inactive}
-			`} 
+			` } 
 			id={ `character__hero__${id}` }
 			> 	
 			{ !isEdge && 
-				<picture className={ s.image }>
+				<picture className={ s.imageWrapper }>
 					<source 
 						srcSet={smallSrc} 
 						media="(max-width: 767px)"
@@ -82,6 +78,7 @@ export default function HeroImage(props){
 						alt={description}
 					/>		
 					<img 
+						className={ s.image }
 						src={ largeSrc } 
 						alt={ description }
 						style={ mask }
