@@ -29,7 +29,8 @@ function renderPaginationLink(data, index){
 	// --------------------------
 	const { 
 		state: {
-			activeIndex 
+			activeIndex,
+			overlayActive 
 		},
 		dispatch
 	} = useContext(Episodes);
@@ -97,6 +98,8 @@ function renderPaginationLink(data, index){
 		};
 	}
 
+	const tabIndex = overlayActive || isNavOpen ? -1 : 0; 
+
 	return (
 		<li 
 			className={ `${s.item} ${isActive ? s.active : s.inactive}` }
@@ -109,6 +112,7 @@ function renderPaginationLink(data, index){
 				destination={ `#${episodeId}` }
 				className={ s.paginationLink }
 				onClick={ setActiveIndex }
+				tabIndex={ tabIndex }
 			>
 				{ episodeNo }
 			</Link>

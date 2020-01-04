@@ -71,6 +71,7 @@ export default function EpisodesNav(){
 	const sidePagination = isLarge;
 
 	const isHidden = isNavOpen || overlayActive;
+	const tabIndex = isHidden ? -1 : 0;
 
 	return (
 		<nav 
@@ -83,6 +84,7 @@ export default function EpisodesNav(){
 					aria-controls="episodes__items episodes__pagination"
 					aria-hidden={ isFirstEpisodeActive || isHidden }
 					onClick={ prevEpisode }
+					tabIndex={ tabIndex }
 				>
 					<span className={ s.icon }/>
 				</button>
@@ -92,6 +94,7 @@ export default function EpisodesNav(){
 					aria-controls="episodes__items episodes__pagination"
 					aria-hidden={ isLastEpisodeActive || isHidden }
 					onClick={ nextEpisode }
+					tabIndex={ tabIndex }
 				>
 					<span className={ s.icon }/>
 				</button>

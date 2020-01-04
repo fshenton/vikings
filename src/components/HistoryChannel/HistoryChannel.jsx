@@ -28,12 +28,14 @@ export default function HistoryChannel(){
 	// RENDER 
 	// ------------------------------
 
+	const hidden = open || !active;
+
 	return (
 		<Link
 			className={ `${s.history} ${active ? s.active : s.inactive}` }
 			destination="https://www.history.co.uk/"
 			aria-label="The History Channel"
-			aria-hidden={ open || !active }
+			aria-hidden={ hidden }
 		>
 			<svg className={ s.outline } viewBox="0 0 100 100" preserveAspectRatio="xMidYMin">
 				<filter id="powder">

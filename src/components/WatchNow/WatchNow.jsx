@@ -37,11 +37,13 @@ export default function WatchNow(props){
 	// RENDER
 	// --------------------------
 
+	const hidden = open || !active;
+
 	return (
 		<Link 
 			className={ `${s.watch} ${className} ${active ? s.active : s.inactive}` }
 			destination="https://www.history.co.uk/shows/vikings"
-			aria-hidden={ open || !active }
+			aria-hidden={ hidden }
 		>
 			Watch Now
 		</Link>

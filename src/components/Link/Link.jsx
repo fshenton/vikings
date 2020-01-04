@@ -12,6 +12,7 @@ export default function Link(props){
 		destination = "",
 		className   = "",
 		children,
+		tabIndex    = 0,
 		...remainingProps
 	} = props;
 
@@ -24,6 +25,7 @@ export default function Link(props){
 	return (
 		<a 
 			className={ className }
+			tabIndex={ tabIndex }
 			{ ...remainingProps }
 			href={ destination }
 			{ ...externalAttributes }
