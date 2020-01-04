@@ -131,10 +131,10 @@ export default function Character(props){
 		<li
 			id={ id }
 			className={ `${s.wrapper} ${isActive ? s.active : s.inactive}`} 
-			role="group"
-			aria-roledescription="slide"
-			aria-label={`Character ${index + 1} of ${characterData.length}.`}
 			aria-hidden={ hidden }
+			aria-label={`Character ${index + 1} of ${characterData.length}.`}
+			aria-roledescription="slide"
+			role="group"
 		>
 			<article 
 				className={ s.container }
@@ -143,8 +143,8 @@ export default function Character(props){
 				<div className={ s.content }>
 					<div className={ s.headings }>
 						<h1 
-							className={ s.name } 
 							id={`character__${id}`}
+							className={ s.name } 
 						>
 							{ name }
 						</h1>
@@ -168,12 +168,12 @@ export default function Character(props){
 			</article>
 			<div className={ `${s.glow} ${isActive ? s.active : s.inactive }` }/>
 			<HeroImage 
-				id={ heroId }
-				src={ src } 
-				mask={ mask }
-				description={ description }
 				active={ isActive }
+				description={ description }
 				faded={ isSmall && !atTop }
+				id={ heroId }
+				mask={ mask }
+				src={ src } 
 			/>
 		</li>
 	);

@@ -1,19 +1,17 @@
 import React from "react";
 import { 
-	RENDER, 
+	CharactersProvider,
 	data as characterData,
-	CharactersProvider
+	RENDER, 
+	s
 } from "./";
 import VideoLayer from "COMPONENTS/VideoLayer/";
-import { s } from "./";
 
 export default function Characters(){
-
 	document.title = 'Vikings | Characters';
 
-	// Render
-	// --------------------------------------
-
+	// RENDER
+	// -------------------------------
 	const characters = characterData.map(RENDER.character);
 
 	const sources = {
@@ -25,9 +23,9 @@ export default function Characters(){
 	return(
 		<article 
 			className={ s.characters }
-			role="region"
-			aria-roledescription="carousel"
 			aria-label="Characters"
+			aria-roledescription="carousel"
+			role="region"
 		>
 			<CharactersProvider>
 				<ul 

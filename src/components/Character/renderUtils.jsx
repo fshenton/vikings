@@ -37,9 +37,9 @@ function renderButton(name, label, newIndex){
 	return (
 		<Link
 			className={ `${s.button} ${className}` } 
-			destination={ `#${safeName}` }
 			aria-controls="characters__items"
 			aria-label={ `${label} character: ${name}.` }
+			destination={ `#${safeName}` }
 			onClick={ updateCharacterIndex }
 		>
 			<span className={ s.label }>
