@@ -2,11 +2,11 @@
 
 ![](landing.gif)
 
-**Code by [fshenton](https://github.com/fshenton)**
-**Primary reviewer: [pookage](https://github.com/pookage)**
+**Code by:** [fshenton](https://github.com/fshenton)
+**Primary reviewer:** [pookage](https://github.com/pookage)
 **Design by Florian Pollet (used with permission)**
 
-[Behance] https://www.behance.net/gallery/75755549/Vikings-Website-Concept
+[Original designs on Behance](https://www.behance.net/gallery/75755549/Vikings-Website-Concept)
 
 ## 🔨 Built using:
 - React.js
@@ -17,25 +17,25 @@
 
 
 ## 🏢 Building the App...
-Requires npm or yarn (instructions below use npm)
+Requires npm or yarn (instructions below use npm).
 
-Download, fork, or clone the repo locally
-In your CLI, navigate to the project directory
-Run npm install to install local dependencies
+Download, fork, or clone the repo locally.
+In your CLI, navigate to the project directory.
+Run npm install to install local dependencies.
 
 ## ...for Development
-Run `npm run build-dev` to build the project for local development
+Run `npm run build-dev` to build the project for local development.
 
-Any changes to files inside the src/ directory will trigger a hot reload
+Any changes to files inside the src/ directory will trigger a hot reload.
 
 
 ## Browser Support
 - Chrome ⭐⭐⭐⭐⭐ 
 - Firefox ⭐⭐⭐⭐ 
-	- performance issue with filter blur effects on some devices 🤷‍♀️
+	- performance issue with filter blur effects on some devices.
 - Edge ⭐⭐⭐⭐
-	- Combined main Vikings logo assets into one due to lack of mask-image support
-	- Videos are not fullscreen due to lacking support for `object-fit: cover`
+	- Combined main Vikings logo assets into one due to lack of mask-image support.
+	- Videos are not fullscreen due to lacking support for `object-fit: cover`.
 - Safari ⭐⭐⭐
 	- Navigation between characters is not available.
 
