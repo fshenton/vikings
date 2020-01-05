@@ -1,19 +1,31 @@
 import React from "react";
 import { 
-	RENDER, 
+	CharactersProvider,
 	data as characterData,
-	CharactersProvider
+	RENDER, 
+	s
 } from "./";
+import VideoLayer from "COMPONENTS/VideoLayer/";
 
 export default function Characters(){
+	document.title = 'Vikings | Characters';
 
+	// RENDER
+	// -------------------------------
 	const characters = characterData.map(RENDER.character);
 
+	const sources = {
+		mp4:  [
+			"assets/video/particles-floating-720p.mp4"
+		]
+	};
+	
 	return(
 		<article 
-			role="region"
-			aria-roledescription="carousel"
+			className={ s.characters }
 			aria-label="Characters"
+			aria-roledescription="carousel"
+			role="region"
 		>
 			<CharactersProvider>
 				<ul 
@@ -23,6 +35,10 @@ export default function Characters(){
 					{ characters }
 				</ul>
 			</CharactersProvider>
+			<VideoLayer 
+				className={ s.dust }
+				sources={ sources } 
+			/>
 		</article>
 	);
 }// Characters

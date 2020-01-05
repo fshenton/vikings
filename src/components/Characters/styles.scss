@@ -1,0 +1,36 @@
+// Mobile portrait
+.characters {
+	width: 100%;
+	height: 100%;
+	z-index: 0;
+}
+
+	.dust {
+		z-index: 4;
+		opacity: 0.11;
+		pointer-events: none;
+	}
+
+// Mobile landscape
+@media (orientation: landscape) {
+	.glow {
+		left: -22.5%;
+		background-size: 100% auto;
+	}
+}
+
+// Tablet portrait
+@media (min-width: 768px) {
+	.glow {
+		width: 150%;
+		left: 0;
+		background-size: contain;
+	}
+}
+
+// Desktop
+@media (min-width: 1025px) {
+	.glow {
+		top: 0;
+	}
+}

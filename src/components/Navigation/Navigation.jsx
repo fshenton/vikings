@@ -1,33 +1,47 @@
 import React, { useContext } from "react";
-import Socials from "COMPONENTS/Socials/";
-import NavToggle from "COMPONENTS/NavToggle";
 import { 
-	RENDER, 
+	ACTIONS,
+	data,
 	NavContext as Nav,
-	s,
-	data
+	RENDER, 
+	s
 } from "./";
+import NavToggle from "COMPONENTS/NavToggle";
+import Socials from "COMPONENTS/Socials/";
 
 export default function Navigation(){
-
-	//CONTEXT
-	//---------------------------
+	// CONTEXT
+	// ---------------------------
 	const {
-		open
-	} = useContext(Nav).state;
+		state: {
+			open
+		},
+		dispatch
+	} = useContext(Nav);
 
+	// EVENT HANDLING
+	// ---------------------------
+	function toggleOpen(e){
 
-	//RENDER
-	//----------------------------
+		dispatch({
+			type: ACTIONS.OPEN_NAVIGATION,
+			value: !open
+		});
+	}// toggleOpen
+	
+	// RENDER
+	// ----------------------------
 	const links = data.map(RENDER.item);
 
-	const isOpen = open ? s.open : "";
+	const isOpen = open ? s.open : s.closed;
 
 	return (
-		<nav 
-			className={ `${s.wrapper} ${isOpen}` }
-		>
-			<NavToggle />
+		<nav className={ `${s.wrapper} ${isOpen}` }>
+			<div 
+				className={ s.overlay } 
+				onClick={ toggleOpen }
+			/>
+			<NavToggle callback={ toggleOpen }/>
 			<ul 
 				id="navigation__links"
 				className={ s.container }
@@ -35,7 +49,10 @@ export default function Navigation(){
 			>
 				{ links }
 			</ul>
-			<Socials className={ s.socials }/>
+			<Socials 
+				className={ s.socials }
+				hidden={ !open }
+			/>
 		</nav>
 	);
 }// Navigation

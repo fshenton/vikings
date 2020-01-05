@@ -1,42 +1,72 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { s } from "./";
-import { 
-	NavContext as Nav, 
-	ACTIONS 
-} from "COMPONENTS/Navigation/";
+import { NavContext as Nav } from "COMPONENTS/Navigation/";
 
 export default function NavToggle(props){
+	const { callback: toggleOpen } = props;
 
-	//CONTEXT
-	//--------------------------
+	// CONTEXT
+	// --------------------------
 	const {
 		state: {
 			open: isOpen
-		},
-		dispatch
+		}
 	} = useContext(Nav);
 
+	// STATE AND EFFECT
+	// ---------------------------
+	const [visible, setVisible] = useState(false);
+	const [landed, setLanded] = useState(false);
 
-	//EVENT HANDLING
-	//---------------------------
-	function toggleOpen(e){
-		if(e) e.preventDefault();
+	useEffect(fireOpeningTransitions, [visible]);
 
-		dispatch({
-			type: ACTIONS.OPEN_NAVIGATION,
-			value: !isOpen
-		});
-	}// toggleOpen
+	function fireOpeningTransitions(){
+		if(visible){
+			const delay = setTimeout(()=> {
+				setLanded(true);
+				}, 500);
 
+			return ()=> { 
+				clearTimeout(delay); 
+			};
+		}
+		else {
+			const delay = setTimeout(()=> {
+				setVisible(true);
+				}, 1000);
+			
+			return ()=> { 
+				clearTimeout(delay); 
+			};
+		}
+	}// fireOpeningTransitions
+
+	let buttonClass = "";
+	if(visible){
+		if(landed) {
+			buttonClass = s.resting;
+		}
+		else {
+			buttonClass = s.initial;
+		}
+	}
+
+	// RENDER
+	// ------------------------------
 	return (
 		<button 
-			className={ s.wrapper }
-			role="switch"
+			className={ `${s.wrapper} ${buttonClass}` }
 			aria-checked={ isOpen }
 			aria-controls="navigation__links"
+			aria-hidden={ !visible }
 			onClick={ toggleOpen }
+			role="switch"
 		>
 			<span className={ s.container }>
+				<div className={ s.icon }>
+				  	<span className={ s.bar }/>
+				  	<span className={ s.bar }/>
+				</div>
 				<span 
 					className={`${s.label} ${s.open}`}
 					aria-hidden={ isOpen }
@@ -52,4 +82,4 @@ export default function NavToggle(props){
 			</span>
 		</button>
 	)
-}
+}// NavToggle

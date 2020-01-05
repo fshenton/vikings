@@ -1,48 +1,32 @@
 import React, { useContext } from "react";
-import { ClientContext as Client } from "COMPONENTS/Client/"; 
-import HomePermalink from "COMPONENTS/HomePermalink/";
-import HistoryChannel from "COMPONENTS/HistoryChannel/";
-import WatchNow from "COMPONENTS/WatchNow/";
-import Navigation, { NavProvider } from "COMPONENTS/Navigation/";
-import Socials from "COMPONENTS/Socials/"
-import Landing from "COMPONENTS/Landing/";
-import About from "COMPONENTS/About/";
-import Characters from "COMPONENTS/Characters/";
-import Episodes from "COMPONENTS/Episodes/";
+import { BrowserRouter as Router, Route } from 'react-router-dom';
 import Fonts from "SHARED/fonts.scss";
 import { s } from "./";
+import About from "COMPONENTS/About/";
+import Characters from "COMPONENTS/Characters/";
+import { ClientContext as Client } from "COMPONENTS/Client/"; 
+import Episodes from "COMPONENTS/Episodes/";
+import FixedElements from "COMPONENTS/FixedElements/";
+import Landing from "COMPONENTS/Landing/";
+import Navigation, { NavProvider, NavContext as Nav} from "COMPONENTS/Navigation/";
+import SvgFilters from "COMPONENTS/SvgFilters/";
 
 export default function App(){
-
-	// CONTEXT
-	// -------------------------
-
-	const { isSmall } = useContext(Client).state;
-
-	// RENDER
-	// -------------------------
-
 	return (
 		<div className={ s.wrapper }>
-			{ /* STICKIES */}
 			<NavProvider>
 				<Navigation /> 
-				<HomePermalink /> 
-				{ !isSmall && 
-					<Socials 
-						className={ s.socials }
-					/> }
-				{ !isSmall && <HistoryChannel /> }
- 				<WatchNow />
+				<FixedElements />
+				<Router>
+					<main className={ s.container }>
+						<Route path="/" exact component={ Landing }/> 
+						<Route path="/about" exact component={ About }/> 
+						<Route path="/characters" exact component={ Characters }/> 
+						<Route path="/episodes" exact component={ Episodes }/> 
+					</main>
+				</Router>
 			</NavProvider>
-
-			{/* PAGES */}
-			<main className={ s.container }>
-				{ false && <Landing /> }
-				{ false && <About /> }
-				{ false && <Characters /> }
-				{ true && <Episodes /> }
-			</main>
+			<SvgFilters />
 		</div>
 	);
-} //App
+}// App

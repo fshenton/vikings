@@ -1,22 +1,128 @@
+$scale_duration: 2.97s;
+$fade_duration: 0.75s;
+$animation_delay: 0s; //originally 1s but was very slow start
+
 // Mobile Portrait
 .wrapper {
 	display: flex;
-	position: absolute;
+	align-items: center;
+	justify-content: center;
 	left: 50%;
 	top: 50%;
-	z-index: 1;
-	justify-content: center;
-	align-items: center;
+	position: absolute;
 	transform: translate(-50%, -50%);
+	
+	&.noBlur {
+		animation: none;
+	}
+
+	&.blur {
+		animation: blur-in-out 2.85s;
+	}
+
+	&.active {
+		.logo {
+			opacity: 1;
+			transform: scale(1);
+		}
+	}
+
+	&.inactive {
+		.logo {
+			opacity: 0;
+			transform: scale(0.79);
+		}
+	}
 }
 	
 	.logo {
+		position: absolute;
 		font-size: 75vw;
 		width: 1em;
 		height: 1.4em;
-		background-color: navy;
-		text-indent: -9999px; // REMOVE ONCE WE HAVE AN IMAGE TO USE
+		opacity: 0;
+		-webkit-mask-size: contain;
+		-moz-mask-size: contain;
+		mask-size: contain;
 	}
+
+	.staticLogo { //for edge
+		width: 400px;
+		height: 500px;		
+		position: absolute;
+		opacity: 0;
+	}
+
+		/* V LOGO BONES */
+		.big-bone {
+			transition: transform $scale_duration $animation_delay+1.15s,
+						opacity $fade_duration $animation_delay+1.6s;
+		}
+
+		.rib-1 {
+			transition: transform $scale_duration $animation_delay+0.48s,
+						opacity $fade_duration $animation_delay+0.93s;
+		}
+
+		.rib-2 {
+			transition: transform $scale_duration $animation_delay+0.73s,
+						opacity $fade_duration $animation_delay+1.18s;
+		}
+
+		.rib-3 {
+			transition: transform $scale_duration $animation_delay+0.92s,
+						opacity $fade_duration $animation_delay+1.37s;
+		}
+
+		.x-1 {
+			transition: transform $scale_duration $animation_delay+0.97s,
+						opacity $fade_duration $animation_delay+1.42s;
+		}
+
+		.x-2 {
+			transition: transform $scale_duration $animation_delay+1.2s,
+						opacity $fade_duration $animation_delay+1.65s;
+		}
+
+		.shape-1 {
+			transition: transform $scale_duration $animation_delay+1.07s,
+						opacity $fade_duration $animation_delay+1.52s;
+		}
+
+		.shape-2 {
+			transition: transform $scale_duration $animation_delay+1.40s,
+						opacity $fade_duration $animation_delay+1.85s;
+		}
+
+		.shape-3 {
+			transition: transform $scale_duration $animation_delay+1.68s,
+						opacity $fade_duration $animation_delay+2.13s;
+		}
+
+		.shape-4 {
+			transition: transform $scale_duration $animation_delay+0.12s,
+						opacity $fade_duration $animation_delay+0.57s;
+		}
+
+		.dot-1 {
+			transition: transform $scale_duration $animation_delay+1.65s,
+						opacity $fade_duration $animation_delay+2.1s;
+		}
+
+		.dot-2 {
+			transition: transform $scale_duration $animation_delay+1.1s,
+						opacity $fade_duration $animation_delay+1.55s;
+		}
+
+		.teeth {
+			transition: transform $scale_duration $animation_delay+0.87s,
+						opacity $fade_duration $animation_delay+1.32s;
+		}
+
+		.v-bone {
+			transition: transform $scale_duration $animation_delay+0.42s,
+						opacity $fade_duration $animation_delay+0.87s;
+		}
 
 // Mobile landscape
 @media (orientation: landscape) {
@@ -40,15 +146,28 @@
 }
 
 // Desktop portrait
-@media (min-width: 1200px) and (max-aspect-ratio: 8/9){
+@media (min-width: 1025px) and (max-aspect-ratio: 8/9){
 	.logo {
 		font-size: 25vw;
 	}
 }
 
 // Desktop landscape
-@media (min-width: 1200px){
+@media (min-width: 1025px){
 	.logo {
 		font-size: 25vw;
+	}
+}
+
+/* ANIMATIONS */
+@keyframes blur-in-out {
+	0% {
+		filter: blur(0px)
+	}
+	50% {
+		filter: blur(5px);
+	}
+	100% {
+		filter: blur(0px)
 	}
 }

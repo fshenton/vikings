@@ -1,29 +1,48 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect, useState } from "react";
+import { s, RENDER } from "./";
+import { ClientContext as Client } from "COMPONENTS/Client/";
 import { 
 	data,
 	ACTIONS,
 	EpisodesContext as Episodes
 } from "COMPONENTS/Episodes/";
-import { ClientContext as Client } from "COMPONENTS/Client/";
-import { s, RENDER } from "./";
+import { NavContext as Nav } from "COMPONENTS/Navigation/";
 
 export default function EpisodesNav(){
-	
 	// CONTEXT
 	// -------------------------------
 	const {
 		state: {
 			activeIndex,
-			episodeCount
+			episodeCount,
+			overlayActive
 		},
 		dispatch
 	} = useContext(Episodes);
+
+	const {
+		open: isNavOpen
+	} = useContext(Nav).state;
 
 	const { 
 		isSmall,
 		isMedium, 
 		isLarge
 	} = useContext(Client).state;
+
+	// STATE AND EFFECTS
+	// -------------------------------
+	const [active, setActive] = useState(false);
+
+	useEffect(fireTransition, []);
+
+	function fireTransition() {
+		const delay = setTimeout(() => {
+			setActive(true);
+			}, 200);
+
+		return () => clearTimeout(delay);
+	}// fireTransition
 
 	// CLICK HANDLER
 	// -------------------------------
@@ -49,23 +68,34 @@ export default function EpisodesNav(){
 	const bottomPagination = isSmall || isMedium;
 	const sidePagination = isLarge;
 
+	const isHidden = isNavOpen || overlayActive;
+	const tabIndex = isHidden ? -1 : 0;
+
 	return (
-		<nav className={ s.wrapper }>
+		<nav 
+			className={ `${s.wrapper} ${active ? s.visible : s.invisible}` } 
+			aria-hidden={ isHidden }>
 			<div className={ s.container }>
-				<button 
+				<button
 					className={ `${s.button} ${s.prev}` }
-					aria-label="Previous episode."
 					aria-controls="episodes__items episodes__pagination"
-					aria-hidden={ isFirstEpisodeActive }
+					aria-hidden={ isFirstEpisodeActive || isHidden }
+					aria-label="Previous episode."
 					onClick={ prevEpisode }
-				/>
+					tabIndex={ tabIndex }
+				>
+					<span className={ s.icon }/>
+				</button>
 				<button 
 					className={ `${s.button} ${s.next}` }
-					aria-label="Next episode." 
 					aria-controls="episodes__items episodes__pagination"
-					aria-hidden={ isLastEpisodeActive }
+					aria-hidden={ isLastEpisodeActive || isHidden }
+					aria-label="Next episode." 
 					onClick={ nextEpisode }
-				/>
+					tabIndex={ tabIndex }
+				>
+					<span className={ s.icon }/>
+				</button>
 				{ bottomPagination && pagination }				
 			</div> 
 			{ sidePagination && pagination }

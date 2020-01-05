@@ -1,4 +1,6 @@
+import data from "./data.js";
+import RENDER from "./renderUtils.jsx";
 import s from "./styles.scss";
 
-export { s };
+export { RENDER, data, s };
 export { default } from "./LogoArtwork.jsx";

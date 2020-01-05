@@ -1,27 +1,26 @@
 import React, { createContext, useReducer, useEffect } from "react";
+import UTILS from "SHARED/utils.js";
 import { 
-	ClientContext as Client,
 	ACTIONS, 
+	ClientContext as Client,
 	reducer 
 } from "./";
-import UTILS from "SHARED/utils.js";
 
 const initialState = {
 	isSmall:  true, //default 
 	isMedium: false,
 	isLarge: false,
+	isChrome: false,
+	isEdge: false,
+	isSafari: false,
+	isFirefox: false
 	// NOT IMPLEMENTED YET
 	// isTouch: false,
 	// hasGyro: false,
 	// is4G: false,
-	// isChrome: false,
-	// isEdge: false,
-	// isSafari: false,
-	// isFirefox: false
 };
 
 const ClientContext = createContext();
-
 
 function ClientProvider(props){
 
@@ -36,19 +35,23 @@ function ClientProvider(props){
 		};
 	}// updateResizeListeners
 
-
 	function syncViewSize(){
 		dispatch({
 			type: ACTIONS.UPDATE_VIEW_SIZE
 		});
 	}// syncViewSize
 
-
-	// EFFECTS
-	// ------------------------
+	function setBrowser(){
+		dispatch({
+			type: ACTIONS.SET_BROWSER
+		});
+	}// setBrowser
 
 	//set device dimensions on mount
 	useEffect(syncViewSize, []); 
+
+	//get browser
+	useEffect(setBrowser, []);
 
 	//add/remove resize listeners
 	useEffect(updateResizeListeners, []);
@@ -58,7 +61,7 @@ function ClientProvider(props){
 			{ children }
 		</ClientContext.Provider>
 	);
-}
+}// ClientProvider
 
 export {
 	ClientContext,

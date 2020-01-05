@@ -1,12 +1,13 @@
 import React, { useContext } from "react";
+import UTILS from "SHARED/utils.js";
 import { s } from "./";
-import Link from "COMPONENTS/Link/";
+import { ClientContext as Client } from "COMPONENTS/Client/";
 import { 
 	ACTIONS,
 	EpisodesContext as Episodes
 } from "COMPONENTS/Episodes/";
-import { ClientContext as Client } from "COMPONENTS/Client/";
-import UTILS from "SHARED/utils.js";
+import Link from "COMPONENTS/Link/";
+import { NavContext as Nav } from "COMPONENTS/Navigation/";
 
 function renderPagination(data){
 	const pagination = data.map(renderPaginationLink);	
@@ -19,19 +20,22 @@ function renderPagination(data){
 			{ pagination }
 		</ol> 
 	);
-}//renderPagination
-
+}// renderPagination
 
 function renderPaginationLink(data, index){
-
 	// CONTEXT
 	// --------------------------
 	const { 
 		state: {
-			activeIndex 
+			activeIndex,
+			overlayActive 
 		},
 		dispatch
 	} = useContext(Episodes);
+
+	const {
+		open: isNavOpen
+	} = useContext(Nav).state;
 
 	const {
 		isLarge
@@ -46,7 +50,6 @@ function renderPaginationLink(data, index){
 		});
 	}// changeEpisode
 
-
 	// RENDER
 	// --------------------------
 	const { 
@@ -58,45 +61,56 @@ function renderPaginationLink(data, index){
 
 	const isActive 	= index === activeIndex;
 
-	let opacity;
+	//calculate the distance from activeIndex for formatting
+	let opacity = 0;
 	if(isActive) opacity = 1;
 	else {
-		const decayDistance = 4;
-		const decayRate     = 1/decayDistance;
-		const fadeOffset    = Math.abs(index - activeIndex);
+		const startingOpacity = isLarge ? 0.45 : 0.8;
+		const decayDistance   = isLarge ? 15 : 5;
+		const decayRate       = 1/decayDistance;
+		const fadeOffset      = Math.abs(index - activeIndex);
 		
-		opacity = 1 - (fadeOffset * decayRate);
+		opacity = startingOpacity - (fadeOffset * decayRate);
 	}
 	
 	const offset = index - activeIndex;
 	
 	let translate, factor;
-	if(isLarge){
+	if(isLarge){ //vertically aligned on desktop only
 		translate   = "translateY";
-		factor      = 1.5;
+		factor      = 2;
 	} else { 
 		translate   = "translateX";
-		factor      = 1;
+		factor      = 1.25;
 	}
 
 	const translation = `${factor * offset}em`;
 
-	const style = {
-		transform: `${translate}(${translation})`,
-		opacity
-	};
+	const isHidden = (isNavOpen || opacity <= 0);
+
+	let style = undefined;
+	if(!isHidden){
+		style = {
+			transform: `${translate}(${translation})`,
+			opacity
+		};
+	}
+
+	const tabIndex = overlayActive || isNavOpen ? -1 : 0; 
 
 	return (
 		<li 
 			className={ `${s.item} ${isActive ? s.active : s.inactive}` }
-			style={ style }
-			key={ `episode__pagination__${episodeNo}` }
 			aria-current={ isActive }
+			aria-hidden={ isHidden }
+			key={ `episode__pagination__${episodeNo}` }
+			style={ style }
 		>
 			<Link 
-				destination={ `#${episodeId}` }
 				className={ s.paginationLink }
+				destination={ `#${episodeId}` }
 				onClick={ setActiveIndex }
+				tabIndex={ tabIndex }
 			>
 				{ episodeNo }
 			</Link>

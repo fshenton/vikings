@@ -1,2 +1,5 @@
 node_modules/
-dist/
+
+#bundled website code
+dist/bundles.js
+dist/index.html

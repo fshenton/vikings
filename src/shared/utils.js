@@ -4,7 +4,6 @@ function convertToSafeString(string, seperator="_"){
 			.toLowerCase();
 }//convertToSafeString
 
-
 function getDeviceDimensions(){
 	const width = Math.max(
 		document.documentElement.clientWidth, 
@@ -20,7 +19,6 @@ function getDeviceDimensions(){
 
 	return { width, height} ;
 }// getDeviceDimensions
-
 
 export default {
 	convertToSafeString,

@@ -1,57 +1,113 @@
-import React, { useContext } from "react";
-import { EpisodesContext as Episodes } from "COMPONENTS/Episodes/";
-import PreviewThumb from "COMPONENTS/PreviewThumb/";
-import { s } from "./";
+import React, { useContext, useState, useEffect } from "react";
 import RENDER from "SHARED/renderUtils.jsx";
+import UTILS from "SHARED/utils.js";
+import { s } from "./";
+import { ClientContext as Client } from "COMPONENTS/Client/";
+import { EpisodesContext as Episodes } from "COMPONENTS/Episodes/";
+import { NavContext as Nav } from "COMPONENTS/Navigation/";
+import PreviewOverlay from "COMPONENTS/PreviewOverlay/";
+import PreviewThumb from "COMPONENTS/PreviewThumb/";
+import WatchNow from "COMPONENTS/WatchNow/";
 
 export default function Episode(props){
-
-	//CONTEXT
-	//---------------------------
-	const {
-		activeIndex,
-		episodeCount
-	} = useContext(Episodes).state;
-
-	//RENDER
-	//---------------------------
+	// PROPS
+	// -------------------------------
 	const {
 		id,
 		index,
 		number,
-		title,
+		poster: {
+			src: posterSrc
+		},
 		synopsis: synopsisData,
 		thumbnail = {},
-		trailer = {}
+		title,
+		trailer: {
+			src: trailerSrc
+		}
 	} = props;
 
+	// CONTEXT
+	// ---------------------------
+	const { 
+		isSmall 
+	} = useContext(Client).state;
+
+	const {
+		activeIndex,
+		episodeCount,
+		overlayActive
+	} = useContext(Episodes).state;
+
+	const { 
+		open: isNavOpen
+	} = useContext(Nav).state;
+
+	// STATE & EFFECT
+	// -----------------------------
+	const [visible, setVisible] = useState(false);
+
+	const active = index === activeIndex;
+
+	useEffect(fireTransition, [active]);
+
+	function fireTransition(){
+		let ms = 0;
+		const delay = setTimeout(()=> {
+				setVisible(active);
+				ms = active ? 200 : 0;
+			}, ms);
+		
+		return ()=> { clearTimeout(delay) };
+	}
+
+	// RENDER
+	// ---------------------------
 	const hidden = index !== activeIndex;
 
 	const synopsis = RENDER.body(synopsisData, {
 		scope: "episode", //for key 
 		className: s.paragraph
 	});
-	
+
+	const formattedTitle    = UTILS.convertToSafeString(title, "-");
+	const formattedId       = `${formattedTitle}-preview`;
+
+	const isHidden = isNavOpen;	
+	const isActive = active && visible && !overlayActive;
 
 	return (
 		<li
 			id={ id }
 			className={ s.wrapper }
-			role="group"
-			aria-roledescription="slide"
-			aria-label={ `Episode ${number} of ${episodeCount}.` }
 			aria-hidden={ hidden }
+			aria-label={ `Episode ${number} of ${episodeCount}.` }
+			aria-roledescription="slide"
+			role="group"
 		>
 			<article className={ s.container }>
 				<PreviewThumb 
 					episodeId={ id }
+					controls={ formattedId }
 					index={ index }
 					number={ number }
-					title={ title }
 					thumbnail={ thumbnail }
-					trailer={ trailer }
+					title={ title }
+					trailerSrc={ trailerSrc }
 				/>
-				<div className={ s.content }>
+				<PreviewOverlay 
+					episodeId={ id }
+					id={ formattedId }
+					index={ index }
+					number={ number }
+					posterSrc={ posterSrc }
+					title={ title }
+					trailerSrc={ trailerSrc }
+				/>
+				<div 
+					className={ `${s.content} ${isActive ? s.active : s.inactive}` }
+					aria-hidden={ isHidden }
+				>
 					<h1 className={ s.title }>
 						{ title }
 					</h1>
@@ -66,4 +122,4 @@ export default function Episode(props){
 			</article>
 		</li>
 	);
-}
+}// Episodes

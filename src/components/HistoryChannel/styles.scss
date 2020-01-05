@@ -1,10 +1,66 @@
 .history {
-	position: absolute;
-	width: 3.75em;
+	width: 3em;
 	height: 4em;	
-	bottom: 3.25em;
-	right: 3.25em;
-	z-index: 3;
+	position: fixed;
+	right: 3em;
+	bottom: 3em;
+	z-index: 5;
 	font-size: 1rem;
-	background-color: green;
-} 
+	opacity: 0;
+	background: center/contain no-repeat url("/assets/2d/static-elements/history-logo.png");
+	transition: opacity 1s 0.8s, 
+				transform 1s 0.8s, 
+				filter 0.15s;
+
+	&.active {
+		transform: translateY(0);
+	}
+
+	&.inactive {
+		transform: translateY(-20%);
+	}
+
+	&[aria-hidden="true"] {
+		transition: opacity 1s, visibility 0s 1.1s;
+	}
+
+	&[aria-hidden="false"] {
+		opacity: 1;
+	}
+
+	&:hover {
+		filter: brightness(1.25);
+
+		.circle {
+			outline: none;
+			animation: encircle 1s cubic-bezier(0.645, 0.045, 0.355, 1) forwards;
+		}
+	}
+
+	&:focus {
+		outline: solid white 1px;
+		outline-offset: 5px;
+	}
+
+	&:active .outline {
+		opacity: 1;
+	}
+}
+
+	.outline {
+		width: 200%;
+		height: 200%;
+		opacity: 0.5;
+		transform: translate(-25%, -10%);
+	}
+
+	.circle {
+		stroke-dasharray: 1000;
+		stroke-dashoffset: 1000;
+	}
+
+@keyframes encircle {
+	to {
+		stroke-dashoffset: 0;
+	}
+}

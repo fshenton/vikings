@@ -1,55 +1,112 @@
+// Mobile Portrait
 .wrapper {
-	position: fixed; //with absolute it will scroll with page
 	width: 80%;
+	height: 2rem;
+	position: fixed;
 	right: 50%;
 	bottom: 5%;
-	z-index: 2;
+	z-index: 3;
 	transform: translateX(50%);
+	transition: opacity 1s 2s;
+
+	&.invisible {
+		opacity: 0;
+	}
+
+	&.visible {
+		opacity: 1;
+	}
 }
 
 	.container {
 		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		height: 100%;
 		position: relative;
 		z-index: 1;
-		justify-content: space-between;
-		align-items: center;
 	}
 
 		.button {
-			font-size: 1.75rem;
-			width: 1em;	
-			height: 1.42em;
+			width: 2em;
+			height: 100%;
 			z-index: 2;
+			font-size: 1em;
+			cursor: pointer;
+			background-color: transparent;
+			transform: translateX(0);
+			transition: transform 0.15s;
+
+			.icon {
+				width: 1em;	
+				height: 100%;
+				position: absolute;
+				top: 0;
+				left: 50%;
+				transform: translateX(-50%);
+				background: url("/assets/2d/arrows/arrow.svg") no-repeat;
+				background-size: 125% 100%;
+			}
+		}
+
+		.prev, .next {			
+			&:focus {
+				outline: solid white 1px;
+				outline-offset: 2px;
+			}			
 		}
 
 		.prev {
 			order: 1;
+			
+			&:hover {
+				transform: translateX(-0.25em);
+			}
+
+			&:active {
+				transform: scale(0.9) translateX(-0.25em);
+			}
 		}
 
 		.next {
 			order: 3;
+			transform: scaleX(-1);
+		
+			&:hover {
+				transform: scaleX(-1) translateX(-0.25em);
+			}
+
+			&:active {
+				transform: scaleX(-0.9) translateX(-0.25em);
+			}
 		}
 
 		.pagination {
 			order: 2;
 			display: flex;
+			align-items: center;
 			width: 40%;
 			height: 1.5em;
 			z-index: 1;
-			align-items: center;
 			list-style: none;
 		}
 
 			.item {
 				display: flex;
-				position: absolute;
-				height: 100%;
-				left: 50%;
 				align-items: center; 
+				height: 100%;
+				position: absolute;
+				left: 50%;
+				transition: transform 0.15s, opacity 0.5s;
 
 				&.inactive {
 					font-size: 1.15em;
 					font-weight: normal;
+
+					&[aria-hidden="false"]:hover {
+						//using important here to override inline styling in renderUtils
+						opacity: 1 !important;
+					}
 				}
 
 				&.active {
@@ -59,7 +116,18 @@
 				}
 
 				.paginationLink {
+					font-family: var(--font_family__heading);
+					font-style: normal;
 					text-decoration: none;
+
+					&:focus {
+						outline: solid white 1px;
+						outline-offset: 2px;
+					}
+
+					&:focus:not(:active) {
+						text-decoration: underline;
+					}
 				}
 			} 
 
@@ -68,18 +136,22 @@
 //Mobile landscape
 @media (orientation: landscape) {
 	.wrapper {
-		width: 33%;
+		width: 40%;
+		right: 25%;
+    	bottom: 8%;
 	}
 }
 
 //Tablet portrait
 @media (min-width: 768px) {
 	.wrapper {
-		width: 50%;
+		width: 33%;
+		bottom: 3.25em;
+		right: 50%;
 	}
 
 		.button {
-			font-size: 2rem;
+			font-size: 1.25em;
 		}
 
 		.inactive {
@@ -97,15 +169,19 @@
 	.wrapper {
 		width: 33%;
 	}
+
+		.button {
+			font-size: 1.15em;
+		}
 }
 
 //Desktop half screen
-@media (min-width: 1200px) {
+@media (min-width: 1025px) {
 	.wrapper {
 		position: fixed;
 		width: 2em;
 		height: 8em;
-		right: 10%;
+		right: 12em;
 		bottom: 25%;
 	}
 
@@ -115,15 +191,37 @@
 			height: 100%;
 		}
 
-			.button {
-				transform: rotateZ(90deg);
+			.prev {
+				transform: rotateZ(90deg) translateY(0);
+
+				&:hover,
+				&:focus {
+					transform: rotateZ(90deg) translateX(-0.25em); 	
+				}
+
+				&:active {
+					transform: scale(0.9) rotateZ(90deg) translateX(-0.25em); 	
+				}
+			}
+
+			.next {
+				transform: rotateZ(-90deg) translateY(0);
+
+				&:hover,
+				&:focus  {
+					transform: rotateZ(-90deg) translateX(-0.25em);
+				}
+
+				&:active {
+					transform: scale(0.9) rotateZ(-90deg) translateX(-0.25em);
+				}
 			}
 
 		.pagination {
 			flex-direction: column;
 			position: absolute;
-			left: 7em;
 			bottom: 20vh;
+			left: 7em;
 		}
 
 			.item {
@@ -132,8 +230,9 @@
 }
 
 //Desktop fullscreen
-@media (min-width: 1200px) and (min-aspect-ratio: 16/9) {
-	.wrapper {
-		right: 10%;
+@media (min-width: 1025px) and (min-aspect-ratio: 16/9) {
+
+	.item {
+		left: auto;
 	}
 }

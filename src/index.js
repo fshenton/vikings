@@ -1,9 +1,9 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import App from "COMPONENTS/App/";
-import { ClientProvider } from "COMPONENTS/Client/";
 import "SHARED/global.scss";
 import "SHARED/reset.scss";
+import App from "COMPONENTS/App/";
+import { ClientProvider } from "COMPONENTS/Client/";
 
 window.addEventListener("DOMContentLoaded", init);
 

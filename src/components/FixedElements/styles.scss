@@ -1,0 +1,62 @@
+// Mobile portrait
+.wrapper {
+	height: 100%;
+	position: fixed;
+	z-index: 5;
+}
+
+	.socials {
+		width: 5.75em;
+		height: 1.125em;
+		position: fixed;
+		top: var(--socials_spacing);
+		right: var(--socials_spacing);
+		z-index: 5;
+		font-size: 1rem;
+		--socials_spacing: 3em;
+
+		&[aria-hidden="true"] {
+			transition: opacity 1s 0s, visibility 0s 1.1s;
+		}
+
+		&[aria-hidden="false"] {
+			transition: opacity 1s 1s;
+		}
+		
+		& li {
+			opacity: 0;
+			animation-duration: 0.5s;
+			animation-fill-mode: forwards;
+			animation-name: fade-in-and-move;
+		}
+
+		& li:nth-child(1) {
+			animation-delay: 0.8s;
+		}
+
+		& li:nth-child(2) {
+			animation-delay: 1s;
+		}
+
+		& li:nth-child(3) {
+			animation-delay: 1.15s;
+		}
+	}
+
+// Desktop 
+@media (min-width: 1025px) {
+	.socials {
+		--socials_spacing: 2.5em;
+	}
+}
+
+@keyframes fade-in-and-move {
+	0% {
+		opacity: 0;
+		transform: translateY(20%);
+	}
+	100% {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}

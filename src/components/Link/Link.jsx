@@ -2,31 +2,33 @@ import React from "react";
 import { UTILS } from "./";
 
 export default function Link(props){
-
-	//shout at the dev who implemented this incorrectly
 	UTILS.checkProps(props);
 
-	//RENDER
-	//------------------------
+	// PROPS
+	// ------------------------
 	const {
 		destination = "",
 		className   = "",
 		children,
+		tabIndex    = 0,
 		...remainingProps
 	} = props;
 
-	const isInternal         = !!destination.match(/(\/|#)/);
+	const isInternal         = !destination.match(/http/g);
 	const externalAttributes = isInternal ? {} : {
 		target: "_blank",
 		rel: "noopener"
 	};
 
+	// RENDER
+	// -------------------------
 	return (
 		<a 
 			className={ className }
-			{ ...remainingProps }
 			href={ destination }
+			tabIndex={ tabIndex }
 			{ ...externalAttributes }
+			{ ...remainingProps }
 		>
 			{ children }
 		</a>	

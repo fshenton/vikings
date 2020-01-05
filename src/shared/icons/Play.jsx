@@ -3,27 +3,41 @@ import { s } from "./";
 
 export default function Play(props) {
 	
-	const { colour } = props;
+	const {
+		className = "", 
+		colour,
+		hidden
+	} = props;
 
 	return (
-		<svg className={ s.icon } 
-			 viewBox="0 0 100 100" 
-			 alt="Play video"
-			 preserveAspectRatio="xMaxYMax"
+		<svg 
+			className={ `${s.icon} ${className}` } 
+			alt="Play video"
+			aria-hidden={ hidden }
+			preserveAspectRatio="xMaxYMax"
+			viewBox="0 0 100 100" 
 		>
+			<mask id="triangle">
+				<rect 
+					width="100%"
+					height="100%" 
+					fill="white"
+				/>
+				<polygon 
+					points="40,30 40,70 65,50" 
+					fill="black"
+				/>
+			</mask>
 			<circle 
 				cx="50" 
 				cy="50" 
-				r="42" 
-				fill="none" 
-				strokeWidth="15" 
-				stroke={ colour }
-			/>
-			<polygon 
-				points="37.5,37.5 37.5,62.5 62.5,50" 
-				fill={ colour }
+				r="49" 
+				fill={ colour } 
+				strokeWidth="0" 
+				stroke="none"
+				mask="url(#triangle)"
 			/>
 		</svg>
 	);
-}
+}// Play
  

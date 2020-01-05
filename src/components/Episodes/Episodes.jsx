@@ -1,14 +1,15 @@
 import React from "react";
-import Episode from "COMPONENTS/Episode/";
-import EpisodesNav from "COMPONENTS/EpisodesNav/";
 import { 
 	data,
 	RENDER,
 	s,
 	EpisodesProvider
 } from "./";
+import Episode from "COMPONENTS/Episode/";
+import EpisodesNav from "COMPONENTS/EpisodesNav/";
 
 export default function Episodes(){
+	document.title = 'Vikings | Episodes';
 
 	const episodes = data.map(RENDER.episode);
 

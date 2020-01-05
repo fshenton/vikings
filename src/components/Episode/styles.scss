@@ -1,117 +1,175 @@
-$fade-color: rgb(237, 20, 61);
-
 // Mobile Portrait
 .wrapper {
-	position: relative;
-	height: auto;
 	min-height: 100%;
-	padding-top: 20vh;
-	background-color: $fade-color;
-	
-	&[aria-hidden="true"]{
-		position: absolute;
-		top: 0;
+	padding-top: 15vh;
+	position: absolute;
+	top: 0;
+	left: 0;
+
+	&[aria-hidden="true"] {
+		transition: opacity .6s, visibility 0s 0.6s;
+	}
+
+	&[aria-hidden="false"] {
+		// placeholder
 	}
 }
-		.content {
-			display: flex;
-			padding: 10vw; 
-			flex-direction: column;
-			font-size: 1.3rem;
+
+	.content {
+		display: flex;
+		flex-direction: column;
+		padding: 10vw;
+		font-size: 1.3rem;
+		transition-property: opacity;
+
+		&[aria-hidden="false"]{
+			transition-delay: 1s;
+			transition-duration: 1s;
 		}
 
-			.episode {
-				order: 1;
-				margin-bottom: 1.62em;
-				font-size: 1em;
-				font-family: var(--font_family__heading);
+		&[aria-hidden="true"]{
+			transition: opacity 0.6s, visibility 0s 0.7s;
+		}
+
+		&.inactive {
+
+			.episode, 
+			.title, 
+			.body>.paragraph {
+				opacity: 0;
+				transform: translateY(1rem);
+			}
+		}
+
+		&.active {
+
+			.episode, 
+			.title, 
+			.body>.paragraph {
+				opacity: 1;
+				transform: translateY(0);
 			}
 
-			.title {
-				order: 2;
-				font-size: 1.62em;
-				font-family: var(--font_family__heading);
-			}
+		}
+	}
 
-			.body {
-				order: 3;
-				padding-bottom: 3em;
-				margin-top: 1.5em;
-				line-height: 1.5;
-				overflow-y: hidden;
-				font-size: 1em;
-				font-family: var(--font_family__body);
-			}
+		.episode,
+		.title,
+		.body>.paragraph {
+			transition: opacity 1s, transform 1s;
+		}
 
-				.paragraph {
-					opacity: 1; //placeholder to get it showing
-				}
+		.episode, 
+		.title {
+			text-shadow: 1px 1px var(--background_color);
+		}
 
-			.fade {
-				content: "";
-				display: block;
-				width: 100%;
-				height: 10em;
-				position: fixed;
-				bottom: 0;
-				left: 0;
-				z-index: 2;
-				background-image: linear-gradient(
-				    rgba($fade-color, 0) 0%,
-				    rgba($fade-color, 1) 80%,
-				    rgba($fade-color, 1) 100%	
-				);
+		.episode {
+			order: 1;
+			margin-bottom: 0.62em;
+			font-size: 1em;
+			font-family: var(--font_family__heading);
+			transition-delay: 1s;
+		}
+
+		.title {
+			order: 2;
+			font-size: 1.62em;
+			font-family: var(--font_family__heading);
+			transition-delay: 1.25s;
+		}
+
+		.body {
+			order: 3;
+			margin-top: 0.62em;
+			margin-bottom: 1.5em;
+			overflow-y: hidden;
+			font-size: 1rem;
+			font-family: var(--font_family__body);
+			line-height: 1.5;
+
+			.paragraph {
+				transition-delay: 1.35s;
 			}
+		}
+
+		.fade {
+			content: "";
+			display: block;
+			width: 100%;
+			height: 10em;
+			position: fixed;
+			bottom: 0;
+			left: 0;
+			z-index: 2;
+			background-image: linear-gradient(
+			    rgba(255, 255, 255, 0) 0%,
+			    var(--background_color) 70%,
+			    var(--background_color) 100%	
+			);
+		}
 
 //Mobile Landscape
 @media (orientation: landscape){
 	.wrapper {
+		display: flex;
 		max-height: 100%;
 		padding: 0;
+		top: 0;
 	}
 
-		.container {
-			display: flex;
-			flex-direction: row;
-
+		.content {
+			order: 1;
+			justify-content: center;
+			width: 50%;
+			padding-top: 15%;
+			padding-right: 5%;
+			padding-left: 5%;
+			position: relative;
 		}
 
-			.content {
-				order: 1;
-				width: 50%;
-				padding-left: 5%;
-				padding-right: 5%;
-				justify-content: center;
+			.fade {
+				height: 9em;
 			}
 }
 
 //Tablet portrait
 @media (min-width: 768px) {
 	.wrapper {
-		padding-top: 10vh;
+		padding-top: 13.5vh;
+		top: 0;
 	}
-
 		.content {
 			padding: 10%;
-			font-size: 1.62rem;
 		}
+
+			.episode {
+				margin-bottom: 0;
+			}
+
+			.title, .body {
+				margin-top: 0.62em;
+			}
 }
 
 //Tablet landscape
 @media (min-width: 768px) and (orientation: landscape) {
 	.wrapper {
-		padding-top: 5%;
+		padding-top: 25vh;
 	}
-
 		.content {
-			padding-left: 5%;
+			padding-top: 8%;
 			padding-right: 5%;
-			font-size: 1.3rem;
+			padding-left: 5%;
 		}
+
+			.fade {
+				height: 0;
+			}
 }
 
 //Desktop half screen
-@media (min-width: 1200px) {
+@media (min-width: 1025px) {
 	.wrapper {
 		width: 95%;
 		height: 100%;
@@ -123,27 +181,27 @@ $fade-color: rgb(237, 20, 61);
 	}
 
 		.container {
+			display: flex;
+			align-items: center;
 			width: 100%;
 			height: 100%;
-			align-items: center;
 		}
 
 			.content {
+				align-self: center;
 				width: 50%;
 				padding-left: 0;
 				padding-right: 5em;
-				align-self: center;
 				font-size: 1rem;
 			}
 }
 
 //Desktop fullscreen
-@media (min-width: 1200px) and (min-aspect-ratio: 16/9) {
-
+@media (min-width: 1025px) and (min-aspect-ratio: 16/9) {
 	.content {
 		padding-left: 0;
 		padding-right: 17.25em;
+		top: auto;
 		align-self: flex-end;
-		font-size: 1rem;
 	}
 }

@@ -1,7 +1,6 @@
 import { ACTIONS } from "./";
 
 export default function reducer(state, action){
-
 	const {
 		type,
 		value
@@ -27,5 +26,4 @@ export default function reducer(state, action){
 			throw new Error("Invalid action used.")
 			break;
 	}	
-}
-
+}// reducer

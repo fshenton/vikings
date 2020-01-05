@@ -1,5 +1,4 @@
 function checkProps(props){
-
 	const { 
 		"aria-label": label, // (string) accessible label for the link 
 		destination,         // (string) path to destination to use for href
