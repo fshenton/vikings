@@ -1,0 +1,64 @@
+// Mobile portrait
+.wrapper {
+	display: flex;
+	justify-content: space-between;
+
+	.item {
+		width: 1em;
+		height: 1em;
+		list-style: none;
+	}
+
+		.link {
+			display: block;
+			width: 100%;
+			height: 100%;
+			background-size: contain;
+			background-position: center;
+			background-repeat: no-repeat;
+			transition: filter 0.5s forwards;
+
+			&.facebook {
+				background-image: url("assets/2d/socials/facebook.svg");
+			}
+
+			&.twitter {
+				background-image: url("assets/2d/socials/twitter.svg");
+			}
+
+			&.instagram {
+				background-image: url("assets/2d/socials/instagram.svg");
+			}
+
+			&:hover,
+			&:focus {
+				filter: brightness(2);
+
+			}
+
+			&:hover	.circle {
+				animation: encircle 1s cubic-bezier(0.645, 0.045, 0.355, 1) forwards;
+			}
+
+			&:focus {
+				outline: solid white 1px;
+				outline-offset: 2px;
+			}
+		}
+	
+	.circle {
+		stroke-dasharray: 1000;
+		stroke-dashoffset: 1000;
+	}
+
+	.svg {
+		transform: scale(2.5);
+		opacity: 0.8;
+	}
+}
+
+@keyframes encircle {
+	to {
+		stroke-dashoffset: 0;
+	}
+}

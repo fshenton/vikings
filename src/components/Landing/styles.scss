@@ -1,0 +1,186 @@
+// Mobile portrait
+.landing {
+	width: 100%;
+	height: 100%;
+	background: 100%/cover url(assets/2d/landing/bg-small-portrait.jpg);
+
+	&.active {
+		.heading,
+		.subheading,
+		.body,
+		.glow {
+			opacity: 1;
+		}
+
+		.heading,
+		.subheading {
+    		transform: translateY(0);
+		}
+	}
+
+	&.inactive {
+		.heading,
+		.subheading,
+		.body,
+		.glow {
+			opacity: 0;
+		}
+
+		.heading,
+		.subheading {
+    		transform: translateY(100%);
+		}
+	}
+}
+
+	.wrapper {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+		width: 100%;
+		height: 100%;
+		position: relative;
+		z-index: 4;
+		font-size: 1.15rem;
+		transition: opacity 0.6s;
+
+		&[aria-hidden="true"]{
+			transition-delay: 0s;
+			transition: opacity 0.6s, visibility 0s 0.7s;
+		}
+
+		&[aria-hidden="false"]{
+			transition-delay: 0.6s;	
+		}
+	}
+
+		.background {
+			opacity: 0.05;	
+			z-index: 0;
+		}
+
+		.foreground {
+			opacity: 0.11;
+			z-index: 4;
+			pointer-events: none;
+		}
+
+		.logo {
+			z-index: 1;
+		}
+
+		.textHider {
+			overflow-y: hidden;
+			padding-top: 0.62em;
+		}
+
+		.heading, .subheading {
+			font-family: var(--font_family__heading);
+	    	transform: translateY(1em);
+	    	text-shadow: 1px 1px black;
+		}
+
+		.heading {
+			margin-bottom: 0;
+			font-size: 3em;
+			letter-spacing: 0.2em;
+			text-transform: uppercase;
+			transition: opacity 1.98s 1.83s,
+						transform 2s 2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+		}
+
+		.subheading {
+			margin-bottom: 0.5em;
+			font-size: 2em;
+			transition: opacity 1.98s 1.83s,
+						transform 2s 2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+		}
+
+		.body {
+			font-size: 0.8em;
+			font-family: var(--font_family__body);
+			text-align: center;
+			filter: drop-shadow(2px 4px 6px black);
+			transition: opacity 1s 3.5s;
+
+			.paragraph+.paragraph {
+				margin-top: 0.62em;
+			}
+
+		}
+
+		.paragraph > a{
+			font-weight: bold;
+
+			&:hover, &:focus {
+				text-decoration: underline;
+			}
+
+			&:focus {
+				outline: solid white 1px;
+				outline-offset: 1px;
+			}
+		}
+
+		.glow {
+			height: 100%;
+			width: 100%;
+			position: fixed;
+			top: -15%;
+			left: 0;
+			z-index: 3;
+			pointer-events: none;
+			background: no-repeat center/cover url("/assets/2d/glow/glow-small.png");
+			transition: opacity 3s 0.5s ease-in-out;
+		}
+		
+		.watchNow {
+			//in case it's needed
+		}
+
+// Mobile landscape
+@media (orientation: landscape) {
+	.landing {
+		background-image: url(assets/2d/landing/bg-small-landscape.jpg);
+	}
+
+		.subheading {
+			margin-bottom: 0.25em;
+			font-size: 2.5em;
+		}
+
+			.glow {
+				top: -10%;
+			}
+}
+
+// Tablet portrait
+@media (min-width: 768px) {
+	.landing {
+		background-image: url(assets/2d/landing/bg-medium.jpg);
+	}
+
+		.wrapper {
+			font-size: 1.5rem;
+		}
+}
+
+// Tablet landscape
+@media (min-width: 768px) and (orientation: landscape) {
+	.glow {
+		top: -15%;
+	}
+}
+
+// Desktop
+@media (min-width: 1025px) {
+	.landing {
+		background-image: url(assets/2d/landing/bg-large.jpg);
+	}
+
+		.glow {
+			background-image: url("/assets/2d/glow/glow-large.png");
+			top: -30%;
+		}
+}

@@ -1,8 +1,8 @@
 const path   = require('path');
 const src    = path.resolve(__dirname, "src");
 const dist   = path.resolve(__dirname, "dist");
-function buildConfig(env, args){
 
+function buildConfig(env, args){
 	const { mode } = args;
 
 	let modeOptions;
@@ -11,13 +11,14 @@ function buildConfig(env, args){
 			modeOptions = {
 				mode: "development",
 				devServer: {
-					contentBase: "./dist"
+					contentBase: "./dist",
+					historyApiFallback: true
 				},
 				output: {
 					filename: "bundle.js",
 					path: dist,
 					publicPath: "/"
-				},
+				}
 			};
 			break;
 		case "production":
@@ -34,7 +35,10 @@ function buildConfig(env, args){
 	}
 
 	return {
-		entry: `${src}/index.js`,
+		entry: [
+			"@babel/polyfill",
+			`${src}/index.js`
+		],
 		module: {
 			rules: [
 				{
@@ -44,6 +48,7 @@ function buildConfig(env, args){
 						loader: "babel-loader",
 						options: {
 							presets: [
+								"@babel/preset-env",
 								"@babel/preset-react"
 							]
 						}
@@ -62,15 +67,16 @@ function buildConfig(env, args){
 							loader: "css-loader",
 							options: {
 								modules: {
-									localIdentName: "[folder]__[local]",
+									localIdentName: "[folder]__[local]"
 								},
 								url: false
 							}
-						}, {
+						}, 
+						{
 							loader: "sass-loader"
 						}
 					]	
-				},
+				}
 			]
 		},
 		resolve: {
@@ -79,7 +85,7 @@ function buildConfig(env, args){
 				"COMPONENTS": `${src}/components`
 			}
 		},
-		...modeOptions,
+		...modeOptions
 	}
 }
 

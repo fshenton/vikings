@@ -1,0 +1,301 @@
+//Mobile portrait
+.wrapper {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: flex-end;
+	height: 100%;
+	width: 100%;
+	position: fixed; 
+	top: 0;
+	left: 0;
+	z-index: 10;
+	font-size: 1.62rem;
+	text-align: center;
+
+	&[aria-hidden="true"]{
+		// placeholder
+	}
+	&[aria-hidden="false"]{
+		transition: opacity .3s;
+	}
+}
+
+	.container {
+		position: absolute;
+		bottom: 5%;
+		z-index: 3;
+	}
+
+		.fade {
+			opacity: 0.2;
+		}
+
+		.visible {
+			opacity: 1;
+		}
+
+		.episode,
+		.title,
+		.controls,
+		.close {
+			transition: opacity 0.3s;
+		}
+
+		.episode,
+		.title {
+			font-family: var(--font_family__heading);
+			text-shadow: 1px 1px 3px black;
+		}
+
+		.episode {
+			font-size: 1em;
+		}
+
+		.title {
+			margin-top: 0.25em;
+			font-size: 1.5em;
+		}
+
+		.play, 
+		.pause {
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -50%);
+			transition: opacity 0.15s;
+		}
+
+		.play, 
+		.pause,
+		.volume {
+			position: fixed;
+			z-index: 2;
+			cursor: pointer;
+
+			&:hover {
+				filter: brightness(1.3);
+			}
+
+			&:focus {
+				outline: solid white 1px;
+				outline-offset: 2px;
+			}
+		}
+
+		.play {
+			width: 1em;
+			height: 1em;
+			font-size: 10rem;
+			background: no-repeat url("assets/2d/controls/play.svg");
+		}
+
+		.pause {
+			width: 1em;
+			height: 1em;
+			font-size: 5rem;
+			background: no-repeat url("assets/2d/controls/pause.svg");
+		}
+
+		.volume {
+			width: 1.62em;
+			height: 1.62em;
+			top: 1em;
+			right: 1em;
+			font-size: 1em;
+
+			&.mute {
+				background: no-repeat url("assets/2d/controls/mute.svg");
+			}
+
+			&.unmute {
+				background: no-repeat url("assets/2d/controls/unmute.svg");
+			}
+		}
+
+		.controls {
+			display: flex;
+			flex-direction: row;
+			justify-content: space-between;
+			width: 9em;
+			margin-top: 1em;
+			margin-right: auto;
+			margin-left: auto;
+		}
+
+			.button {
+				display: flex;
+				align-items: center;
+				transition: transform 0.15s,
+							outline 0.15s;
+
+				&::before, 
+				&::after {
+					display: inline-block;
+					width: 1em;
+					height: 1.38em;
+					font-size: 0.8em;
+					background-image: url("/assets/2d/arrows/arrow.svg");
+					background-size: cover;
+				}
+
+				&.prev::before,
+				&.next::after {
+					content: "";
+				}
+
+				.prev, .next {
+					&:focus {
+						outline: solid white 1px;
+						outline-offset: 2px;
+					}
+				}
+
+				.prevLabel, .nextLabel {
+					transition: transform 0.3s;
+				}
+
+				&.prev {
+					margin-left: 0;
+					margin-right: auto;
+
+					&:hover .prevLabel {
+						transform: translateX(-0.25em);
+					}		
+
+					&:active {
+						.prevLabel {
+							transform: scale(0.9) translateX(-0.25em);
+						}
+					}
+
+					&::before {
+						margin-right: 1em;
+					}
+				}
+
+				&.next {
+					margin-left: auto;
+					margin-right: 0;
+
+					&:hover .nextLabel {
+						transform: translateX(0.25em);
+					}	
+
+					&:active {
+						.nextLabel {
+							transform: scale(0.9) translateX(0.25em);
+						}
+					}
+
+					&::after {
+						margin-left: 1em;
+						transform: scaleX(-1);
+					}
+				}
+			}
+
+		.close {
+			width: 1.62em;
+			height: 1.62em;
+			position: fixed;
+			top: 1em;
+			left: 50%;
+			font-size: 1em;
+			transform: translateX(-50%);
+
+			&:hover {
+				filter: brightness(1.3);
+			}
+
+			&:focus {
+				outline: solid white 1px;
+				outline-offset: 2px;
+			}
+		}
+
+			.label {
+				display: none;
+			}
+
+			.icon {
+				position: relative;
+				height: 100%;
+				width: 100%;
+			}
+
+				.bar {						
+					width: 100%;
+					height: 5px;	//placeholder
+					position: absolute;
+					top: 50%;
+					left: 50%;
+					background-color: var(--font_color);	
+
+					&.bar1 {
+	  					transform: translate(-50%, -50%) rotate(-45deg);
+				 	}
+
+				 	&.bar2 {
+	  					transform: translate(-50%, -50%) rotate(45deg);
+				 	}				
+				}
+
+	.contrastOverlay {
+		height: 100%;
+		width: 100%;
+		position: fixed;
+		top: 0;
+		left: 0;
+		background-color: rgba(2,2,2,0.25);
+		z-index: 2;
+	}
+
+	.video {
+		position: absolute;
+		height: 100%;
+		width: 100%;
+		z-index: 1;
+		object-fit: cover;
+	}
+
+// Mobile landscape
+@media (orientation: landscape) {
+	.play {
+		font-size: 6.5rem;
+	}
+
+	.pause {
+		font-size: 3.5rem;
+	}
+}
+
+// Tablet 
+@media (min-width: 768px) {
+	.close,
+	.volume  {
+		top: 1.62em;
+	}
+
+	.play {
+		font-size: 12.5rem;
+	}
+
+	.pause {
+		font-size: 7.5rem;
+	}
+
+	.volume {
+		right: 1.62em;
+	}
+}
+
+// Desktop
+@media (min-width: 1025px) {
+	.controls {
+		width: 11em;
+	}
+
+	.title {
+		font-size: 2em;
+	}
+}

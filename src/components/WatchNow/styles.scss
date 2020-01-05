@@ -1,0 +1,111 @@
+$border__color: #4e4e4e;
+
+// Mobile portrait
+.watch {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 8em;
+	height: 2.5em;
+	border: solid 1px transparent;
+	position: fixed;
+	bottom: 5%;
+	left: 50%;
+	z-index: 5;
+	font-size: 1.25em;
+	font-family: var(--font_family__body);
+	background-color: transparent;
+	transition: background-color 0.3s,
+				color 0.3s,
+				border 0.3s,
+				outline 0.3s,
+				filter 0.3s,
+				opacity 1s 0.7s,
+				transform 1s 0.7s;
+	animation:  border-color 1s 0.7s forwards linear;
+	--watch_now__x_offset: -50%;
+
+	&.active {
+		transform: translate(var(--watch_now__x_offset), 0);
+	}
+
+	&.inactive {
+		transform: translate(var(--watch_now__x_offset), -20%);
+	}
+
+	&[aria-hidden="true"] {
+		transition: opacity 1s, visibility 0s 1.1s;
+	}
+
+	&[aria-hidden="false"] {
+		opacity: 1;
+	}
+
+	&:hover {
+		border: none;  
+		outline: none; 
+		color: var(--background_color);
+		text-decoration: none; 
+		background-color: var(--font_color);
+	}
+
+	&:focus {
+		outline: solid white 1px;
+		outline-offset: 5px;
+	}
+
+	&:active {
+		filter: brightness(1.5);
+	}
+} 
+
+// Mobile landscape 
+@media (orientation: landscape) {
+	.watch {
+		height: 2em;
+	}
+}
+
+// Tablet up
+@media (min-width: 768px) {
+	.watch {
+		height: 2.5em;
+		bottom: 2.5em;
+		left: 2.5em;
+		--watch_now__x_offset: 0;
+	}
+}
+
+@keyframes border-color {
+	0% {
+		border-top-color: transparent;
+		border-right-color: transparent;
+		border-bottom-color: transparent;
+		border-left-color: transparent;
+	}
+	25% {
+		border-top-color: transparent;
+		border-right-color: transparent;
+		border-bottom-color: transparent;
+		border-left-color: $border__color;
+	}
+	50% {
+		
+		border-top-color: transparent;
+		border-right-color: transparent;
+		border-bottom-color: $border__color;
+		border-left-color: $border__color;
+	}
+	75% {
+		border-top-color: transparent;
+		border-right-color: $border__color;
+		border-bottom-color: $border__color;
+		border-left-color: $border__color;
+	}
+	100% {
+		border-top-color: $border__color;
+		border-right-color: $border__color;
+		border-bottom-color: $border__color;
+		border-left-color: $border__color;
+	}
+}

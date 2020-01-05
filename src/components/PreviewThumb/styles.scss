@@ -1,0 +1,224 @@
+//Mobile portrait
+.wrapper {
+	width: 100%;
+	position: relative;
+	z-index: 0;
+	--thumbnail_width: 100%;
+	--thumbnail_height: 38vh;
+
+	&.active {
+		.image {
+			opacity: 1;
+			filter: blur(0);
+		}
+		.ghost {
+			opacity: 0.1;
+		}
+	}
+	&.inactive {
+		opacity: 0;
+		transition: .3s;
+		
+		.image {
+			opacity: 0;
+			filter: blur(2px);
+		}
+		.ghost {
+			opacity: 0;
+		}
+	}
+}
+
+	.thumbnail {
+		display: flex;
+		width: var(--thumbnail_width);
+		height: var(--thumbnail_height);
+		position: relative;
+
+		.button { 
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			width: 100%;
+			height: 100%;
+			transition: filter 0.3s;
+
+			&:focus {
+				outline: solid white 1px;
+				outline-offset: 4px;
+			}
+
+			&:focus, 
+			&:hover {
+				filter: saturate(1.1);
+			}
+
+			.icon {
+				transform: scale(1.00);
+				transition-duration: 0.3s;
+			}  
+
+			&:hover .icon,
+			&:focus .icon {
+				transform: scale(1.15);
+				filter: brightness(1.1);
+			}
+
+			&:active .icon {
+				transform: scale(1.05);
+			}
+		}
+	
+			.image { 
+				display: block;
+				width: 100%;
+				height: 100%;
+				position: absolute;
+				top: 0;
+				left: 0;
+				transition: filter 1.5s,
+							opacity 1.5s;
+
+				&.faded {
+					opacity: 0.3; //for firefox, instead of using blurs
+				}
+
+				&.visible { }
+
+				img {
+					width: 100%;
+					height: 100%;
+					object-fit: cover; 
+				}
+			}
+
+			.icon {
+				font-size: 68px;
+			}
+	}
+
+	.ghost {
+		top: 0;
+		left: 0;
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		pointer-events: none;
+		background-blend-mode: luminosity;
+		background-color: #293354;
+		background-position: center;
+		background-repeat: no-repeat;
+		background-size: cover;
+		filter: saturate(41%) brightness(45%);
+		filter: brightness(45%);
+		transition: opacity 1.2s 0.6s;
+		--ghost_translate__distance: 100%;
+
+		&.left {
+			background-image: url("/assets/2d/episodes/ep2-small.jpg");
+			transform: translateX(calc(-1*var(--ghost_translate__distance)));			
+		}
+
+		&.top {
+			background-image: url("/assets/2d/episodes/ep4-small.jpg");
+			transform: translateY(calc(-1*var(--ghost_translate__distance)));
+
+			&.left {
+				background-image: url("/assets/2d/episodes/ep5-small.jpg");
+				transform: translate(calc(-1*var(--ghost_translate__distance)), calc(-1*var(--ghost_translate__distance)));
+			}
+		}
+
+		&.bottom {
+			background-image: url("/assets/2d/episodes/ep6-small.jpg");
+			transform: translateY(var(--ghost_translate__distance));	
+
+			&.left {
+				background-image: url("/assets/2d/episodes/ep3-small.jpg");
+				transform: translate(calc(-1*var(--ghost_translate__distance)), var(--ghost_translate__distance));
+			}
+		}
+	}
+
+	.content {
+		position: absolute; 
+	}
+
+
+//Mobile landscape
+@media (orientation: landscape) {
+	.wrapper {
+		order: 2;
+		width: 50%;
+		position: fixed;
+		left: 50%;
+		top: 50%;
+		transform: translateY(-50%);
+		--thumbnail_height: 50vh;
+	}
+}
+
+//Tablet
+@media (min-width: 768px) {
+	.ghost {
+		&.left {		
+				background-image: url("/assets/2d/episodes/ep2-medium.jpg");
+			}
+
+		&.top {
+			background-image: url("/assets/2d/episodes/ep4-medium.jpg");
+
+			&.left {
+				background-image: url("/assets/2d/episodes/ep5-medium.jpg");
+			}
+		}
+
+		&.bottom {	
+			background-image: url("/assets/2d/episodes/ep6-medium.jpg");
+
+			&.left {
+				background-image: url("/assets/2d/episodes/ep3-medium.jpg");
+			}
+		}
+	}
+}
+
+//Tablet landscape
+@media (min-width: 768px) and (orientation: landscape) {
+	.wrapper {
+		padding-top: 0;
+	}
+}
+
+//Desktop fullscreen
+@media (min-width: 1025px) {
+	.wrapper {
+		width: 50%;
+		position: initial;
+		transform: none;
+	}
+
+		.ghost {
+			--ghost_translate__distance: calc(100% + 100px);
+
+			&.left {		
+				background-image: url("/assets/2d/episodes/ep2-large.jpg");
+			}
+
+			&.top {
+				background-image: url("/assets/2d/episodes/ep4-large.jpg");
+
+				&.left {
+					background-image: url("/assets/2d/episodes/ep5-large.jpg");
+				}
+			}
+
+			&.bottom {
+				background-image: url("/assets/2d/episodes/ep6-large.jpg");
+
+				&.left {
+					background-image: url("/assets/2d/episodes/ep6-large.jpg");
+				}
+			}
+		}
+}

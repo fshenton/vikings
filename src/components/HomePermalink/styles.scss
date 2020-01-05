@@ -1,0 +1,63 @@
+// Mobile portrait
+.home {
+	width: 2em;
+	height: 3em;
+	position: fixed;
+	top: var(--home-spacing);
+	left: var(--home-spacing);
+	z-index: 5;
+	font-size: 1rem;
+	background: center/contain no-repeat url("/assets/2d/static-elements/viking-home.png");
+	transition: filter 0.3s, 
+				opacity 1s .6s, 
+				transform 1s .6s;
+	--home-spacing: 2em;
+
+	&.active {
+		transform: translateY(0);
+	}
+
+	&.inactive {
+		transform: translateY(20%);
+	}
+	
+	&[aria-hidden="true"] {
+		transition: opacity 1s, visibility 0s 1.1s;
+	}
+
+	&[aria-hidden="false"] {
+		
+	}
+
+	&:hover,
+	&:focus {
+		filter: brightness(1.35);
+	}
+
+	&:active {
+		filter: brightness(0.8);
+	}
+
+	&:focus {
+		outline: white solid 1px;
+    	outline-offset: 4px;
+	}
+}
+
+// Tablet portrait 
+@media (min-width: 768px) {
+	.home {
+		width: 3em;
+		height: 4em;
+		--home-spacing: 3em;
+	}
+}
+
+// Desktop 
+@media (min-width: 1025px) {
+	.home {
+		width: 4em;
+		height: 5em;
+		--home-spacing: 2.5em;
+	}
+}
