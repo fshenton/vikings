@@ -116,7 +116,7 @@ export default function Character(props){
 		className: s.paragraph
 	});
 
-	const heroId = UTILS.convertToSafeString(`${name} ${nickname}`);
+	const heroId   = UTILS.convertToSafeString(`${name} ${nickname}`);
 
 	const isActive = active && visible;
 	
@@ -124,7 +124,7 @@ export default function Character(props){
 
 	let nicknameClass = "";
 	if(nickname === " "){
-		nicknameClass = s.none;
+		nicknameClass = s.none; //for styling when no nickname provided
 	}
 
 	return (

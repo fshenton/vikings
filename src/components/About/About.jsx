@@ -54,9 +54,9 @@ export default function About(){
 	const body = RENDER.body(bodyData, 
 		{
 			className: s.paragraph,
-			scope: "about"
+			scope: "about" //component name is used for key
 		}
-	); //comp name for key
+	); 
 
 	const isHidden = isNavOpen;
 
@@ -66,7 +66,7 @@ export default function About(){
 				<source 
 					alt={ description }
 					media="(max-width: 767px)"
-					srcSet={ mediumSrc } //using medium for quality
+					srcSet={ mediumSrc } //using medium for quality reasons
 				/>
 				<source 
 					alt={ description }
