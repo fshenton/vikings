@@ -38,16 +38,6 @@ export default function HistoryChannel(){
 				preserveAspectRatio="xMidYMin"
 				viewBox="0 0 100 100"
 			>
-				<filter id="powder">
-					<feTurbulence
-						baseFrequency="0.2" 
-						numOctaves="3"
-					/>
-					<feDisplacementMap 
-						in="SourceGraphic" 
-						scale="5" 
-					/>
-				</filter>
 				<path 
 					className={ s.circle } 
 					fill="none" 

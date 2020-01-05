@@ -7,7 +7,7 @@
 	left: var(--home-spacing);
 	z-index: 5;
 	font-size: 1rem;
-	background: center/contain no-repeat url("/assets/2d/static-elements/viking-home.png");
+	background: center/contain no-repeat url("assets/2d/static-elements/viking-home.png");
 	transition: filter 0.3s, 
 				opacity 1s .6s, 
 				transform 1s .6s;
