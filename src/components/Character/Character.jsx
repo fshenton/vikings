@@ -49,7 +49,7 @@ export default function Character(props){
 			window.scrollTo({
 				top: 0
 			});
-		}, 500);
+			}, 500);
 
 		return () => clearTimeout(scrollTimer);
 	}// resetScroll
@@ -63,8 +63,8 @@ export default function Character(props){
 	function fireTransition(){
 		let ms = 0;
 		const delay = setTimeout(()=> {
-				setVisible(active);
-				ms = active ? 200 : 0;
+			setVisible(active);
+			ms = active ? 200 : 0;
 			}, ms);
 		
 		return ()=> { clearTimeout(delay) };

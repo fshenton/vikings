@@ -39,8 +39,7 @@ export default function EpisodesNav(){
 	function fireTransition() {
 		const delay = setTimeout(() => {
 			setActive(true);
-		}
-		, 200);
+			}, 200);
 
 		return () => clearTimeout(delay);
 	}// fireTransition

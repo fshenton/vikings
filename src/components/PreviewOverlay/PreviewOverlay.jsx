@@ -88,7 +88,7 @@ export default function PreviewOverlay(props){
 		}
 	}// toggleMuted
 	
-	// EFFECTS
+	// STATE AND EFFECTS
 	// ------------------------------
 	const isActiveEpisode   = activeIndex === index;
 	const isOverlayActive  	= isActiveEpisode && overlayActive;
@@ -97,17 +97,10 @@ export default function PreviewOverlay(props){
 
 	const player = useRef();
 
-	let focusTimer;
-
 	function toggleVideo(){
-		clearInterval(focusTimer);
-
 		if(isOverlayActive) {
 			player.current.play();
 			setPlaying(true);
-			focusTimer = setTimeout(() => {
-				setMouseMoving(false)
-			}, 3000);
 		}
 		else {
 			player.current.pause();
@@ -121,15 +114,14 @@ export default function PreviewOverlay(props){
 	// --------------------------------
 	const [mouseMoving, setMouseMoving] = useState(true);
 
-	let timer;
-
 	function setInactivityTimer(){
 		setMouseMoving(true);
 
-		clearTimeout(timer);
-		timer = setTimeout(() => 
-			(setMouseMoving(false))
-			, 3000);
+		clearTimeout(window.focusTimer);
+		
+		window.focusTimer = setTimeout(() => {
+			setMouseMoving(false)
+			}, 3000);
 	}// setTimeout
 
 	// BINDING
