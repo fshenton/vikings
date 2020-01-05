@@ -161,3 +161,12 @@
 		top: 3em;
 	}
 }
+
+// Touchscreens
+@media (pointer: coarse) {
+	.wrapper:focus {
+		.container {
+			outline: none;
+		}
+	}
+}
