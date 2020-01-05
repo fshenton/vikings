@@ -3,7 +3,9 @@
 ![](landing.gif)
 
 **Code by:** [fshenton](https://github.com/fshenton)
+
 **Primary reviewer:** [pookage](https://github.com/pookage)
+
 **Design by Florian Pollet (used with permission)**
 
 [Original designs on Behance](https://www.behance.net/gallery/75755549/Vikings-Website-Concept)
