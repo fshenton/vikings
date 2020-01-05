@@ -52,3 +52,4 @@ Any changes to files inside the src/ directory will trigger a hot reload.
 - Add wheel / keyboard arrow support to navigate between episodes and characters.
 - Prevent visibility of other site elements when transitioning between fullscreen episode previews
 - Add more content to media pages for variety.
+- Implement different, more appropriate focus effects depending on input type used to navigate site 
