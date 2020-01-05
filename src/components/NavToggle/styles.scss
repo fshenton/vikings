@@ -45,8 +45,12 @@
 	}
 
 	&:focus {
-		outline: white solid 1px;
-    	outline-offset: 4px;
+		outline: none;
+
+		.container {
+			outline: white solid 1px;
+    		outline-offset: 4px;
+    	}
 	}
 
 	&:hover {
