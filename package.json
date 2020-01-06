@@ -11,14 +11,15 @@
     "type": "git",
     "url": "git+https://github.com/fshenton/vikings.git"
   },
-  "author": "",
+  "author": "fshenton",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/fshenton/vikings/issues"
   },
-  "homepage": "https://github.com/fshenton/vikings#readme",
+  "homepage": "http://fshenton.github.io/vikings/",
   "devDependencies": {
     "@babel/core": "^7.5.5",
+    "@babel/polyfill": "^7.7.0",
     "@babel/preset-env": "^7.4.5",
     "@babel/preset-react": "^7.0.0",
     "babel-loader": "^8.0.6",
@@ -33,7 +34,6 @@
     "webpack-dev-server": "^3.7.2"
   },
   "dependencies": {
-    "@babel/polyfill": "^7.7.0",
     "react-router-dom": "^5.1.2"
   }
 }
