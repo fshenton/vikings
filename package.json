@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "build-prod": "cp -r src/index.html dist && webpack --mode=production",
-    "build-dev": "cp -r src/index.html dist && webpack-dev-server --open --mode=development"
+    "build-dev": "cp -r src/index.html dist && webpack-dev-server --open --mode=development",
+    "deploy": "git subtree push --prefix dist origin gh-pages"
   },
   "repository": {
     "type": "git",
@@ -16,7 +17,7 @@
   "bugs": {
     "url": "https://github.com/fshenton/vikings/issues"
   },
-  "homepage": "http://fshenton.github.io/vikings/",
+  "homepage": "https://fshenton.github.io/vikings",
   "devDependencies": {
     "@babel/core": "^7.5.5",
     "@babel/polyfill": "^7.7.0",
@@ -24,6 +25,7 @@
     "@babel/preset-react": "^7.0.0",
     "babel-loader": "^8.0.6",
     "css-loader": "^3.1.0",
+    "gh-pages": "^2.1.1",
     "node-sass": "^4.12.0",
     "react": "^16.9.0",
     "react-dom": "^16.9.0",
