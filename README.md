@@ -45,7 +45,6 @@ Any changes to files inside the src/ directory will trigger a hot reload.
 
 
 ### Future Features / Improvements
-- Page-to-page transitions.
 - Add support for anchor-links directly to specific characters and episodes.
 - Add swipe gestures to navigate between episodes and characters.
 - Add scrubbing controls to episode previews
