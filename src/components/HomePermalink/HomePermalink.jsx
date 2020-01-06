@@ -27,7 +27,7 @@ export default function HomePermalink(){
 	return (
 		<Link
 			className={ `${s.home} ${active ? s.active : s.inactive}` } 
-			destination="/"
+			destination="#/"
 			aria-label="Home."
 			aria-hidden={ open || !active }
 		/>
