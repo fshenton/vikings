@@ -106,14 +106,13 @@ function renderPaginationLink(data, index){
 			key={ `episode__pagination__${episodeNo}` }
 			style={ style }
 		>
-			<Link 
+			<button 
 				className={ s.paginationLink }
-				destination={ `#${episodeId}` }
 				onClick={ setActiveIndex }
 				tabIndex={ tabIndex }
 			>
 				{ episodeNo }
-			</Link>
+			</button>
 		</li>
 	);	
 }// renderPaginationLink

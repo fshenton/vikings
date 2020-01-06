@@ -1,16 +1,16 @@
 const data = [
 	{
 		label: "Home",
-		destination: "/"
+		destination: "#/"
 	}, {
 		label: "About",
-		destination: "/about"
+		destination: "#/about"
 	}, {
 		label: "Characters",
-		destination: "/characters"
+		destination: "#/characters"
 	}, {
 		label: "Episodes",
-		destination: "/episodes"
+		destination: "#/episodes"
 	}, {
 		label: "Watch Now",
 		destination: "https://www.history.co.uk/shows/vikings"

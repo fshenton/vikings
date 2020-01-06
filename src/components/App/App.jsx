@@ -17,12 +17,12 @@ export default function App(){
 			<NavProvider>
 				<Navigation /> 
 				<FixedElements />
-				<Router>
+				<Router basename={ process.env.PUBLIC_URL }>
 					<main className={ s.container }>
-						<Route exact path={ process.env.PUBLIC_URL + "/" } component={ Landing }/> 
-						<Route exact path={ process.env.PUBLIC_URL + "/about" } component={ About }/> 
-						<Route exact path={ process.env.PUBLIC_URL + "/characters" } component={ Characters }/> 
-						<Route exact path={ process.env.PUBLIC_URL + "/episodes" } component={ Episodes }/> 
+						<Route exact path="/" component={ Landing }/> 
+						<Route exact path="/about" component={ About }/> 
+						<Route exact path="/characters" component={ Characters }/> 
+						<Route exact path="/episodes" component={ Episodes }/> 
 					</main>
 				</Router>
 			</NavProvider>

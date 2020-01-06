@@ -1,9 +1,31 @@
-import React from "react";
+import React, { useContext } from "react";
 import UTILS from "SHARED/utils.js";
-import { s } from "./";
+import { 
+	ACTIONS,
+	NavContext as Nav,
+	s
+} from "./";
 import Link from "COMPONENTS/Link/";
 
 function renderItem(data){
+	// CONTEXT
+	// ---------------------------
+	const {
+		state: {
+			open
+		},
+		dispatch
+	} = useContext(Nav);
+
+	// EVENT HANDLING
+	// ---------------------------
+	function closeNav(e){
+		dispatch({
+			type: ACTIONS.OPEN_NAVIGATION,
+			value: false
+		});
+	}// closeNav
+
 	const { 
 		label = "",
 		...remainingProps
@@ -47,6 +69,7 @@ function renderItem(data){
 			</svg>
 			<Link 
 				className={ s.link }
+				onClick={ closeNav }
 				{ ...remainingProps }
 			>
 				{ label }

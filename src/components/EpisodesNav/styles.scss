@@ -116,9 +116,12 @@
 				}
 
 				.paginationLink {
+					font-size: 1em;
+					color: var(--font_color);
 					font-family: var(--font_family__heading);
 					font-style: normal;
 					text-decoration: none;
+					background-color: transparent;
 
 					&:focus {
 						outline: solid white 1px;
