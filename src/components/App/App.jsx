@@ -17,7 +17,7 @@ export default function App(){
 			<NavProvider>
 				<Navigation /> 
 				<FixedElements />
-				<Router>
+				<Router basename={ process.env.PUBLIC_URL }>
 					<main className={ s.container }>
 						<Route path="/" exact component={ Landing }/> 
 						<Route path="/about" exact component={ About }/> 

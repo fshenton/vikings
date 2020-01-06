@@ -6,7 +6,7 @@
   "scripts": {
     "build-prod": "cp -r src/index.html dist && webpack --mode=production",
     "build-dev": "cp -r src/index.html dist && webpack-dev-server --open --mode=development",
-    "deploy": "git subtree push --prefix dist origin gh-pages"
+    "deploy": "gh-pages -d dist"
   },
   "repository": {
     "type": "git",
@@ -29,7 +29,7 @@
     "node-sass": "^4.12.0",
     "react": "^16.9.0",
     "react-dom": "^16.9.0",
-    "react-router-dom": "^5.1.2"
+    "react-router-dom": "^5.1.2",
     "sass-loader": "^7.1.0",
     "style-loader": "^1.0.0",
     "webpack": "^4.39.1",
