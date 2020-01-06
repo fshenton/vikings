@@ -9,7 +9,7 @@
 	top: 0;
 	left: 0;
 	z-index: 2;
-	background: url("/assets/2d/shared/bg-portrait.jpg") center / cover no-repeat;
+	background: url("assets/2d/shared/bg-portrait.jpg") center / cover no-repeat;
 	background-attachment: fixed;
 
 	&.active {
@@ -204,7 +204,7 @@
 					width: 1em;
 					height: 1.5em;
 					font-size: 1em;
-					background-image: url("/assets/2d/arrows/arrow.svg");
+					background-image: url("assets/2d/arrows/arrow.svg");
 					background-repeat: no-repeat;
 					background-size: contain;
 					cursor: pointer;
@@ -261,7 +261,7 @@
 		top: 0;
 		left: 0;
 		pointer-events: none;
-		background: no-repeat center top/200% auto url("/assets/2d/glow/glow-small.png");
+		background: no-repeat center top/200% auto url("assets/2d/glow/glow-small.png");
 		transition: opacity 1s 0.5s ease-in-out;
 
 		&.inactive {
@@ -278,7 +278,7 @@
 	.wrapper {
 		max-height: 100%;
 		padding: 5%; //GUESS
-		background-image: url("/assets/2d/shared/bg-small.jpg");
+		background-image: url("assets/2d/shared/bg-small.jpg");
 	}
 
 		.container {
@@ -341,7 +341,7 @@
 		justify-content: flex-end;
 		padding: 10%;
 		padding-bottom: 6.3em;
-		background-image: url("/assets/2d/shared/bg-medium.jpg");
+		background-image: url("assets/2d/shared/bg-medium.jpg");
 	}
 
 		.content {
@@ -415,7 +415,7 @@
 // Desktop half
 @media (min-width: 1025px) {
 	.wrapper {
-		background-image: url("/assets/2d/shared/bg-large.jpg");
+		background-image: url("assets/2d/shared/bg-large.jpg");
 	}
 
 		.content {
@@ -442,7 +442,7 @@
 		.glow {
 			top: -20%;
 			left: -5vw;
-			background-image: url("/assets/2d/glow/glow-large.png");
+			background-image: url("assets/2d/glow/glow-large.png");
 		}
 }
 

@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import { BrowserRouter as Router, Route } from 'react-router-dom';
+import { HashRouter as Router, Route } from 'react-router-dom';
 import Fonts from "SHARED/fonts.scss";
 import { s } from "./";
 import About from "COMPONENTS/About/";
@@ -17,12 +17,12 @@ export default function App(){
 			<NavProvider>
 				<Navigation /> 
 				<FixedElements />
-				<Router basename={ process.env.PUBLIC_URL }>
+				<Router>
 					<main className={ s.container }>
-						<Route path="/" exact component={ Landing }/> 
-						<Route path="/about" exact component={ About }/> 
-						<Route path="/characters" exact component={ Characters }/> 
-						<Route path="/episodes" exact component={ Episodes }/> 
+						<Route exact path={ process.env.PUBLIC_URL + "/" } component={ Landing }/> 
+						<Route exact path={ process.env.PUBLIC_URL + "/about" } component={ About }/> 
+						<Route exact path={ process.env.PUBLIC_URL + "/characters" } component={ Characters }/> 
+						<Route exact path={ process.env.PUBLIC_URL + "/episodes" } component={ Episodes }/> 
 					</main>
 				</Router>
 			</NavProvider>

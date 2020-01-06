@@ -4,7 +4,7 @@
 	flex-direction: column;
 	width: 100%;
 	height: 100%;
-	background-image: url("/assets/2d/shared/bg-small.jpg");
+	background-image: url("assets/2d/shared/bg-small.jpg");
 
 	&.active {
 		.hero, 
@@ -161,7 +161,7 @@
 @media (min-width: 768px) {
 
 	.wrapper {
-		background: url("/assets/2d/shared/bg-medium.jpg");
+		background: url("assets/2d/shared/bg-medium.jpg");
 	}
 
 		.hero {
@@ -222,7 +222,7 @@
 @media (min-width: 1025px) {
 	
 	.wrapper {
-		background: url("/assets/2d/shared/bg-large.jpg");
+		background: url("assets/2d/shared/bg-large.jpg");
 	}
 
 		.textContainer {

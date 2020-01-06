@@ -131,7 +131,7 @@
 			left: 0;
 			z-index: 3;
 			pointer-events: none;
-			background: no-repeat center/cover url("/assets/2d/glow/glow-small.png");
+			background: no-repeat center/cover url("assets/2d/glow/glow-small.png");
 			transition: opacity 3s 0.5s ease-in-out;
 		}
 		
@@ -142,7 +142,7 @@
 // Mobile landscape
 @media (orientation: landscape) {
 	.landing {
-		background-image: url(assets/2d/landing/bg-small-landscape.jpg);
+		background-image: url("assets/2d/landing/bg-small-landscape.jpg");
 	}
 
 		.subheading {
@@ -158,7 +158,7 @@
 // Tablet portrait
 @media (min-width: 768px) {
 	.landing {
-		background-image: url(assets/2d/landing/bg-medium.jpg);
+		background-image: url("assets/2d/landing/bg-medium.jpg");
 	}
 
 		.wrapper {
@@ -176,11 +176,11 @@
 // Desktop
 @media (min-width: 1025px) {
 	.landing {
-		background-image: url(assets/2d/landing/bg-large.jpg);
+		background-image: url("assets/2d/landing/bg-large.jpg");
 	}
 
 		.glow {
-			background-image: url("/assets/2d/glow/glow-large.png");
+			background-image: url("assets/2d/glow/glow-large.png");
 			top: -30%;
 		}
 }
