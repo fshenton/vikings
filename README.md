@@ -1,4 +1,4 @@
-# 🌊 VIKINGS WEBSITE 🌊
+# 🌊 VIKINGS SPA 🌊
 
 ## Live Site [HERE](https://fshenton.github.io/vikings)
 
