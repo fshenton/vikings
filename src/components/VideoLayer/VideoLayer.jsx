@@ -12,9 +12,10 @@ export default function VideoLayer(props){
 		<div className={ `${s.wrapper } ${className}` }>	
 			<video 
 				className={ s.video }
-				autoPlay 
-				loop
-				muted
+				autoPlay={ true }
+				loop={ true }
+				muted={ true }
+				playsinline={ true }
 				poster={ poster } 
 			>
 				<source 
