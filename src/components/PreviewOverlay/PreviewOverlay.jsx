@@ -236,7 +236,7 @@ export default function PreviewOverlay(props){
 				autoPlay={ true }
 				loop={ true }
 				muted={ muted } 
-				playsinline={ true }
+				playsInline={ true }
 				poster={ posterSrc }
 			>
 				{ isOverlayActive && (

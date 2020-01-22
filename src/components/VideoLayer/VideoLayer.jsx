@@ -15,7 +15,7 @@ export default function VideoLayer(props){
 				autoPlay={ true }
 				loop={ true }
 				muted={ true }
-				playsinline={ true }
+				playsInline={ true }
 				poster={ poster } 
 			>
 				<source 
